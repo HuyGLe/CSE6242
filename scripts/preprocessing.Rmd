@@ -9,13 +9,12 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE)
-setwd("C:\\Users\\jbos1\\Desktop\\gatech\\CSE6242\\Project\\CSE6242")
 ```
 
 # Load and Prepare the Data
 ## Load the scorecard data and filter out the unwanted columns
 ```{r, }
-colleges <- read.table(file = "..\\data\\scorecard\\Most-Recent-Cohorts-All-Data-Elements.csv",
+colleges <- read.table(file = "..\\data\\scorecard\\Most-Recent-Cohorts-All-Data-Elements-1.csv",
                      header = T,
                      sep = ",",
                      quote = "\"",
@@ -24,8 +23,8 @@ colleges <- read.table(file = "..\\data\\scorecard\\Most-Recent-Cohorts-All-Data
                      comment.char = "",
                      na.strings = c("NULL", "PrivacySuppressed", ""))
 
-cols = c("UNITID", "INSTNM", "CITY", "STABBR", "ZIP", "ACCREDAGENCY", "INSTURL", "MAIN",
-         "NUMBRANCH", "PREDDEG", "HIGHDEG", "CONTROL", "ST_FIPS", "REGION", "LOCALE",
+cols = c("UNITID", "INSTNM", "CITY", "STABBR", "ZIP", "INSTURL", "MAIN",
+         "NUMBRANCH", "PREDDEG", "HIGHDEG", "CONTROL", "REGION", "LOCALE",
          "LATITUDE", "LONGITUDE", "CCBASIC", "CCUGPROF", "CCSIZSET", "HBCU", "PBI",
          "ANNHI", "TRIBAL", "AANAPII", "HSI", "NANTI", "MENONLY", "WOMENONLY", "RELAFFIL",
          "ADM_RATE", "ADM_RATE_ALL", "SATVR25", "SATVR75", "SATMT25", "SATMT75", "SATVRMID",
@@ -46,7 +45,9 @@ cols = c("UNITID", "INSTNM", "CITY", "STABBR", "ZIP", "ACCREDAGENCY", "INSTURL",
          "COMP_ORIG_YR8_RT", "CONTROL", "OPEFLAG" ,"ADMCON7", "MDCOMP_ALL", "UGDS_MEN",
          "UGDS_WOMEN", "MD_EARN_WNE_P6", "PCT25_EARN_WNE_P6", "PCT75_EARN_WNE_P6",
          "COUNT_NWNE_1YR", "COUNT_WNE_1YR", "BOOKSUPPLY", "ROOMBOARD_ON",
-         "OTHEREXPENSE_ON", "ROOMBOARD_OFF", "OTHEREXPENSE_OFF", "NPT4_PUB", "NPT4_PRIV")
+         "OTHEREXPENSE_ON", "ROOMBOARD_OFF", "OTHEREXPENSE_OFF", "NPT4_PUB", "NPT4_PRIV",
+         "NPT41_PUB", "NPT42_PUB", "NPT43_PUB", "NPT44_PUB", "NPT45_PUB", "NPT41_PRIV",
+         "NPT42_PRIV", "NPT43_PRIV", "NPT44_PRIV", "NPT45_PRIV", "C150_4", "OVERALL_YR6_N")
 
 colleges <- colleges[, cols]
 ```
@@ -64,9 +65,9 @@ factor_cols <- c("STABBR", "MAIN", "PREDDEG", "HIGHDEG", "CONTROL", "ST_FIPS", "
                  "CIP40BACHL", "CIP41BACHL", "CIP42BACHL", "CIP43BACHL", "CIP44BACHL",
                  "CIP45BACHL", "CIP46BACHL", "CIP47BACHL", "CIP48BACHL", "CIP49BACHL",
                  "CIP50BACHL", "CIP51BACHL", "CIP52BACHL", "CIP54BACHL", "DISTANCE",
-                 "CURROPER", "OPEFLAG", "ADMCON7")
+                 "CURROPER", "OPEFLAG", "ADMCON7", "DISTANCEONLY")
 
-integer_cols <- c("UNITID", "ZIP", "NUMBRANCH", "UGDS", "COUNT_NWNE_1YR",
+integer_cols <- c("UNITID", "NUMBRANCH", "UGDS", "COUNT_NWNE_1YR",
                   "COUNT_WNE_1YR")
 
 numeric_cols <- c("LATITUDE", "LONGITUDE", "ADM_RATE", "ADM_RATE_ALL", "SATVR25",
@@ -81,9 +82,11 @@ numeric_cols <- c("LATITUDE", "LONGITUDE", "ADM_RATE", "ADM_RATE_ALL", "SATVR25"
                   "COMP_ORIG_YR8_RT", "MDCOMP_ALL", "UGDS_MEN", "UGDS_WOMEN",
                   "MD_EARN_WNE_P6", "PCT25_EARN_WNE_P6", "PCT75_EARN_WNE_P6",
                   "BOOKSUPPLY", "ROOMBOARD_ON", "OTHEREXPENSE_ON", "ROOMBOARD_OFF",
-                  "OTHEREXPENSE_OFF", "NPT4_PUB", "NPT4_PRIV")
+                  "OTHEREXPENSE_OFF", "NPT4_PUB", "NPT4_PRIV", "NPT41_PUB", "NPT42_PUB",
+                  "NPT43_PUB", "NPT44_PUB", "NPT45_PUB", "NPT41_PRIV", "NPT42_PRIV",
+                  "NPT43_PRIV", "NPT44_PRIV", "NPT45_PRIV", "C150_4")
 
-character_cols <- c("INSTNM", "CITY", "ACCREDAGENCY")
+character_cols <- c("INSTNM", "CITY", "INSTURL", "ZIP", "INSTURL")
 
 for (name in names(colleges)){
     if (name %in% factor_cols)
@@ -96,34 +99,194 @@ for (name in names(colleges)){
         colleges[, name] <- as.character(colleges[, name])
 }
 ```
+# Remove Unwanted Colleges and Unneeded Columns
 
-## Remove inactive colleges, and then remove the CURROPER column
+## Remove inactive colleges
 ```{r}
 colleges <- subset(colleges, CURROPER==1)
-colleges <- colleges[, !(names(colleges) %in% "CURROPER")]
 ```
 
-## Create missing value matrix and save it as csv
+## Remove colleges that don't offer bachelor's degrees
 ```{r}
-write.csv(is.na(colleges), "..\\data\\scorecard\\missing.csv", row.names=F, quote=F)
+# remove colleges whose highest degree offered is less that a bachelor's
+colleges <- subset(colleges, HIGHDEG %in% c("3", "4"))
+
+# remove colleges that only offer graduate degrees
+colleges <- subset(colleges, PREDDEG != "4")
 ```
 
+## Remove program-year colleges
+```{r}
+print(colleges[!is.na(colleges$COSTT4_P), c("INSTNM", "CITY", "STABBR")])
+```
 
-# Cost-Related Columns
-## Impute missing values related to cost
-```{r, message=FALSE}
+# Add Pre-Imputation Calculated Columns
+## Combine the NPT4 PUB/PRIV columns since they are mutually exclusive
+```{r}
+colleges$NPT4 <- ifelse(colleges$CONTROL == 1, colleges$NPT4_PUB, colleges$NPT4_PRIV)
+colleges$NPT41 <- ifelse(colleges$CONTROL == 1, colleges$NPT41_PUB, colleges$NPT41_PRIV)
+colleges$NPT42 <- ifelse(colleges$CONTROL == 1, colleges$NPT42_PUB, colleges$NPT42_PRIV)
+colleges$NPT43 <- ifelse(colleges$CONTROL == 1, colleges$NPT43_PUB, colleges$NPT43_PRIV)
+colleges$NPT44 <- ifelse(colleges$CONTROL == 1, colleges$NPT44_PUB, colleges$NPT44_PRIV)
+colleges$NPT45 <- ifelse(colleges$CONTROL == 1, colleges$NPT45_PUB, colleges$NPT45_PRIV)
+```
+
+# Create initial missing value dataframe
+```{r}
+missing <- data.frame(lapply(colleges, function(x){as.integer(is.na(x))}))
+```
+
+# Perform Imputation
+```{r}
+impute_cols <- c("CONTROL"
+,"REGION"
+,"LOCALE"
+,"CCBASIC"
+,"CCUGPROF"
+,"CCSIZSET"
+,"HBCU"
+,"PBI"
+,"ANNHI"
+,"TRIBAL"
+,"AANAPII"
+,"HSI"
+,"NANTI"
+,"MENONLY"
+,"WOMENONLY"
+#,"RELAFFIL" missForest can't deal with factor variables with more than 50 categories
+,"ADM_RATE"
+,"ADM_RATE_ALL"
+,"SATVR25"
+,"SATVR75"
+,"SATMT25"
+,"SATMT75"
+,"SATVRMID"
+,"SATMTMID"
+,"ACTCM25"
+,"ACTCM75"
+,"ACTEN25"
+,'ACTEN75'
+,"ACTMT25"
+,"ACTMT75"
+,"ACTCMMID"
+,"ACTENMID"
+,"ACTMTMID"
+,"SAT_AVG"
+,"SAT_AVG_ALL"
+,"CIP01BACHL"
+,"CIP03BACHL"
+,"CIP04BACHL"
+,"CIP05BACHL"
+,"CIP09BACHL"
+,"CIP10BACHL"
+,"CIP11BACHL"
+,"CIP12BACHL"
+,"CIP13BACHL"
+,"CIP14BACHL"
+,"CIP15BACHL"
+,"CIP16BACHL"
+,"CIP19BACHL"
+,"CIP22BACHL"
+,"CIP23BACHL"
+,"CIP24BACHL"
+,"CIP25BACHL"
+,"CIP26BACHL"
+,"CIP27BACHL"
+,"CIP29BACHL"
+,"CIP30BACHL"
+,"CIP31BACHL"
+,"CIP38BACHL"
+,"CIP39BACHL"
+,"CIP40BACHL"
+,"CIP41BACHL"
+,"CIP42BACHL"
+,"CIP43BACHL"
+,"CIP44BACHL"
+,"CIP45BACHL"
+,"CIP46BACHL"
+,"CIP47BACHL"
+,"CIP48BACHL"
+,"CIP49BACHL"
+,"CIP50BACHL"
+,"CIP51BACHL"
+,"CIP52BACHL"
+,"CIP54BACHL"
+,"DISTANCEONLY"
+,"UGDS"
+,"UGDS_WHITE"
+,"UGDS_BLACK"
+,"UGDS_HISP"
+,"UGDS_ASIAN"
+,"UGDS_AIAN"
+,"UGDS_NHPI"
+,"UGDS_2MOR"
+,"UGDS_NRA"
+,"UGDS_UNKN"
+,"COSTT4_A"
+,"TUITIONFEE_IN"
+,"TUITIONFEE_OUT"
+,"TUITFTE"
+,"INEXPFTE"
+,"AVGFACSAL"
+,"PFTFAC"
+,"UG25ABV"
+,"COMP_ORIG_YR2_RT"
+,"COMP_ORIG_YR3_RT"
+,"COMP_ORIG_YR4_RT"
+,"COMP_ORIG_YR6_RT"
+,"COMP_ORIG_YR8_RT"
+,"OPEFLAG"
+,"ADMCON7"
+,"UGDS_MEN"
+,"UGDS_WOMEN"
+,"MD_EARN_WNE_P6"
+,"PCT25_EARN_WNE_P6"
+,"PCT75_EARN_WNE_P6"
+,"COUNT_NWNE_1YR"
+,"COUNT_WNE_1YR"
+,"BOOKSUPPLY"
+,"ROOMBOARD_ON"
+,"OTHEREXPENSE_ON"
+,"ROOMBOARD_OFF"
+,"OTHEREXPENSE_OFF"
+,"C150_4"
+,"NPT4"
+,"NPT41"
+,"NPT42"
+,"NPT43"
+,"NPT44"
+,"NPT45"
+)
+
 library(missForest)
+library(doParallel)
 
 set.seed(1)
 
-impute_cols <- c("BOOKSUPPLY", "ROOMBOARD_ON", "OTHEREXPENSE_ON", "ROOMBOARD_OFF",
-                 "OTHEREXPENSE_OFF", "TUITIONFEE_IN", "TUITIONFEE_OUT", "NPT4_PUB",
-                 "NPT4_PRIV")
-
-mf <- missForest(colleges[, impute_cols])
-
-colleges[, impute_cols] <- mf$ximp
+registerDoParallel(cores=12)
+# note: missForest takes ~4 minutes per iteration using default params
+# note: missForest takes ~.6 minutes per iteration using default params and 8 cores
+rf <- missForest(colleges[, impute_cols], maxiter=15, ntree=150, parallelize="variables")
+colleges[, impute_cols] <- rf$ximp
 ```
+
+## Impute missing values related to cost
+```{r, message=FALSE}
+# library(missForest)
+# 
+# set.seed(1)
+# 
+# # Imputation for Cost
+# impute_cols <- c("BOOKSUPPLY", "ROOMBOARD_ON", "OTHEREXPENSE_ON", "ROOMBOARD_OFF",
+#                  "OTHEREXPENSE_OFF", "TUITIONFEE_IN", "TUITIONFEE_OUT", "AVGFACSAL",
+#                  "DISTANCEONLY", "PFTFAC", "INEXPFTE", "ADM_RATE", "TUITFTE",
+#                  "C150_4", "NPT4", "NPT41", "NPT42", "NPT43", "NPT44", "NPT45",
+#                  "CONTROL", "COSTT4_A")
+# rf <- missForest(colleges[, impute_cols], ntree=150, maxiter=20)
+# colleges[, impute_cols] <- rf$ximp
+```
+
+# Add Post-Imputation Calculated Columns
 
 ## Create final cost columns
 There will be four cost columns, each corresponding to the overall cost for in-state/on-campus, in-state/off-campus, out-of-state/on-campus, and out-of-state/off-campus students.  For example, the case for in-state/on-campus students can be calculated as follows:
@@ -140,7 +303,7 @@ colleges$COST_INSTATE_ONCAMPUS <- colleges$BOOKSUPPLY + colleges$ROOMBOARD_ON +
     colleges$OTHEREXPENSE_ON + colleges$TUITIONFEE_IN
 
 colleges$COST_INSTATE_OFFCAMPUS <- colleges$BOOKSUPPLY + colleges$ROOMBOARD_OFF +
-    colleges$OTHEREXPENSE_OFF + colleges$TUITIONFEE_OUT
+    colleges$OTHEREXPENSE_OFF + colleges$TUITIONFEE_IN
 
 colleges$COST_OUTSTATE_ONCAMPUS <- colleges$BOOKSUPPLY + colleges$ROOMBOARD_ON +
     colleges$OTHEREXPENSE_ON + colleges$TUITIONFEE_OUT
@@ -154,28 +317,177 @@ hist(colleges$COST_INSTATE_OFFCAMPUS, main="Cost for In-State, Off-Campus")
 hist(colleges$COST_OUTSTATE_ONCAMPUS, main="Cost for Out-of-State, On-Campus")
 hist(colleges$COST_OUTSTATE_OFFCAMPUS, main="Cost for Out-of-State, Off-Campus")
 
-print(paste0("Out-of-bag error: ", mf$OOBerror))
+boxplot(list(colleges$COST_INSTATE_ONCAMPUS, colleges$COST_INSTATE_OFFCAMPUS,
+                  colleges$COST_OUTSTATE_ONCAMPUS, colleges$COST_OUTSTATE_OFFCAMPUS))
+
+lapply(colleges[, c("COST_INSTATE_ONCAMPUS", "COST_INSTATE_OFFCAMPUS",
+                    "COST_OUTSTATE_ONCAMPUS", "COST_OUTSTATE_OFFCAMPUS")],
+       function(x){summary(x)})
+
+print(rf$OOBerror)
 ```
 
-## Remove unneeded cost columns
+## Create final income-based financial aid columns
 ```{r}
-colleges <- colleges[, !(names(colleges) %in% c("BOOKSUPPLY", "ROOMBOARD_ON",
-                                                "OTHEREXPENSE_ON", "ROOMBOARD_OFF",
-                                                "OTHEREXPENSE_OFF", "TUITIONFEE_IN",
-                                                "TUITIONFEE_OUT", "COSTT4_A",
-                                                "COSTT4_P", "NPT4_PUB", "NPT4_PRIV"))]
-```
-
-# Other columns (TODO)
-## Impute LATITUDE/LONGITUDE 
-This can be done using the script fill_lon_lat.py
-
-# Final Column Removal
-```{r}
-colleges <- colleges[, !(names(colleges) %in% "MDCOMP_ALL")]
+colleges$FINAID1 <- colleges$COSTT4_A - colleges$NPT41
+colleges$FINAID2 <- colleges$COSTT4_A - colleges$NPT42
+colleges$FINAID3 <- colleges$COSTT4_A - colleges$NPT43
+colleges$FINAID4 <- colleges$COSTT4_A - colleges$NPT44
+colleges$FINAID5 <- colleges$COSTT4_A - colleges$NPT45
 ```
 
 # Write the Final Dataset to a .csv File
 ```{r}
-write.csv(colleges, file="..\\data\\final.csv", row.names=F, quote=F)
+output_cols <- c("UNITID"
+,"INSTNM"
+,"CITY"
+,"STABBR"
+,"ZIP"
+,"INSTURL"
+,"MAIN"
+,"NUMBRANCH"
+,"CONTROL"
+,"REGION"
+,"LOCALE"
+,"LATITUDE"
+,"LONGITUDE"
+,"CCBASIC"
+,"CCUGPROF"
+,"CCSIZSET"
+,"HBCU"
+,"PBI"
+,"ANNHI"
+,"TRIBAL"
+,"AANAPII"
+,"HSI"
+,"NANTI"
+,"MENONLY"
+,"WOMENONLY"
+,"RELAFFIL"
+,"ADM_RATE"
+,"SATVR25"
+,"SATVR75"
+,"SATMT25"
+,"SATMT75"
+,"SATVRMID"
+,"SATMTMID"
+,"ACTCM25"
+,"ACTCM75"
+,"ACTEN25"
+,"ACTEN75"
+,"ACTMT25"
+,"ACTMT75"
+,"ACTCMMID"
+,"ACTENMID"
+,"ACTMTMID"
+,"SAT_AVG"
+,"CIP01BACHL"
+,"CIP03BACHL"
+,"CIP04BACHL"
+,"CIP05BACHL"
+,"CIP09BACHL"
+,"CIP10BACHL"
+,"CIP11BACHL"
+,"CIP12BACHL"
+,"CIP13BACHL"
+,"CIP14BACHL"
+,"CIP15BACHL"
+,"CIP16BACHL"
+,"CIP19BACHL"
+,"CIP22BACHL"
+,"CIP23BACHL"
+,"CIP24BACHL"
+,"CIP25BACHL"
+,"CIP26BACHL"
+,"CIP27BACHL"
+,"CIP29BACHL"
+,"CIP30BACHL"
+,"CIP31BACHL"
+,"CIP38BACHL"
+,"CIP39BACHL"
+,"CIP40BACHL"
+,"CIP41BACHL"
+,"CIP42BACHL"
+,"CIP43BACHL"
+,"CIP44BACHL"
+,"CIP45BACHL"
+,"CIP46BACHL"
+,"CIP47BACHL"
+,"CIP48BACHL"
+,"CIP49BACHL"
+,"CIP50BACHL"
+,"CIP51BACHL"
+,"CIP52BACHL"
+,"CIP54BACHL"
+,"DISTANCEONLY"
+,"UGDS"
+,"UGDS_WHITE"
+,"UGDS_BLACK"
+,"UGDS_HISP"
+,"UGDS_ASIAN"
+,"UGDS_AIAN"
+,"UGDS_NHPI"
+,"UGDS_2MOR"
+,"UGDS_NRA"
+,"UGDS_UNKN"
+,"AVGFACSAL"
+,"PFTFAC"
+,"UG25ABV"
+,"COMP_ORIG_YR2_RT"
+,"COMP_ORIG_YR3_RT"
+,"COMP_ORIG_YR4_RT"
+,"COMP_ORIG_YR6_RT"
+,"COMP_ORIG_YR8_RT"
+,"OPEFLAG"
+,"ADMCON7"
+,"UGDS_MEN"
+,"UGDS_WOMEN"
+,"MD_EARN_WNE_P6"
+,"PCT25_EARN_WNE_P6"
+,"PCT75_EARN_WNE_P6"
+,"COUNT_NWNE_1YR"
+,"COUNT_WNE_1YR"
+,"C150_4"
+,"COST_INSTATE_ONCAMPUS"
+,"COST_INSTATE_OFFCAMPUS"
+,"COST_OUTSTATE_ONCAMPUS"
+,"COST_OUTSTATE_OFFCAMPUS"
+,"FINAID1"
+,"FINAID2"
+,"FINAID3"
+,"FINAID4"
+,"FINAID5"
+)
+
+quote <- which(output_cols == "INSTURL")
+
+write.csv(colleges[, output_cols], file="..\\data\\final.csv", row.names=F, quote=quote)
 ```
+
+# Update Missing dataframe and write it to missing.csv
+```{r}
+missing$COST_INSTATE_ONCAMPUS <- as.integer(is.na(colleges$BOOKSUPPLY) |
+                                            is.na(colleges$ROOMBOARD_ON) |
+                                            is.na(colleges$OTHEREXPENSE_ON) |
+                                            is.na(colleges$TUITIONFEE_IN))
+missing$COST_INSTATE_OFFCAMPUS <- as.integer(is.na(colleges$BOOKSUPPLY) |
+                                            is.na(colleges$ROOMBOARD_OFF) |
+                                            is.na(colleges$OTHEREXPENSE_OFF) |
+                                            is.na(colleges$TUITIONFEE_IN))
+missing$COST_OUTSTATE_ONCAMPUS <- as.integer(is.na(colleges$BOOKSUPPLY) |
+                                            is.na(colleges$ROOMBOARD_ON) |
+                                            is.na(colleges$OTHEREXPENSE_ON) |
+                                            is.na(colleges$TUITIONFEE_OUT))
+missing$COST_OUTSTATE_OFFCAMPUS <- as.integer(is.na(colleges$BOOKSUPPLY) |
+                                            is.na(colleges$ROOMBOARD_OFF) |
+                                            is.na(colleges$OTHEREXPENSE_OFF) |
+                                            is.na(colleges$TUITIONFEE_OUT))
+missing$FINAID1 <- as.integer(is.na(colleges$COSTT4_A) | is.na(colleges$NPT41))
+missing$FINAID2 <- as.integer(is.na(colleges$COSTT4_A) | is.na(colleges$NPT42))
+missing$FINAID3 <- as.integer(is.na(colleges$COSTT4_A) | is.na(colleges$NPT43))
+missing$FINAID4 <- as.integer(is.na(colleges$COSTT4_A) | is.na(colleges$NPT44))
+missing$FINAID5 <- as.integer(is.na(colleges$COSTT4_A) | is.na(colleges$NPT45))
+
+write.csv(missing[, output_cols], file="..\\data\\missing.csv", row.names=F, quote=F)
+```
+
