@@ -9,12 +9,12 @@ from urllib.request import urlopen
 import pandas as pd
 import json
 
+
 na_values = ['', '#N/A', '#N/A N/A', '#NA', '-1.#IND', '-1.#QNAN', '-NaN', '-nan', '1.#IND', '1.#QNAN', '<NA>', 'N/A', 'NA', 'NULL', 'NaN', 'n/a', 'nan', 'null', 'PrivacySuppressed']
-sc = pd.read_csv('data/scorecard/Most-Recent-Cohorts-All-Data-Elements.csv', na_values=na_values)
+sc = pd.read_csv('data/temp1.csv', na_values=na_values)
 
 username = 'team173'
 url = 'http://api.geonames.org/search?maxRows=1&type=json&country=US&username=' + username
-
 for i in sc.index:
     if pd.isnull(sc.loc[i, 'LATITUDE']) or pd.isnull(sc.loc[i, 'LONGITUDE']):
         query = '&q=' + sc.loc[i, 'CITY'].replace(' ', '+') + '+' + sc.loc[i, 'STABBR']
@@ -42,4 +42,4 @@ sc.loc[6495, ['LATITUDE', 'LONGITUDE']] = [18.2013, -67.1452]
 sc.loc[6578, ['LATITUDE', 'LONGITUDE']] = [18.2116, -65.7349]
 sc.loc[6579, ['LATITUDE', 'LONGITUDE']] = [18.4704, -67.0242]
  
-sc.to_csv('data/scorecard/Most-Recent-Cohorts-All-Data-Elements2.csv')
+sc.to_csv('data/temp2.csv', index=False)
