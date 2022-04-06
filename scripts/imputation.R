@@ -215,6 +215,17 @@ colleges$FINAID5 <- colleges$COSTT4_A - colleges$NPT45
 
 
 
+# Add dummy variables for the factor columns
+for (factor_col in factor_cols) {
+    for (level in levels(colleges[[factor_col]])) {
+        new_col_name <- paste(factor_col, level, sep='.')
+        colleges[[new_col_name]] <- as.integer(colleges[[factor_col]] == level)
+    }
+}
+
+
+
+
 # Write the Final Dataset to a .csv File
 # (TODO?) We can potentially remove imputation for certain columns and instead
 # set the missing values to an appropriate value.
