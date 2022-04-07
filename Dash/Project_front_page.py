@@ -1,177 +1,171 @@
-from dash import Dash, dcc, html, Input, Output, State
-from plotly.express import data
-import pandas as pd
-import csv
+from dash import Dash, dcc, html, Input, Output, callback, State
 import json
+import numpy as np
+import pandas as pd
 
+DEGREES = ['Degree A', 'Degree B', 'Degree C']
 
-#Load CSV file in 
-df = pd.read_csv("../data/final.csv")
+def create_slider(name):
+    return dcc.Slider(1, 5, 1, id=f'{name}-imp-i',
+                      marks={1: 'Not Important', 3: 'Moderately Important', 5: 'Extremely Important'}
+    )
 
-### Degree Program Selection
+def create_page_3_layout(unitid):
+    college = df.loc[df.UNITID == int(unitid), :].squeeze()
+    return html.Div([
+        html.H1(str(college.INSTNM)),
+        html.H2(f'{college.CITY}, {college.STABBR}'),
+        html.P("More information and graphs"),
+        html.P("Short list of similar schools"),
+        dcc.Link(html.Button('Back'), href='/2')])
+
+df = pd.read_csv("../data/minimal.csv")
 app = Dash(__name__, suppress_callback_exceptions=True)
-
 app.layout = html.Div([
     dcc.Location(id='url', refresh=False),
-    dcc.Store(id='page-number-store', data='1', storage_type='session'),
-    dcc.Store(id='page-1-store', storage_type='session', data="default"),
-    dcc.Store(id='college-results-store', storage_type='session'),
-    dcc.Store(id='second-page-filters-store', storage_type='session'),
-    html.Div(id='page-content')
-])
-
-page_1_layout = html.Div([
-    html.H1('College Recommendation Tool'),
-    html.H3('User Information'),
-    html.P(['Select major of study you are interested in.',
-        html.Br()]),
-    dcc.Dropdown(df.columns, id='major-input'),
-    html.Div(id='majors-output-container-1'),
-    html.Br(),
-    html.Br(),
-    html.Label('Please enter your home zip code:'),
-    dcc.Input(
-        placeholder='Zip Code',
-        type='number',
-        min=1,
-        max=99950,
-        value = '',
-        id='zip-code-input',
-        debounce =True
-    ),
-    html.Br(),
-    html.Br(),
-    html.Label('Please enter your unweighted GPA:'),
+    dcc.Store(id='1s'),
+    dcc.Store(id='2s'),
+    html.Div(id='pc', children=(page_1_layout := html.Div([
+        html.H1('College Recommendation Tool'),
+        html.H2('Page 1'),
+        html.H3('User Information'),
+        html.Label('Select your desired major'),
+        dcc.Dropdown(DEGREES, id='major-i'),
+        html.Br(),
+        html.Label('Enter your home zip code'),
         dcc.Input(
-        placeholder='X.XX',
-        type='number',
-        min=0,
-        max=4,
-        value = '',
-        id='gpa-input',
-        debounce =True
-    ),
-    html.Br(),
-    html.Br(),
-    html.Label('Please enter your SAT score:'),
+            placeholder='Zip Code',
+            type='number',
+            min=1,
+            max=99950,
+            value = '',
+            id='zip-i',
+            debounce =True
+        ),
+        html.Br(),
+        html.Label('Enter your unweighted GPA'),
         dcc.Input(
-        placeholder='XXXX',
-        type='number',
-        value = '',
-        id='sat-input',
-        debounce =True
-    ),
-    html.Br(),
-    html.Br(),
-    html.Label('Please enter your ACT score:'),
+            placeholder='X.XX',
+            type='number',
+            min=0,
+            max=4,
+            value = '',
+            id='gpa-i',
+            debounce =True
+        ),
+        html.Br(),
+        html.Label('Enter your SAT score'),
+        dcc.Input(
+            placeholder='XXXX',
+            type='number',
+            value = '',
+            id='sat-i',
+            debounce =True
+        ),
+        html.Br(),
+        html.Label('Enter your ACT score'),
         dcc.Input(
         placeholder='XXXX',
-        type='number',
-        value = '',
-        id='act-input',
-        debounce =True
-    ),
-    html.Hr(),
-    html.H3('Specific College Preferences'),
-    html.P('Location'),
-    dcc.Dropdown(id='preferred-state-input', placeholder='Select your preferred state', options=['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming']),
-    dcc.Slider(1, 5, 1, id='preferred-state-importance',
-        marks={
-            1: 'Not Important',
-            3: 'Moderately Important',
-            5: 'Extremely Important'
-        }
-    ),
-    html.Br(),
-    html.P('Weather'),
-    dcc.Dropdown(id='preferred-climate-input', placeholder='Select your preferred climate type', options=['A', 'B', 'C', 'D', 'E', 'F']),
-    dcc.Checklist(['Snowy winters', 'Sunny summers'], id='preferred-weather-types-input'),
-    dcc.Slider(1, 5, 1, id='preferred-weather-importance',
-        marks={
-            1: 'Not Important',
-            3: 'Moderately Important',
-            5: 'Extremely Important'
-        }
-    ),
-    html.Hr(),
-    html.H3('Additional Preferences'),
-    html.P('How important is teaching quality to you?'),
-    dcc.Slider(1, 5, 1, id='teaching-quality-importance',
-        marks={
-            1: 'Not Important',
-            3: 'Moderately Important',
-            5: 'Extremely Important'
-        }
-    ),
-    dcc.Link(html.Button('Submit', id='page-1-button', n_clicks=0), href='/page-2', id='page-1-link')
+            type='number',
+            value = '',
+            id='act-i',
+            debounce =True
+        ),
+        html.Br(),
+        html.Hr(),
+        html.H3('Specific College Preferences'),
+        html.Label('Select your desired tuition cost'),
+        dcc.Slider(1, 5, 1, marks={1:'Inexpensive', 3:'Moderate', 5:'Expensive'}, id='cost-i'),
+        create_slider('cost'),
+        html.Br(),
+        html.Label('Select your desired location'),
+        dcc.Dropdown(id='state-i', placeholder='Select your preferred state', options=['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming']),
+        create_slider('state'),
+        html.Br(),
+        html.Label('Select your desired weather'),
+        dcc.Dropdown(id='climate-i', placeholder='Select your preferred climate type', options=['A', 'B', 'C', 'D', 'E', 'F']),
+        dcc.Checklist(['Snowy winters', 'Sunny summers'], id='weather-types-i'),
+        create_slider('weather'),
+        html.Br(),
+        html.Label('Select your desired school size'),
+        dcc.Slider(1, 5, 1, marks={1:'Small', 3:'Medium', 5:'Large'}, id='size-i'),
+        create_slider('size'),
+        html.Br(),
+        html.Label('Select your desired school environment'),
+        dcc.Dropdown(['City', 'Suburb', 'Town', 'Rural'], id='environment-i'),
+        create_slider('environment'),
+        html.Hr(),
+        html.H3('Additional Preferences'),
+        html.P('How important is school selectivity to you?'),
+        create_slider('selectivity'),
+        html.P('How important is teaching quality to you?'),
+        create_slider('teaching'),
+        html.P('How important is projected earnings to you?'),
+        create_slider('earnings'),
+        dcc.Link(html.Button('Submit'), href='/2')
+    ])))
 ])
 
-page_2_layout = html.Div([
-    html.H1('Recommendations'),
-    html.H3('A list of schools will be here', id='page-2-h3'),
-    html.P('This is default text for testing purposes', id='test-text'),
-    dcc.Link(html.Button('Back', id='page-2-button', n_clicks=0), href='/page-1')
-])
-
-
-@app.callback(Output('page-content', 'children'),
-              Input('url', 'pathname'))
-def display_page(pathname):
-    if pathname == '/page-2':
+@callback(Output('pc', 'children'),
+          Input('url', 'pathname'))
+def url(pathname):
+    if pathname == '/1':
+        return page_1_layout
+    elif pathname == '/2':
         return page_2_layout
+    elif pathname[1:8] == 'college':
+        return create_page_3_layout(pathname[9:])
     else:
         return page_1_layout
-    
-@app.callback(Output('first-page-store', 'data'),
-              Input('page-1-link', 'n_clicks'),
-              State('zip-code-input', 'value'))
-def page_1_button(n_clicks, zip_value):
-    return f'the zip code is {zip_value}'
 
-@app.callback(Output('test-text', 'children'),
-              Input('page-2-h3', 'children'),
-              State('page-1-store', 'data'))
-def page_2_load(children, store_data):
-    return f'The zip code from the previous page was {store_data}'
+# Page 1
+@callback(Output('1s', 'data'),
+          Input('major-i', 'value'),
+          Input('zip-i', 'value'),
+          Input('gpa-i', 'value'),
+          Input('sat-i', 'value'),
+          Input('act-i', 'value'),
+          Input('cost-i', 'value'),
+          Input('cost-imp-i', 'value'),
+          Input('state-i', 'value'),
+          Input('state-imp-i', 'value'),
+          Input('climate-i', 'value'),
+          Input('weather-types-i', 'value'),
+          Input('weather-imp-i', 'value'),
+          Input('size-i', 'value'),
+          Input('size-imp-i', 'value'),
+          Input('environment-i', 'value'),
+          Input('environment-imp-i', 'value'),
+          Input('selectivity-imp-i', 'value'),
+          Input('teaching-imp-i', 'value'),
+          Input('earnings-imp-i', 'value'), prevent_initial_call=True)
+def form_change(major_val, zip_val, gpa_val, sat_val, act_val, cost_val, cost_imp_val,
+                state_val, state_imp_val, climate_val, weather_types_val, weather_imp_val,
+                size_val, size_imp_val, environment_val, environment_imp_val,
+                selectivity_imp_val, teaching_imp_val, earnings_imp_val):
+    print(f'{{"major":"{major_val}", "zip":{zip_val}, "gpa":{gpa_val}, "sat":{sat_val}, "act":{act_val}, "cost":{cost_val}, "cost-imp":{cost_imp_val}, "state":"{state_val}", "state-imp":{state_imp_val}, "climate":"{climate_val}", "weather-types":{weather_types_val}, "weather-imp":{weather_imp_val}, "size":{size_val}, "size-imp":{size_imp_val}, "environment":"{environment_val}", "environment-imp":{environment_imp_val}, "selectivity-imp":{selectivity_imp_val}, "teaching-imp":{teaching_imp_val}, "earnings-imp":{earnings_imp_val}}}')
+    return f'{{"major":"{major_val}", "zip":{zip_val}, "gpa":{gpa_val}, "sat":{sat_val}, "act":{act_val}, "cost":{cost_val}, "cost-imp":{cost_imp_val}, "state":"{state_val}", "state-imp":{state_imp_val}, "climate":"{climate_val}", "weather-types":{weather_types_val}, "weather-imp":{weather_imp_val}, "size":{size_val}, "size-imp":{size_imp_val}, "environment":"{environment_val}", "environment-imp":{environment_imp_val}, "selectivity-imp":{selectivity_imp_val}, "teaching-imp":{teaching_imp_val}, "earnings-imp":{earnings_imp_val}}}'
 
-@app.callback(
-    Output('majors-output-container-1', 'children'),
-    Input('majors-input', 'value')
-)
-def update_output(value):
-    return f'You have selected the {value} degree program '
-    
-    
-#@app.callback(
-#    Output('zip-code-container', 'children'),
-#    Input('zip-code-input','value')
-#)
+# Page 2
+page_2_layout = html.Div([
+    html.H1('College Recommendation Tool'),
+    html.H3('Recommendations'),
+    html.Div(id='2c'),
+    dcc.Link(html.Button('Back'), href='/1'),
+])
 
-#ALLOWED_TYPES = (
-#    "text", "number", "password", "email", "search",
-#    "tel", "url", "range", "hidden",
-#)
+@callback(Output('2c', 'children'),
+          Input('2c', 'children'),
+          State('1s', 'data'))
+def page_2_content(a, store):
+    n = int(np.random.random()*5+1)
+    return [dcc.Link(html.Div(id={'type':'listed-college', 'index':str(df.UNITID[i])}, n_clicks=0, children=[html.Hr(), html.Label(df.INSTNM[i]), html.Br(), html.P(f'{df.CITY[i]}, {df.STABBR[i]}')]), href=f'/college/{df.UNITID[i]}') for i in range(n)]
 
-
-#app.layout = html.Div(
-#    [
-#        dcc.Input(
-#            id="input_{}".format(_),
-#            type=_,
-#            placeholder="input type {}".format(_),
-#        )
-#        for _ in ALLOWED_TYPES
-#    ]
-#    + [html.Div(id="out-all-types")]
-#)
-
-
-#@app.callback(
-#    Output("out-all-types", "children"),
-#    [Input("input_{}".format(_), "value") for _ in ALLOWED_TYPES],
-#)
-#def cb_render(*vals):
-#    return " | ".join((str(val) for val in vals if val))
+@callback(Output('2s', 'data'),
+          Input('2c', 'children'))
+def update_2s(children):
+    print(json.dumps(children))
+    return json.dumps(children)
 
 
 if __name__ == '__main__':
