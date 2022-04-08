@@ -3,6 +3,7 @@ import json
 import numpy as np
 import pandas as pd
 
+
 DEGREES = ['Degree A', 'Degree B', 'Degree C']
 
 def create_slider(name):
@@ -25,7 +26,10 @@ app.layout = html.Div([
     dcc.Location(id='url', refresh=False),
     dcc.Store(id='1s'),
     dcc.Store(id='2s'),
-    html.Div(id='pc', children=(page_1_layout := html.Div([
+    dcc.Store(id='old_page', data='/1'),
+    dcc.Store(id='temp_page', data='/1'),
+    dcc.Store(id='new_page', data='/1'),
+    html.Div(id='pc', children=(page_1_layout := html.Div(id='form', children=[
         html.H1('College Recommendation Tool'),
         html.H2('Page 1'),
         html.H3('User Information'),
@@ -106,17 +110,48 @@ app.layout = html.Div([
     ])))
 ])
 
-@callback(Output('pc', 'children'),
-          Input('url', 'pathname'))
-def url(pathname):
-    if pathname == '/1':
-        return page_1_layout
-    elif pathname == '/2':
-        return page_2_layout
-    elif pathname[1:8] == 'college':
-        return create_page_3_layout(pathname[9:])
+@callback(Output('temp_page', 'data'),
+          Input('url', 'pathname'),
+          State('old_page', 'data'), suppress_callback_exceptions=True)
+def update_temp(pathname, old_data):
+    return old_data
+    
+@callback(Output('old_page', 'data'),
+          Input('temp_page', 'data'),
+          State('url', 'pathname'),
+          State('old_page', 'data'),
+          State('new_page', 'data'), suppress_callback_exceptions=True)
+def update_old(temp_data, pathname, old_data, new_data):
+    if pathname == new_data:
+        return old_data
     else:
+        return new_data
+    
+@callback(Output('new_page', 'data'),
+          Input('old_page', 'data'),
+          State('url', 'pathname'), suppress_callback_exceptions=True)
+def update_new(old_data, pathname):
+    if pathname == '/1':
+        return '/1'
+    elif pathname == '/2':
+        return '/2'
+    elif pathname[1:8] == 'college':
+        return pathname[9:]
+    else:
+        return '/1'
+
+@callback(Output('pc', 'children'),
+          Input('new_page', 'data'), suppress_callback_exceptions=True)
+def change_page(new_data):
+    if new_data == '/1':
         return page_1_layout
+    elif new_data == '/2':
+        return page_2_layout
+    elif new_data is None or new_data == '':
+        return page_1_layout
+    else:
+        return create_page_3_layout(new_data)
+
 
 # Page 1
 @callback(Output('1s', 'data'),
@@ -139,12 +174,13 @@ def url(pathname):
           Input('selectivity-imp-i', 'value'),
           Input('teaching-imp-i', 'value'),
           Input('earnings-imp-i', 'value'), prevent_initial_call=True)
-def form_change(major_val, zip_val, gpa_val, sat_val, act_val, cost_val, cost_imp_val,
+def page_1_input(major_val, zip_val, gpa_val, sat_val, act_val, cost_val, cost_imp_val,
                 state_val, state_imp_val, climate_val, weather_types_val, weather_imp_val,
                 size_val, size_imp_val, environment_val, environment_imp_val,
                 selectivity_imp_val, teaching_imp_val, earnings_imp_val):
     print(f'{{"major":"{major_val}", "zip":{zip_val}, "gpa":{gpa_val}, "sat":{sat_val}, "act":{act_val}, "cost":{cost_val}, "cost-imp":{cost_imp_val}, "state":"{state_val}", "state-imp":{state_imp_val}, "climate":"{climate_val}", "weather-types":{weather_types_val}, "weather-imp":{weather_imp_val}, "size":{size_val}, "size-imp":{size_imp_val}, "environment":"{environment_val}", "environment-imp":{environment_imp_val}, "selectivity-imp":{selectivity_imp_val}, "teaching-imp":{teaching_imp_val}, "earnings-imp":{earnings_imp_val}}}')
     return f'{{"major":"{major_val}", "zip":{zip_val}, "gpa":{gpa_val}, "sat":{sat_val}, "act":{act_val}, "cost":{cost_val}, "cost-imp":{cost_imp_val}, "state":"{state_val}", "state-imp":{state_imp_val}, "climate":"{climate_val}", "weather-types":{weather_types_val}, "weather-imp":{weather_imp_val}, "size":{size_val}, "size-imp":{size_imp_val}, "environment":"{environment_val}", "environment-imp":{environment_imp_val}, "selectivity-imp":{selectivity_imp_val}, "teaching-imp":{teaching_imp_val}, "earnings-imp":{earnings_imp_val}}}'
+
 
 # Page 2
 page_2_layout = html.Div([
@@ -156,17 +192,24 @@ page_2_layout = html.Div([
 
 @callback(Output('2c', 'children'),
           Input('2c', 'children'),
-          State('1s', 'data'))
-def page_2_content(a, store):
-    n = int(np.random.random()*5+1)
-    return [dcc.Link(html.Div(id={'type':'listed-college', 'index':str(df.UNITID[i])}, n_clicks=0, children=[html.Hr(), html.Label(df.INSTNM[i]), html.Br(), html.P(f'{df.CITY[i]}, {df.STABBR[i]}')]), href=f'/college/{df.UNITID[i]}') for i in range(n)]
-
+          State('old_page', 'data'),
+          State('1s', 'data'),
+          State('2s', 'data'))
+def page_2_content(children, old_page_data, store1, store2):
+    if old_page_data == '/1':  #if we came from page 1
+        n = int(np.random.random()*5+1)
+        return [dcc.Link(html.Div(id={'type':'listed-college', 'index':str(df.UNITID[i])}, n_clicks=0, children=[html.Hr(), html.Label(df.INSTNM[i]), html.Br(), html.P(f'{df.CITY[i]}, {df.STABBR[i]}')]), href=f'/college/{df.UNITID[i]}') for i in range(n)]
+    elif old_page_data == '/2':
+        return children
+    else:
+        ## TODO: make this json into actual objects
+        return store2
+        
 @callback(Output('2s', 'data'),
           Input('2c', 'children'))
 def update_2s(children):
     print(json.dumps(children))
     return json.dumps(children)
-
 
 if __name__ == '__main__':
     app.run_server(debug=True)
