@@ -1,4 +1,5 @@
 from dash import Dash, dcc, html, Input, Output, callback, State
+import plotly.express as px
 import json
 import numpy as np
 import pandas as pd
@@ -179,10 +180,12 @@ page_2_layout = html.Div([
     html.H1('College Recommendation Tool'),
     html.H3('Recommendations'),
     html.Div(id='2c'),
+    html.Div(id='map'),
     dcc.Link(html.Button('Back'), href='/1'),
 ])
 
 @callback(Output('2c', 'children'),
+          Output('map', 'children'),
           Output('2s', 'data'),
           Output('2s-minimal', 'data'),
           Input('2c', 'children'),
@@ -191,13 +194,31 @@ page_2_layout = html.Div([
           State('2s', 'data'),
           State('2s-minimal', 'data'))
 def page_2_content(children, last_page, store1, store2, store2_m):
+    hovertemplate = '%{customdata[1]}<br>%{customdata[2]}, %{customdata[3]}'
+    custom_data = ['UNITID', 'INSTNM', 'CITY', 'STABBR']
     if last_page == '/1':  # if we came from page 1
         df = submit_form(store1)
-        return [dcc.Link(html.Div(id={'type':'listed-college', 'index':str(df.UNITID.iloc[i])}, n_clicks=0, children=[html.Hr(), html.Label(df.INSTNM.iloc[i]), html.Br(), html.P(f'{df.CITY.iloc[i]}, {df.STABBR.iloc[i]}')]), href=f'/college/{df.UNITID.iloc[i]}') for i in range(df.shape[0])], df.to_json(), df.iloc[0:min(10, df.shape[0]), :].to_json()
+        fig_map = px.scatter_mapbox(df, lat="LATITUDE", lon="LONGITUDE", custom_data=custom_data, color_discrete_sequence=["fuchsia"], zoom=3, height=300)
+        fig_map.update_traces(hovertemplate=hovertemplate)
+        fig_map.update_layout(mapbox_style="open-street-map")
+        fig_map.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
+        return [dcc.Link(html.Div(id={'type':'listed-college', 'index':str(df.UNITID.iloc[i])}, n_clicks=0, children=[html.Hr(), html.Label(df.INSTNM.iloc[i]), html.Br(), html.P(f'{df.CITY.iloc[i]}, {df.STABBR.iloc[i]}')]), href=f'/college/{df.UNITID.iloc[i]}') for i in range(df.shape[0])], dcc.Graph(id='map', figure=fig_map), df.to_json(), df.iloc[0:min(10, df.shape[0]), :].to_json()
     else:
         df = pd.read_json(store2_m)
-        return [dcc.Link(html.Div(id={'type':'listed-college', 'index':str(df.UNITID.iloc[i])}, n_clicks=0, children=[html.Hr(), html.Label(df.INSTNM.iloc[i]), html.Br(), html.P(f'{df.CITY.iloc[i]}, {df.STABBR.iloc[i]}')]), href=f'/college/{df.UNITID.iloc[i]}') for i in range(df.shape[0])], store2, store2_m
+        fig_map = px.scatter_mapbox(df, lat="LATITUDE", lon="LONGITUDE", custom_data=custom_data, color_discrete_sequence=["fuchsia"], zoom=3, height=300)
+        fig_map.update_traces(hovertemplate=hovertemplate)
+        fig_map.update_layout(mapbox_style="open-street-map")
+        fig_map.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
+        return [dcc.Link(html.Div(id={'type':'listed-college', 'index':str(df.UNITID.iloc[i])}, n_clicks=0, children=[html.Hr(), html.Label(df.INSTNM.iloc[i]), html.Br(), html.P(f'{df.CITY.iloc[i]}, {df.STABBR.iloc[i]}')]), href=f'/college/{df.UNITID.iloc[i]}') for i in range(df.shape[0])], dcc.Graph(id='map', figure=fig_map), store2, store2_m
 
+@callback(
+    Output('url', 'pathname'),
+    Input('map', 'clickData'), prevent_initial_call=True)
+def display_click_data(clickData):
+    if clickData is None:
+        return '/2'
+    else:
+        return f'/college/{clickData["points"][0]["customdata"][0]}'
 
 # page 3
 page_3_layout = html.Div(id='page-3-layout')
