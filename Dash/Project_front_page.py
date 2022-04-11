@@ -42,45 +42,25 @@ def create_page_3_layout(unitid):
         html.P("Short list of similar schools"),
         dcc.Link(html.Button('Back'), href='/2')])
 
-@callback(Output('temp-page', 'data'),
-          Input('url', 'pathname'),
-          State('old-page', 'data'), suppress_callback_exceptions=True)
-def update_temp(pathname, old_data):
-    return old_data
-    
-@callback(Output('old-page', 'data'),
-          Input('temp-page', 'data'),
-          State('url', 'pathname'),
-          State('old-page', 'data'),
-          State('new-page', 'data'), suppress_callback_exceptions=True)
-def update_old(temp_data, pathname, old_data, new_data):
-    if pathname == new_data:
-        return old_data
-    else:
-        return new_data
-    
 @callback(Output('new-page', 'data'),
-          Input('old-page', 'data'),
-          State('url', 'pathname'), suppress_callback_exceptions=True)
-def update_new(old_data, pathname):
-    #print(f'old-page:{old_data}, pathname:{pathname}')
-    if pathname == '/1':
-        return '/1'
-    elif pathname == '/2':
-        return '/2'
-    elif pathname[1:8] == 'college':
-        return pathname
+          Output('last-page', 'data'),
+          Input('url', 'pathname'),
+          State('new-page', 'data'),
+          State('last-page', 'data'))
+def url_update(pathname, new_page, last_page):
+    if pathname == '/1' or pathname == '/2' or pathname[1:8] == 'college':
+        return pathname, new_page
     else:
-        return '/1'
+        return '/1', '/1'
 
 @callback(Output('pc', 'children'),
-          Input('new-page', 'data'), suppress_callback_exceptions=True)
-def change_page(new_data):
-    if new_data == '/1':
+          Input('new-page', 'data'))
+def change_page(new_page):
+    if new_page == '/1':
         return page_1_layout
-    elif new_data == '/2':
+    elif new_page == '/2':
         return page_2_layout
-    elif new_data is None or new_data == '':
+    elif new_page is None or new_page == '':
         return page_1_layout
     else:
         return page_3_layout
@@ -204,19 +184,19 @@ page_2_layout = html.Div([
 
 @callback(Output('2c', 'children'),
           Output('2s', 'data'),
+          Output('2s-minimal', 'data'),
           Input('2c', 'children'),
-          State('old-page', 'data'),
+          State('last-page', 'data'),
           State('1s', 'data'),
-          State('2s', 'data'))
-def page_2_content(children, old_page_data, store1, store2):
-    if old_page_data == '/1':  # if we came from page 1
+          State('2s', 'data'),
+          State('2s-minimal', 'data'))
+def page_2_content(children, last_page, store1, store2, store2_m):
+    if last_page == '/1':  # if we came from page 1
         df = submit_form(store1)
-        return [dcc.Link(html.Div(id={'type':'listed-college', 'index':str(df.UNITID.iloc[i])}, n_clicks=0, children=[html.Hr(), html.Label(df.INSTNM.iloc[i]), html.Br(), html.P(f'{df.CITY.iloc[i]}, {df.STABBR.iloc[i]}')]), href=f'/college/{df.UNITID.iloc[i]}') for i in range(df.shape[0])], df.to_json()
-    elif old_page_data == '/2':
-        return children, store2
+        return [dcc.Link(html.Div(id={'type':'listed-college', 'index':str(df.UNITID.iloc[i])}, n_clicks=0, children=[html.Hr(), html.Label(df.INSTNM.iloc[i]), html.Br(), html.P(f'{df.CITY.iloc[i]}, {df.STABBR.iloc[i]}')]), href=f'/college/{df.UNITID.iloc[i]}') for i in range(df.shape[0])], df.to_json(), df.iloc[0:min(10, df.shape[0]), :].to_json()
     else:
-        df = pd.read_json(store2)
-        return [dcc.Link(html.Div(id={'type':'listed-college', 'index':str(df.UNITID.iloc[i])}, n_clicks=0, children=[html.Hr(), html.Label(df.INSTNM.iloc[i]), html.Br(), html.P(f'{df.CITY.iloc[i]}, {df.STABBR.iloc[i]}')]), href=f'/college/{df.UNITID.iloc[i]}') for i in range(df.shape[0])], store2
+        df = pd.read_json(store2_m)
+        return [dcc.Link(html.Div(id={'type':'listed-college', 'index':str(df.UNITID.iloc[i])}, n_clicks=0, children=[html.Hr(), html.Label(df.INSTNM.iloc[i]), html.Br(), html.P(f'{df.CITY.iloc[i]}, {df.STABBR.iloc[i]}')]), href=f'/college/{df.UNITID.iloc[i]}') for i in range(df.shape[0])], store2, store2_m
 
 
 # page 3
@@ -245,11 +225,11 @@ app = Dash(__name__, suppress_callback_exceptions=True)
 
 app.layout = html.Div([
     dcc.Location(id='url', refresh=False),
-    dcc.Store(id='1s'),
-    dcc.Store(id='2s'),
-    dcc.Store(id='old-page', data='/1'),
-    dcc.Store(id='temp-page', data='/1'),
-    dcc.Store(id='new-page', data='/1'),
+    dcc.Store(id='1s', storage_type='session'),
+    dcc.Store(id='2s', storage_type='session'),
+    dcc.Store(id='2s-minimal', storage_type='session'),
+    dcc.Store(id='last-page', data='/1', storage_type='session'),
+    dcc.Store(id='new-page', data='/1', storage_type='session'),
     html.Div(id='pc', children=page_1_layout)
 ])
 
