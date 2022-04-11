@@ -254,5 +254,7 @@ app.layout = html.Div([
     html.Div(id='pc', children=page_1_layout)
 ])
 
+server = app.server
+
 if __name__ == '__main__':
     app.run_server(debug=True)
