@@ -10,10 +10,10 @@ majors = ["Agriculture, Agriculture Operations, And Related Sciences", "Natural 
 climate_zones = {"Tropical Rainforest":"Af", "Tropical Monsoon":"Am", "Tropical Savanna, Dry Summer":"As", "Tropical Savanna, Dry Winter":"Aw", "Arid Steppe, Hot":"BSh", "Arid Steppe, Cold":"BSk", "Arid Desert, Hot":"BWh", "Arid Desert, Cold":"BWk", "Temperate, No Dry Season, Hot Summer":"Cfa", "Temperate, No Dry Season, Warm Summer":"Cfb", "Temperate, Dry Summer, Hot Summer":"Csa", "Temperate, Dry Summer, Warm Summer":"Csb", "Continental, No Dry Season, Hot Summer":"Dfa", "Continental, No Dry Season, Warm Summer":"Dfb", "Continental, No Dry Season, Cold Summer":"Dfc", "Continental, Dry Winter, Hot Summer":"Dwa"}
 
 # dummy functions to be replaced with Huy's final versions
-df = pd.read_csv("minimal.csv")
+df = pd.read_csv("../data/minimal.csv")
 def startup():
     global df
-    df = pd.read_csv("minimal.csv")
+    df = pd.read_csv("../data/minimal.csv")
     
 def submit_form(form_data):
     a = int(np.random.random()*40)
