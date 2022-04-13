@@ -22,25 +22,25 @@ def custom_dist(x, y, weights):
     return np.sqrt(sum_dist)
 
 ## Read in files
-data = pd.read_csv('../data/final.csv')
-norm = pd.read_csv('../data/final_standardized.csv')
+data = pd.read_csv('data/final.csv')
+norm = pd.read_csv('data/final_standardized.csv')
 
-zip_to_state = pd.read_csv('../data/zip_to_state.csv')
-columns = pd.read_excel('../data/scorecard/columns-simplified.xlsx')
+zip_to_state = pd.read_csv('data/zip_to_state.csv')
+columns = pd.read_excel('data/scorecard/columns-simplified.xlsx')
 
-## Create selectivity column
-select_col = np.zeros(len(norm))
-temp = norm[['ADM_RATE_ALL', 'GPA_BOTTOM_TEN_PERCENT']]
-for i in range(len(norm)):
-    select_col[i] += 0.3*-1*temp.iloc[i, 0] + 0.7*temp.iloc[i, 1]
-norm['SELECT'] = select_col
+## Create selectivity column (MOVED TO PREPROCESSING)
+#select_col = np.zeros(len(norm))
+#temp = norm[['ADM_RATE_ALL', 'GPA_BOTTOM_TEN_PERCENT']]
+#for i in range(len(norm)):
+#    select_col[i] += 0.3*-1*temp.iloc[i, 0] + 0.7*temp.iloc[i, 1]
+#norm['SELECT'] = select_col
 
-## Create teaching quality column
-teach_qual_col = np.zeros(len(norm))
-temp = norm[['INEXPFTE', 'AVGFACSAL', 'PFTFAC']]
-for i in range(len(norm)):
-    teach_qual_col[i] += 0.25*temp.iloc[i, 0] + 0.60*temp.iloc[i, 1] + 0.15*temp.iloc[i, 2]
-norm['TEACH_QUAL'] = teach_qual_col
+## Create teaching quality column (MOVED TO PREPROCESSING)
+#teach_qual_col = np.zeros(len(norm))
+#temp = norm[['INEXPFTE', 'AVGFACSAL', 'PFTFAC']]
+#for i in range(len(norm)):
+#    teach_qual_col[i] += 0.25*temp.iloc[i, 0] + 0.60*temp.iloc[i, 1] + 0.15*temp.iloc[i, 2]
+#norm['TEACH_QUAL'] = teach_qual_col
 
 def similar_colleges(college_id, weights):
     query = norm.iloc[data[data['UNITID'] == college_id].index,:].drop('UNITID', axis=1)
@@ -54,33 +54,29 @@ def similar_colleges(college_id, weights):
     neigh.fit(norm.drop('UNITID', axis=1))
     return data.iloc[neigh.kneighbors(query, 4, return_distance=False)[0][1:], ]
 
-def submit_form(school_dict):
+def submit_form(school_dict, zipcode):
     ## Dictionaries to map size/cost references to numerical values
     size_ref = {1: 2500, 2: 5000, 3: 7500, 4: 10000, 5: 15000}
     cost_ref = {1: 2500, 2: 10000, 3: 20000, 4: 35000, 5: 50000}
-    school_dict['UGDS'][0] = size_ref[school_dict['UGDS'][0]]
+    school_dict['UGDS'][0] = (size_ref[school_dict['UGDS'][0]] - np.mean(data.UGDS)) / np.std(data.UGDS)
     school_dict['TUITION'][0] = cost_ref[school_dict['TUITION'][0]]
     school_dict['TEACH_QUAL'][0] = max(norm['TEACH_QUAL'])
     school_dict['SELECT'][0] = max(norm['SELECT'])
     
     ## Penalize teach_qual, and select
-    school_dict['TEACH_QUAL'][1] *= 0.1
-    school_dict['SELECT'][1] *= 0.1
+    school_dict['TEACH_QUAL'][1]
+    school_dict['SELECT'][1]
     
-    zipcode = school_dict['ZIP'][0]
     user_state = zip_to_state[(zip_to_state['Zip Min'] <= zipcode) & (zip_to_state['Zip Max'] >= zipcode)].iloc[0, 0]
     
     ## Create custom tuition column based on in-state and out-of-state
-    cost_col = np.zeros(len(data))
-    for i in range(len(data)):
-        temp = data.iloc[i,:][['STABBR', 'TUITIONFEE_IN', 'TUITIONFEE_OUT']]
-        if user_state == temp['STABBR']:
-            cost_col[i] += temp['TUITIONFEE_IN']
-        else:
-            cost_col[i] += temp['TUITIONFEE_OUT']
-    data['TUITION'] = cost_col
-    cost_col = (cost_col - np.mean(cost_col)) / np.std(cost_col)
-    norm['TUITION'] = cost_col
+    ## - modified to execute faster
+    cost_col = data.TUITIONFEE_OUT.copy()
+    cost_col.loc[data.STABBR == user_state] = data.TUITIONFEE_IN
+    school_dict['TUITION'][0] = (school_dict['TUITION'][0] - np.mean(cost_col)) / np.std(cost_col)
+    #data['TUITION'] = cost_col  # can't modify global dataframe
+    std_cost_col = (cost_col - np.mean(cost_col)) / np.std(cost_col)
+    #norm['TUITION'] = cost_col # can't modify global dataframe
     
     
     query = pd.DataFrame(pd.DataFrame(school_dict).iloc[0, :]).T
@@ -89,6 +85,7 @@ def submit_form(school_dict):
     major_names = degree_dicts(data, columns).values()
     non_stand_col.append('TEACH_QUAL')
     non_stand_col.append('SELECT')
+    non_stand_col.append('TUITION') # have to do this manually
     non_stand_col.extend([col for col in query.columns if col in major_names])
 
     for col in query.columns:
@@ -96,17 +93,17 @@ def submit_form(school_dict):
             continue
         mean = np.mean(data[col])
         std = np.std(data[col])
-        query[col] = (query[col] - mean) / std
-        
-    print(query)
-    
+        query.loc[:, col] = (query[col] - mean) / std
+            
     weights = pd.DataFrame(school_dict).iloc[1, :]
     
-    norm_nn = norm[school_dict.keys()]
+    cols = list(set(school_dict.keys()).difference(['TUITION']))
+    norm_nn = norm[cols].copy()
+    norm_nn['TUITION'] = std_cost_col
+    norm_nn = norm_nn.loc[:, school_dict.keys()] # reorder columns to play well with neigh.fit() below
     
     neigh = NearestNeighbors(metric=custom_dist, metric_params = {'weights': weights})
     neigh.fit(norm_nn)
-    
     
     return data.loc[neigh.kneighbors(query, len(data), return_distance=False)[0], ]
 
