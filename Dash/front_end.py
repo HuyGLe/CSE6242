@@ -1,33 +1,25 @@
-import dash
-from dash import Dash, dcc, html, Input, Output, callback, State
-import json
-import numpy as np
-import pandas as pd
-import dash_bootstrap_components as dbc
+from dash import html, dcc
+
 
 majors = ["Agriculture, Agriculture Operations, And Related Sciences", "Natural Resources And Conservation", "Architecture And Related Services", "Area, Ethnic, Cultural, Gender, And Group Studies", "Communication, Journalism, And Related Programs", "Communications Technologies/Technicians And Support Services", "Computer And Information Sciences And Support Services", "Personal And Culinary Services", "Education", "Engineering", "Engineering Technologies And Engineering-Related Fields", "Foreign Languages, Literatures, And Linguistics",	"Family And Consumer Sciences/Human Sciences", "Legal Professions And Studies", "English Language And Literature/Letters", "Liberal Arts And Sciences, General Studies And Humanities", "Library Science", "Biological And Biomedical Sciences", "Mathematics And Statistics", "Military Technologies And Applied Sciences", "Multi/Interdisciplinary Studies",	"Parks, Recreation, Leisure, And Fitness Studies", "Philosophy And Religious Studies", "Theology And Religious Vocations", "Physical Sciences", "Science Technologies/Technicians", "Psychology", "Homeland Security, Law Enforcement, Firefighting And Related Protective Services", "Public Administration And Social Service Professions", "Social Sciences", "Construction Trades", "Mechanic And Repair Technologies/Technicians", "Precision Production", "Transportation And Materials Moving", "Visual And Performing Arts", "Health Professions And Related Programs", "Business, Management, Marketing, And Related Support Services", "History"]
-climate_zones = {"Tropical Rainforest":"Af", "Tropical Monsoon":"Am", "Tropical Savanna, Dry Summer":"As", "Tropical Savanna, Dry Winter":"Aw", "Arid Steppe, Hot":"BSh", "Arid Steppe, Cold":"BSk", "Arid Desert, Hot":"BWh", "Arid Desert, Cold":"BWk", "Temperate, No Dry Season, Hot Summer":"Cfa", "Temperate, No Dry Season, Warm Summer":"Cfb", "Temperate, Dry Summer, Hot Summer":"Csa", "Temperate, Dry Summer, Warm Summer":"Csb", "Continental, No Dry Season, Hot Summer":"Dfa", "Continental, No Dry Season, Warm Summer":"Dfb", "Continental, No Dry Season, Cold Summer":"Dfc", "Continental, Dry Winter, Hot Summer":"Dwa"}
-
-app = dash.Dash(
-    __name__,
-    external_stylesheets=['style.css'],
-    meta_tags=[{'name': 'viewport', 'content': 'width=device-width, initial-scale=1.0'}]
-)
+climate_zones = {'Tropical (examples: Honolulu and Miami)':'A', 'Arid (examples: Pheonix and Denver)':'B', 'Temperate (examples: San Francisco and Atlanta)':'C', 'Continental (examples: Boston and Detroit)':'D'}
 
 LOGO = "https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/1722948/college-student-clipart-md.png"
 
+def create_slider(name):
+    return dcc.Slider(1, 5, 1, id=f'{name}-imp-i', value=3,
+        marks={1: 'Not Important', 3: 'Moderately Important', 5: 'Extremely Important'},
+        className='slider'
+    )
+
+
+##############################  Page 1 ##############################
 pageheader = html.Header(children=[
     html.Div(className='flex container', children=[
         html.Img(src=LOGO, height="90px"),
         html.A('College Recommendation Tool', href='/1'),
     ])
 ])
-
-def create_slider(name):
-    return dcc.Slider(1, 5, 1, id=f'{name}-imp-i',
-        marks={1: 'Not Important', 3: 'Moderately Important', 5: 'Extremely Important'},
-        className='slider'
-    )
 
 pageContent = html.Main(children=[
     html.Div(className='flexcols container', children=[
@@ -62,7 +54,7 @@ pageContent = html.Main(children=[
             html.H3('Specific College Preferences'),
             html.Div(children=[
                 html.Label('Select your desired tuition cost'),
-                dcc.Slider(1, 5, 1, marks={1:'Inexpensive', 3:'Moderate', 5:'Expensive'}, id='cost-i', className='slider'),
+                dcc.Slider(1, 5, 1, value=1, marks={1:'Inexpensive', 3:'Moderate', 5:'Expensive'}, id='cost-i', className='slider'),
                 create_slider('cost'),
                 html.Br(),
 
@@ -78,7 +70,7 @@ pageContent = html.Main(children=[
                 html.Br(),
 
                 html.Label('Select your desired school size'),
-                dcc.Slider(1, 5, 1, marks={1:'Small', 3:'Medium', 5:'Large'}, id='size-i', className='slider'),
+                dcc.Slider(1, 5, 1, value=1, marks={1:'Small', 3:'Medium', 5:'Large'}, id='size-i', className='slider'),
                 create_slider('size'),
                 html.Br(),
                 
@@ -104,10 +96,22 @@ pageContent = html.Main(children=[
     ])
 ])
 
-app.layout = html.Div(children=[
+page_1_layout = html.Div(children=[
     pageheader,
-    pageContent
+    pageContent,
+    dcc.Link(html.Button('Submit'), href='/2')
 ])
 
-if __name__ == '__main__':
-    app.run_server(debug=True)
+
+##############################  Page 2 ##############################
+page_2_layout = html.Div([
+    html.H1('College Recommendation Tool'),
+    html.H3('Recommendations'),
+    html.Div(id='2c'),
+    html.Div(id='map'),
+    dcc.Link(html.Button('Back'), href='/1'),
+])
+
+
+##############################  Page 3 ##############################
+page_3_layout = html.Div(id='page-3-layout')

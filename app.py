@@ -1,243 +1,15 @@
-from dash import Dash, dcc, html, Input, Output, callback, State
-import plotly.express as px
-import json
-import pandas as pd
-import numpy as np
+from dash import Dash, dcc, html, callback, Output, Input
 import sys
-sys.path.append('./scripts')
-import recommendation_engine as rec
+sys.path.append('./Dash')
+import front_end
+import callbacks
 
 
-majors = ["Agriculture, Agriculture Operations, And Related Sciences", "Natural Resources And Conservation", "Architecture And Related Services", "Area, Ethnic, Cultural, Gender, And Group Studies", "Communication, Journalism, And Related Programs", "Communications Technologies/Technicians And Support Services", "Computer And Information Sciences And Support Services", "Personal And Culinary Services", "Education", "Engineering", "Engineering Technologies And Engineering-Related Fields", "Foreign Languages, Literatures, And Linguistics",	"Family And Consumer Sciences/Human Sciences", "Legal Professions And Studies", "English Language And Literature/Letters", "Liberal Arts And Sciences, General Studies And Humanities", "Library Science", "Biological And Biomedical Sciences", "Mathematics And Statistics", "Military Technologies And Applied Sciences", "Multi/Interdisciplinary Studies",	"Parks, Recreation, Leisure, And Fitness Studies", "Philosophy And Religious Studies", "Theology And Religious Vocations", "Physical Sciences", "Science Technologies/Technicians", "Psychology", "Homeland Security, Law Enforcement, Firefighting And Related Protective Services", "Public Administration And Social Service Professions", "Social Sciences", "Construction Trades", "Mechanic And Repair Technologies/Technicians", "Precision Production", "Transportation And Materials Moving", "Visual And Performing Arts", "Health Professions And Related Programs", "Business, Management, Marketing, And Related Support Services", "History"]
-#climate_zones = {"Tropical Rainforest":"Af", "Tropical Monsoon":"Am", "Tropical Savanna, Dry Summer":"As", "Tropical Savanna, Dry Winter":"Aw", "Arid Steppe, Hot":"BSh", "Arid Steppe, Cold":"BSk", "Arid Desert, Hot":"BWh", "Arid Desert, Cold":"BWk", "Temperate, No Dry Season, Hot Summer":"Cfa", "Temperate, No Dry Season, Warm Summer":"Cfb", "Temperate, Dry Summer, Hot Summer":"Csa", "Temperate, Dry Summer, Warm Summer":"Csb", "Continental, No Dry Season, Hot Summer":"Dfa", "Continental, No Dry Season, Warm Summer":"Dfb", "Continental, No Dry Season, Cold Summer":"Dfc", "Continental, Dry Winter, Hot Summer":"Dwa"}
-climate_zones = {'Tropical (examples: Honolulu and Miami)':'A', 'Arid (examples: Pheonix and Denver)':'B', 'Temperate (examples: San Francisco and Atlanta)':'C', 'Continental (examples: Boston and Detroit)':'D'}
-
-
-def create_slider(name):
-    return dcc.Slider(1, 5, 1, id=f'{name}-imp-i', value=3,
-                      marks={1: 'Not Important', 3: 'Moderately Important', 5: 'Extremely Important'}
-    )
-
-@callback(Output('new-page', 'data'),
-          Output('last-page', 'data'),
-          Input('url', 'pathname'),
-          State('new-page', 'data'),
-          State('last-page', 'data'))
-def url_update(pathname, new_page, last_page):
-    if pathname == '/1' or pathname == '/2' or pathname[1:8] == 'college':
-        return pathname, new_page
-    else:
-        return '/1', '/1'
-
-@callback(Output('pc', 'children'),
-          Input('new-page', 'data'))
-def change_page(new_page):
-    if new_page == '/1':
-        return page_1_layout
-    elif new_page == '/2':
-        return page_2_layout
-    elif new_page is None or new_page == '':
-        return page_1_layout
-    else:
-        return page_3_layout
-
-
-# Page 1
-page_1_layout = html.Div(id='form', children=[
-    html.H1('College Recommendation Tool'),
-    html.H2('Page 1'),
-    html.H3('User Information'),
-    html.Label('Select your desired major'),
-    dcc.Dropdown(majors, id='major-i'),
-    html.Br(),
-    html.Label('Enter your home zip code'),
-    dcc.Input(
-        placeholder='Zip Code',
-        type='number',
-        min=1,
-        max=99950,
-        value = '',
-        id='zip-i',
-        debounce =True,
-    ),
-    html.Br(),
-    html.Label('Enter your unweighted GPA'),
-    dcc.Input(
-        placeholder='X.XX',
-        type='number',
-        min=0,
-        max=4,
-        value = '',
-        id='gpa-i',
-        debounce =True
-    ),
-    html.Br(),
-    html.Label('Enter your SAT score'),
-    dcc.Input(
-        placeholder='XXXX',
-        type='number',
-        value = '',
-        id='sat-i',
-        debounce =True
-    ),
-    html.Br(),
-    html.Label('Enter your ACT score'),
-    dcc.Input(
-    placeholder='XXXX',
-        type='number',
-        value = '',
-        id='act-i',
-        debounce =True
-    ),
-    html.Br(),
-    html.Hr(),
-    html.H3('Specific College Preferences'),
-    html.Label('Select your desired tuition cost'),
-    dcc.Slider(1, 5, 1, value=1, marks={1:'Inexpensive', 3:'Moderate', 5:'Expensive'}, id='cost-i'),
-    create_slider('cost'),
-    html.Br(),
-    html.Label('Select your desired location'),
-    dcc.Dropdown(id='state-i', placeholder='Select your preferred state', options=['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming']),
-    create_slider('state'),
-    html.Br(),
-    html.Label('Select your desired weather'),
-    dcc.Dropdown(id='climate-i', placeholder='Select your preferred climate type', options=list(climate_zones.keys())),
-    dcc.Checklist(['Snowy Winters', 'Sunny Summers'], id='weather-types-i'),
-    create_slider('weather'),
-    html.Br(),
-    html.Label('Select your desired school size'),
-    dcc.Slider(1, 5, 1, value=1, marks={1:'Small', 3:'Medium', 5:'Large'}, id='size-i'),
-    create_slider('size'),
-    html.Br(),
-    html.Label('Select your desired school environment'),
-    dcc.Dropdown(['City', 'Suburb', 'Town', 'Rural'], id='environment-i'),
-    create_slider('environment'),
-    html.Hr(),
-    html.H3('Additional Preferences'),
-    html.P('How important is school selectivity to you?'),
-    create_slider('selectivity'),
-    html.P('How important is teaching quality to you?'),
-    create_slider('teaching'),
-    html.P('How important is projected earnings to you?'),
-    create_slider('earnings'),
-    dcc.Link(html.Button('Submit'), href='/2')
-])
-
-@callback(Output('1s', 'data'),
-          Input('major-i', 'value'),
-          Input('zip-i', 'value'),
-          Input('gpa-i', 'value'),
-          Input('sat-i', 'value'),
-          Input('act-i', 'value'),
-          Input('cost-i', 'value'),
-          Input('cost-imp-i', 'value'),
-          Input('state-i', 'value'),
-          Input('state-imp-i', 'value'),
-          Input('climate-i', 'value'),
-          Input('weather-types-i', 'value'),
-          Input('weather-imp-i', 'value'),
-          Input('size-i', 'value'),
-          Input('size-imp-i', 'value'),
-          Input('environment-i', 'value'),
-          Input('environment-imp-i', 'value'),
-          Input('selectivity-imp-i', 'value'),
-          Input('teaching-imp-i', 'value'),
-          Input('earnings-imp-i', 'value'), prevent_initial_call=True)
-def page_1_input(major_val, zip_val, gpa_val, sat_val, act_val, cost_val, cost_imp_val,
-                state_val, state_imp_val, climate_val, weather_types_val, weather_imp_val,
-                size_val, size_imp_val, environment_val, environment_imp_val,
-                selectivity_imp_val, teaching_imp_val, earnings_imp_val):
-    return f'{{"major":"{major_val}", "zip":"{zip_val}", "gpa":"{gpa_val}", "sat":"{sat_val}", "act":"{act_val}", "cost":"{cost_val}", "cost-imp":"{cost_imp_val}", "state":"{state_val}", "state-imp":"{state_imp_val}", "climate":"{climate_val}", "weather-types":"{weather_types_val}", "weather-imp":"{weather_imp_val}", "size":"{size_val}", "size-imp":"{size_imp_val}", "environment":"{environment_val}", "environment-imp":"{environment_imp_val}", "selectivity-imp":"{selectivity_imp_val}", "teaching-imp":"{teaching_imp_val}", "earnings-imp":"{earnings_imp_val}"}}'
-
-
-# Page 2
-page_2_layout = html.Div([
-    html.H1('College Recommendation Tool'),
-    html.H3('Recommendations'),
-    html.Div(id='2c'),
-    html.Div(id='map'),
-    dcc.Link(html.Button('Back'), href='/1'),
-])
-
-@callback(Output('2c', 'children'),
-          Output('map', 'children'),
-          Output('2s', 'data'),
-          Input('2c', 'children'),
-          State('last-page', 'data'),
-          State('1s', 'data'),
-          State('2s', 'data'),)
-def page_2_content(children, last_page, store1, store2):
-    n = 12 # number of schools listed
-    hovertemplate = '%{customdata[1]}<br>%{customdata[2]}, %{customdata[3]}'
-    custom_data = ['UNITID', 'INSTNM', 'CITY', 'STABBR']
-    if last_page == '/1':  # if we came from page 1
-        form = json.loads(store1)
-        form_dict = dict()
-        form_dict['UGDS'] = [int(form['size']), int(form['size-imp'])]
-        form_dict['TUITION'] = [int(form['cost']), int(form['cost-imp'])]
-        form_dict['TEACH_QUAL'] = [None, int(form['teaching-imp'])]
-        form_dict['SELECT'] = [None, int(form['selectivity-imp'])]
-        df = rec.submit_form(form_dict, int(form['zip']))
-        local_df = pd.Series(data=True, index=df.index)
-        fig_map = px.scatter_mapbox(df.iloc[1:n, :], lat="LATITUDE", lon="LONGITUDE", custom_data=custom_data, color_discrete_sequence=["fuchsia"], zoom=3, height=300)
-        fig_map.update_traces(hovertemplate=hovertemplate, marker_size=10)
-        fig_map.update_layout(mapbox_style="white-bg", margin={"r":0, "t":0, "l":0, "b":0}, mapbox_layers=[
-            {
-                'below':'traces',
-                'sourcetype':'raster',
-                'sourceattribution':'United States Geological Survey',
-                'source':['https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryOnly/MapServer/tile/{z}/{y}/{x}']
-            }])
-        return [dcc.Link(html.Div(id={'type':'listed-college', 'index':str(df.UNITID.iloc[i])}, n_clicks=0, children=[html.Hr(), html.Label(df.INSTNM.iloc[i]), html.Br(), html.P(f'{df.CITY.iloc[i]}, {df.STABBR.iloc[i]}')]), href=f'/college/{df.UNITID.iloc[i]}') for i in range(min(10, df.shape[0]))], dcc.Graph(id='map', figure=fig_map), local_df.to_json()
-    else:
-        local_df = pd.read_json(store2)
-        df = rec.get_data(local_df)
-        df = df.loc[local_df, :]
-        if df.shape[0] > 0:
-            df = df.iloc[0:max(n, df.shape[0]), :]
-        fig_map = px.scatter_mapbox(df.iloc[1:n, :], lat="LATITUDE", lon="LONGITUDE", custom_data=custom_data, color_discrete_sequence=["fuchsia"], zoom=3, height=300)
-        fig_map.update_traces(hovertemplate=hovertemplate, marker_size=10)
-        fig_map.update_layout(mapbox_style="white-bg", margin={"r":0, "t":0, "l":0, "b":0}, mapbox_layers=[
-            {
-                'below':'traces',
-                'sourcetype':'raster',
-                'sourceattribution':'United States Geological Survey',
-                'source':['https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryOnly/MapServer/tile/{z}/{y}/{x}']
-            }])
-        return [dcc.Link(html.Div(id={'type':'listed-college', 'index':str(df.UNITID.iloc[i])}, n_clicks=0, children=[html.Hr(), html.Label(df.INSTNM.iloc[i]), html.Br(), html.P(f'{df.CITY.iloc[i]}, {df.STABBR.iloc[i]}')]), href=f'/college/{df.UNITID.iloc[i]}') for i in range(min(10, df.shape[0]))], dcc.Graph(id='map', figure=fig_map), store2
-
-@callback(
-    Output('url', 'pathname'),
-    Input('map', 'clickData'), prevent_initial_call=True)
-def display_click_data(clickData):
-    if clickData is None:
-        return '/2'
-    else:
-        return f'/college/{clickData["points"][0]["customdata"][0]}'
-
-# page 3
-page_3_layout = html.Div(id='page-3-layout')
-
-@callback(Output('page-3-layout', 'children'),
-          Input('page-3-layout', 'children'),
-          State('new-page', 'data'))
-def page_3_content(children, new_page):
-    unitid = new_page[9:]
-    (main, df) = rec.similar_colleges(int(unitid), 'fake weights')
-    return html.Div([
-        html.H1(main.INSTNM.iloc[0]),
-        html.H3(f'{main.CITY.iloc[0]}, {main.STABBR.iloc[0]}'),
-        html.P(f'Detailed information about {main.INSTNM.iloc[0]}, including graphs'),
-        html.Hr(),
-        html.H2('Similar Colleges:'),
-        html.Div([
-            dcc.Link(html.H4(f'{df.INSTNM.iloc[i]} : {df.CITY.iloc[i]}, {df.STABBR.iloc[i]}'), href=f'/college/{df.UNITID.iloc[i]}') 
-            for i in range(3)
-        ]),
-        dcc.Link(html.Button('Back'), href='/2')
-    ])
-
-app = Dash(__name__, title='College Recommendation System', suppress_callback_exceptions=True)
+app = Dash(__name__,
+           title='College Recommendation System',
+           meta_tags=[{'name': 'viewport', 'content': 'width=device-width, initial-scale=1.0'}],
+           suppress_callback_exceptions=True,
+           external_stylesheets=['assets/style.css'])
 
 app.layout = html.Div([
     dcc.Location(id='url', refresh=False),
@@ -245,8 +17,20 @@ app.layout = html.Div([
     dcc.Store(id='2s', storage_type='session'),
     dcc.Store(id='last-page', data='/1', storage_type='session'),
     dcc.Store(id='new-page', data='/1', storage_type='session'),
-    html.Div(id='pc', children=page_1_layout)
+    html.Div(id='pc', children=front_end.page_1_layout)
 ])
+
+@callback(Output('pc', 'children'),
+          Input('new-page', 'data'))
+def change_page(new_page):
+    if new_page == '/1':
+        return front_end.page_1_layout
+    elif new_page == '/2':
+        return front_end.page_2_layout
+    elif new_page is None or new_page == '':
+        return front_end.page_1_layout
+    else:
+        return front_end.page_3_layout
 
 server = app.server
 
