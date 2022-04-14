@@ -22,36 +22,26 @@ def custom_dist(x, y, weights):
     return np.sqrt(sum_dist)
 
 ## Read in files
-data = pd.read_csv('data/final.csv')
-norm = pd.read_csv('data/final_standardized.csv')
+data = pd.read_csv('data/final.csv', index_col='UNITID')
+data['UNITID'] = data.index # UNITID is an index for performance reasons; also need as col for map
+norm = pd.read_csv('data/final_standardized.csv', index_col='UNITID')
+norm['UNITID'] = norm.index
 
 zip_to_state = pd.read_csv('data/zip_to_state.csv')
 columns = pd.read_excel('data/scorecard/columns-simplified.xlsx')
 
-## Create selectivity column (MOVED TO PREPROCESSING)
-#select_col = np.zeros(len(norm))
-#temp = norm[['ADM_RATE_ALL', 'GPA_BOTTOM_TEN_PERCENT']]
-#for i in range(len(norm)):
-#    select_col[i] += 0.3*-1*temp.iloc[i, 0] + 0.7*temp.iloc[i, 1]
-#norm['SELECT'] = select_col
-
-## Create teaching quality column (MOVED TO PREPROCESSING)
-#teach_qual_col = np.zeros(len(norm))
-#temp = norm[['INEXPFTE', 'AVGFACSAL', 'PFTFAC']]
-#for i in range(len(norm)):
-#    teach_qual_col[i] += 0.25*temp.iloc[i, 0] + 0.60*temp.iloc[i, 1] + 0.15*temp.iloc[i, 2]
-#norm['TEACH_QUAL'] = teach_qual_col
-
 def similar_colleges(college_id, weights):
-    query = norm.iloc[data[data['UNITID'] == college_id].index,:].drop('UNITID', axis=1)
-    weights = pd.DataFrame(weights).T
-    for col in norm.drop('UNITID', axis=1):
+    query = norm.loc[college_id, :].drop('UNITID', axis=1)
+    x = norm.drop('UNITID', axis=1)
+    weights = pd.DataFrame(weights)
+    print(weights)
+    for col in x:
         if col not in weights.columns:
             weights[col] = 3
     weights = weights[query.columns]
     weights = list(weights.T.iloc[:,0])
     neigh = NearestNeighbors(metric=custom_dist, metric_params = {'weights': weights})
-    neigh.fit(norm.drop('UNITID', axis=1))
+    neigh.fit(x)
     return data.iloc[neigh.kneighbors(query, 4, return_distance=False)[0][1:], ]
 
 def submit_form(school_dict, zipcode):
@@ -62,22 +52,17 @@ def submit_form(school_dict, zipcode):
     school_dict['TUITION'][0] = cost_ref[school_dict['TUITION'][0]]
     school_dict['TEACH_QUAL'][0] = max(norm['TEACH_QUAL'])
     school_dict['SELECT'][0] = max(norm['SELECT'])
-    
     ## Penalize teach_qual, and select
     school_dict['TEACH_QUAL'][1]
     school_dict['SELECT'][1]
     
     user_state = zip_to_state[(zip_to_state['Zip Min'] <= zipcode) & (zip_to_state['Zip Max'] >= zipcode)].iloc[0, 0]
-    
     ## Create custom tuition column based on in-state and out-of-state
     ## - modified to execute faster
     cost_col = data.TUITIONFEE_OUT.copy()
     cost_col.loc[data.STABBR == user_state] = data.TUITIONFEE_IN
     school_dict['TUITION'][0] = (school_dict['TUITION'][0] - np.mean(cost_col)) / np.std(cost_col)
-    #data['TUITION'] = cost_col  # can't modify global dataframe
     std_cost_col = (cost_col - np.mean(cost_col)) / np.std(cost_col)
-    #norm['TUITION'] = cost_col # can't modify global dataframe
-    
     
     query = pd.DataFrame(pd.DataFrame(school_dict).iloc[0, :]).T
     
@@ -87,7 +72,6 @@ def submit_form(school_dict, zipcode):
     non_stand_col.append('SELECT')
     non_stand_col.append('TUITION') # have to do this manually
     non_stand_col.extend([col for col in query.columns if col in major_names])
-
     for col in query.columns:
         if col in non_stand_col:
             continue
@@ -96,29 +80,33 @@ def submit_form(school_dict, zipcode):
         query.loc[:, col] = (query[col] - mean) / std
             
     weights = pd.DataFrame(school_dict).iloc[1, :]
-    
     cols = list(set(school_dict.keys()).difference(['TUITION']))
     norm_nn = norm[cols].copy()
     norm_nn['TUITION'] = std_cost_col
     norm_nn = norm_nn.loc[:, school_dict.keys()] # reorder columns to play well with neigh.fit() below
-    
     neigh = NearestNeighbors(metric=custom_dist, metric_params = {'weights': weights})
     neigh.fit(norm_nn)
-    
-    return data.loc[neigh.kneighbors(query, len(data), return_distance=False)[0], ]
+    return data.iloc[neigh.kneighbors(query, norm_nn.shape[0], return_distance=False)[0], ]
+
+def get_data(mask):
+    return data.loc[mask, :]
 
 def filt(df, filter_col, filter_val, how):
-    
-    if df[filter_col].dtypes == np.dtype(object):
-        return np.where(data[filter_col] == filter_val)
-    else:
-        if how == ">":
-            return np.where(data[filter_col] > filter_val)
-        elif how == ">=":
-            return np.where(data[filter_col] >= filter_val)
-        elif how == "<=":
-            return np.where(data[filter_col] <= filter_val)
-        elif how == "==":
-            return np.where(data[filter_col] == filter_val)
+    curr_mask = np.ones(len(df))
+    for i in range(len(filter_col)):
+        if df[filter_col[i]].dtypes == np.dtype(object):
+            curr_mask = curr_mask & (df[filter_col[i]] == filter_val[i])
         else:
-            raise ValueError("Value for how should be one of >, >=, ==, <, <=")
+            if how[i] == ">":
+                curr_mask = curr_mask & (df[filter_col[i]] > filter_val[i])
+            elif how[i] == ">=":
+                curr_mask = curr_mask & (df[filter_col[i]] >= filter_val[i])
+            elif how[i] == "<=":
+                curr_mask = curr_mask & (df[filter_col[i]] <= filter_val[i])
+            elif how[i] == "<":
+                curr_mask = curr_mask & (df[filter_col[i]] < filter_val[i])
+            elif how[i] == "==":
+                curr_mask = curr_mask & (df[filter_col[i]] == filter_val[i])
+            else:
+                raise ValueError("Value for how should be one of >, >=, ==, <, <=")
+    return np.where(curr_mask)
