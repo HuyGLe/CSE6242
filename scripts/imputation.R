@@ -1,4 +1,4 @@
-colleges <- read.table(file = "..\\data\\temp4.csv",
+colleges_0 <- read.table(file = "..\\data\\temp5.csv",
                        header = T,
                        sep = ",",
                        quote = "\"",
@@ -8,10 +8,7 @@ colleges <- read.table(file = "..\\data\\temp4.csv",
                        na.strings = c("NULL", "PrivacySuppressed", ""))
 
 
-
-
 # Adjust the datatypes of the columns
-
 factor_cols <- c("STABBR", "MAIN", "CONTROL", "ST_FIPS", "REGION",
                  "LOCALE", "CCBASIC", "CCUGPRO", "CCSIZESET", "HBCU", "PBI", "ANNHI",
                  "TRIBAL", "AANAPII", "HSI", "NANTI", "MENONLY", "WOMENONLY",
@@ -22,12 +19,10 @@ factor_cols <- c("STABBR", "MAIN", "CONTROL", "ST_FIPS", "REGION",
                  "CIP29BACHL", "CIP30BACHL", "CIP31BACHL", "CIP38BACHL", "CIP39BACHL",
                  "CIP40BACHL", "CIP41BACHL", "CIP42BACHL", "CIP43BACHL", "CIP44BACHL",
                  "CIP45BACHL", "CIP46BACHL", "CIP47BACHL", "CIP48BACHL", "CIP49BACHL",
-                 "CIP50BACHL", "CIP51BACHL", "CIP52BACHL", "CIP54BACHL", "DISTANCE",
+                 "CIP50BACHL", "CIP51BACHL", "CIP52BACHL", "CIP54BACHL",
                  "OPEFLAG", "ADMCON7", "DISTANCEONLY", "CLIMATE_ZONE")
-
 integer_cols <- c("UNITID", "NUMBRANCH", "UGDS", "COUNT_NWNE_1YR",
-                  "COUNT_WNE_1YR")
-
+                  "COUNT_WNE_1YR", "OVERALL_YR6_N")
 numeric_cols <- c("LATITUDE", "LONGITUDE", "ADM_RATE", "ADM_RATE_ALL", "SATVR25",
                   "SATVR75", "SATMT25", "SATMT75", "SATVRMID", "SATMTMID", "ACTCM25",
                   "ACTCM75", "ACTEN25", "ACTEN75", "ACTMT25", "ACTMT75", "ACTCMMID",
@@ -42,9 +37,7 @@ numeric_cols <- c("LATITUDE", "LONGITUDE", "ADM_RATE", "ADM_RATE_ALL", "SATVR25"
                   "BOOKSUPPLY", "ROOMBOARD_ON", "OTHEREXPENSE_ON", "ROOMBOARD_OFF",
                   "OTHEREXPENSE_OFF", "NPT4", "NPT41", "NPT42",
                   "NPT43", "NPT4", "NPT45", "C150_4", "GPA_BOTTOM_TEN_PERCENT")
-
-character_cols <- c("INSTNM", "CITY", "INSTURL", "ZIP", "INSTURL")
-
+character_cols <- c("INSTNM", "CITY", "INSTURL", "ZIP", "INSTURL", "IMAGE")
 for (name in names(colleges)){
     if (name %in% factor_cols)
         colleges[, name] <- as.factor(colleges[, name])
@@ -57,10 +50,7 @@ for (name in names(colleges)){
 }
 
 
-
-
 # Perform Imputation
-
 impute_cols <- c("CONTROL"
                  ,"REGION"
                  ,"LOCALE"
@@ -179,25 +169,20 @@ impute_cols <- c("CONTROL"
                  ,"NPT44"
                  ,"NPT45"
                  ,"GPA_BOTTOM_TEN_PERCENT"
-                 ,"CLIMATE_ZONE"
+                 ,"CLIMATE_ZONE",
+                 "OVERALL_YR6_N"
 )
-
 library(missForest)
 library(doParallel)
-
 set.seed(1)
-
 registerDoParallel(cores=12)
 # note: missForest takes ~4 minutes per iteration using default params
 # note: missForest takes ~.6 minutes per iteration using default params and 8 cores
-rf <- missForest(colleges[, impute_cols], maxiter=15, ntree=150, parallelize="variables")
+rf <- missForest(colleges[, impute_cols], maxiter=30, ntree=200, parallelize="variables")
 colleges[, impute_cols] <- rf$ximp
 
 
-
-
 # create the cost and financial aid columns
-
 colleges$COST_INSTATE_ONCAMPUS <- colleges$BOOKSUPPLY + colleges$ROOMBOARD_ON +
     colleges$OTHEREXPENSE_ON + colleges$TUITIONFEE_IN
 colleges$COST_INSTATE_OFFCAMPUS <- colleges$BOOKSUPPLY + colleges$ROOMBOARD_OFF +
@@ -212,24 +197,31 @@ colleges$FINAID3 <- colleges$COSTT4_A - colleges$NPT43
 colleges$FINAID4 <- colleges$COSTT4_A - colleges$NPT44
 colleges$FINAID5 <- colleges$COSTT4_A - colleges$NPT45
 
+# Truncate LOCALE
+colleges$LOCALE <- as.factor(substr(as.character(colleges$LOCALE), 1, 1))
 
-
+# Group Climate Zones
+colleges$CLIMATE_ZONE <- substr(colleges$CLIMATE_ZONE, 1, 1)
 
 # Add dummy variables for the factor columns
-for (factor_col in factor_cols) {
-    for (level in levels(colleges[[factor_col]])) {
-        new_col_name <- paste(factor_col, level, sep='.')
-        colleges[[new_col_name]] <- as.integer(colleges[[factor_col]] == level)
+dummy_cols <- c("STABBR", "CONTROL", "REGION",
+               "LOCALE", "CCBASIC", "CCUGPROF", "CCSIZSET",
+               "RELAFFIL", "OPEFLAG", "CLIMATE_ZONE")
+i = 1
+n = length(dummy_cols)
+while (i <= n) {
+    for (level in levels(colleges[, dummy_cols[i]])) {
+        new_col_name <- paste(dummy_cols[i], level, sep='.')
+        colleges[[new_col_name]] <- as.integer(colleges[, dummy_cols[i]] == level)
+        dummy_cols <- c(dummy_cols, new_col_name)
     }
+    i <- i + 1
 }
-
-
 
 
 # Write the Final Dataset to a .csv File
 # (TODO?) We can potentially remove imputation for certain columns and instead
 # set the missing values to an appropriate value.
-
 output_cols <- c("UNITID"
                  ,"INSTNM"
                  ,"CITY"
@@ -350,9 +342,21 @@ output_cols <- c("UNITID"
                  ,"FINAID4"
                  ,"FINAID5"
                  ,"CLIMATE_ZONE"
-                 ,"GPA_BOTTOM_TEN_PERCENT"
+                 ,"GPA_BOTTOM_TEN_PERCENT",
+                 "OVERALL_YR6_N"
 )
-
 quote <- which(output_cols == "INSTURL")
+write.csv(colleges, file="..\\data\\final.csv", row.names=F, quote=quote)
 
-write.csv(colleges[, output_cols], file="..\\data\\final.csv", row.names=F, quote=quote)
+
+# Create standardized data frame and save it
+not_standardized <- c(dummy_cols, character_cols, factor_cols, "UNITID", "LONGITUDE", "LATITUDE")
+colleges_standardized <- colleges
+standardize <- function(x) {
+    (x - mean(x)) / sd(x)
+}
+colleges_standardized[, !(names(colleges_standardized) %in% not_standardized)] <- lapply(colleges_standardized[, !(names(colleges_standardized) %in% not_standardized)], standardize)
+## Create selectivity and teaching quality columns
+colleges_standardized$SELECT <- -0.30*colleges_standardized$ADM_RATE_ALL + 0.70*colleges_standardized$GPA_BOTTOM_TEN_PERCENT
+colleges_standardized$TEACH_QUAL <- 0.25*colleges_standardized$INEXPFTE + 0.60*colleges_standardized$AVGFACSAL + 0.15*colleges_standardized$PFTFAC
+write.csv(colleges_standardized, file="..//data//final_standardized.csv", row.names=F, quote=quote)

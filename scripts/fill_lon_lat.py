@@ -11,7 +11,7 @@ import json
 
 
 na_values = ['', '#N/A', '#N/A N/A', '#NA', '-1.#IND', '-1.#QNAN', '-NaN', '-nan', '1.#IND', '1.#QNAN', '<NA>', 'N/A', 'NA', 'NULL', 'NaN', 'n/a', 'nan', 'null', 'PrivacySuppressed']
-sc = pd.read_csv('data/temp1.csv', na_values=na_values)
+sc = pd.read_csv('../data/temp1.csv', na_values=na_values)
 
 username = 'team173'
 url = 'http://api.geonames.org/search?maxRows=1&type=json&country=US&username=' + username
@@ -32,4 +32,4 @@ for i in sc.index:
         except Exception:
             pass
   
-sc.to_csv('data/temp2.csv', index=False)
+sc.to_csv('../data/temp2.csv', index=False)
