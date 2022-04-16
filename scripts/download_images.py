@@ -10,9 +10,7 @@ na_values = ['', '#N/A', '#N/A N/A', '#NA', '-1.#IND', '-1.#QNAN', '-NaN', '-nan
 colleges = pd.read_csv('../data/temp4.csv', na_values=na_values)
 
 endpoint = 'https://en.wikipedia.org/w/api.php'
-#for i in range(colleges.shape[0]):
-for i in range(2247, colleges.shape[0]):
-    print(i)
+for i in range(colleges.shape[0]):
     try:
         # get pageid
         college_name = quote(colleges.INSTNM[i])
