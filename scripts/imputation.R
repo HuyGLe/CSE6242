@@ -1,4 +1,4 @@
-colleges_0 <- read.table(file = "..\\data\\temp5.csv",
+colleges <- read.table(file = "..\\data\\temp5.csv",
                        header = T,
                        sep = ",",
                        quote = "\"",
@@ -183,25 +183,43 @@ colleges[, impute_cols] <- rf$ximp
 
 
 # create the cost and financial aid columns
-colleges$COST_INSTATE_ONCAMPUS <- colleges$BOOKSUPPLY + colleges$ROOMBOARD_ON +
-    colleges$OTHEREXPENSE_ON + colleges$TUITIONFEE_IN
-colleges$COST_INSTATE_OFFCAMPUS <- colleges$BOOKSUPPLY + colleges$ROOMBOARD_OFF +
-    colleges$OTHEREXPENSE_OFF + colleges$TUITIONFEE_IN
-colleges$COST_OUTSTATE_ONCAMPUS <- colleges$BOOKSUPPLY + colleges$ROOMBOARD_ON +
-    colleges$OTHEREXPENSE_ON + colleges$TUITIONFEE_OUT
-colleges$COST_OUTSTATE_OFFCAMPUS <- colleges$BOOKSUPPLY + colleges$ROOMBOARD_OFF +
-    colleges$OTHEREXPENSE_OFF + colleges$TUITIONFEE_OUT
-colleges$FINAID1 <- colleges$COSTT4_A - colleges$NPT41
-colleges$FINAID2 <- colleges$COSTT4_A - colleges$NPT42
-colleges$FINAID3 <- colleges$COSTT4_A - colleges$NPT43
-colleges$FINAID4 <- colleges$COSTT4_A - colleges$NPT44
-colleges$FINAID5 <- colleges$COSTT4_A - colleges$NPT45
+#colleges$COST_INSTATE_ONCAMPUS <- colleges$BOOKSUPPLY + colleges$ROOMBOARD_ON +
+#    colleges$OTHEREXPENSE_ON + colleges$TUITIONFEE_IN
+#colleges$COST_INSTATE_OFFCAMPUS <- colleges$BOOKSUPPLY + colleges$ROOMBOARD_OFF +
+#    colleges$OTHEREXPENSE_OFF + colleges$TUITIONFEE_IN
+#colleges$COST_OUTSTATE_ONCAMPUS <- colleges$BOOKSUPPLY + colleges$ROOMBOARD_ON +
+#    colleges$OTHEREXPENSE_ON + colleges$TUITIONFEE_OUT
+#colleges$COST_OUTSTATE_OFFCAMPUS <- colleges$BOOKSUPPLY + colleges$ROOMBOARD_OFF +
+#    colleges$OTHEREXPENSE_OFF + colleges$TUITIONFEE_OUT
+#colleges$FINAID1 <- colleges$COSTT4_A - colleges$NPT41
+#colleges$FINAID2 <- colleges$COSTT4_A - colleges$NPT42
+#colleges$FINAID3 <- colleges$COSTT4_A - colleges$NPT43
+#colleges$FINAID4 <- colleges$COSTT4_A - colleges$NPT44
+#colleges$FINAID5 <- colleges$COSTT4_A - colleges$NPT45
 
 # Truncate LOCALE
 colleges$LOCALE <- as.factor(substr(as.character(colleges$LOCALE), 1, 1))
 
 # Group Climate Zones
 colleges$CLIMATE_ZONE <- substr(colleges$CLIMATE_ZONE, 1, 1)
+
+# Calculate DIVERSITY using Shannon's entropy index
+race_cols <- c('UGDS_WHITE', 'UGDS_BLACK', 'UGDS_HISP', 'UGDS_ASIAN', 'UGDS_AIAN', 'UGDS_NHPI', 'UGDS_2MOR', 'UGDS_NRA', 'UGDS_UNKN')
+income_cols <- c('INC_PCT_LO', 'INC_PCT_M1', 'INC_PCT_M2', 'INC_PCT_H1', 'INC_PCT_H2')
+diversity_cols <- c(race_cols, income_cols, 'UG25ABV')
+for (col in diversity_cols) {
+    colleges[[col]] <- ifelse(colleges[[col]] <= 0, 0.001, ifelse(colleges[[col]] >= 1, 0.999, colleges[[col]]))
+}
+race_entropy <- numeric(nrow(colleges))
+for (col in race_cols) {
+    race_entropy <- race_entropy - colleges[[col]] * log2(colleges[[col]])
+}
+age_entropy <- -(colleges$UG25ABV * log2(colleges$UG25ABV) + (1 - colleges$UG25ABV) * log2(1 - colleges$UG25ABV))
+income_entropy <- numeric(nrow(colleges))
+for (col in income_cols) {
+    income_entropy <- race_entropy - colleges[[col]] * log2(colleges[[col]])
+}
+colleges$DIVERSITY <- race_entropy + age_entropy + income_entropy
 
 # Add dummy variables for the factor columns
 dummy_cols <- c("STABBR", "CONTROL", "REGION",
