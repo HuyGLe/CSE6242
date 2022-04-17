@@ -1,16 +1,25 @@
 unitId,city,zipCode,year,DoesPlaceHavehotSummer,IsthePlaceHumid,IsthePlaceSunny,IsthePlaceRainy,IsthePlaceSnowy
+219259,Aberdeen,57401-7198,2021,Pleasent,Humid,OverCast,Low Rain,1
+219295,Aberdeen,57401-1280,2021,Pleasent,Humid,OverCast,Low Rain,1
+235334,Aberdeen,98520-7599,2021,Pleasent,Humid,OverCast,Heavy Rain,0
+222178,Abilene,79699,2021,Moderate,Moderate,Sunny,Moderate Rain,0
+225247,Abilene,79698-0001,2021,Moderate,Moderate,Sunny,Moderate Rain,0
+226587,Abilene,79697,2021,Moderate,Moderate,Sunny,Moderate Rain,0
 214801,Abington,19001-3918,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 204635,Ada,45810-1599,2021,Pleasent,Humid,OverCast,Moderate Rain,1
-207041,Ada,74820-6999,2021,Moderate,Humid,Sunny,Moderate Rain,0
+207041,Ada,74820-6999,2021,Moderate,Humid,Sunny,Moderate Rain,1
 454227,Addison,60101,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 163204,Adelphi,20783-8010,2021,Moderate,Humid,OverCast,Heavy Rain,1
 186900,Adelphia,07710,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 168528,Adrian,49221-2575,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 172264,Adrian,49221,2021,Pleasent,Humid,OverCast,Moderate Rain,1
+242626,Aguadilla,00603,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+243106,Aguadilla,00604-6150,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+218645,Aiken,29801,2021,Moderate,Humid,Sunny,Moderate Rain,0
 200785,Akron,44306-3931,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 200800,Akron,44325-4702,2021,Pleasent,Humid,OverCast,Moderate Rain,1
-126182,Alamosa,81101,2021,Moderate,Dry,Sunny,Low Rain,0
-138716,Albany,31705,2021,Moderate,Very Humid,OverCast,Moderate Rain,""
+126182,Alamosa,81101,2021,Moderate,Dry,Sunny,Low Rain,1
+138716,Albany,31705,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
 188517,Albany,12205,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 188526,Albany,12208-3492,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 192785,Albany,12208,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
@@ -20,33 +29,38 @@ unitId,city,zipCode,year,DoesPlaceHavehotSummer,IsthePlaceHumid,IsthePlaceSunny,
 168546,Albion,49224,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 187985,Albuquerque,87106,2021,Moderate,Dry,OverCast,Low Rain,1
 444088,Albuquerque,87105,2021,Moderate,Dry,OverCast,Low Rain,1
-175342,Alcorn State,39096-7500,2021,Moderate,Very Humid,Sunny,Moderate Rain,""
-159382,Alexandria,71302-9121,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
+175342,Alcorn State,39096-7500,2021,Moderate,Very Humid,Sunny,Moderate Rain,0
+159382,Alexandria,71302-9121,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 438498,Alexandria,22314,2021,Moderate,Humid,OverCast,Heavy Rain,1
 188641,Alfred,14802-1205,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 196006,Alfred,14802,2021,Pleasent,Humid,OverCast,Moderate Rain,1
+260789,Alhambra,91803,2021,Moderate,Humid,Sunny,Low Rain,0
+399911,Aliso Viejo,92656-8081,2021,Pleasent,Humid,OverCast,Low Rain,0
 170082,Allendale,49401-9403,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 211468,Allentown,18104-6196,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 214175,Allentown,18104,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 204185,Alliance,44601-3929,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 168591,Alma,48801-1599,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 168607,Alpena,49707,2021,Pleasent,Humid,OverCast,Moderate Rain,1
+228501,Alpine,79832,2021,Moderate,Dry,Sunny,Low Rain,0
 214689,Altoona,16601-3777,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 207306,Alva,73717-2799,2021,Moderate,Humid,Sunny,Moderate Rain,1
-139764,Americus,31709-4693,2021,Moderate,Very Humid,OverCast,Moderate Rain,""
+139764,Americus,31709-4693,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
 153603,Ames,50011-2103,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 164465,Amherst,01002-5000,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 166018,Amherst,01002-5001,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 166629,Amherst,01003,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 190725,Amherst,14226-3592,2021,Pleasent,Humid,OverCast,Moderate Rain,1
-110060,Anaheim,92801,2021,Pleasent,Humid,Sunny,Low Rain,""
-458210,Anaheim,92802,2021,Pleasent,Humid,Sunny,Low Rain,""
-490878,Anaheim,92806-5949,2021,Pleasent,Humid,Sunny,Low Rain,""
+110060,Anaheim,92801,2021,Pleasent,Humid,Sunny,Low Rain,0
+399869,Anaheim,92801-3758,2021,Pleasent,Humid,Sunny,Low Rain,0
+458210,Anaheim,92802,2021,Pleasent,Humid,Sunny,Low Rain,0
+490878,Anaheim,92806-5949,2021,Pleasent,Humid,Sunny,Low Rain,0
 102553,Anchorage,99508,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 102669,Anchorage,99508,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 150066,Anderson,46012-3495,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+217633,Anderson,29621-4035,2021,Moderate,Humid,OverCast,Moderate Rain,0
 152567,Angola,46703-1764,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
-120865,Angwin,94508-9707,2021,Pleasent,Humid,Sunny,Moderate Rain,""
+120865,Angwin,94508-9707,2021,Pleasent,Humid,Sunny,Moderate Rain,0
 153320,Ankeny,50023-2152,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 169363,Ann Arbor,48105,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 170976,Ann Arbor,48109,2021,Pleasent,Humid,OverCast,Heavy Rain,1
@@ -54,21 +68,33 @@ unitId,city,zipCode,year,DoesPlaceHavehotSummer,IsthePlaceHumid,IsthePlaceSunny,
 163976,Annapolis,21401,2021,Moderate,Humid,OverCast,Heavy Rain,1
 164155,Annapolis,21402-1300,2021,Moderate,Humid,OverCast,Heavy Rain,1
 213507,Annville,17003-1400,2021,Pleasent,Humid,OverCast,Heavy Rain,1
-115755,Arcata,95521-8299,2021,Pleasent,Humid,Sunny,Moderate Rain,""
+239017,Appleton,54911,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+115755,Arcata,95521-8299,2021,Pleasent,Humid,Sunny,Moderate Rain,0
+241395,Arecibo,00614-4045,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+242635,Arecibo,00614,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+243115,Arecibo,00614-4010,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
 107071,Arkadelphia,71999-0001,2021,Moderate,Humid,OverCast,Moderate Rain,0
 107512,Arkadelphia,71998-0001,2021,Moderate,Humid,OverCast,Moderate Rain,0
+222877,Arlington,76012-3425,2021,Moderate,Moderate,Sunny,Moderate Rain,0
+228769,Arlington,76013,2021,Moderate,Moderate,Sunny,Moderate Rain,0
+232706,Arlington,22207-4299,2021,Moderate,Humid,OverCast,Heavy Rain,1
+233684,Arlington,22201,2021,Moderate,Humid,OverCast,Heavy Rain,1
 437097,Arlington,22209-1609,2021,Moderate,Humid,OverCast,Heavy Rain,1
 482653,Arlington,22202,2021,Moderate,Humid,OverCast,Heavy Rain,1
-199111,Asheville,28804-8510,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+199111,Asheville,28804-8510,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 201104,Ashland,44805,2021,Pleasent,Humid,OverCast,Moderate Rain,1
-210146,Ashland,97520,2021,Moderate,Moderate,OverCast,Moderate Rain,""
+210146,Ashland,97520,2021,Moderate,Moderate,OverCast,Moderate Rain,0
+233295,Ashland,23005-5505,2021,Moderate,Humid,OverCast,Moderate Rain,1
+239512,Ashland,54806-3999,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 203447,Ashtabula,44004,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 214272,Aston,19014-1298,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 154712,Atchison,66002-1499,2021,Moderate,Humid,OverCast,Moderate Rain,1
 100812,Athens,35611,2021,Pleasent,Very Humid,OverCast,Heavy Rain,0
 139959,Athens,30602,2021,Moderate,Humid,OverCast,Moderate Rain,0
 204857,Athens,45701-2979,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
-118693,Atherton,94027-4301,2021,Pleasent,Humid,Sunny,Moderate Rain,""
+221731,Athens,37303,2021,Moderate,Humid,OverCast,Moderate Rain,0
+237330,Athens,24712,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
+118693,Atherton,94027-4301,2021,Pleasent,Humid,Sunny,Moderate Rain,0
 138813,Atlanta,30328-1635,2021,Moderate,Humid,OverCast,Heavy Rain,0
 138901,Atlanta,30310-4448,2021,Moderate,Humid,OverCast,Heavy Rain,0
 138947,Atlanta,30314-4391,2021,Moderate,Humid,OverCast,Heavy Rain,0
@@ -83,22 +109,28 @@ unitId,city,zipCode,year,DoesPlaceHavehotSummer,IsthePlaceHumid,IsthePlaceSunny,
 438586,Atlanta,30328,2021,Moderate,Humid,OverCast,Heavy Rain,0
 458919,Atlanta,30341,2021,Moderate,Humid,OverCast,Heavy Rain,0
 475732,Atlanta,30342,2021,Moderate,Humid,OverCast,Heavy Rain,0
-100858,Auburn,36849,2021,Moderate,Very Humid,OverCast,Moderate Rain,""
-140720,Augusta,30901-3182,2021,Moderate,Humid,Sunny,Moderate Rain,""
+100858,Auburn,36849,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
+235343,Auburn,98092-3622,2021,Pleasent,Humid,OverCast,Heavy Rain,0
+140720,Augusta,30901-3182,2021,Moderate,Humid,Sunny,Moderate Rain,0
 161217,Augusta,04330-9410,2021,Pleasent,Humid,OverCast,Moderate Rain,1
-482149,Augusta,30912,2021,Moderate,Humid,Sunny,Moderate Rain,""
+482149,Augusta,30912,2021,Moderate,Humid,Sunny,Moderate Rain,0
 143118,Aurora,60506-4892,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 197230,Aurora,13026-0500,2021,Pleasent,Humid,OverCast,Moderate Rain,1
+260813,Aurora,80014-3141,2021,Moderate,Dry,OverCast,Low Rain,1
 476975,Aurora,80011-0000,2021,Moderate,Dry,OverCast,Low Rain,1
-458973,Austin,78759,2021,Moderate,Moderate,OverCast,Moderate Rain,""
-446048,Ave Maria,34142-9505,2021,Moderate,Very Humid,Sunny,Moderate Rain,""
-137315,Avon Park,33825-9356,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-109785,Azusa,91702-7000,2021,Moderate,Moderate,Sunny,Low Rain,""
-138293,Babson Park,33827-0096,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-109819,Bakersfield,93305-1299,2021,Hot,Dry,Sunny,Low Rain,""
-110486,Bakersfield,93311-1099,2021,Hot,Dry,Sunny,Low Rain,""
-122834,Bakersfield,93309,2021,Hot,Dry,Sunny,Low Rain,""
-433420,Bakersfield,93308,2021,Hot,Dry,Sunny,Low Rain,""
+224004,Austin,78726,2021,Moderate,Moderate,OverCast,Moderate Rain,0
+225575,Austin,78702-2795,2021,Moderate,Moderate,OverCast,Moderate Rain,0
+227845,Austin,78704-6489,2021,Moderate,Moderate,OverCast,Moderate Rain,0
+228778,Austin,78705,2021,Moderate,Moderate,OverCast,Moderate Rain,0
+458973,Austin,78759,2021,Moderate,Moderate,OverCast,Moderate Rain,0
+446048,Ave Maria,34142-9505,2021,Moderate,Very Humid,Sunny,Moderate Rain,0
+137315,Avon Park,33825-9356,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+109785,Azusa,91702-7000,2021,Moderate,Moderate,Sunny,Low Rain,0
+138293,Babson Park,33827-0096,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+109819,Bakersfield,93305-1299,2021,Hot,Dry,Sunny,Low Rain,0
+110486,Bakersfield,93311-1099,2021,Hot,Dry,Sunny,Low Rain,0
+122834,Bakersfield,93309,2021,Hot,Dry,Sunny,Low Rain,0
+433420,Bakersfield,93308,2021,Hot,Dry,Sunny,Low Rain,0
 154688,Baldwin City,66006-0065,2021,Moderate,Very Humid,Sunny,Moderate Rain,1
 161873,Baltimore,21201-5720,2021,Moderate,Humid,OverCast,Heavy Rain,1
 162283,Baltimore,21216-3698,2021,Moderate,Humid,OverCast,Heavy Rain,1
@@ -116,52 +148,72 @@ unitId,city,zipCode,year,DoesPlaceHavehotSummer,IsthePlaceHumid,IsthePlaceSunny,
 487524,Bangor,04401-2929,2021,Pleasent,Very Humid,OverCast,Low Rain,1
 198808,Banner Elk,28604,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 160959,Bar Harbor,04609,2021,Pleasent,Humid,OverCast,Moderate Rain,1
-157863,Barbourville,40906-1499,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+157863,Barbourville,40906-1499,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 139968,Barnesville,30204,2021,Moderate,Humid,OverCast,Heavy Rain,0
-206835,Bartlesville,74006-6299,2021,Moderate,Humid,OverCast,Moderate Rain,0
-451820,Bastrop,78602,2021,Moderate,Moderate,OverCast,Moderate Rain,""
+242644,Barranquitas,00794,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+206835,Bartlesville,74006-6299,2021,Moderate,Humid,OverCast,Moderate Rain,1
+451820,Bastrop,78602,2021,Moderate,Moderate,OverCast,Moderate Rain,0
 201946,Batavia,45103,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 106342,Batesville,72501,2021,Moderate,Humid,OverCast,Moderate Rain,0
-159391,Baton Rouge,70803-2750,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-160074,Baton Rouge,70808,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-160621,Baton Rouge,70813,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-451741,Bayamn,00961,2021,Pleasent,Very Humid,OverCast,Moderate Rain,""
+159391,Baton Rouge,70803-2750,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+160074,Baton Rouge,70808,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+160621,Baton Rouge,70813,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+241225,Bayamn,00960-1725,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+451741,Bayamn,00961,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+241100,Bayamon,00960-2037,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+241377,Bayamon,00960-0493,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+242705,Bayamon,00957-6257,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+242972,Bayamon,00960,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+243133,Bayamon,00959,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+243568,Bayamon,00960-6032,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+226091,Beaumont,77705,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
 212656,Beaver Falls,15010-3599,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
-442949,Beaverton,97005,2021,Moderate,Moderate,OverCast,Heavy Rain,""
-417752,Bedford,76021-4202,2021,Moderate,Moderate,Sunny,Moderate Rain,""
-200527,Belcourt,58316,2021,Pleasent,Humid,OverCast,Low Rain,0
+442949,Beaverton,97005,2021,Moderate,Moderate,OverCast,Heavy Rain,0
+237950,Beckley,25801,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
+417752,Bedford,76021-4202,2021,Moderate,Moderate,Sunny,Moderate Rain,0
+200527,Belcourt,58316,2021,Pleasent,Humid,OverCast,Low Rain,1
 448354,Belleville,07109,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 180814,Bellevue,68005-3098,2021,Moderate,Humid,OverCast,Moderate Rain,1
-120184,Belmont,94002-1908,2021,Pleasent,Moderate,Sunny,Low Rain,""
+234669,Bellevue,98007-6484,2021,Pleasent,Moderate,OverCast,Heavy Rain,0
+234696,Bellingham,98225-1599,2021,Pleasent,Humid,OverCast,Heavy Rain,0
+237011,Bellingham,98225-9008,2021,Pleasent,Humid,OverCast,Heavy Rain,0
+237039,Bellingham,98226,2021,Pleasent,Humid,OverCast,Heavy Rain,0
+380377,Bellingham,98226-9217,2021,Pleasent,Humid,OverCast,Heavy Rain,0
+120184,Belmont,94002-1908,2021,Pleasent,Moderate,Sunny,Low Rain,0
 197984,Belmont,28012-1802,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
-173124,Bemidji,56601,2021,Pleasent,Humid,OverCast,Low Rain,0
-174525,Bemidji,56601-8834,2021,Pleasent,Humid,OverCast,Low Rain,0
-440828,Bend,97702,2021,Moderate,Moderate,OverCast,Moderate Rain,""
+238333,Beloit,53511-5595,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+226471,Belton,76513-2599,2021,Moderate,Moderate,Sunny,Moderate Rain,0
+173124,Bemidji,56601,2021,Pleasent,Humid,OverCast,Low Rain,1
+174525,Bemidji,56601-8834,2021,Pleasent,Humid,OverCast,Low Rain,1
+440828,Bend,97702,2021,Moderate,Moderate,OverCast,Moderate Rain,0
+230816,Bennington,05201-6003,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 170620,Benton Harbor,49022-1899,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 156295,Berea,40404-2182,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 201195,Berea,44017-2088,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
-110635,Berkeley,94720,2021,Pleasent,Very Humid,OverCast,Moderate Rain,""
-486488,Berkeley,94704-1268,2021,Pleasent,Very Humid,OverCast,Moderate Rain,""
+110635,Berkeley,94720,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+486488,Berkeley,94704-1268,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
 168740,Berrien Springs,49104,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
-206862,Bethany,73008,2021,Moderate,Moderate,OverCast,Moderate Rain,0
-207856,Bethany,73008,2021,Moderate,Moderate,OverCast,Moderate Rain,0
+206862,Bethany,73008,2021,Moderate,Moderate,OverCast,Moderate Rain,1
+207856,Bethany,73008,2021,Moderate,Moderate,OverCast,Moderate Rain,1
+237181,Bethany,26032,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 213543,Bethlehem,18015,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 214157,Bethlehem,18018-6650,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 165699,Beverly,01915,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 166911,Beverly,01915-4508,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
-475635,Beverly Hills,90211,2021,Moderate,Moderate,Sunny,Low Rain,""
+475635,Beverly Hills,90211,2021,Moderate,Moderate,Sunny,Low Rain,0
 161457,Biddeford,04005-9599,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 169910,Big Rapids,49307-2251,2021,Pleasent,Humid,OverCast,Moderate Rain,1
-180179,Billings,59101-0298,2021,Moderate,Dry,OverCast,Low Rain,0
-180595,Billings,59102-1796,2021,Moderate,Dry,OverCast,Low Rain,0
+180179,Billings,59101-0298,2021,Moderate,Dry,OverCast,Low Rain,1
+180595,Billings,59102-1796,2021,Moderate,Dry,OverCast,Low Rain,1
 100663,Birmingham,35294-0110,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
 100937,Birmingham,35254,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
 101365,Birmingham,35209,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
 102049,Birmingham,35229-2240,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
 450377,Birmingham,35203,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
-200022,Bismarck,58506-5587,2021,Pleasent,Humid,OverCast,Low Rain,0
-200217,Bismarck,58504,2021,Pleasent,Humid,OverCast,Low Rain,0
-200554,Bismarck,58504,2021,Pleasent,Humid,OverCast,Low Rain,0
+200022,Bismarck,58506-5587,2021,Pleasent,Humid,OverCast,Low Rain,1
+200217,Bismarck,58504,2021,Pleasent,Humid,OverCast,Low Rain,1
+200554,Bismarck,58504,2021,Pleasent,Humid,OverCast,Low Rain,1
+233921,Blacksburg,24061-0131,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 183822,Bloomfield,07003,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 446224,Bloomfield,07003-3551,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 145646,Bloomington,61702-2900,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
@@ -171,11 +223,15 @@ unitId,city,zipCode,year,DoesPlaceHavehotSummer,IsthePlaceHumid,IsthePlaceSunny,
 486284,Bloomington,55438-2849,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 211158,Bloomsburg,17815,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 201955,Blue Ash,45236-1096,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
-113537,Blue Lake,95525-0816,2021,Pleasent,Humid,Sunny,Moderate Rain,""
+113537,Blue Lake,95525-0816,2021,Pleasent,Humid,Sunny,Moderate Rain,0
 175430,Blue Mountain,38610,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
+231554,Bluefield,24605,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
+237215,Bluefield,24701-2198,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 201371,Bluffton,45817-2104,2021,Pleasent,Humid,OverCast,Moderate Rain,1
-132657,Boca Raton,33431-5598,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-133669,Boca Raton,33431-0991,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
+218654,Bluffton,29909,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
+132657,Boca Raton,33431-5598,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+133669,Boca Raton,33431-0991,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+385619,Boca Raton,33431,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 198561,Boiling Springs,28017-0997,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 142090,Boise,83714-1220,2021,Moderate,Dry,Sunny,Low Rain,1
 142115,Boise,83725,2021,Moderate,Dry,Sunny,Low Rain,1
@@ -201,20 +257,28 @@ unitId,city,zipCode,year,DoesPlaceHavehotSummer,IsthePlaceHumid,IsthePlaceSunny,
 168005,Boston,02108-3901,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 168227,Boston,02115,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 482705,Boston,02115,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
-439190,Bothell,98011-8205,2021,Pleasent,Moderate,OverCast,Heavy Rain,""
+377555,Bothell,98011-8246,2021,Pleasent,Moderate,OverCast,Heavy Rain,0
+439190,Bothell,98011-8205,2021,Pleasent,Moderate,OverCast,Heavy Rain,0
 126614,Boulder,80309-0017,2021,Moderate,Dry,Sunny,Low Rain,1
 127653,Boulder,80302-6697,2021,Moderate,Dry,Sunny,Low Rain,1
 147828,Bourbonnais,60914-2271,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 162007,Bowie,20715-9465,2021,Moderate,Humid,OverCast,Heavy Rain,1
 157951,Bowling Green,42101-1000,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
 201441,Bowling Green,43403,2021,Pleasent,Humid,OverCast,Moderate Rain,1
-180461,Bozeman,59717,2021,Moderate,Dry,OverCast,Low Rain,0
-135391,Bradenton,34207,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
+363439,Bowling Green,42101,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+366340,Box Elder,59521-9796,2021,Moderate,Dry,OverCast,Low Rain,1
+180461,Bozeman,59717,2021,Moderate,Dry,OverCast,Low Rain,1
+262165,Bozeman,59718,2021,Moderate,Dry,OverCast,Low Rain,1
+135391,Bradenton,34207,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 215266,Bradford,16701,2021,Pleasent,Humid,OverCast,Moderate Rain,1
-198066,Brevard,28712,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+236188,Bremerton,98337-1699,2021,Pleasent,Moderate,OverCast,Heavy Rain,0
+198066,Brevard,28712,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 128744,Bridgeport,06604-5620,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 165024,Bridgewater,02325,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
+231581,Bridgewater,22812-1599,2021,Moderate,Humid,OverCast,Moderate Rain,1
 167677,Brighton,02135-3846,2021,Pleasent,Humid,OverCast,Heavy Rain,1
+217518,Bristol,02809-2921,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
+220516,Bristol,37620-2699,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 196121,Brockport,14420-2919,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 190637,Bronx,10468,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 191241,Bronx,10458,2021,Pleasent,Humid,OverCast,Heavy Rain,1
@@ -224,6 +288,7 @@ unitId,city,zipCode,year,DoesPlaceHavehotSummer,IsthePlaceHumid,IsthePlaceSunny,
 195304,Bronxville,10708,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 428259,Brookfield,53005,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 459851,Brookfield,53005,2021,Pleasent,Humid,OverCast,Moderate Rain,1
+219356,Brookings,57007-1898,2021,Pleasent,Humid,OverCast,Low Rain,1
 166054,Brookline,02445-7415,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 189273,Brooklyn,11204,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 189857,Brooklyn,11230-2798,2021,Pleasent,Humid,OverCast,Heavy Rain,1
@@ -243,6 +308,7 @@ unitId,city,zipCode,year,DoesPlaceHavehotSummer,IsthePlaceHumid,IsthePlaceSunny,
 197018,Brooklyn,11211,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 197601,Brooklyn,11204-1545,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 197647,Brooklyn,11218-0000,2021,Pleasent,Humid,OverCast,Heavy Rain,1
+375230,Brooklyn,11219,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 404994,Brooklyn,11201-9805,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 405854,Brooklyn,11211,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 451404,Brooklyn,11219,2021,Pleasent,Humid,OverCast,Heavy Rain,1
@@ -256,10 +322,13 @@ unitId,city,zipCode,year,DoesPlaceHavehotSummer,IsthePlaceHumid,IsthePlaceSunny,
 494737,Brooklyn,11211-7106,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 195173,Brooklyn Heights,11201-4305,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 192448,Brookville,11548-1327,2021,Pleasent,Humid,OverCast,Heavy Rain,1
-139250,Brunswick,31520-3644,2021,Moderate,Very Humid,OverCast,Moderate Rain,""
+225548,Brownwood,76801-2794,2021,Moderate,Moderate,Sunny,Moderate Rain,0
+139250,Brunswick,31520-3644,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
 161004,Brunswick,04011,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 210492,Bryn Athyn,19009-0711,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 211273,Bryn Mawr,19010,2021,Pleasent,Humid,OverCast,Heavy Rain,1
+237969,Buckhannon,26201-2994,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+233611,Buena Vista,24416,2021,Moderate,Humid,OverCast,Moderate Rain,1
 189583,Buffalo,14203,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 189705,Buffalo,14208-1098,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 190716,Buffalo,14201-1084,2021,Pleasent,Humid,OverCast,Moderate Rain,1
@@ -269,16 +338,20 @@ unitId,city,zipCode,year,DoesPlaceHavehotSummer,IsthePlaceHumid,IsthePlaceSunny,
 196653,Buffalo,14220-2094,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 197142,Buffalo,14225-3999,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 198136,Buies Creek,27506,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
-125897,Burbank,91504-1052,2021,Moderate,Moderate,Sunny,Low Rain,""
-461148,Burbank,91505,2021,Moderate,Moderate,Sunny,Low Rain,""
+125897,Burbank,91504-1052,2021,Moderate,Moderate,Sunny,Low Rain,0
+461148,Burbank,91505,2021,Moderate,Moderate,Sunny,Low Rain,0
+230852,Burlington,05401,2021,Pleasent,Humid,OverCast,Moderate Rain,1
+231174,Burlington,05405-0160,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 203526,Burton,44021,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
-180416,Butte,59701-8997,2021,Moderate,Dry,OverCast,Low Rain,0
+180416,Butte,59701-8997,2021,Moderate,Dry,OverCast,Low Rain,1
 166692,Buzzards Bay,02532-1803,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
-430670,Caguas,00725-4968,2021,Pleasent,Very Humid,OverCast,Heavy Rain,""
+241304,Caguas,00726,2021,Pleasent,Very Humid,OverCast,Heavy Rain,0
+242112,Caguas,00725,2021,Pleasent,Very Humid,OverCast,Heavy Rain,0
+430670,Caguas,00725-4968,2021,Pleasent,Very Humid,OverCast,Heavy Rain,0
 142294,Caldwell,83605-4432,2021,Moderate,Dry,Sunny,Low Rain,1
 183910,Caldwell,07006-6195,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 211361,California,15419-1394,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
-441937,Camarillo,93012,2021,Pleasent,Very Humid,Sunny,Low Rain,""
+441937,Camarillo,93012,2021,Pleasent,Very Humid,Sunny,Low Rain,0
 164368,Cambridge,02141-1805,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 166027,Cambridge,02138,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 166452,Cambridge,02138-2790,2021,Pleasent,Humid,OverCast,Heavy Rain,1
@@ -292,35 +365,50 @@ unitId,city,zipCode,year,DoesPlaceHavehotSummer,IsthePlaceHumid,IsthePlaceSunny,
 201177,Canton,44710-1797,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 203465,Canton,44720-7599,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 203775,Canton,44709-3308,2021,Pleasent,Humid,OverCast,Moderate Rain,1
+229814,Canyon,79016-0001,2021,Moderate,Moderate,Sunny,Low Rain,1
 179557,Cape Girardeau,63701,2021,Moderate,Very Humid,OverCast,Moderate Rain,1
 417734,Cape Girardeau,63703-4507,2021,Moderate,Very Humid,OverCast,Moderate Rain,1
 446394,Capitol Heights,20743,2021,Moderate,Humid,OverCast,Heavy Rain,1
 149222,Carbondale,62901-4512,2021,Moderate,Very Humid,OverCast,Moderate Rain,1
 143288,Carlinville,62626,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 212009,Carlisle,17013-2896,2021,Moderate,Humid,OverCast,Heavy Rain,1
-434900,Carolina,00986,2021,Pleasent,Very Humid,OverCast,Heavy Rain,""
+241386,Carolina,00985,2021,Pleasent,Very Humid,OverCast,Heavy Rain,0
+243142,Carolina,00984-4800,2021,Pleasent,Very Humid,OverCast,Heavy Rain,0
+243346,Carolina,00985-0985,2021,Pleasent,Very Humid,OverCast,Heavy Rain,0
+434900,Carolina,00986,2021,Pleasent,Very Humid,OverCast,Heavy Rain,0
 141334,Carrollton,30118-0001,2021,Moderate,Humid,OverCast,Heavy Rain,0
-110547,Carson,90747-0005,2021,Pleasent,Humid,Sunny,Moderate Rain,""
+110547,Carson,90747-0005,2021,Pleasent,Humid,Sunny,Moderate Rain,0
 182564,Carson City,89703-7399,2021,Moderate,Dry,Sunny,Low Rain,1
 161299,Castine,04420-0001,2021,Pleasent,Humid,OverCast,Moderate Rain,1
+230834,Castleton,05735,2021,Pleasent,Humid,OverCast,Moderate Rain,1
+243151,Cayey,00737-2230,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
 189848,Cazenovia,13035,2021,Pleasent,Humid,OverCast,Moderate Rain,1
+230603,Cedar City,84720,2021,Hot,Dry,Sunny,Desert,0
 154095,Cedar Falls,50614-0005,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
-480912,Cedar Park,78613,2021,Moderate,Moderate,OverCast,Moderate Rain,""
+480912,Cedar Park,78613,2021,Moderate,Moderate,OverCast,Moderate Rain,0
 153144,Cedar Rapids,52402-5092,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 154013,Cedar Rapids,52402-4797,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 201654,Cedarville,45314-0601,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 206613,Celina,45822-2952,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 210739,Center Valley,18034-9568,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 214670,Center Valley,18034-8447,2021,Pleasent,Humid,OverCast,Heavy Rain,1
+217776,Central,29630-1020,2021,Moderate,Humid,OverCast,Moderate Rain,0
+234845,Centralia,98531-4099,2021,Pleasent,Humid,OverCast,Heavy Rain,0
 180948,Chadron,69337-2690,2021,Moderate,Dry,Sunny,Low Rain,1
+217013,Chambersburg,17201-1285,2021,Moderate,Humid,OverCast,Heavy Rain,1
 145637,Champaign,61820-5711,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
-436614,Chandler,85286,2021,Very Hot,Dry,Sunny,Low Rain,""
-445027,Chandler,85286,2021,Very Hot,Dry,Sunny,Low Rain,""
+436614,Chandler,85286,2021,Very Hot,Dry,Sunny,Low Rain,0
+445027,Chandler,85286,2021,Very Hot,Dry,Sunny,Low Rain,0
 199120,Chapel Hill,27599,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 449339,Charles Town,25414,2021,Moderate,Humid,OverCast,Heavy Rain,1
 475398,Charles Town,25414,2021,Moderate,Humid,OverCast,Heavy Rain,1
 144892,Charleston,61920,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
-485698,Charleston,29403-4223,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
+217688,Charleston,29406-9121,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+217819,Charleston,29424-0001,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+217864,Charleston,29409,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+218335,Charleston,29425,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+237312,Charleston,25304,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+485698,Charleston,29403-4223,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 198756,Charlotte,28216-5398,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 199139,Charlotte,28223-0001,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 199412,Charlotte,28274-0001,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
@@ -328,8 +416,14 @@ unitId,city,zipCode,year,DoesPlaceHavehotSummer,IsthePlaceHumid,IsthePlaceSunny,
 445708,Charlotte,28202,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 482565,Charlotte,28273,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 489344,Charlotte,28273,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+243665,Charlotte Amalie,00802-9990,2021,Pleasent,Very Humid,OverCast,Heavy Rain,0
+234076,Charlottesville,22903-2628,2021,Moderate,Humid,OverCast,Moderate Rain,1
+221740,Chattanooga,37403-2598,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
+235097,Cheney,99004-2496,2021,Moderate,Dry,OverCast,Low Rain,1
 453215,Cherry Hill,08002,2021,Pleasent,Humid,OverCast,Heavy Rain,1
+232885,Chesapeake,23320,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 420024,Chesapeake,23320,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+216852,Chester,19013-5792,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 177986,Chesterfield,63017,2021,Moderate,Very Humid,OverCast,Moderate Rain,1
 164216,Chestertown,21620-1438,2021,Moderate,Humid,OverCast,Heavy Rain,1
 164924,Chestnut Hill,02467,2021,Pleasent,Humid,OverCast,Heavy Rain,1
@@ -359,8 +453,8 @@ unitId,city,zipCode,year,DoesPlaceHavehotSummer,IsthePlaceHumid,IsthePlaceSunny,
 149763,Chicago,60622,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 442842,Chicago,60601,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 482477,Chicago,60618,2021,Pleasent,Humid,OverCast,Moderate Rain,1
-207722,Chickasha,73018-5322,2021,Moderate,Humid,Sunny,Moderate Rain,0
-110538,Chico,95929-0150,2021,Moderate,Dry,Sunny,Low Rain,""
+207722,Chickasha,73018-5322,2021,Moderate,Humid,Sunny,Moderate Rain,1
+110538,Chico,95929-0150,2021,Moderate,Dry,Sunny,Low Rain,0
 167394,Chicopee,01013,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 201061,Cincinnati,45202-1706,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 201140,Cincinnati,45230-2091,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
@@ -373,16 +467,19 @@ unitId,city,zipCode,year,DoesPlaceHavehotSummer,IsthePlaceHumid,IsthePlaceSunny,
 206279,Cincinnati,45206-1925,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 206622,Cincinnati,45207-1092,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 201964,Circleville,43113-9487,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
-112260,Claremont,91711-6400,2021,Moderate,Moderate,Sunny,Low Rain,""
-115409,Claremont,91711,2021,Moderate,Moderate,Sunny,Low Rain,""
-121257,Claremont,91711-6101,2021,Moderate,Moderate,Sunny,Low Rain,""
-121345,Claremont,91711-6319,2021,Moderate,Moderate,Sunny,Low Rain,""
-123165,Claremont,91711-3905,2021,Moderate,Moderate,Sunny,Low Rain,""
-207661,Claremore,74017-3252,2021,Moderate,Humid,OverCast,Moderate Rain,0
+112260,Claremont,91711-6400,2021,Moderate,Moderate,Sunny,Low Rain,0
+115409,Claremont,91711,2021,Moderate,Moderate,Sunny,Low Rain,0
+121257,Claremont,91711-6101,2021,Moderate,Moderate,Sunny,Low Rain,0
+121345,Claremont,91711-6319,2021,Moderate,Moderate,Sunny,Low Rain,0
+123165,Claremont,91711-3905,2021,Moderate,Moderate,Sunny,Low Rain,0
+207661,Claremore,74017-3252,2021,Moderate,Humid,OverCast,Moderate Rain,1
 211644,Clarion,16214,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 211024,Clarks Summit,18411-1250,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 107558,Clarksville,72830,2021,Moderate,Humid,OverCast,Moderate Rain,0
-137078,Clearwater,33760-2822,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
+219602,Clarksville,37044,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+368443,Clarksville,37040,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+137078,Clearwater,33760-2822,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+217882,Clemson,29634,2021,Moderate,Humid,OverCast,Moderate Rain,0
 141237,Cleveland,30528,2021,Moderate,Humid,OverCast,Moderate Rain,0
 175616,Cleveland,38733,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
 201645,Cleveland,44106,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
@@ -390,21 +487,35 @@ unitId,city,zipCode,year,DoesPlaceHavehotSummer,IsthePlaceHumid,IsthePlaceSunny,
 202073,Cleveland,44106-1776,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 202134,Cleveland,44115-2214,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 204468,Cleveland,44121-4293,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
-176053,Clinton,39058,2021,Moderate,Very Humid,Sunny,Moderate Rain,""
+219842,Cleveland,37320-3330,2021,Moderate,Humid,OverCast,Moderate Rain,0
+220613,Cleveland,37311,2021,Moderate,Humid,OverCast,Moderate Rain,0
+176053,Clinton,39058,2021,Moderate,Very Humid,Sunny,Moderate Rain,0
 191515,Clinton,13323,2021,Pleasent,Humid,OverCast,Moderate Rain,1
+218539,Clinton,29325,2021,Moderate,Humid,Sunny,Moderate Rain,0
 196033,Cobleskill,12043,2021,Pleasent,Humid,OverCast,Moderate Rain,1
-132693,Cocoa,32922,2021,Moderate,Very Humid,Sunny,Moderate Rain,""
+132693,Cocoa,32922,2021,Moderate,Very Humid,Sunny,Moderate Rain,0
+231059,Colchester,05439,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 163286,College Park,20742,2021,Moderate,Humid,OverCast,Heavy Rain,1
+236896,College Place,99324-1198,2021,Moderate,Dry,OverCast,Low Rain,1
+228723,College Station,77843-1248,2021,Moderate,Moderate,Sunny,Moderate Rain,0
+221661,Collegedale,37315-0370,2021,Moderate,Humid,OverCast,Moderate Rain,0
 174792,Collegeville,56321,2021,Pleasent,Humid,OverCast,Moderate Rain,1
-126580,Colorado Springs,80918,2021,Pleasent,Dry,Sunny,Low Rain,0
-126678,Colorado Springs,80903,2021,Pleasent,Dry,Sunny,Low Rain,0
-126827,Colorado Springs,80907-3812,2021,Pleasent,Dry,Sunny,Low Rain,0
-127714,Colorado Springs,80920,2021,Pleasent,Dry,Sunny,Low Rain,0
+216524,Collegeville,19426-1000,2021,Pleasent,Humid,OverCast,Heavy Rain,1
+126580,Colorado Springs,80918,2021,Pleasent,Dry,Sunny,Low Rain,1
+126678,Colorado Springs,80903,2021,Pleasent,Dry,Sunny,Low Rain,1
+126827,Colorado Springs,80907-3812,2021,Pleasent,Dry,Sunny,Low Rain,1
+127714,Colorado Springs,80920,2021,Pleasent,Dry,Sunny,Low Rain,1
 157216,Columbia,42728-1223,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 177065,Columbia,65216,2021,Moderate,Humid,OverCast,Moderate Rain,1
 178396,Columbia,65211,2021,Moderate,Humid,OverCast,Moderate Rain,1
 179548,Columbia,65215,2021,Moderate,Humid,OverCast,Moderate Rain,1
-139366,Columbus,31907-5645,2021,Moderate,Very Humid,OverCast,Moderate Rain,""
+217624,Columbia,29204,2021,Moderate,Humid,Sunny,Moderate Rain,0
+217721,Columbia,29204-1086,2021,Moderate,Humid,Sunny,Moderate Rain,0
+217925,Columbia,29203-1513,2021,Moderate,Humid,Sunny,Moderate Rain,0
+217934,Columbia,29203,2021,Moderate,Humid,Sunny,Moderate Rain,0
+218663,Columbia,29208,2021,Moderate,Humid,Sunny,Moderate Rain,0
+251312,Columbia,29203,2021,Moderate,Humid,Sunny,Moderate Rain,0
+139366,Columbus,31907-5645,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
 176035,Columbus,39701,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
 201548,Columbus,43209-2394,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 202170,Columbus,43215,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
@@ -415,51 +526,67 @@ unitId,city,zipCode,year,DoesPlaceHavehotSummer,IsthePlaceHumid,IsthePlaceSunny,
 205027,Columbus,43235-1499,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 454236,Columbus,43209,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 482574,Columbus,43219,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+224554,Commerce,75428-3011,2021,Moderate,Moderate,Sunny,Heavy Rain,0
 177083,Conception,64433-0502,2021,Moderate,Humid,OverCast,Moderate Rain,1
 183257,Concord,03301-3471,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 198109,Concord,28025-3959,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
-481401,Conroe,77384-4894,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
+481401,Conroe,77384-4894,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 106704,Conway,72035-0001,2021,Moderate,Humid,OverCast,Moderate Rain,0
 106713,Conway,72034,2021,Moderate,Humid,OverCast,Moderate Rain,0
 107080,Conway,72032-3080,2021,Moderate,Humid,OverCast,Moderate Rain,0
-135726,Coral Gables,33146,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
+218724,Conway,29526,2021,Moderate,Very Humid,Sunny,Moderate Rain,0
+221847,Cookeville,38505-0001,2021,Moderate,Very Humid,OverCast,Moderate Rain,1
+135726,Coral Gables,33146,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+224147,Corpus Christi,78412-5503,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
 196149,Cortland,13045-0900,2021,Pleasent,Humid,OverCast,Moderate Rain,1
-209542,Corvallis,97331,2021,Moderate,Moderate,OverCast,Moderate Rain,""
-123651,Costa Mesa,92626,2021,Pleasent,Humid,OverCast,Low Rain,""
-422695,Costa Mesa,92626,2021,Pleasent,Humid,OverCast,Low Rain,""
+209542,Corvallis,97331,2021,Moderate,Moderate,OverCast,Moderate Rain,0
+123651,Costa Mesa,92626,2021,Pleasent,Humid,OverCast,Low Rain,0
+422695,Costa Mesa,92626,2021,Pleasent,Humid,OverCast,Low Rain,0
+231095,Craftsbury Common,05827-0072,2021,Pleasent,Very Humid,OverCast,Low Rain,1
 152673,Crawfordsville,47933-0352,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 214166,Cresson,16630-1999,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 157809,Crestview Hills,41017-3495,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 181020,Crete,68333,2021,Moderate,Humid,Sunny,Moderate Rain,1
 129534,Cromwell,06416-2005,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
-174075,Crookston,56716-5001,2021,Pleasent,Humid,OverCast,Low Rain,0
+174075,Crookston,56716-5001,2021,Pleasent,Humid,OverCast,Low Rain,1
 187596,Crownpoint,87313-0849,2021,Moderate,Dry,OverCast,Low Rain,1
-200004,Cullowhee,28723-9646,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
-125471,Culver City,90230-3519,2021,Pleasent,Humid,Sunny,Low Rain,""
-113236,Cypress,90630-5897,2021,Pleasent,Humid,Sunny,Low Rain,""
+200004,Cullowhee,28723-9646,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+125471,Culver City,90230-3519,2021,Pleasent,Humid,Sunny,Low Rain,0
+245838,Culver City,90230-7615,2021,Pleasent,Humid,Sunny,Low Rain,0
+113236,Cypress,90630-5897,2021,Pleasent,Humid,Sunny,Low Rain,0
 482680,Dahlonega,30597,2021,Moderate,Humid,OverCast,Moderate Rain,0
 214069,Dallas,18612-1098,2021,Pleasent,Humid,OverCast,Heavy Rain,1
-475608,Dallas,75246-1537,2021,Moderate,Moderate,OverCast,Heavy Rain,""
-477039,Dallas,75247-3900,2021,Moderate,Moderate,OverCast,Moderate Rain,""
-484905,Dallas,75241,2021,Moderate,Moderate,OverCast,Heavy Rain,""
+224226,Dallas,75211-9299,2021,Moderate,Moderate,Sunny,Heavy Rain,0
+224244,Dallas,75234-7299,2021,Moderate,Moderate,OverCast,Heavy Rain,0
+224776,Dallas,75231-5993,2021,Moderate,Moderate,OverCast,Heavy Rain,0
+226879,Dallas,75207,2021,Moderate,Moderate,OverCast,Heavy Rain,0
+227429,Dallas,75241,2021,Moderate,Moderate,OverCast,Heavy Rain,0
+228246,Dallas,75275-0221,2021,Moderate,Moderate,OverCast,Heavy Rain,0
+243823,Dallas,75229-5668,2021,Moderate,Moderate,OverCast,Heavy Rain,0
+475608,Dallas,75246-1537,2021,Moderate,Moderate,OverCast,Heavy Rain,0
+477039,Dallas,75247-3900,2021,Moderate,Moderate,OverCast,Moderate Rain,0
+484905,Dallas,75241,2021,Moderate,Moderate,OverCast,Heavy Rain,0
 139463,Dalton,30720-3797,2021,Moderate,Humid,OverCast,Moderate Rain,0
 130776,Danbury,06810-6826,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 146533,Danville,61832,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 156408,Danville,40422-1394,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+231420,Danville,24541,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 449931,Danville,24541,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
-102395,Daphne,36526-7055,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
+102395,Daphne,36526-7055,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 153427,Davenport,52807,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 154174,Davenport,52803-5287,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 154235,Davenport,52803-2898,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 198385,Davidson,28035,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
-110644,Davis,95616-8678,2021,Moderate,Dry,Sunny,Low Rain,""
+110644,Davis,95616-8678,2021,Moderate,Dry,Sunny,Low Rain,0
 202480,Dayton,45469,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 206604,Dayton,45435-0001,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
-132602,Daytona Beach,32114-3099,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-133386,Daytona Beach,32114,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-133553,Daytona Beach,32114-3900,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-426314,Daytona Beach,32114-3900,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-137546,DeLand,32723,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
+219790,Dayton,37321,2021,Moderate,Humid,OverCast,Moderate Rain,0
+132602,Daytona Beach,32114-3099,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+133386,Daytona Beach,32114,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+133553,Daytona Beach,32114-3900,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+426314,Daytona Beach,32114-3900,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+239716,De Pere,54115-2099,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+137546,DeLand,32723,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 170240,Dearborn,48128-1495,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 171137,Dearborn,48128-1491,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 138600,Decatur,30030-3770,2021,Moderate,Humid,OverCast,Heavy Rain,0
@@ -467,11 +594,15 @@ unitId,city,zipCode,year,DoesPlaceHavehotSummer,IsthePlaceHumid,IsthePlaceSunny,
 482468,Decatur,30030,2021,Moderate,Humid,OverCast,Heavy Rain,0
 153834,Decorah,52101-1045,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 149514,Deerfield,60015-1283,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+366003,Deerfield Beach,33442,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 202514,Defiance,43512,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 147703,Dekalb,60115-2828,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 204909,Delaware,43015-2370,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 196024,Delhi,13753-1100,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 140818,Demorest,30535-0010,2021,Moderate,Humid,OverCast,Moderate Rain,0
+218919,Denmark,29042,2021,Moderate,Humid,Sunny,Moderate Rain,0
+227216,Denton,76203-1277,2021,Moderate,Moderate,Sunny,Moderate Rain,0
+229179,Denton,76204,2021,Moderate,Moderate,Sunny,Moderate Rain,0
 126562,Denver,80217-3364,2021,Moderate,Dry,OverCast,Low Rain,1
 126942,Denver,80204-2026,2021,Moderate,Dry,OverCast,Low Rain,1
 127060,Denver,80208,2021,Moderate,Dry,OverCast,Low Rain,1
@@ -482,17 +613,19 @@ unitId,city,zipCode,year,DoesPlaceHavehotSummer,IsthePlaceHumid,IsthePlaceSunny,
 153269,Des Moines,50311-4505,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 153375,Des Moines,50316,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 153977,Des Moines,50309-1239,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+235431,Des Moines,98198-9800,2021,Pleasent,Humid,OverCast,Heavy Rain,0
 169442,Detroit,48202,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 169716,Detroit,48221-3038,2021,Pleasent,Moderate,OverCast,Moderate Rain,1
 172033,Detroit,48206-1799,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 172644,Detroit,48202,2021,Pleasent,Humid,OverCast,Moderate Rain,1
-200059,Dickinson,58601-4896,2021,Pleasent,Humid,OverCast,Low Rain,0
-180692,Dillon,59725-3598,2021,Moderate,Dry,OverCast,Low Rain,0
+247162,Detroit,48201-3035,2021,Pleasent,Humid,OverCast,Moderate Rain,1
+200059,Dickinson,58601-4896,2021,Pleasent,Humid,OverCast,Low Rain,1
+180692,Dillon,59725-3598,2021,Moderate,Dry,OverCast,Low Rain,1
 191205,Dix Hills,11746-5871,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 193016,Dobbs Ferry,10522,2021,Pleasent,Humid,OverCast,Heavy Rain,1
-461883,Doral,33178-2369,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-485272,Doral,33178-2431,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-482699,Douglas,31533,2021,Moderate,Very Humid,OverCast,Moderate Rain,""
+461883,Doral,33178-2369,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+485272,Doral,33178-2431,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+482699,Douglas,31533,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
 130907,Dover,19901,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 130934,Dover,19901,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 131098,Dover,19901-3875,2021,Pleasent,Humid,OverCast,Heavy Rain,1
@@ -504,54 +637,64 @@ unitId,city,zipCode,year,DoesPlaceHavehotSummer,IsthePlaceHumid,IsthePlaceSunny,
 153302,Dubuque,52001-3096,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 153825,Dubuque,52004-0178,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 167260,Dudley,01571-5000,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
+217998,Due West,29639,2021,Moderate,Humid,OverCast,Moderate Rain,0
 174233,Duluth,55812,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 174899,Duluth,55811-4199,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 214652,Dunmore,18512-1602,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 198677,Dunn,28334,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 127185,Durango,81301-3999,2021,Moderate,Dry,OverCast,Low Rain,1
-207847,Durant,74701-3347,2021,Moderate,Moderate,Sunny,Heavy Rain,""
+207847,Durant,74701-3347,2021,Moderate,Moderate,Sunny,Heavy Rain,0
 183044,Durham,03824-3547,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 198419,Durham,27708,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 199157,Durham,27707,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+217305,East Greenwich,02818-1205,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 129154,East Hartford,06118,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 171100,East Lansing,48824-1046,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 203456,East Liverpool,43920,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 212115,East Stroudsburg,18301-2999,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 167996,Easton,02357-6110,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 213385,Easton,18042-1768,2021,Pleasent,Humid,OverCast,Heavy Rain,1
+240268,Eau Claire,54701,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 212160,Edinboro,16444-0001,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
-206941,Edmond,73034,2021,Moderate,Moderate,OverCast,Moderate Rain,0
-207324,Edmond,73013,2021,Moderate,Moderate,OverCast,Moderate Rain,0
+227368,Edinburg,78539-2999,2021,Moderate,Humid,OverCast,Low Rain,0
+384421,Edison,08817-4494,2021,Pleasent,Humid,OverCast,Heavy Rain,1
+206941,Edmond,73034,2021,Moderate,Moderate,OverCast,Moderate Rain,1
+207324,Edmond,73013,2021,Moderate,Moderate,OverCast,Moderate Rain,1
 149231,Edwardsville,62026-1259,2021,Moderate,Very Humid,OverCast,Moderate Rain,1
-117575,El Cajon,92019-1108,2021,Pleasent,Very Humid,OverCast,Low Rain,""
-447953,El Dorado Hills,95762,2021,Moderate,Dry,Sunny,Low Rain,""
-451556,El Paso,79925,2021,Hot,Dry,Sunny,Low Rain,""
-492689,El Paso,79905-2827,2021,Hot,Dry,Sunny,Low Rain,""
+117575,El Cajon,92019-1108,2021,Pleasent,Very Humid,OverCast,Low Rain,0
+447953,El Dorado Hills,95762,2021,Moderate,Dry,Sunny,Low Rain,0
+228796,El Paso,79968-0691,2021,Hot,Dry,Sunny,Low Rain,0
+451556,El Paso,79925,2021,Hot,Dry,Sunny,Low Rain,0
+492689,El Paso,79905-2827,2021,Hot,Dry,Sunny,Low Rain,0
 146339,Elgin,60123-1498,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 451370,Elizabeth,07208,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 198507,Elizabeth City,27909,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 199458,Elizabeth City,27909-4054,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 212197,Elizabethtown,17022-2298,2021,Moderate,Humid,OverCast,Heavy Rain,1
+237358,Elkins,26241-3996,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 182306,Elko,89801,2021,Moderate,Dry,Sunny,Low Rain,1
-200484,Ellendale,58436-7105,2021,Pleasent,Humid,OverCast,Low Rain,0
+200484,Ellendale,58436-7105,2021,Pleasent,Humid,OverCast,Low Rain,1
+234827,Ellensburg,98926-7501,2021,Moderate,Dry,OverCast,Low Rain,1
 440749,Ellsworth Air Force Base,57706-4800,2021,Moderate,Dry,Sunny,Low Rain,1
 144962,Elmhurst,60126-3296,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 190983,Elmira,14901,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 198516,Elon,27244-2010,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 148016,Elsah,62028-9799,2021,Moderate,Very Humid,OverCast,Moderate Rain,1
-447458,Emeryville,94608,2021,Pleasent,Very Humid,OverCast,Moderate Rain,""
+447458,Emeryville,94608,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
 163462,Emmitsburg,21727-7799,2021,Moderate,Humid,OverCast,Heavy Rain,1
+232025,Emory,24327-0947,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 155025,Emporia,66801-5415,2021,Moderate,Humid,Sunny,Moderate Rain,1
+230597,Ephraim,84627,2021,Moderate,Dry,Sunny,Low Rain,1
 153241,Epworth,52045,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 212601,Erie,16541-0001,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 213987,Erie,16546,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 214591,Erie,16563-0001,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
-407629,Erie,16509-1025,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
-462354,Escondido,92025,2021,Pleasent,Very Humid,Sunny,Low Rain,""
+407629,Erie,16509-1025,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
+462354,Escondido,92025,2021,Pleasent,Very Humid,Sunny,Low Rain,0
 188058,Espanola,87532,2021,Moderate,Dry,OverCast,Low Rain,1
-208725,Eugene,97405,2021,Moderate,Moderate,OverCast,Moderate Rain,""
-209409,Eugene,97401-3745,2021,Moderate,Moderate,OverCast,Moderate Rain,""
-209551,Eugene,97403,2021,Moderate,Moderate,OverCast,Moderate Rain,""
+208725,Eugene,97405,2021,Moderate,Moderate,OverCast,Moderate Rain,0
+209409,Eugene,97401-3745,2021,Moderate,Moderate,OverCast,Moderate Rain,0
+209551,Eugene,97403,2021,Moderate,Moderate,OverCast,Moderate Rain,0
 144971,Eureka,61530,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 147767,Evanston,60208,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 439020,Evanston,60201,2021,Pleasent,Humid,OverCast,Moderate Rain,1
@@ -560,19 +703,23 @@ unitId,city,zipCode,year,DoesPlaceHavehotSummer,IsthePlaceHumid,IsthePlaceSunny,
 187134,Ewing,08628-7718,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 442639,FALLS CHURCH,22043-2536,2021,Moderate,Humid,OverCast,Heavy Rain,1
 102614,Fairbanks,99775,2021,Pleasent,Humid,OverCast,Moderate Rain,1
+232186,Fairfax,22030-4444,2021,Moderate,Humid,OverCast,Heavy Rain,1
 460376,Fairfax,22030-0000,2021,Moderate,Humid,OverCast,Heavy Rain,1
 101675,Fairfield,35064-2621,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
-123563,Fairfield,94534-3197,2021,Moderate,Moderate,Sunny,Low Rain,""
+123563,Fairfield,94534-3197,2021,Moderate,Moderate,Sunny,Low Rain,0
 129242,Fairfield,06824-5195,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 130253,Fairfield,06825-1000,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 153861,Fairfield,52557,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+237367,Fairmont,26554-2470,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+242680,Fajardo,00738-7003,2021,Pleasent,Very Humid,OverCast,Heavy Rain,0
 190752,Far Rockaway,11691-5219,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 444413,Far Rockaway,11691-4433,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 487746,Far Rockaway,11691-0000,2021,Pleasent,Humid,OverCast,Heavy Rain,1
-200013,Fargo,58103-7196,2021,Pleasent,Humid,OverCast,Low Rain,0
-200332,Fargo,58108-6050,2021,Pleasent,Humid,OverCast,Low Rain,0
+200013,Fargo,58103-7196,2021,Pleasent,Humid,OverCast,Low Rain,1
+200332,Fargo,58108-6050,2021,Pleasent,Humid,OverCast,Low Rain,1
 196042,Farmingdale,11735-1021,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 161226,Farmington,04938-9978,2021,Pleasent,Very Humid,OverCast,Low Rain,1
+232566,Farmville,23909,2021,Moderate,Humid,OverCast,Moderate Rain,1
 154493,Fayette,52142-1857,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 176947,Fayette,65248-1198,2021,Moderate,Humid,OverCast,Moderate Rain,1
 445267,Fayette,65248-1198,2021,Moderate,Humid,OverCast,Moderate Rain,1
@@ -582,84 +729,101 @@ unitId,city,zipCode,year,DoesPlaceHavehotSummer,IsthePlaceHumid,IsthePlaceSunny,
 461032,Fayetteville,28303-5157,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 461528,Fayetteville,28314-2343,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 442426,Fenton,63026,2021,Moderate,Very Humid,OverCast,Moderate Rain,1
+232089,Ferrum,24088-9000,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 202763,Findlay,45840-3653,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 165820,Fitchburg,01420-2697,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
-105330,Flagstaff,86011-4092,2021,Very Hot,Dry,Sunny,Low Rain,""
+105330,Flagstaff,86011-4092,2021,Very Hot,Dry,Sunny,Low Rain,0
 169983,Flint,48504-6214,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 171146,Flint,48502-1950,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 101453,Florence,35630-9977,2021,Pleasent,Very Humid,OverCast,Heavy Rain,0
 101879,Florence,35632-0001,2021,Pleasent,Very Humid,OverCast,Heavy Rain,0
+218061,Florence,29506,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+247065,Florence,41042,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 179256,Florissant,63033,2021,Moderate,Very Humid,OverCast,Moderate Rain,1
 188340,Flushing,11369,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 194763,Flushing,11367,2021,Pleasent,Humid,OverCast,Heavy Rain,1
+239080,Fond Du Lac,54935-4699,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 154518,Forest City,50436-1713,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
-209612,Forest Grove,97116,2021,Moderate,Moderate,OverCast,Heavy Rain,""
+209612,Forest Grove,97116,2021,Moderate,Moderate,OverCast,Heavy Rain,0
 194499,Forest Hills,11375,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 126818,Fort Collins,80523-0100,2021,Moderate,Dry,Sunny,Low Rain,1
 161235,Fort Kent,04743-1292,2021,Pleasent,Humid,OverCast,Moderate Rain,1
-132709,Fort Lauderdale,33301,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-135081,Fort Lauderdale,33309,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-136215,Fort Lauderdale,33314-7796,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-439446,Fort Lauderdale,33301-3510,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-133508,Fort Myers,33919,2021,Moderate,Very Humid,Sunny,Moderate Rain,""
-433660,Fort Myers,33965-6565,2021,Moderate,Very Humid,Sunny,Moderate Rain,""
-134608,Fort Pierce,34981-5596,2021,Moderate,Very Humid,OverCast,Moderate Rain,""
-108092,Fort Smith,72913-3649,2021,Moderate,Humid,OverCast,Moderate Rain,0
-139719,Fort Valley,31030-4313,2021,Moderate,Very Humid,OverCast,Moderate Rain,""
+132709,Fort Lauderdale,33301,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+135081,Fort Lauderdale,33309,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+136215,Fort Lauderdale,33314-7796,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+244233,Fort Lauderdale,33309,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+439446,Fort Lauderdale,33301-3510,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+133508,Fort Myers,33919,2021,Moderate,Very Humid,Sunny,Moderate Rain,0
+366553,Fort Myers,33907-1108,2021,Moderate,Very Humid,Sunny,Moderate Rain,0
+367884,Fort Myers,33966,2021,Moderate,Very Humid,Sunny,Moderate Rain,0
+433660,Fort Myers,33965-6565,2021,Moderate,Very Humid,Sunny,Moderate Rain,0
+134608,Fort Pierce,34981-5596,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
+108092,Fort Smith,72913-3649,2021,Moderate,Humid,OverCast,Moderate Rain,1
+139719,Fort Valley,31030-4313,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
 151102,Fort Wayne,46805-1499,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 151290,Fort Wayne,46803-1228,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 152336,Fort Wayne,46808-3994,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 414878,Fort Wayne,46825,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 492962,Fort Wayne,46803,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
-200466,Fort Yates,58538-9721,2021,Pleasent,Humid,OverCast,Low Rain,0
+228875,Fort Worth,76129,2021,Moderate,Moderate,Sunny,Moderate Rain,0
+229160,Fort Worth,76105-1536,2021,Moderate,Moderate,Sunny,Moderate Rain,0
+200466,Fort Yates,58538-9721,2021,Pleasent,Humid,OverCast,Low Rain,1
 165866,Framingham,01701-9101,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 157058,Frankfort,40601-2355,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 150604,Franklin,46131-2623,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 165574,Franklin,02038-1941,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
-443340,Franklin,37067,2021,Moderate,Humid,OverCast,Moderate Rain,0
+443340,Franklin,37067,2021,Moderate,Humid,OverCast,Moderate Rain,1
 139630,Franklin Springs,30639,2021,Moderate,Humid,OverCast,Moderate Rain,0
 162760,Frederick,21701,2021,Moderate,Humid,OverCast,Heavy Rain,1
+232681,Fredericksburg,22401-5300,2021,Moderate,Humid,OverCast,Heavy Rain,1
 196158,Fredonia,14063-1136,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 181330,Fremont,68025,2021,Moderate,Humid,OverCast,Moderate Rain,1
-459204,Fremont,94538,2021,Pleasent,Humid,Sunny,Low Rain,""
-110556,Fresno,93740,2021,Hot,Dry,Sunny,Low Rain,""
-114813,Fresno,93702-4709,2021,Hot,Dry,Sunny,Low Rain,""
+459204,Fremont,94538,2021,Pleasent,Humid,Sunny,Low Rain,0
+110556,Fresno,93740,2021,Hot,Dry,Sunny,Low Rain,0
+114813,Fresno,93702-4709,2021,Hot,Dry,Sunny,Low Rain,0
 162584,Frostburg,21532-1099,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 482608,Ft. Washington,19034,2021,Pleasent,Humid,OverCast,Heavy Rain,1
-110565,Fullerton,92831-3599,2021,Pleasent,Humid,Sunny,Low Rain,""
-120537,Fullerton,92831-3199,2021,Pleasent,Humid,Sunny,Low Rain,""
-481058,Fullerton,92833-3860,2021,Pleasent,Humid,Sunny,Low Rain,""
+110565,Fullerton,92831-3599,2021,Pleasent,Humid,Sunny,Low Rain,0
+120537,Fullerton,92831-3199,2021,Pleasent,Humid,Sunny,Low Rain,0
+481058,Fullerton,92833-3860,2021,Pleasent,Humid,Sunny,Low Rain,0
 179946,Fulton,65251-1299,2021,Moderate,Humid,OverCast,Moderate Rain,1
 179964,Fulton,65251-2388,2021,Moderate,Humid,OverCast,Moderate Rain,1
-134130,Gainesville,32611,2021,Moderate,Very Humid,OverCast,Moderate Rain,""
-137096,Gainesville,32606-6210,2021,Moderate,Very Humid,OverCast,Moderate Rain,""
+218238,Gaffney,29340-3799,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+134130,Gainesville,32611,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
+137096,Gainesville,32606-6210,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
 139199,Gainesville,30501-3668,2021,Moderate,Humid,OverCast,Moderate Rain,0
-406547,Gainesville,32607,2021,Moderate,Very Humid,OverCast,Moderate Rain,""
-484473,Gainesville,32611,2021,Moderate,Very Humid,OverCast,Moderate Rain,""
+406547,Gainesville,32607,2021,Moderate,Very Humid,Sunny,Heavy Rain,0
+484473,Gainesville,32611,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
 146427,Galesburg,61401,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+220206,Gallatin,37066-8460,2021,Moderate,Humid,OverCast,Moderate Rain,1
 186876,Galloway,08205-9441,2021,Pleasent,Humid,OverCast,Heavy Rain,1
+228653,Galveston,77555-0129,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 203535,Gambier,43022,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 188429,Garden City,11530-0701,2021,Pleasent,Humid,OverCast,Heavy Rain,1
+222628,Garland,75041-5595,2021,Moderate,Moderate,OverCast,Heavy Rain,0
+223463,Garland,75041,2021,Moderate,Moderate,OverCast,Heavy Rain,0
 151360,Gary,46408-1197,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 196167,Geneseo,14454-1465,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 191630,Geneva,14456,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 156745,Georgetown,40324-1696,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+228343,Georgetown,78626,2021,Moderate,Moderate,OverCast,Moderate Rain,0
 181543,Gering,69341,2021,Moderate,Dry,Sunny,Low Rain,1
 212674,Gettysburg,17325,2021,Moderate,Humid,OverCast,Heavy Rain,1
 184782,Glassboro,08028,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 459259,Glen Allen,23060,2021,Moderate,Humid,OverCast,Moderate Rain,1
 197221,Glen Cove,11542-1398,2021,Pleasent,Humid,OverCast,Heavy Rain,1
-105899,Glendale,85306-3216,2021,Very Hot,Dry,Sunny,Low Rain,""
-407009,Glendale,85306,2021,Very Hot,Dry,Sunny,Low Rain,""
-488031,Glendale,91210,2021,Moderate,Moderate,Sunny,Low Rain,""
+105899,Glendale,85306-3216,2021,Very Hot,Dry,Sunny,Low Rain,0
+407009,Glendale,85306,2021,Very Hot,Dry,Sunny,Low Rain,0
+488031,Glendale,91210,2021,Moderate,Moderate,Sunny,Low Rain,0
 211088,Glenside,19038-3295,2021,Pleasent,Humid,OverCast,Heavy Rain,1
+237385,Glenville,26351-1292,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 126711,Glenwood Springs,81601-0233,2021,Moderate,Dry,OverCast,Low Rain,1
 126775,Golden,80401,2021,Moderate,Dry,OverCast,Low Rain,1
-207351,Goodwell,73939-0430,2021,Moderate,Moderate,Sunny,Low Rain,0
+207351,Goodwell,73939-0430,2021,Moderate,Moderate,Sunny,Low Rain,1
 150668,Goshen,46526-4794,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
-132408,Graceville,32440,2021,Moderate,Very Humid,OverCast,Moderate Rain,""
-159009,Grambling,71245,2021,Moderate,Humid,OverCast,Moderate Rain,""
-200280,Grand Forks,58202-8193,2021,Pleasent,Humid,OverCast,Low Rain,0
+132408,Graceville,32440,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
+159009,Grambling,71245,2021,Moderate,Humid,OverCast,Moderate Rain,0
+200280,Grand Forks,58202-8193,2021,Pleasent,Humid,OverCast,Low Rain,1
 127556,Grand Junction,81501-3122,2021,Moderate,Dry,Sunny,Low Rain,1
 168786,Grand Rapids,49506-1801,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 169080,Grand Rapids,49546,2021,Pleasent,Humid,OverCast,Moderate Rain,1
@@ -670,24 +834,35 @@ unitId,city,zipCode,year,DoesPlaceHavehotSummer,IsthePlaceHumid,IsthePlaceSunny,
 202523,Granville,43023,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 157100,Grayson,41143-1199,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 167792,Great Barrington,01230-9702,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
-180258,Great Falls,59405-4996,2021,Moderate,Dry,OverCast,Low Rain,0
+180258,Great Falls,59405-4996,2021,Moderate,Dry,OverCast,Low Rain,1
 127741,Greeley,80639,2021,Moderate,Dry,Sunny,Low Rain,1
+238324,Green Bay,54311,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+240277,Green Bay,54311-7001,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 450571,Green Bay,54303-2349,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 150400,Greencastle,46135-1772,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 482228,Greendale,47025,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+221953,Greeneville,37743,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 197993,Greensboro,27401-3239,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 198598,Greensboro,27401-1875,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 198613,Greensboro,27410-4108,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 199102,Greensboro,27411,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 199148,Greensboro,27402-6170,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 215275,Greensburg,15601-5860,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+215947,Greensburg,15601,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 145372,Greenville,62246,2021,Moderate,Very Humid,OverCast,Moderate Rain,1
 198464,Greenville,27858-4353,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+216357,Greenville,16125-2181,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+217749,Greenville,29614-0001,2021,Moderate,Humid,OverCast,Moderate Rain,0
+218070,Greenville,29613-6162,2021,Moderate,Humid,OverCast,Moderate Rain,0
 458964,Greenville,29607,2021,Moderate,Humid,OverCast,Moderate Rain,0
+218229,Greenwood,29649-2099,2021,Moderate,Humid,Sunny,Moderate Rain,0
 153384,Grinnell,50112-1690,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 436827,Groton,06340-6097,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 212805,Grove City,16127-2104,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
-128391,Gunnison,81231,2021,Pleasent,Dry,Sunny,Low Rain,0
+242699,Guayama,00784,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+241216,Guaynabo,00970,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+128391,Gunnison,81231,2021,Pleasent,Dry,Sunny,Low Rain,1
+243601,Gurabo,00778-3030,2021,Pleasent,Very Humid,OverCast,Heavy Rain,0
 212832,Gwynedd Valley,19437-0901,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 183974,Hackettstown,07840,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 191621,Hamburg,14075-1597,2021,Pleasent,Humid,OverCast,Moderate Rain,1
@@ -695,69 +870,94 @@ unitId,city,zipCode,year,DoesPlaceHavehotSummer,IsthePlaceHumid,IsthePlaceSunny,
 130226,Hamden,06518,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 190099,Hamilton,13346-1398,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 204006,Hamilton,45011,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
-160612,Hammond,70402,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
+160612,Hammond,70402,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 490805,Hammond,46323,2021,Pleasent,Humid,OverCast,Moderate Rain,1
+232256,Hampden-Sydney,23943-0128,2021,Moderate,Humid,OverCast,Moderate Rain,1
+232265,Hampton,23668-0099,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 458113,Hampton,23666,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 172440,Hancock,49930-1832,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 177542,Hannibal,63401,2021,Moderate,Humid,OverCast,Moderate Rain,1
 150756,Hanover,47243,2021,Moderate,Very Humid,OverCast,Moderate Rain,1
 182670,Hanover,03755-3529,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 446640,Harrisburg,17101-2208,2021,Moderate,Humid,OverCast,Heavy Rain,1
+232043,Harrisonburg,22802-2462,2021,Moderate,Humid,OverCast,Heavy Rain,1
+232423,Harrisonburg,22807,2021,Moderate,Humid,OverCast,Moderate Rain,1
+220631,Harrogate,37752-9900,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 130590,Hartford,06106-3100,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 463056,Hartford,06103,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
+217907,Hartsville,29550,2021,Moderate,Humid,Sunny,Moderate Rain,0
 181127,Hastings,68901,2021,Moderate,Humid,Sunny,Moderate Rain,1
-443562,Hato Rey,00910,2021,Pleasent,Very Humid,OverCast,Moderate Rain,""
-176372,Hattiesburg,39406-0001,2021,Moderate,Very Humid,Sunny,Moderate Rain,""
-176479,Hattiesburg,39401,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
+243577,Hato Rey,00919,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+443562,Hato Rey,00910,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+176372,Hattiesburg,39406-0001,2021,Moderate,Very Humid,Sunny,Moderate Rain,0
+176479,Hattiesburg,39401,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 212911,Haverford,19041-1392,2021,Pleasent,Humid,OverCast,Heavy Rain,1
+217606,Haverhill,01835,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 155070,Haviland,67059-0288,2021,Moderate,Humid,Sunny,Moderate Rain,1
-180522,Havre,59501,2021,Moderate,Dry,OverCast,Low Rain,0
+180522,Havre,59501,2021,Moderate,Dry,OverCast,Low Rain,1
+225885,Hawkins,75765-1470,2021,Moderate,Moderate,OverCast,Heavy Rain,0
 155061,Hays,67601-4099,2021,Moderate,Humid,Sunny,Moderate Rain,1
-110574,Hayward,94542,2021,Pleasent,Moderate,Sunny,Low Rain,""
+110574,Hayward,94542,2021,Pleasent,Moderate,Sunny,Low Rain,0
 214768,Hazleton,18202-8025,2021,Pleasent,Humid,OverCast,Heavy Rain,1
-180106,Helena,59625-0002,2021,Moderate,Dry,OverCast,Low Rain,0
+180106,Helena,59625-0002,2021,Moderate,Dry,OverCast,Low Rain,1
 191649,Hempstead,11549,2021,Pleasent,Humid,OverCast,Heavy Rain,1
-441900,Henderson,89002,2021,Hot,Dry,Sunny,Desert,""
-445735,Henderson,89014,2021,Hot,Dry,Sunny,Desert,""
-459824,Henderson,89014,2021,Hot,Dry,Sunny,Desert,""
-482547,Henderson,89074,2021,Hot,Dry,Sunny,Desert,""
+220215,Henderson,38340-2399,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
+441900,Henderson,89002,2021,Hot,Dry,Sunny,Desert,0
+445735,Henderson,89014,2021,Hot,Dry,Sunny,Desert,0
+459824,Henderson,89014,2021,Hot,Dry,Sunny,Desert,0
+482547,Henderson,89074,2021,Hot,Dry,Sunny,Desert,0
 182980,Henniker,03242,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 155177,Hesston,67062-2093,2021,Moderate,Humid,Sunny,Moderate Rain,1
-408844,Hialeah,33012,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
+408844,Hialeah,33012,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 198835,Hickory,28601,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
-198695,High Point,27268,2021,Pleasent,Very Humid,OverCast,Heavy Rain,0
-481720,High Point,27265-8320,2021,Pleasent,Very Humid,OverCast,Heavy Rain,0
+198695,High Point,27268,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
+481720,High Point,27265-8320,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 157447,Highland Heights,41099,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 155973,Hillsboro,67063-1799,2021,Moderate,Humid,Sunny,Moderate Rain,1
 170286,Hillsdale,49242,2021,Pleasent,Humid,OverCast,Heavy Rain,1
-141565,Hilo,96720-4091,2021,Pleasent,Humid,OverCast,Moderate Rain,""
+141565,Hilo,96720-4091,2021,Pleasent,Humid,OverCast,Moderate Rain,0
 203128,Hiram,44234-0067,2021,Pleasent,Humid,OverCast,Moderate Rain,1
-188182,Hobbs,88240,2021,Moderate,Dry,Sunny,Low Rain,""
-134510,Hobe Sound,33455-1065,2021,Moderate,Very Humid,OverCast,Moderate Rain,""
+188182,Hobbs,88240,2021,Moderate,Dry,Sunny,Low Rain,0
+134510,Hobe Sound,33455-1065,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
 186867,Hoboken,07030-5991,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 170301,Holland,49422-9000,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 176318,Holly Springs,38635,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
-119270,Hollywood,90028,2021,Moderate,Moderate,Sunny,Low Rain,""
-436429,Hollywood,90028-7318,2021,Moderate,Moderate,Sunny,Low Rain,""
-449384,Hollywood,90038,2021,Moderate,Moderate,Sunny,Low Rain,""
-141486,Honolulu,96816-1578,2021,Pleasent,Humid,OverCast,Moderate Rain,""
-141574,Honolulu,96822-2217,2021,Pleasent,Humid,OverCast,Moderate Rain,""
-141644,Honolulu,96813,2021,Pleasent,Humid,OverCast,Moderate Rain,""
-457484,Honolulu,96819-2228,2021,Pleasent,Humid,OverCast,Moderate Rain,""
+119270,Hollywood,90028,2021,Moderate,Moderate,Sunny,Low Rain,0
+436429,Hollywood,90028-7318,2021,Moderate,Moderate,Sunny,Low Rain,0
+449384,Hollywood,90038,2021,Moderate,Moderate,Sunny,Low Rain,0
+141486,Honolulu,96816-1578,2021,Pleasent,Humid,OverCast,Moderate Rain,0
+141574,Honolulu,96822-2217,2021,Pleasent,Humid,OverCast,Moderate Rain,0
+141644,Honolulu,96813,2021,Pleasent,Humid,OverCast,Moderate Rain,0
+457484,Honolulu,96819-2228,2021,Pleasent,Humid,OverCast,Moderate Rain,0
 492069,Hot Springs,71913,2021,Moderate,Humid,OverCast,Moderate Rain,0
 171128,Houghton,49931-1295,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 191676,Houghton,14744,2021,Pleasent,Humid,OverCast,Moderate Rain,1
-416801,Houston,77030-4009,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-445133,Houston,77042,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-445203,Houston,77067,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-466930,Houston,77041,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-484756,Houston,77079,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
+222938,Houston,77027-9625,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+225399,Houston,77074-3298,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+225414,Houston,77058-1002,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+225432,Houston,77002-1014,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+225511,Houston,77204-2018,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+227757,Houston,77005-1827,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+227863,Houston,77006-4696,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+229063,Houston,77004,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+229300,Houston,77030,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+388520,Houston,77036-3211,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+416801,Houston,77030-4009,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+445133,Houston,77042,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+445203,Houston,77067,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+466930,Houston,77041,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+484756,Houston,77079,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 169327,Howell,48843,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 491765,Howell,07731-2444,2021,Pleasent,Humid,OverCast,Heavy Rain,1
+242121,Humacao,00791,2021,Pleasent,Very Humid,OverCast,Heavy Rain,0
+243179,Humacao,00792,2021,Pleasent,Very Humid,OverCast,Heavy Rain,0
+376224,Humacao,00791-4210,2021,Pleasent,Very Humid,OverCast,Heavy Rain,0
 213251,Huntingdon,16652-2196,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 150941,Huntington,46750,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+237525,Huntington,25755,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 100706,Huntsville,35899,2021,Pleasent,Very Humid,OverCast,Heavy Rain,0
 101912,Huntsville,35896,2021,Pleasent,Very Humid,OverCast,Heavy Rain,0
+227881,Huntsville,77340,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 449348,Huntsville,35811-1632,2021,Pleasent,Very Humid,OverCast,Heavy Rain,0
 190503,Hyde Park,12538-1499,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 213011,Immaculata,19345,2021,Pleasent,Humid,OverCast,Heavy Rain,1
@@ -772,50 +972,59 @@ unitId,city,zipCode,year,DoesPlaceHavehotSummer,IsthePlaceHumid,IsthePlaceSunny,
 457226,Indianapolis,46236-2622,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 475741,Indianapolis,46240,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 154350,Indianola,50125,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
-484862,Inglewood,90301,2021,Pleasent,Humid,Sunny,Low Rain,""
+484862,Inglewood,90301,2021,Pleasent,Humid,Sunny,Low Rain,0
+237899,Institute,25112-1000,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 153658,Iowa City,52242-1316,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
-110653,Irvine,92697,2021,Pleasent,Humid,OverCast,Low Rain,""
-112075,Irvine,92612-3203,2021,Pleasent,Humid,OverCast,Low Rain,""
-446561,Irvine,92612,2021,Pleasent,Humid,OverCast,Low Rain,""
-485546,Irvine,92614-5636,2021,Pleasent,Humid,OverCast,Low Rain,""
-490133,Irvine,92614,2021,Pleasent,Humid,OverCast,Low Rain,""
-482635,Irving,75063,2021,Moderate,Moderate,OverCast,Heavy Rain,""
+110653,Irvine,92697,2021,Pleasent,Humid,OverCast,Low Rain,0
+112075,Irvine,92612-3203,2021,Pleasent,Humid,OverCast,Low Rain,0
+262086,Irvine,92618,2021,Pleasent,Humid,OverCast,Low Rain,0
+446561,Irvine,92612,2021,Pleasent,Humid,OverCast,Low Rain,0
+485546,Irvine,92614-5636,2021,Pleasent,Humid,OverCast,Low Rain,0
+490133,Irvine,92614,2021,Pleasent,Humid,OverCast,Low Rain,0
+224323,Irving,75062-4736,2021,Moderate,Moderate,OverCast,Moderate Rain,0
+482635,Irving,75063,2021,Moderate,Moderate,OverCast,Heavy Rain,0
 482556,Iselin,08830,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 190415,Ithaca,14853,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 191968,Ithaca,14850-7002,2021,Pleasent,Humid,OverCast,Moderate Rain,1
-176044,Itta Bena,38941-1400,2021,Moderate,Very Humid,Sunny,Moderate Rain,""
+176044,Itta Bena,38941-1400,2021,Moderate,Very Humid,Sunny,Moderate Rain,0
 157030,Jackson,41339,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 170444,Jackson,49201-8399,2021,Pleasent,Humid,OverCast,Heavy Rain,1
-175421,Jackson,39202,2021,Moderate,Very Humid,Sunny,Moderate Rain,""
-175856,Jackson,39217,2021,Moderate,Very Humid,Sunny,Moderate Rain,""
-175980,Jackson,39210-0001,2021,Moderate,Very Humid,Sunny,Moderate Rain,""
-458955,Jackson,39201,2021,Moderate,Very Humid,Sunny,Moderate Rain,""
+175421,Jackson,39202,2021,Moderate,Very Humid,Sunny,Moderate Rain,0
+175856,Jackson,39217,2021,Moderate,Very Humid,Sunny,Moderate Rain,0
+175980,Jackson,39210-0001,2021,Moderate,Very Humid,Sunny,Moderate Rain,0
+220598,Jackson,38301-4598,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
+221971,Jackson,38305-3697,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
+458955,Jackson,39201,2021,Moderate,Very Humid,Sunny,Moderate Rain,0
 101480,Jacksonville,36265,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
-133526,Jacksonville,32209,2021,Moderate,Very Humid,OverCast,Moderate Rain,""
-133702,Jacksonville,32202,2021,Moderate,Very Humid,OverCast,Moderate Rain,""
-134945,Jacksonville,32211-3394,2021,Moderate,Very Humid,OverCast,Moderate Rain,""
-136172,Jacksonville,32224-7699,2021,Moderate,Very Humid,OverCast,Moderate Rain,""
-137953,Jacksonville,32221,2021,Moderate,Very Humid,OverCast,Moderate Rain,""
+133526,Jacksonville,32209,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
+133702,Jacksonville,32202,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
+134945,Jacksonville,32211-3394,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
+136172,Jacksonville,32224-7699,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
+137953,Jacksonville,32221,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
 145691,Jacksonville,62650-2299,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
-457129,Jacksonville,32256,2021,Moderate,Very Humid,OverCast,Moderate Rain,""
+223117,Jacksonville,75766-5407,2021,Moderate,Moderate,OverCast,Heavy Rain,0
+457129,Jacksonville,32256,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
 190691,Jamaica,11451,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 192004,Jamestown,14701-4756,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
-200156,Jamestown,58405,2021,Pleasent,Humid,OverCast,Low Rain,0
+200156,Jamestown,58405,2021,Pleasent,Humid,OverCast,Low Rain,1
 177940,Jefferson City,65101,2021,Moderate,Humid,OverCast,Moderate Rain,1
+219806,Jefferson City,37760,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 151962,Jeffersonville,47130,2021,Moderate,Very Humid,OverCast,Moderate Rain,1
 213774,Jenkintown,19046-3399,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 185129,Jersey City,07305,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 186432,Jersey City,07306-5997,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 421878,Jersey City,07306,2021,Pleasent,Humid,OverCast,Heavy Rain,1
+230913,Johnson,05656-9464,2021,Pleasent,Very Humid,OverCast,Low Rain,1
 194569,Johnson City,13790-2700,2021,Pleasent,Humid,OverCast,Moderate Rain,1
+220075,Johnson City,37614,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 215284,Johnstown,15904,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 148584,Joliet,60435-6188,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 106458,Jonesboro,72401,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
 178341,Joplin,64801-1595,2021,Moderate,Humid,Sunny,Moderate Rain,1
 178679,Joplin,64801,2021,Moderate,Humid,Sunny,Moderate Rain,1
-449135,Juana Diaz,00910,2021,Pleasent,Very Humid,OverCast,Moderate Rain,""
+449135,Juana Diaz,00910,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
 102632,Juneau,99801-8697,2021,Pleasent,Humid,OverCast,Moderate Rain,1
-141839,Kahului,96732-1617,2021,Pleasent,Humid,OverCast,Moderate Rain,""
+141839,Kahului,96732-1617,2021,Pleasent,Humid,OverCast,Moderate Rain,0
 170532,Kalamazoo,49006-3295,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 172699,Kalamazoo,49008-5200,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 480499,Kalona,52247-0846,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
@@ -829,54 +1038,75 @@ unitId,city,zipCode,year,DoesPlaceHavehotSummer,IsthePlaceHumid,IsthePlaceSunny,
 179043,Kansas City,64110-2561,2021,Moderate,Humid,OverCast,Moderate Rain,1
 457697,Kansas City,64106-3028,2021,Moderate,Humid,OverCast,Moderate Rain,1
 482538,Kansas City,64131,2021,Moderate,Humid,Sunny,Moderate Rain,1
-141981,Kapolei,96707-4507,2021,Pleasent,Humid,OverCast,Moderate Rain,""
-420042,Kapolei,96707-2082,2021,Pleasent,Humid,OverCast,Moderate Rain,""
+141981,Kapolei,96707-4507,2021,Pleasent,Humid,OverCast,Moderate Rain,0
+420042,Kapolei,96707-2082,2021,Pleasent,Humid,OverCast,Moderate Rain,0
 181215,Kearney,68849-1212,2021,Moderate,Humid,Sunny,Moderate Rain,1
 183062,Keene,03435-1506,2021,Pleasent,Humid,OverCast,Moderate Rain,1
+228468,Keene,76059,2021,Moderate,Moderate,Sunny,Moderate Rain,0
+235547,Kenmore,98028-4966,2021,Pleasent,Moderate,OverCast,Heavy Rain,0
 486840,Kennesaw,30144,2021,Moderate,Humid,OverCast,Heavy Rain,0
+238476,Kenosha,53140-1994,2021,Pleasent,Humid,OverCast,Moderate Rain,1
+240374,Kenosha,53144,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 459842,Kenosha,53140,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 491297,Kenosha,53141,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 203517,Kent,44242-0001,2021,Pleasent,Humid,OverCast,Moderate Rain,1
+228042,Kerrville,78028-5697,2021,Moderate,Humid,OverCast,Moderate Rain,0
 413617,Keshena,54135-1179,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 203544,Kettering,45429-1299,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 192192,Keuka Park,14478,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 197692,Kew Gardens,11418,2021,Pleasent,Humid,OverCast,Heavy Rain,1
-133960,Key West,33040,2021,Moderate,Very Humid,OverCast,Low Rain,""
+133960,Key West,33040,2021,Moderate,Very Humid,OverCast,Low Rain,0
 491710,Keyport,07735-5105,2021,Pleasent,Humid,OverCast,Heavy Rain,1
-483036,Killeen,76549,2021,Moderate,Moderate,Sunny,Moderate Rain,""
+237701,Keyser,26726,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+483036,Killeen,76549,2021,Moderate,Moderate,Sunny,Moderate Rain,0
 210809,King of Prussia,19406,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 197027,Kings Point,11024-1634,2021,Pleasent,Humid,OverCast,Heavy Rain,1
-487603,Kirkland,98033,2021,Pleasent,Moderate,OverCast,Heavy Rain,""
+217484,Kingston,02881,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
+228705,Kingsville,78363,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
+235699,Kirkland,98034-8506,2021,Pleasent,Moderate,OverCast,Heavy Rain,0
+236133,Kirkland,98083-0579,2021,Pleasent,Moderate,OverCast,Heavy Rain,0
+487603,Kirkland,98033,2021,Pleasent,Moderate,OverCast,Heavy Rain,0
 178615,Kirksville,63501-4221,2021,Moderate,Humid,OverCast,Moderate Rain,1
-132879,Kissimmee,34744,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-209506,Klamath Falls,97601-8801,2021,Moderate,Moderate,OverCast,Moderate Rain,""
-488068,Knoxville,37918-8230,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+132879,Kissimmee,34744,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+209506,Klamath Falls,97601-8801,2021,Moderate,Moderate,OverCast,Moderate Rain,0
+220473,Knoxville,37998,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+220552,Knoxville,37909-0000,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+221759,Knoxville,37996,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+488068,Knoxville,37918-8230,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 151333,Kokomo,46902-9003,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 213349,Kutztown,19530-0730,2021,Pleasent,Humid,OverCast,Heavy Rain,1
+219277,Kyle,57752-0490,2021,Moderate,Dry,Sunny,Low Rain,1
+240107,La Crosse,54601-8804,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+240329,La Crosse,54601-9959,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 208646,La Grande,97850,2021,Moderate,Dry,Sunny,Low Rain,1
-110680,La Jolla,92093,2021,Pleasent,Very Humid,OverCast,Low Rain,""
-119605,La Jolla,92037-1011,2021,Pleasent,Very Humid,OverCast,Low Rain,""
-444130,La Jolla,92037,2021,Pleasent,Very Humid,OverCast,Low Rain,""
-110097,La Mirada,90639-0001,2021,Pleasent,Humid,Sunny,Low Rain,""
+110680,La Jolla,92093,2021,Pleasent,Very Humid,OverCast,Low Rain,0
+119605,La Jolla,92037-1011,2021,Pleasent,Very Humid,OverCast,Low Rain,0
+444130,La Jolla,92037,2021,Pleasent,Very Humid,OverCast,Low Rain,0
+110097,La Mirada,90639-0001,2021,Pleasent,Humid,Sunny,Low Rain,0
 213303,La Plume,18440-0200,2021,Pleasent,Humid,OverCast,Heavy Rain,1
-117140,La Verne,91750-4401,2021,Moderate,Moderate,Sunny,Low Rain,""
-160658,Lafayette,70503,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-140234,Lagrange,30240-2999,2021,Moderate,Very Humid,OverCast,Moderate Rain,""
-117168,Laguna Beach,92651,2021,Pleasent,Humid,OverCast,Low Rain,""
-159717,Lake Charles,70605,2021,Moderate,Very Humid,OverCast,Moderate Rain,""
-135160,Lake City,32025-2007,2021,Moderate,Very Humid,OverCast,Moderate Rain,""
+117140,La Verne,91750-4401,2021,Moderate,Moderate,Sunny,Low Rain,0
+236452,Lacey,98503-7500,2021,Pleasent,Humid,OverCast,Heavy Rain,0
+160658,Lafayette,70503,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+140234,Lagrange,30240-2999,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
+117168,Laguna Beach,92651,2021,Pleasent,Humid,OverCast,Low Rain,0
+230047,Laie,96762-1294,2021,Pleasent,Humid,OverCast,Moderate Rain,0
+159717,Lake Charles,70605,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
+135160,Lake City,32025-2007,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
 146481,Lake Forest,60045-2399,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
-138275,Lake Wales,33859-8797,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-136358,Lake Worth,33461-4796,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-134079,Lakeland,33801-5698,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-137564,Lakeland,33801-6034,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-482936,Lakeland,33805-8531,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
+223506,Lake Jackson,77566,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+138275,Lake Wales,33859-8797,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+136358,Lake Worth,33461-4796,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+134079,Lakeland,33801-5698,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+137564,Lakeland,33801-6034,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+482936,Lakeland,33805-8531,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 126669,Lakewood,80226,2021,Moderate,Dry,OverCast,Low Rain,1
 127909,Lakewood,80228-1255,2021,Moderate,Dry,OverCast,Low Rain,1
 127945,Lakewood,80214,2021,Moderate,Dry,OverCast,Low Rain,1
 183804,Lakewood,08701-2754,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 184773,Lakewood,08701-2697,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 206394,Lakewood,44107,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+234951,Lakewood,98499-4004,2021,Pleasent,Humid,OverCast,Heavy Rain,0
+235237,Lakewood,98498-1999,2021,Pleasent,Humid,OverCast,Heavy Rain,0
 449658,Lakewood,08701,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 451398,Lakewood,08701,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 454689,Lakewood,80227,2021,Moderate,Dry,OverCast,Low Rain,1
@@ -889,25 +1119,28 @@ unitId,city,zipCode,year,DoesPlaceHavehotSummer,IsthePlaceHumid,IsthePlaceSunny,
 491640,Lakewood,08701-1239,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 493716,Lakewood,08701-5502,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 153366,Lamoni,50140,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
-109350,Lancaster,93536-5426,2021,Moderate,Dry,Sunny,Low Rain,""
+109350,Lancaster,93536-5426,2021,Moderate,Dry,Sunny,Low Rain,0
 212577,Lancaster,17604-3003,2021,Moderate,Humid,OverCast,Heavy Rain,1
 213400,Lancaster,17601-5036,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 215053,Lancaster,17608-0059,2021,Moderate,Humid,OverCast,Heavy Rain,1
 442356,Lancaster,17601,2021,Pleasent,Humid,OverCast,Heavy Rain,1
-442930,Lancaster,93534,2021,Moderate,Dry,Sunny,Low Rain,""
+442930,Lancaster,93534,2021,Moderate,Dry,Sunny,Low Rain,0
 215114,Langhorne,19047-2990,2021,Pleasent,Humid,OverCast,Heavy Rain,1
-207209,Langston,73050,2021,Moderate,Moderate,OverCast,Moderate Rain,0
+207209,Langston,73050,2021,Moderate,Moderate,OverCast,Moderate Rain,1
 170091,Lansing,48917-1299,2021,Pleasent,Humid,OverCast,Moderate Rain,1
-188030,Las Cruces,88003-8001,2021,Hot,Dry,Sunny,Low Rain,""
-182005,Las Vegas,89146-1164,2021,Hot,Dry,Sunny,Desert,""
-182281,Las Vegas,89154,2021,Hot,Dry,Sunny,Desert,""
+240727,Laramie,82071,2021,Moderate,Dry,Sunny,Low Rain,1
+226152,Laredo,78041-1900,2021,Hot,Moderate,OverCast,Low Rain,0
+188030,Las Cruces,88003-8001,2021,Hot,Dry,Sunny,Low Rain,0
+182005,Las Vegas,89146-1164,2021,Hot,Dry,Sunny,Desert,0
+182281,Las Vegas,89154,2021,Hot,Dry,Sunny,Desert,0
 187897,Las Vegas,87701,2021,Moderate,Dry,OverCast,Low Rain,1
-484710,Las Vegas,89135,2021,Hot,Dry,Sunny,Desert,""
-486938,Las Vegas,89144,2021,Hot,Dry,Sunny,Desert,""
-487375,Las Vegas,89102-4512,2021,Hot,Dry,Sunny,Desert,""
-457402,Lauderhill,33313,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
+484710,Las Vegas,89135,2021,Hot,Dry,Sunny,Desert,0
+486938,Las Vegas,89144,2021,Hot,Dry,Sunny,Desert,0
+487375,Las Vegas,89102-4512,2021,Hot,Dry,Sunny,Desert,0
+215798,Latrobe,15650-2690,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+457402,Lauderhill,33313,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 162061,Laurel,20708,2021,Moderate,Humid,OverCast,Heavy Rain,1
-176336,Laurel,39440-9989,2021,Moderate,Very Humid,Sunny,Moderate Rain,""
+176336,Laurel,39440-9989,2021,Moderate,Very Humid,Sunny,Moderate Rain,0
 199698,Laurinburg,28352,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 155140,Lawrence,66046-4800,2021,Moderate,Very Humid,Sunny,Moderate Rain,1
 155317,Lawrence,66045,2021,Moderate,Very Humid,Sunny,Moderate Rain,1
@@ -919,7 +1152,9 @@ unitId,city,zipCode,year,DoesPlaceHavehotSummer,IsthePlaceHumid,IsthePlaceSunny,
 447421,Layton,84041,2021,Moderate,Dry,OverCast,Low Rain,1
 155812,Leavenworth,66048-5082,2021,Moderate,Humid,OverCast,Moderate Rain,1
 147013,Lebanon,62254-1291,2021,Moderate,Very Humid,OverCast,Moderate Rain,1
-135188,Leesburg,34788-8751,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
+219949,Lebanon,37087,2021,Moderate,Very Humid,OverCast,Moderate Rain,1
+135188,Leesburg,34788-8751,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+384254,Leesburg,34748,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 214643,Lehman,18627-0217,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 214759,Lemont Furnace,15456-1025,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 442569,Lenexa,66219,2021,Moderate,Very Humid,Sunny,Moderate Rain,1
@@ -928,6 +1163,8 @@ unitId,city,zipCode,year,DoesPlaceHavehotSummer,IsthePlaceHumid,IsthePlaceSunny,
 160977,Lewiston,04240,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 157085,Lexington,40506-0032,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 157818,Lexington,40508-1797,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+234085,Lexington,24450-0304,2021,Moderate,Humid,OverCast,Moderate Rain,1
+234207,Lexington,24450-2116,2021,Moderate,Humid,OverCast,Moderate Rain,1
 179955,Liberty,64068-1896,2021,Moderate,Humid,Sunny,Moderate Rain,1
 204486,Lima,45805,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 204671,Lima,45804,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
@@ -953,31 +1190,35 @@ unitId,city,zipCode,year,DoesPlaceHavehotSummer,IsthePlaceHumid,IsthePlaceSunny,
 172200,Livonia,48152-2696,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 213613,Lock Haven,17745-2390,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 184612,Lodi,07644,2021,Pleasent,Humid,OverCast,Heavy Rain,1
-117636,Loma Linda,92350,2021,Moderate,Dry,Sunny,Low Rain,""
+230728,Logan,84322-1400,2021,Moderate,Dry,OverCast,Low Rain,1
+117636,Loma Linda,92350,2021,Moderate,Dry,Sunny,Low Rain,0
 147590,Lombard,60148-4583,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
-110583,Long Beach,90840-0115,2021,Pleasent,Humid,Sunny,Low Rain,""
+110583,Long Beach,90840-0115,2021,Pleasent,Humid,Sunny,Low Rain,0
 194736,Long Beach,11561,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 164632,Longmeadow,01106,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+226231,Longview,75602,2021,Moderate,Humid,OverCast,Moderate Rain,0
 139393,Lookout Mountain,30750-4164,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
-459727,Los Alamitos,90720,2021,Pleasent,Humid,Sunny,Low Rain,""
-114716,Los Altos Hills,94022,2021,Pleasent,Humid,Sunny,Moderate Rain,""
-110592,Los Angeles,90032-8506,2021,Moderate,Humid,Sunny,Low Rain,""
-110662,Los Angeles,90095-1405,2021,Moderate,Moderate,Sunny,Low Rain,""
-111966,Los Angeles,90059,2021,Pleasent,Humid,Sunny,Low Rain,""
-114354,Los Angeles,90015-1421,2021,Moderate,Humid,Sunny,Low Rain,""
-116846,Los Angeles,90077-1519,2021,Moderate,Moderate,Sunny,Low Rain,""
-117946,Los Angeles,90045-2659,2021,Pleasent,Humid,Sunny,Low Rain,""
-119173,Los Angeles,90049-1599,2021,Moderate,Moderate,Sunny,Low Rain,""
-120254,Los Angeles,90041-3392,2021,Moderate,Moderate,Sunny,Low Rain,""
-120403,Los Angeles,90045-3505,2021,Pleasent,Humid,Sunny,Low Rain,""
-120838,Los Angeles,90010-2263,2021,Moderate,Moderate,Sunny,Low Rain,""
-123952,Los Angeles,90013-1822,2021,Moderate,Humid,Sunny,Low Rain,""
-123961,Los Angeles,90089,2021,Moderate,Humid,Sunny,Low Rain,""
-126076,Los Angeles,90046-7660,2021,Moderate,Moderate,Sunny,Low Rain,""
-455664,Los Angeles,90017,2021,Pleasent,Humid,Sunny,Low Rain,""
-457299,Los Angeles,90010,2021,Moderate,Moderate,Sunny,Low Rain,""
-486965,Los Angeles,90017-2019,2021,Moderate,Humid,Sunny,Low Rain,""
-490081,Los Angeles,90006-5860,2021,Moderate,Humid,Sunny,Low Rain,""
+215743,Loretto,15940,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+459727,Los Alamitos,90720,2021,Pleasent,Humid,Sunny,Low Rain,0
+114716,Los Altos Hills,94022,2021,Pleasent,Humid,Sunny,Moderate Rain,0
+110592,Los Angeles,90032-8506,2021,Moderate,Humid,Sunny,Low Rain,0
+110662,Los Angeles,90095-1405,2021,Moderate,Moderate,Sunny,Low Rain,0
+111966,Los Angeles,90059,2021,Pleasent,Humid,Sunny,Low Rain,0
+114354,Los Angeles,90015-1421,2021,Moderate,Humid,Sunny,Low Rain,0
+116846,Los Angeles,90077-1519,2021,Moderate,Moderate,Sunny,Low Rain,0
+117946,Los Angeles,90045-2659,2021,Pleasent,Humid,Sunny,Low Rain,0
+119173,Los Angeles,90049-1599,2021,Moderate,Moderate,Sunny,Low Rain,0
+120254,Los Angeles,90041-3392,2021,Moderate,Moderate,Sunny,Low Rain,0
+120403,Los Angeles,90045-3505,2021,Pleasent,Humid,Sunny,Low Rain,0
+120838,Los Angeles,90010-2263,2021,Moderate,Moderate,Sunny,Low Rain,0
+123952,Los Angeles,90013-1822,2021,Moderate,Humid,Sunny,Low Rain,0
+123961,Los Angeles,90089,2021,Moderate,Humid,Sunny,Low Rain,0
+126076,Los Angeles,90046-7660,2021,Moderate,Moderate,Sunny,Low Rain,0
+401223,Los Angeles,90020,2021,Moderate,Humid,Sunny,Low Rain,0
+455664,Los Angeles,90017,2021,Pleasent,Humid,Sunny,Low Rain,0
+457299,Los Angeles,90010,2021,Moderate,Moderate,Sunny,Low Rain,0
+486965,Los Angeles,90017-2019,2021,Moderate,Humid,Sunny,Low Rain,0
+490081,Los Angeles,90006-5860,2021,Moderate,Humid,Sunny,Low Rain,0
 195474,Loudonville,12211-1462,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 156286,Louisville,40205-0671,2021,Moderate,Very Humid,OverCast,Moderate Rain,1
 156471,Louisville,40207,2021,Moderate,Very Humid,OverCast,Moderate Rain,1
@@ -987,89 +1228,133 @@ unitId,city,zipCode,year,DoesPlaceHavehotSummer,IsthePlaceHumid,IsthePlaceSunny,
 157793,Louisville,40205-3013,2021,Moderate,Very Humid,OverCast,Moderate Rain,1
 461759,Louisville,40203-3322,2021,Moderate,Very Humid,OverCast,Moderate Rain,1
 166513,Lowell,01854-5104,2021,Pleasent,Humid,OverCast,Heavy Rain,1
+226383,Lubbock,79407-2099,2021,Moderate,Moderate,OverCast,Low Rain,1
+229115,Lubbock,79409-5005,2021,Moderate,Moderate,OverCast,Low Rain,1
+229337,Lubbock,79430,2021,Moderate,Moderate,OverCast,Low Rain,1
+232557,Lynchburg,24515,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
+232609,Lynchburg,24501-3113,2021,Moderate,Humid,OverCast,Moderate Rain,1
+232618,Lynchburg,24501,2021,Moderate,Humid,OverCast,Moderate Rain,1
+233301,Lynchburg,24503-1555,2021,Moderate,Humid,OverCast,Moderate Rain,1
+234137,Lynchburg,24501,2021,Moderate,Humid,OverCast,Moderate Rain,1
+235103,Lynnwood,98036-5912,2021,Pleasent,Humid,OverCast,Moderate Rain,0
 149772,Macomb,61455,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 140447,Macon,31207,2021,Moderate,Humid,OverCast,Heavy Rain,0
 141325,Macon,31210-4462,2021,Moderate,Humid,OverCast,Heavy Rain,0
 482158,Macon,31206,2021,Moderate,Humid,OverCast,Heavy Rain,0
-136145,Madison,32340,2021,Moderate,Very Humid,OverCast,Moderate Rain,""
+136145,Madison,32340,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
 184348,Madison,07940,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 184694,Madison,07940,2021,Pleasent,Humid,OverCast,Heavy Rain,1
-107983,Magnolia,71753,2021,Moderate,Humid,OverCast,Moderate Rain,""
+219082,Madison,57042-1799,2021,Pleasent,Humid,OverCast,Low Rain,1
+238263,Madison,53704-2599,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+238661,Madison,53711-1997,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+240392,Madison,53718,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+240444,Madison,53706-1380,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+107983,Magnolia,71753,2021,Moderate,Humid,OverCast,Moderate Rain,0
 186201,Mahwah,07430-1680,2021,Pleasent,Humid,OverCast,Heavy Rain,1
-121150,Malibu,90263,2021,Pleasent,Humid,Sunny,Low Rain,""
-440651,Manati,00674-0000,2021,Pleasent,Very Humid,OverCast,Moderate Rain,""
-469416,Manati,00674-0000,2021,Pleasent,Very Humid,OverCast,Moderate Rain,""
+376695,Majuro,96960,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
+121150,Malibu,90263,2021,Pleasent,Humid,Sunny,Low Rain,0
+241128,Manati,00674-1082,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+440651,Manati,00674-0000,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+469416,Manati,00674-0000,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
 183026,Manchester,03106-1045,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 183071,Manchester,03101-1113,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 183239,Manchester,03102-1310,2021,Pleasent,Humid,OverCast,Moderate Rain,1
-439862,Mangilao,96913,2021,Pleasent,Very Humid,OverCast,Heavy Rain,""
+240754,Mangilao,96923,2021,Pleasent,Very Humid,OverCast,Heavy Rain,0
+439862,Mangilao,96913,2021,Pleasent,Very Humid,OverCast,Heavy Rain,0
 155399,Manhattan,66506,2021,Moderate,Humid,Sunny,Moderate Rain,1
 155496,Manhattan,66502-4801,2021,Moderate,Humid,Sunny,Moderate Rain,1
 173142,Mankato,56001,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 173920,Mankato,56001,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 204680,Mansfield,44906,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 213783,Mansfield,16933,2021,Pleasent,Humid,OverCast,Moderate Rain,1
-133021,Marianna,32446-2053,2021,Moderate,Very Humid,OverCast,Moderate Rain,""
+133021,Marianna,32446-2053,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
 140252,Marietta,30060,2021,Moderate,Humid,OverCast,Heavy Rain,0
 203845,Marietta,45750,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 151801,Marion,46953-4974,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 204699,Marion,43302-5695,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 488679,Marion,46953,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 171456,Marquette,49855-5301,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
-198899,Mars Hill,28754,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+198899,Mars Hill,28754,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 175078,Marshall,56258-5468,2021,Pleasent,Humid,OverCast,Low Rain,1
 178369,Marshall,65340,2021,Moderate,Humid,OverCast,Moderate Rain,1
+224527,Marshall,75670-1498,2021,Moderate,Humid,OverCast,Moderate Rain,0
+229887,Marshall,75670,2021,Moderate,Humid,OverCast,Moderate Rain,0
+221768,Martin,38238,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
 178624,Maryville,64468-6001,2021,Moderate,Humid,OverCast,Moderate Rain,1
-484835,Mayaguez,00680-0000,2021,Pleasent,Very Humid,OverCast,Moderate Rain,""
-200226,Mayville,58257-1299,2021,Pleasent,Humid,OverCast,Low Rain,0
-409315,McAllen,78502-9701,2021,Moderate,Humid,OverCast,Low Rain,""
+220710,Maryville,37804-5907,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+241191,Mayaguez,00680-0000,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+243197,Mayaguez,00681,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+243586,Mayaguez,00680-1713,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+484835,Mayaguez,00680-0000,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+200226,Mayville,58257-1299,2021,Pleasent,Humid,OverCast,Low Rain,1
+409315,McAllen,78502-9701,2021,Moderate,Humid,Sunny,Heavy Rain,0
 214786,McKeesport,15132-7644,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
-209065,McMinnville,97128-6894,2021,Moderate,Moderate,OverCast,Moderate Rain,""
-437325,McMinnville,97128-6894,2021,Moderate,Moderate,OverCast,Moderate Rain,""
+219718,McKenzie,38201,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+209065,McMinnville,97128-6894,2021,Moderate,Moderate,OverCast,Moderate Rain,0
+437325,McMinnville,97128-6894,2021,Moderate,Moderate,OverCast,Moderate Rain,0
 154855,McPherson,67460-5740,2021,Moderate,Humid,Sunny,Moderate Rain,1
 155511,McPherson,67460-1402,2021,Moderate,Humid,Sunny,Moderate Rain,1
 210669,Meadville,16335-3902,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 213996,Mechanicsburg,17055,2021,Moderate,Humid,OverCast,Heavy Rain,1
 168148,Medford,02155-5555,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 214731,Media,19063-5522,2021,Pleasent,Humid,OverCast,Heavy Rain,1
-133881,Melbourne,32901-6975,2021,Moderate,Very Humid,Sunny,Moderate Rain,""
-480569,Melbourne,32901-6975,2021,Moderate,Very Humid,Sunny,Moderate Rain,""
+133881,Melbourne,32901-6975,2021,Moderate,Very Humid,Sunny,Moderate Rain,0
+480569,Melbourne,32901-6975,2021,Moderate,Very Humid,Sunny,Moderate Rain,0
 212771,Melrose Park,19027-3010,2021,Pleasent,Humid,OverCast,Heavy Rain,1
+219639,Memphis,38104,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
+219833,Memphis,38104,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
+220604,Memphis,38126-6595,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
+220862,Memphis,38152,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
+221351,Memphis,38112-1690,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
 412599,Memphis,38132,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
 443766,Memphis,38118,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
 449764,Memphis,38103,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
 481225,Memphis,38118-3151,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
 487010,Memphis,38163,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
-445188,Merced,95343-5603,2021,Hot,Dry,Sunny,Low Rain,""
+240417,Menomonie,54751,2021,Pleasent,Humid,OverCast,Moderate Rain,1
+238616,Mequon,53097-2402,2021,Pleasent,Humid,OverCast,Moderate Rain,1
+445188,Merced,95343-5603,2021,Hot,Dry,Sunny,Low Rain,0
+242662,Mercedita,00715-1602,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
 183275,Merrimack,03054,2021,Pleasent,Humid,OverCast,Moderate Rain,1
-420574,Mesa,85212,2021,Very Hot,Dry,Sunny,Low Rain,""
-433536,Metairie,70002,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-132471,Miami,33161-6695,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-132842,Miami,33172-2209,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-133951,Miami,33199,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-134811,Miami,33132-1418,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-135610,Miami,33186,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-135717,Miami,33132-2204,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-137272,Miami,33165-3244,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-434539,Miami,33156,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-439969,Miami,33176,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-456481,Miami,33166,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-485768,Miami,33132,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-137777,Miami Beach,33140-3854,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-133979,Miami Gardens,33054-6199,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-137476,Miami Gardens,33054-6459,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-451103,Miami Springs,33166,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
+420574,Mesa,85212,2021,Very Hot,Dry,Sunny,Low Rain,0
+433536,Metairie,70002,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+132471,Miami,33161-6695,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+132842,Miami,33172-2209,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+133951,Miami,33199,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+134811,Miami,33132-1418,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+135610,Miami,33186,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+135717,Miami,33132-2204,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+137272,Miami,33165-3244,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+434539,Miami,33156,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+439969,Miami,33176,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+456481,Miami,33166,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+485768,Miami,33132,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+137777,Miami Beach,33140-3854,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+363712,Miami Beach,33139,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+133979,Miami Gardens,33054-6199,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+137476,Miami Gardens,33054-6459,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+451103,Miami Springs,33166,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+230959,Middlebury,05753,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 130697,Middletown,06459,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 204015,Middletown,45042,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 214713,Middletown,17057-4846,2021,Moderate,Humid,OverCast,Heavy Rain,1
 171492,Midland,48640-2398,2021,Pleasent,Humid,OverCast,Moderate Rain,1
+226806,Midland,79705,2021,Moderate,Dry,Sunny,Low Rain,0
 157377,Midway,40347-1120,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 139861,Milledgeville,31061,2021,Moderate,Humid,OverCast,Moderate Rain,0
 485111,Milledgeville,31061,2021,Moderate,Humid,OverCast,Moderate Rain,0
 214041,Millersville,17551-0302,2021,Moderate,Humid,OverCast,Heavy Rain,1
-486901,Milligan,37682,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+486901,Milligan,37682,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 165264,Milton,02186,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 165529,Milton,02186-2395,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
+238193,Milwaukee,53234-3922,2021,Pleasent,Humid,OverCast,Moderate Rain,1
+238430,Milwaukee,53217-3985,2021,Pleasent,Humid,OverCast,Moderate Rain,1
+239105,Milwaukee,53233,2021,Pleasent,Humid,OverCast,Moderate Rain,1
+239309,Milwaukee,53202-6003,2021,Pleasent,Humid,OverCast,Moderate Rain,1
+239318,Milwaukee,53202-3109,2021,Pleasent,Humid,OverCast,Moderate Rain,1
+239390,Milwaukee,53222-4597,2021,Pleasent,Humid,OverCast,Moderate Rain,1
+240338,Milwaukee,53226-4699,2021,Pleasent,Humid,OverCast,Moderate Rain,1
+240453,Milwaukee,53211,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 491288,Milwaukee,53201,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 125231,Minneapolis,55401,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 173045,Minneapolis,55454,2021,Pleasent,Humid,OverCast,Moderate Rain,1
@@ -1079,26 +1364,29 @@ unitId,city,zipCode,year,DoesPlaceHavehotSummer,IsthePlaceHumid,IsthePlaceSunny,
 175227,Minneapolis,55403-1192,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 413413,Minneapolis,55402-3389,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 454616,Minneapolis,55401,2021,Pleasent,Humid,OverCast,Moderate Rain,1
-200253,Minot,58707,2021,Pleasent,Humid,OverCast,Low Rain,0
-482459,Miramar,33027,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-486354,Miramar,33025-3943,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-199306,Misenheimer,28109-0960,2021,Pleasent,Very Humid,OverCast,Heavy Rain,0
+200253,Minot,58707,2021,Pleasent,Humid,OverCast,Low Rain,1
+482459,Miramar,33027,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+486354,Miramar,33025-3943,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+199306,Misenheimer,28109-0960,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 150145,Mishawaka,46545-5591,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
-176080,Mississippi State,39762,2021,Moderate,Very Humid,Sunny,Moderate Rain,""
+219374,Mission,57555-0105,2021,Pleasent,Humid,OverCast,Low Rain,1
+176080,Mississippi State,39762,2021,Moderate,Very Humid,Sunny,Moderate Rain,0
 180489,Missoula,59812,2021,Moderate,Dry,OverCast,Low Rain,1
+219091,Mitchell,57301-4398,2021,Pleasent,Humid,OverCast,Low Rain,1
 176910,Moberly,65270-1997,2021,Moderate,Humid,OverCast,Moderate Rain,1
-101693,Mobile,36613-2842,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-102094,Mobile,36688-0002,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-102234,Mobile,36608-1791,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-118976,Modesto,95350-5800,2021,Hot,Dry,Sunny,Low Rain,""
+101693,Mobile,36613-2842,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+102094,Mobile,36688-0002,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+102234,Mobile,36608-1791,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+118976,Modesto,95350-5800,2021,Hot,Dry,Sunny,Low Rain,0
 214698,Monaca,15061-2764,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 147341,Monmouth,61462-1998,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
-210429,Monmouth,97361-1394,2021,Moderate,Moderate,OverCast,Moderate Rain,""
-159993,Monroe,71209-0000,2021,Moderate,Humid,OverCast,Moderate Rain,""
+210429,Monmouth,97361-1394,2021,Moderate,Moderate,OverCast,Moderate Rain,0
+159993,Monroe,71209-0000,2021,Moderate,Humid,OverCast,Moderate Rain,0
 446604,Monroe,10950,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 488101,Monroe,10950,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 194693,Monsey,10952-3033,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 197735,Monsey,10952,2021,Pleasent,Humid,OverCast,Heavy Rain,1
+245777,Monsey,10952,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 420325,Monsey,10952,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 481410,Monsey,10952-2127,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 486196,Monsey,10952-4023,2021,Pleasent,Humid,OverCast,Heavy Rain,1
@@ -1106,23 +1394,24 @@ unitId,city,zipCode,year,DoesPlaceHavehotSummer,IsthePlaceHumid,IsthePlaceSunny,
 490328,Monsey,10952-2710,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 214795,Mont Alto,17237-9700,2021,Moderate,Humid,OverCast,Heavy Rain,1
 185590,Montclair,07043-1624,2021,Pleasent,Humid,OverCast,Heavy Rain,1
-119058,Monterey,93940,2021,Pleasent,Humid,Sunny,Low Rain,""
+119058,Monterey,93940,2021,Pleasent,Humid,Sunny,Low Rain,0
 101709,Montevallo,35115-6000,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
-100690,Montgomery,36117-3553,2021,Moderate,Very Humid,Sunny,Moderate Rain,""
-100724,Montgomery,36104-0271,2021,Moderate,Very Humid,Sunny,Moderate Rain,""
-100830,Montgomery,36117-3596,2021,Moderate,Very Humid,Sunny,Moderate Rain,""
-101116,Montgomery,36116,2021,Moderate,Very Humid,Sunny,Moderate Rain,""
-101189,Montgomery,36109-3390,2021,Moderate,Very Humid,Sunny,Moderate Rain,""
-101435,Montgomery,36106-2148,2021,Moderate,Very Humid,Sunny,Moderate Rain,""
+100690,Montgomery,36117-3553,2021,Moderate,Very Humid,Sunny,Moderate Rain,0
+100724,Montgomery,36104-0271,2021,Moderate,Very Humid,Sunny,Moderate Rain,0
+100830,Montgomery,36117-3596,2021,Moderate,Very Humid,Sunny,Moderate Rain,0
+101116,Montgomery,36116,2021,Moderate,Very Humid,Sunny,Moderate Rain,0
+101189,Montgomery,36109-3390,2021,Moderate,Very Humid,Sunny,Moderate Rain,0
+101435,Montgomery,36106-2148,2021,Moderate,Very Humid,Sunny,Moderate Rain,0
 106485,Monticello,71656,2021,Moderate,Humid,OverCast,Moderate Rain,0
 199032,Montreat,28757-1267,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 215655,Moon Township,15108-1189,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
-207157,Moore,73160,2021,Moderate,Humid,Sunny,Moderate Rain,0
-173300,Moorhead,56562,2021,Pleasent,Humid,OverCast,Low Rain,0
-174358,Moorhead,56563,2021,Pleasent,Humid,OverCast,Low Rain,0
-123554,Moraga,94575,2021,Pleasent,Very Humid,OverCast,Moderate Rain,""
+207157,Moore,73160,2021,Moderate,Humid,Sunny,Moderate Rain,1
+173300,Moorhead,56562,2021,Pleasent,Humid,OverCast,Low Rain,1
+174358,Moorhead,56563,2021,Pleasent,Humid,OverCast,Low Rain,1
+123554,Moraga,94575,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
 157386,Morehead,40351,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
-174251,Morris,56267,2021,Pleasent,Humid,OverCast,Low Rain,0
+238032,Morgantown,26506,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+174251,Morris,56267,2021,Pleasent,Humid,OverCast,Low Rain,1
 186186,Morristown,07960-3600,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 186618,Morristown,07960,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 196051,Morrisville,13408,2021,Pleasent,Humid,OverCast,Moderate Rain,1
@@ -1131,23 +1420,37 @@ unitId,city,zipCode,year,DoesPlaceHavehotSummer,IsthePlaceHumid,IsthePlaceSunny,
 142285,Moscow,83844-2282,2021,Moderate,Dry,OverCast,Low Rain,1
 440396,Moscow,83843-1525,2021,Moderate,Dry,OverCast,Low Rain,1
 139144,Mount Berry,30149,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
+237136,Mount Hope,25880-9557,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 197674,Mount Kisco,10549,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 199069,Mount Olive,28365-0919,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 153621,Mount Pleasant,52641,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 169248,Mount Pleasant,48859,2021,Pleasent,Humid,OverCast,Moderate Rain,1
-139205,Mount Vernon,30445,2021,Moderate,Very Humid,OverCast,Moderate Rain,""
+139205,Mount Vernon,30445,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
 153162,Mount Vernon,52314-1098,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 204194,Mount Vernon,43050-9500,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+236638,Mount Vernon,98273,2021,Pleasent,Humid,OverCast,Moderate Rain,0
 150136,Muncie,47306,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 198303,Murfreesboro,27855,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
-444255,Murfreesboro,37128,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
+220978,Murfreesboro,37132,2021,Moderate,Very Humid,OverCast,Moderate Rain,1
+444255,Murfreesboro,37128,2021,Moderate,Very Humid,OverCast,Moderate Rain,1
 157401,Murray,42071-3318,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
-206817,Muskogee,74403-1597,2021,Moderate,Humid,OverCast,Moderate Rain,0
+230366,Murray,84123-6965,2021,Moderate,Dry,Sunny,Low Rain,1
+206817,Muskogee,74403-1597,2021,Moderate,Humid,OverCast,Moderate Rain,1
+228431,Nacogdoches,75961,2021,Moderate,Humid,OverCast,Moderate Rain,0
 142461,Nampa,83686-5897,2021,Moderate,Dry,Sunny,Low Rain,1
 147660,Naperville,60540,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 183211,Nashua,03060,2021,Pleasent,Humid,OverCast,Heavy Rain,1
-482617,Nashville,37211,2021,Moderate,Humid,OverCast,Moderate Rain,0
-160038,Natchitoches,71497-0002,2021,Moderate,Humid,OverCast,Moderate Rain,""
+219505,Nashville,37207-9980,2021,Moderate,Humid,OverCast,Moderate Rain,1
+219709,Nashville,37212-3757,2021,Moderate,Humid,OverCast,Moderate Rain,1
+219976,Nashville,37204-3951,2021,Moderate,Humid,OverCast,Moderate Rain,1
+220002,Nashville,37214,2021,Moderate,Humid,OverCast,Moderate Rain,1
+220181,Nashville,37208-4501,2021,Moderate,Humid,OverCast,Moderate Rain,1
+221838,Nashville,37209-1561,2021,Moderate,Humid,OverCast,Moderate Rain,1
+221892,Nashville,37210,2021,Moderate,Humid,OverCast,Moderate Rain,1
+221999,Nashville,37240,2021,Moderate,Humid,OverCast,Moderate Rain,1
+368452,Nashville,37115,2021,Moderate,Humid,OverCast,Moderate Rain,1
+482617,Nashville,37211,2021,Moderate,Humid,OverCast,Moderate Rain,1
+160038,Natchitoches,71497-0002,2021,Moderate,Humid,OverCast,Moderate Rain,0
 441982,Needham,02492-1200,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 177117,Nevada,64772,2021,Moderate,Humid,Sunny,Moderate Rain,1
 151379,New Albany,47150,2021,Moderate,Very Humid,OverCast,Moderate Rain,1
@@ -1164,21 +1467,22 @@ unitId,city,zipCode,year,DoesPlaceHavehotSummer,IsthePlaceHumid,IsthePlaceSunny,
 129774,New London,06320,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 130624,New London,06320-4195,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 182634,New London,03257-7835,2021,Pleasent,Humid,OverCast,Moderate Rain,1
-158802,New Orleans,70122,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-159373,New Orleans,70112-2223,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-159656,New Orleans,70118-6143,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-159939,New Orleans,70148,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-159948,New Orleans,70126,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-160065,New Orleans,70131-7399,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-160630,New Orleans,70126,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-160755,New Orleans,70118-5698,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-160904,New Orleans,70125-1098,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
+158802,New Orleans,70122,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+159373,New Orleans,70112-2223,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+159656,New Orleans,70118-6143,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+159939,New Orleans,70148,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+159948,New Orleans,70126,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+160065,New Orleans,70131-7399,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+160630,New Orleans,70126,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+160755,New Orleans,70118-5698,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+160904,New Orleans,70125-1098,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 196176,New Paltz,12561-2443,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 203483,New Philadelphia,44663-9403,2021,Pleasent,Humid,OverCast,Moderate Rain,1
-136400,New Port Richey,34654-5199,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
+136400,New Port Richey,34654-5199,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 191931,New Rochelle,10801-1890,2021,Pleasent,Humid,OverCast,Heavy Rain,1
-200086,New Town,58763,2021,Pleasent,Humid,OverCast,Low Rain,0
+200086,New Town,58763,2021,Pleasent,Humid,OverCast,Low Rain,1
 173452,New Ulm,56073-3965,2021,Pleasent,Humid,OverCast,Moderate Rain,1
+216807,New Wilmington,16172,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 490504,New Windsor,12553-8006,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 188854,New York,10023,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 189097,New York,10027-6598,2021,Pleasent,Humid,OverCast,Heavy Rain,1
@@ -1218,50 +1522,61 @@ unitId,city,zipCode,year,DoesPlaceHavehotSummer,IsthePlaceHumid,IsthePlaceSunny,
 186399,Newark,07102,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 204705,Newark,43055,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 440794,Newark,07102,2021,Pleasent,Humid,OverCast,Heavy Rain,1
-208822,Newberg,97132,2021,Moderate,Moderate,OverCast,Heavy Rain,""
+208822,Newberg,97132,2021,Moderate,Moderate,OverCast,Heavy Rain,0
+218414,Newberry,29108,2021,Moderate,Humid,Sunny,Moderate Rain,0
 193353,Newburgh,12550,2021,Pleasent,Humid,OverCast,Heavy Rain,1
-116226,Newport Beach,92660,2021,Pleasent,Humid,OverCast,Low Rain,""
+217536,Newport,02840-4192,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
+116226,Newport Beach,92660,2021,Pleasent,Humid,OverCast,Low Rain,0
+231712,Newport News,23606-3072,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 166391,Newton,02466,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 193973,Niagara University,14109,2021,Pleasent,Humid,OverCast,Moderate Rain,1
-136233,Niceville,32578-1295,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
+136233,Niceville,32578-1295,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+232937,Norfolk,23504-8000,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+232982,Norfolk,23529,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 100654,Normal,35762,2021,Pleasent,Very Humid,OverCast,Heavy Rain,0
 145813,Normal,61790-1000,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
-207500,Norman,73019-3072,2021,Moderate,Humid,Sunny,Moderate Rain,0
+207500,Norman,73019-3072,2021,Moderate,Humid,Sunny,Moderate Rain,1
 167288,North Adams,01247-4100,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 166850,North Andover,01845,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 486956,North Brunswick,08902,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 206437,North Canton,44720-3396,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 145558,North Chicago,60064-3095,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 167987,North Dartmouth,02747-2300,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
-443331,North Hollywood,91606,2021,Moderate,Moderate,Sunny,Low Rain,""
+443331,North Hollywood,91606,2021,Moderate,Moderate,Sunny,Low Rain,0
 151777,North Manchester,46962,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 154749,North Newton,67117-1716,2021,Moderate,Humid,Sunny,Moderate Rain,1
 167835,Northampton,01063,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 173258,Northfield,55057,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 174844,Northfield,55057-1098,2021,Pleasent,Humid,OverCast,Moderate Rain,1
-110608,Northridge,91330,2021,Moderate,Dry,Sunny,Low Rain,""
+230995,Northfield,05663-1035,2021,Pleasent,Very Humid,OverCast,Low Rain,1
+110608,Northridge,91330,2021,Moderate,Dry,Sunny,Low Rain,0
 168281,Norton,02766-2322,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 150774,Notre Dame,46556-0308,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 152080,Notre Dame,46556,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 152390,Notre Dame,46556,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+247773,Oak Park,48237,2021,Pleasent,Moderate,OverCast,Moderate Rain,1
 215415,Oakdale,15071,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
-115728,Oakland,94619-1699,2021,Pleasent,Very Humid,OverCast,Moderate Rain,""
-117557,Oakland,94612-2801,2021,Pleasent,Very Humid,OverCast,Moderate Rain,""
-118888,Oakland,94613,2021,Pleasent,Very Humid,OverCast,Moderate Rain,""
-122296,Oakland,94609,2021,Pleasent,Very Humid,OverCast,Moderate Rain,""
+115728,Oakland,94619-1699,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+117557,Oakland,94612-2801,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+118888,Oakland,94613,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+122296,Oakland,94609,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
 152099,Oakland City,47660-1099,2021,Moderate,Very Humid,OverCast,Moderate Rain,1
 204501,Oberlin,44074,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
-132851,Ocala,34474,2021,Moderate,Very Humid,OverCast,Moderate Rain,""
-138309,Ocala,34474-6226,2021,Moderate,Very Humid,OverCast,Moderate Rain,""
-118912,Oceanside,92056-3899,2021,Pleasent,Very Humid,OverCast,Low Rain,""
-207342,Oklahoma City,73117-1221,2021,Moderate,Moderate,OverCast,Moderate Rain,0
-207397,Oklahoma City,73107-6195,2021,Moderate,Moderate,OverCast,Moderate Rain,0
-207458,Oklahoma City,73106-1402,2021,Moderate,Moderate,OverCast,Moderate Rain,0
-207564,Okmulgee,74447-3901,2021,Moderate,Humid,OverCast,Moderate Rain,0
+132851,Ocala,34474,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
+138309,Ocala,34474-6226,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
+118912,Oceanside,92056-3899,2021,Pleasent,Very Humid,OverCast,Low Rain,0
+229018,Odessa,79762-0001,2021,Moderate,Dry,Sunny,Low Rain,0
+230782,Ogden,84408-1031,2021,Moderate,Dry,OverCast,Low Rain,1
+207342,Oklahoma City,73117-1221,2021,Moderate,Moderate,OverCast,Moderate Rain,1
+207397,Oklahoma City,73107-6195,2021,Moderate,Moderate,OverCast,Moderate Rain,1
+207458,Oklahoma City,73106-1402,2021,Moderate,Moderate,OverCast,Moderate Rain,1
+245953,Oklahoma City,73170-9797,2021,Moderate,Moderate,OverCast,Moderate Rain,1
+207564,Okmulgee,74447-3901,2021,Moderate,Humid,OverCast,Moderate Rain,1
 155520,Olathe,66062-1899,2021,Moderate,Very Humid,Sunny,Moderate Rain,1
 194091,Old Westbury,11568-8000,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 196237,Old Westbury,11568-0210,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 171599,Olivet,49076,2021,Pleasent,Humid,OverCast,Moderate Rain,1
+235167,Olympia,98505-0001,2021,Pleasent,Humid,OverCast,Heavy Rain,0
 180832,Omaha,68131-2739,2021,Moderate,Humid,OverCast,Moderate Rain,1
 181002,Omaha,68178,2021,Moderate,Humid,OverCast,Moderate Rain,1
 181297,Omaha,68114-2852,2021,Moderate,Humid,OverCast,Moderate Rain,1
@@ -1270,22 +1585,26 @@ unitId,city,zipCode,year,DoesPlaceHavehotSummer,IsthePlaceHumid,IsthePlaceSunny,
 181604,Omaha,68106,2021,Moderate,Humid,OverCast,Moderate Rain,1
 191533,Oneonta,13820-4020,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 196185,Oneonta,13820-4015,2021,Pleasent,Humid,OverCast,Moderate Rain,1
-432384,Ontario,91764,2021,Moderate,Moderate,Sunny,Low Rain,""
-458229,Ontario,91761,2021,Moderate,Moderate,Sunny,Low Rain,""
-482431,Ontario,91764,2021,Moderate,Moderate,Sunny,Low Rain,""
-484631,Ontario,91761,2021,Moderate,Moderate,Sunny,Low Rain,""
-111948,Orange,92866,2021,Pleasent,Humid,Sunny,Low Rain,""
-450933,Orange Beach,36561-9000,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
+432384,Ontario,91764,2021,Moderate,Moderate,Sunny,Low Rain,0
+458229,Ontario,91761,2021,Moderate,Moderate,Sunny,Low Rain,0
+482431,Ontario,91764,2021,Moderate,Moderate,Sunny,Low Rain,0
+484631,Ontario,91761,2021,Moderate,Moderate,Sunny,Low Rain,0
+111948,Orange,92866,2021,Pleasent,Humid,Sunny,Low Rain,0
+450933,Orange Beach,36561-9000,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 154101,Orange City,51041,2021,Pleasent,Humid,OverCast,Low Rain,1
 190761,Orangeburg,10962-1210,2021,Pleasent,Humid,OverCast,Heavy Rain,1
+217873,Orangeburg,29115-4498,2021,Moderate,Humid,Sunny,Moderate Rain,0
+218733,Orangeburg,29117-0001,2021,Moderate,Humid,Sunny,Moderate Rain,0
 480091,Orchard Park,14127,2021,Pleasent,Humid,OverCast,Moderate Rain,1
+230737,Orem,84058-5999,2021,Moderate,Dry,Sunny,Low Rain,1
 448239,Orem,84058,2021,Moderate,Dry,Sunny,Low Rain,1
-132903,Orlando,32816,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-133872,Orlando,32803,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-134112,Orlando,32826,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-138187,Orlando,32835,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-456490,Orlando,32825,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
+132903,Orlando,32816,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+133872,Orlando,32803,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+134112,Orlando,32826,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+138187,Orlando,32835,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+456490,Orlando,32825,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 161253,Orono,04469,2021,Pleasent,Very Humid,OverCast,Low Rain,1
+240365,Oshkosh,54901,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 154590,Oskaloosa,52577,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 192165,Ossining,10562,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 196194,Oswego,13126,2021,Pleasent,Humid,OverCast,Moderate Rain,1
@@ -1299,37 +1618,41 @@ unitId,city,zipCode,year,DoesPlaceHavehotSummer,IsthePlaceHumid,IsthePlaceSunny,
 168847,Owosso,48867,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 204024,Oxford,45056,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 180647,Pablo,59855,2021,Moderate,Dry,OverCast,Low Rain,1
+240736,Pago Pago,96799-2609,2021,Pleasent,Very Humid,OverCast,Heavy Rain,0
 203580,Painesville,44077-3389,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
-137281,Palatka,32177,2021,Moderate,Very Humid,OverCast,Moderate Rain,""
+137281,Palatka,32177,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
 102580,Palmer,99645,2021,Pleasent,Humid,OverCast,Moderate Rain,1
-110778,Palo Alto,94303,2021,Pleasent,Humid,Sunny,Moderate Rain,""
-120698,Palo Alto,94304-1337,2021,Pleasent,Humid,Sunny,Moderate Rain,""
+110778,Palo Alto,94303,2021,Pleasent,Humid,Sunny,Moderate Rain,0
+120698,Palo Alto,94304-1337,2021,Pleasent,Humid,Sunny,Moderate Rain,0
 149505,Palos Heights,60463-0929,2021,Pleasent,Humid,OverCast,Moderate Rain,1
-134343,Panama City,32401,2021,Moderate,Very Humid,OverCast,Moderate Rain,""
+134343,Panama City,32401,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
 181376,Papillion,68046,2021,Moderate,Humid,OverCast,Moderate Rain,1
 106810,Paragould,72450,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
+237686,Parkersburg,26104,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 178721,Parkville,64152-3795,2021,Moderate,Humid,OverCast,Moderate Rain,1
 201469,Parma,44130-3151,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
-109651,Pasadena,91103,2021,Moderate,Moderate,Sunny,Low Rain,""
-110404,Pasadena,91125,2021,Moderate,Moderate,Sunny,Low Rain,""
-120768,Pasadena,91103,2021,Moderate,Moderate,Sunny,Low Rain,""
-446385,Pasadena,91105,2021,Moderate,Moderate,Sunny,Low Rain,""
-455770,Pasadena,91101,2021,Moderate,Moderate,Sunny,Low Rain,""
+109651,Pasadena,91103,2021,Moderate,Moderate,Sunny,Low Rain,0
+110404,Pasadena,91125,2021,Moderate,Moderate,Sunny,Low Rain,0
+120768,Pasadena,91103,2021,Moderate,Moderate,Sunny,Low Rain,0
+446385,Pasadena,91105,2021,Moderate,Moderate,Sunny,Low Rain,0
+455770,Pasadena,91101,2021,Moderate,Moderate,Sunny,Low Rain,0
+234979,Pasco,99301,2021,Moderate,Dry,OverCast,Low Rain,1
 195562,Patchogue,11772,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 194392,Paul Smiths,12970-0265,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 164492,Paxton,01612-1198,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 194189,Peekskill,10566,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 153108,Pella,50219,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 199281,Pembroke,28372-1510,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
-461281,Pembroke Pines,33026,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-461643,Penngrove,94951,2021,Pleasent,Humid,Sunny,Moderate Rain,""
-136473,Pensacola,32504-8998,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-138354,Pensacola,32514-5750,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
+461281,Pembroke Pines,33026,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+461643,Penngrove,94951,2021,Pleasent,Humid,Sunny,Moderate Rain,0
+136473,Pensacola,32504-8998,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+138354,Pensacola,32514-5750,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 143358,Peoria,61625-0001,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 147129,Peoria,61615,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 148575,Peoria,61603-3783,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 206349,Pepper Pike,44124,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 181534,Peru,68421-0010,2021,Moderate,Humid,Sunny,Moderate Rain,1
+234155,Petersburg,23806,2021,Moderate,Humid,OverCast,Moderate Rain,1
 211583,Philadelphia,19118-2693,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 211893,Philadelphia,19103,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 212054,Philadelphia,19104,2021,Pleasent,Humid,OverCast,Heavy Rain,1
@@ -1343,17 +1666,23 @@ unitId,city,zipCode,year,DoesPlaceHavehotSummer,IsthePlaceHumid,IsthePlaceSunny,
 215105,Philadelphia,19102-4901,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 215132,Philadelphia,19104-4495,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 215637,Philadelphia,19104,2021,Pleasent,Humid,OverCast,Heavy Rain,1
-104717,Phoenix,85017,2021,Very Hot,Dry,Sunny,Low Rain,""
-105367,Phoenix,85021,2021,Very Hot,Dry,Sunny,Low Rain,""
-448886,Phoenix,85004,2021,Very Hot,Dry,Sunny,Low Rain,""
-454245,Phoenix,85021,2021,Very Hot,Dry,Sunny,Low Rain,""
-461023,Phoenix,85014-1561,2021,Very Hot,Dry,Sunny,Low Rain,""
-482422,Phoenix,85021,2021,Very Hot,Dry,Sunny,Low Rain,""
-484613,Phoenix,85040,2021,Very Hot,Dry,Sunny,Low Rain,""
+215770,Philadelphia,19131-1395,2021,Pleasent,Humid,OverCast,Heavy Rain,1
+216311,Philadelphia,19131,2021,Pleasent,Humid,OverCast,Heavy Rain,1
+216339,Philadelphia,19122-6096,2021,Pleasent,Humid,OverCast,Heavy Rain,1
+216366,Philadelphia,19107,2021,Pleasent,Humid,OverCast,Heavy Rain,1
+237118,Philippi,26416-2035,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+104717,Phoenix,85017,2021,Very Hot,Dry,Sunny,Low Rain,0
+105367,Phoenix,85021,2021,Very Hot,Dry,Sunny,Low Rain,0
+448886,Phoenix,85004,2021,Very Hot,Dry,Sunny,Low Rain,0
+454245,Phoenix,85021,2021,Very Hot,Dry,Sunny,Low Rain,0
+461023,Phoenix,85014-1561,2021,Very Hot,Dry,Sunny,Low Rain,0
+482422,Phoenix,85021,2021,Very Hot,Dry,Sunny,Low Rain,0
+484613,Phoenix,85040,2021,Very Hot,Dry,Sunny,Low Rain,0
+216542,Phoenixville,19460-2373,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 157535,Pikeville,41501,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 106412,Pine Bluff,71601,2021,Moderate,Humid,OverCast,Moderate Rain,0
-156417,Pineville,40977-9752,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
-159568,Pineville,71359,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
+156417,Pineville,40977-9752,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+159568,Pineville,71359,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 156189,Pippa Passes,41844,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 155681,Pittsburg,66762,2021,Moderate,Humid,Sunny,Moderate Rain,1
 211431,Pittsburgh,15213-3165,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
@@ -1363,50 +1692,71 @@ unitId,city,zipCode,year,DoesPlaceHavehotSummer,IsthePlaceHumid,IsthePlaceSunny,
 213358,Pittsburgh,15237-5898,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 215293,Pittsburgh,15260,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 215442,Pittsburgh,15222-1984,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+230889,Plainfield,05667-9432,2021,Pleasent,Very Humid,OverCast,Low Rain,1
+229780,Plainview,79072,2021,Moderate,Moderate,OverCast,Low Rain,1
+240462,Platteville,53818-3099,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 196246,Plattsburgh,12901-2681,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 183080,Plymouth,03264-1595,2021,Pleasent,Humid,OverCast,Moderate Rain,1
+238980,Plymouth,53073,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 142276,Pocatello,83209,2021,Moderate,Dry,OverCast,Low Rain,1
 178697,Point Lookout,65726-0017,2021,Moderate,Humid,Sunny,Moderate Rain,1
-110529,Pomona,91768,2021,Moderate,Moderate,Sunny,Low Rain,""
-187648,Portales,88130,2021,Moderate,Moderate,OverCast,Low Rain,0
+110529,Pomona,91768,2021,Moderate,Moderate,Sunny,Low Rain,0
+241410,Ponce,00717-9997,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+243212,Ponce,00716-9996,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+363907,Ponce,00716-7733,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+236258,Port Angeles,98362,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+187648,Portales,88130,2021,Moderate,Moderate,OverCast,Low Rain,1
 161509,Portland,04101-3494,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 161554,Portland,04103,2021,Pleasent,Humid,OverCast,Moderate Rain,1
-209056,Portland,97219-7899,2021,Moderate,Moderate,OverCast,Heavy Rain,""
-209287,Portland,97220,2021,Moderate,Moderate,OverCast,Heavy Rain,""
-209296,Portland,97201-4848,2021,Moderate,Moderate,OverCast,Heavy Rain,""
-209490,Portland,97239-3098,2021,Moderate,Moderate,OverCast,Heavy Rain,""
-209603,Portland,97209-3404,2021,Moderate,Moderate,OverCast,Heavy Rain,""
-209807,Portland,97201,2021,Moderate,Moderate,OverCast,Heavy Rain,""
-209825,Portland,97203-5798,2021,Moderate,Moderate,OverCast,Heavy Rain,""
-209922,Portland,97202-8199,2021,Moderate,Moderate,OverCast,Heavy Rain,""
-210304,Portland,97215,2021,Moderate,Moderate,OverCast,Heavy Rain,""
-210438,Portland,97213,2021,Moderate,Moderate,OverCast,Heavy Rain,""
-437316,Portland,97210-2932,2021,Moderate,Moderate,OverCast,Heavy Rain,""
-443599,Portland,97239,2021,Moderate,Moderate,OverCast,Heavy Rain,""
-480198,Portland,97266,2021,Moderate,Moderate,OverCast,Heavy Rain,""
+209056,Portland,97219-7899,2021,Moderate,Moderate,OverCast,Heavy Rain,0
+209287,Portland,97220,2021,Moderate,Moderate,OverCast,Heavy Rain,0
+209296,Portland,97201-4848,2021,Moderate,Moderate,OverCast,Heavy Rain,0
+209490,Portland,97239-3098,2021,Moderate,Moderate,OverCast,Heavy Rain,0
+209603,Portland,97209-3404,2021,Moderate,Moderate,OverCast,Heavy Rain,0
+209807,Portland,97201,2021,Moderate,Moderate,OverCast,Heavy Rain,0
+209825,Portland,97203-5798,2021,Moderate,Moderate,OverCast,Heavy Rain,0
+209922,Portland,97202-8199,2021,Moderate,Moderate,OverCast,Heavy Rain,0
+210304,Portland,97215,2021,Moderate,Moderate,OverCast,Heavy Rain,0
+210438,Portland,97213,2021,Moderate,Moderate,OverCast,Heavy Rain,0
+437316,Portland,97210-2932,2021,Moderate,Moderate,OverCast,Heavy Rain,0
+443599,Portland,97239,2021,Moderate,Moderate,OverCast,Heavy Rain,0
+480198,Portland,97266,2021,Moderate,Moderate,OverCast,Heavy Rain,0
 205443,Portsmouth,45662,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 190044,Potsdam,13699,2021,Pleasent,Humid,OverCast,Low Rain,1
 196200,Potsdam,13676-2294,2021,Pleasent,Humid,OverCast,Low Rain,1
 192819,Poughkeepsie,12601,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 197133,Poughkeepsie,12604,2021,Pleasent,Humid,OverCast,Heavy Rain,1
-104586,Prescott,86301-3720,2021,Very Hot,Dry,Sunny,Low Rain,""
-105589,Prescott,86301,2021,Very Hot,Dry,Sunny,Low Rain,""
+227526,Prairie View,77446,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+104586,Prescott,86301-3720,2021,Very Hot,Dry,Sunny,Low Rain,0
+105589,Prescott,86301,2021,Very Hot,Dry,Sunny,Low Rain,0
 161341,Presque Isle,04769-2888,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 163338,Princess Anne,21853-1299,2021,Moderate,Humid,OverCast,Heavy Rain,1
 186131,Princeton,08544-0070,2021,Pleasent,Humid,OverCast,Heavy Rain,1
+217156,Providence,02912,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
+217235,Providence,02903-3703,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
+217402,Providence,02918-0001,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
+217420,Providence,02908,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
+217493,Providence,02903-2784,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 460349,Providence,02903,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 493822,Providence,02905-2340,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
-127884,Pueblo,81004-1499,2021,Moderate,Dry,Sunny,Low Rain,0
-128106,Pueblo,81001-4901,2021,Moderate,Dry,Sunny,Low Rain,0
+230038,Provo,84602,2021,Moderate,Dry,Sunny,Low Rain,1
+380438,Provo,84601,2021,Moderate,Dry,Sunny,Low Rain,1
+127884,Pueblo,81004-1499,2021,Moderate,Dry,Sunny,Low Rain,1
+128106,Pueblo,81001-4901,2021,Moderate,Dry,Sunny,Low Rain,1
+220701,Pulaski,38478-2799,2021,Pleasent,Very Humid,OverCast,Heavy Rain,0
+236939,Pullman,99164-5910,2021,Moderate,Dry,OverCast,Low Rain,1
 451927,Purcellville,20132,2021,Moderate,Humid,OverCast,Heavy Rain,1
 192749,Purchase,10577,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 196219,Purchase,10577-1400,2021,Pleasent,Humid,OverCast,Heavy Rain,1
+247649,Putney,05346,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 190664,Queens,11367,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 195809,Queens,11439,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 114433,Quincy,95971-9124,2021,Moderate,Dry,Sunny,Low Rain,1
 143297,Quincy,62305-7005,2021,Moderate,Humid,OverCast,Moderate Rain,1
 148131,Quincy,62301-2699,2021,Moderate,Humid,OverCast,Moderate Rain,1
 165644,Quincy,02170-2999,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
+383020,Racine,53403-9747,2021,Pleasent,Humid,OverCast,Moderate Rain,1
+233277,Radford,24142,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 211352,Radnor,19087-3698,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 198950,Raleigh,27607-5298,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 199193,Raleigh,27695-7001,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
@@ -1415,32 +1765,44 @@ unitId,city,zipCode,year,DoesPlaceHavehotSummer,IsthePlaceHumid,IsthePlaceSunny,
 199643,Raleigh,27601,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 421832,Raleigh,27614-7076,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 184959,Ramsey,07446-2551,2021,Pleasent,Humid,OverCast,Heavy Rain,1
-489353,Rancho Cordova,95670,2021,Moderate,Dry,Sunny,Low Rain,""
-118541,Rancho Palos Verdes,90275-6299,2021,Pleasent,Humid,Sunny,Moderate Rain,""
+489353,Rancho Cordova,95670,2021,Moderate,Dry,Sunny,Low Rain,0
+118541,Rancho Palos Verdes,90275-6299,2021,Pleasent,Humid,Sunny,Moderate Rain,0
+231165,Randolph,05061,2021,Pleasent,Humid,OverCast,Moderate Rain,1
+219204,Rapid City,57701-2823,2021,Moderate,Dry,Sunny,Low Rain,1
+219347,Rapid City,57701-3995,2021,Moderate,Dry,Sunny,Low Rain,1
 210571,Reading,19612-5234,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 210775,Reading,19607-1799,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 214704,Reading,19610-1016,2021,Pleasent,Humid,OverCast,Heavy Rain,1
-123280,Redding,96002,2021,Moderate,Dry,Sunny,Low Rain,""
-123299,Redding,96003,2021,Moderate,Dry,Sunny,Low Rain,""
-123457,Redding,96003-8606,2021,Moderate,Dry,Sunny,Low Rain,""
-121691,Redlands,92373-0999,2021,Moderate,Dry,Sunny,Low Rain,""
-443410,Redmond,98052,2021,Pleasent,Moderate,OverCast,Heavy Rain,""
+123280,Redding,96002,2021,Moderate,Dry,Sunny,Low Rain,0
+123299,Redding,96003,2021,Moderate,Dry,Sunny,Low Rain,0
+123457,Redding,96003-8606,2021,Moderate,Dry,Sunny,Low Rain,0
+121691,Redlands,92373-0999,2021,Moderate,Dry,Sunny,Low Rain,0
+443410,Redmond,98052,2021,Pleasent,Moderate,OverCast,Heavy Rain,0
 182290,Reno,89557,2021,Moderate,Dry,Sunny,Low Rain,1
 182500,Reno,89512-3999,2021,Moderate,Dry,Sunny,Low Rain,1
-142522,Rexburg,83460-1690,2021,Moderate,Dry,OverCast,Low Rain,0
+236382,Renton,98056-4123,2021,Pleasent,Moderate,OverCast,Heavy Rain,0
+142522,Rexburg,83460-1690,2021,Moderate,Dry,OverCast,Low Rain,1
+228787,Richardson,75080-3021,2021,Moderate,Moderate,OverCast,Heavy Rain,0
 150455,Richmond,47374-4095,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 151388,Richmond,47374-1289,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 156620,Richmond,40475-3102,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+233356,Richmond,23227-1149,2021,Moderate,Humid,OverCast,Moderate Rain,1
+234030,Richmond,23284-2512,2021,Moderate,Humid,OverCast,Moderate Rain,1
+234164,Richmond,23220,2021,Moderate,Humid,OverCast,Moderate Rain,1
 182795,Rindge,03461-0060,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 205203,Rio Grande,45674,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
-441690,Rio Piedras,00928,2021,Pleasent,Very Humid,OverCast,Moderate Rain,""
+441690,Rio Piedras,00928,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+239628,Ripon,54971-0248,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+240471,River Falls,54022-5001,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 144351,River Forest,60305-1499,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 148496,River Forest,60305,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 192703,Riverdale,10471-4098,2021,Pleasent,Humid,OverCast,Heavy Rain,1
-110361,Riverside,92504-3297,2021,Moderate,Moderate,Sunny,Low Rain,""
-110671,Riverside,92521,2021,Moderate,Moderate,Sunny,Low Rain,""
-117627,Riverside,92505-8247,2021,Moderate,Moderate,Sunny,Low Rain,""
-480204,Riverside,92507,2021,Moderate,Moderate,Sunny,Low Rain,""
+110361,Riverside,92504-3297,2021,Moderate,Moderate,Sunny,Low Rain,0
+110671,Riverside,92521,2021,Moderate,Moderate,Sunny,Low Rain,0
+117627,Riverside,92505-8247,2021,Moderate,Moderate,Sunny,Low Rain,0
+480204,Riverside,92507,2021,Moderate,Moderate,Sunny,Low Rain,0
+231837,Roanoke,24013,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
+232308,Roanoke,24020,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 173957,Rochester,55905,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 189592,Rochester,14612,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 193584,Rochester,14618-3790,2021,Pleasent,Humid,OverCast,Moderate Rain,1
@@ -1452,37 +1814,41 @@ unitId,city,zipCode,year,DoesPlaceHavehotSummer,IsthePlaceHumid,IsthePlaceSunny,
 456959,Rochester,55904,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 170967,Rochester Hills,48307,2021,Pleasent,Moderate,OverCast,Moderate Rain,1
 171571,Rochester Hills,48309-4401,2021,Pleasent,Moderate,OverCast,Moderate Rain,1
+217891,Rock Hill,29730,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+218964,Rock Hill,29733,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 143084,Rock Island,61201-2296,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 146755,Rock Island,61201-5317,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 148405,Rockford,61108-2311,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 149028,Rockford,61114,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 448673,Rockford,61108-2513,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
-122728,Rocklin,95765-3707,2021,Moderate,Dry,Sunny,Low Rain,""
+122728,Rocklin,95765-3707,2021,Moderate,Dry,Sunny,Low Rain,0
 490753,Rockport,04856-5952,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 193292,Rockville Centre,11571-5002,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 199209,Rocky Mount,27804,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
-123572,Rohnert Park,94928-3609,2021,Pleasent,Humid,Sunny,Moderate Rain,""
+123572,Rohnert Park,94928-3609,2021,Pleasent,Humid,Sunny,Moderate Rain,0
 178411,Rolla,65409,2021,Moderate,Humid,OverCast,Moderate Rain,1
 139700,Rome,30161-3897,2021,Moderate,Humid,OverCast,Heavy Rain,0
 140988,Rome,30165,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
 146612,Romeoville,60446-2200,2021,Pleasent,Humid,OverCast,Heavy Rain,1
-449870,Rosemead,91770,2021,Moderate,Moderate,Sunny,Low Rain,""
-480073,Round Rock,78681-2300,2021,Moderate,Moderate,OverCast,Moderate Rain,""
-133465,Royal Palm Beach,33411,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
+449870,Rosemead,91770,2021,Moderate,Moderate,Sunny,Low Rain,0
+215691,Rosemont,19010-1699,2021,Pleasent,Humid,OverCast,Heavy Rain,1
+480073,Round Rock,78681-2300,2021,Moderate,Moderate,OverCast,Moderate Rain,0
+133465,Royal Palm Beach,33411,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 106467,Russellville,72801-2222,2021,Moderate,Humid,OverCast,Moderate Rain,0
-159647,Ruston,71272,2021,Moderate,Humid,OverCast,Moderate Rain,""
-110617,Sacramento,95819-2694,2021,Moderate,Dry,Sunny,Low Rain,""
-124487,Sacramento,95841,2021,Moderate,Dry,Sunny,Low Rain,""
-133711,Saint Augustine,32084,2021,Moderate,Very Humid,OverCast,Moderate Rain,""
-209241,Saint Benedict,97373,2021,Moderate,Moderate,OverCast,Moderate Rain,""
+159647,Ruston,71272,2021,Moderate,Humid,OverCast,Moderate Rain,0
+110617,Sacramento,95819-2694,2021,Moderate,Dry,Sunny,Low Rain,0
+124487,Sacramento,95841,2021,Moderate,Dry,Sunny,Low Rain,0
+133711,Saint Augustine,32084,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
+209241,Saint Benedict,97373,2021,Moderate,Moderate,OverCast,Moderate Rain,0
 195164,Saint Bonaventure,14778-9800,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 174862,Saint Bonifacius,55375-9001,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 177968,Saint Charles,63301-1695,2021,Moderate,Very Humid,OverCast,Moderate Rain,1
 174783,Saint Cloud,56301-4498,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 212133,Saint Davids,19087-3696,2021,Pleasent,Humid,OverCast,Heavy Rain,1
+230171,Saint George,84770-3876,2021,Hot,Dry,Sunny,Desert,0
 174747,Saint Joseph,56374,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 178387,Saint Joseph,64507,2021,Moderate,Humid,OverCast,Moderate Rain,1
-137032,Saint Leo,33574-6665,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
+137032,Saint Leo,33574-6665,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 177418,Saint Louis,63105-3098,2021,Moderate,Very Humid,OverCast,Moderate Rain,1
 177551,Saint Louis,63103-2136,2021,Moderate,Very Humid,OverCast,Moderate Rain,1
 177719,Saint Louis,63110,2021,Moderate,Very Humid,OverCast,Moderate Rain,1
@@ -1505,107 +1871,161 @@ unitId,city,zipCode,year,DoesPlaceHavehotSummer,IsthePlaceHumid,IsthePlaceSunny,
 174914,Saint Paul,55105-1078,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 175005,Saint Paul,55105,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 173647,Saint Peter,56082-1498,2021,Pleasent,Humid,OverCast,Moderate Rain,1
-133492,Saint Petersburg,33711-4700,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
+133492,Saint Petersburg,33711-4700,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+240790,Saipan,96950-1250,2021,Pleasent,Very Humid,OverCast,Heavy Rain,0
 167729,Salem,01970,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 200873,Salem,44460-9598,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 203492,Salem,44460,2021,Pleasent,Humid,OverCast,Moderate Rain,1
-210331,Salem,97317-9392,2021,Moderate,Moderate,OverCast,Moderate Rain,""
-210401,Salem,97301,2021,Moderate,Moderate,OverCast,Moderate Rain,""
+210331,Salem,97317-9392,2021,Moderate,Moderate,OverCast,Moderate Rain,0
+210401,Salem,97301,2021,Moderate,Moderate,OverCast,Moderate Rain,0
+232797,Salem,24153,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
+233426,Salem,24153-3794,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
+237783,Salem,26426,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 155414,Salina,67401-6146,2021,Moderate,Humid,Sunny,Moderate Rain,1
 163851,Salisbury,21801-6862,2021,Moderate,Humid,OverCast,Heavy Rain,1
 198215,Salisbury,28144,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 198862,Salisbury,28144,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
+230764,Salt Lake City,84112-9008,2021,Moderate,Dry,OverCast,Low Rain,1
+230807,Salt Lake City,84105,2021,Moderate,Dry,OverCast,Low Rain,1
 433387,Salt Lake City,84107,2021,Moderate,Dry,OverCast,Low Rain,1
 444787,Salt Lake City,84111,2021,Moderate,Dry,OverCast,Low Rain,1
 445692,Salt Lake City,84111-1917,2021,Moderate,Dry,OverCast,Low Rain,1
 480985,Salt Lake City,84106,2021,Moderate,Dry,OverCast,Low Rain,1
-444398,San Antonio,78224-1364,2021,Moderate,Humid,OverCast,Moderate Rain,""
-458982,San Antonio,78230,2021,Moderate,Humid,OverCast,Moderate Rain,""
-459949,San Antonio,78224,2021,Moderate,Humid,OverCast,Moderate Rain,""
-494630,San Antonio,78254-1000,2021,Moderate,Humid,OverCast,Moderate Rain,""
-110510,San Bernardino,92407-2393,2021,Moderate,Dry,Sunny,Low Rain,""
-123509,San Bruno,94066-1698,2021,Pleasent,Very Humid,OverCast,Moderate Rain,""
-110468,San Diego,92131,2021,Pleasent,Very Humid,OverCast,Low Rain,""
-113582,San Diego,92121,2021,Pleasent,Very Humid,OverCast,Low Rain,""
-119775,San Diego,92101,2021,Pleasent,Very Humid,OverCast,Low Rain,""
-121275,San Diego,92115-3919,2021,Pleasent,Very Humid,OverCast,Low Rain,""
-121309,San Diego,92106-2899,2021,Pleasent,Very Humid,OverCast,Low Rain,""
-122375,San Diego,92111-4998,2021,Pleasent,Very Humid,OverCast,Low Rain,""
-122409,San Diego,92182-0001,2021,Pleasent,Very Humid,OverCast,Low Rain,""
-122436,San Diego,92110-2492,2021,Pleasent,Very Humid,OverCast,Low Rain,""
-154022,San Diego,92123,2021,Pleasent,Very Humid,OverCast,Low Rain,""
-447050,San Diego,92108,2021,Pleasent,Very Humid,OverCast,Low Rain,""
-480781,San Diego,92108,2021,Pleasent,Very Humid,OverCast,Low Rain,""
-490063,San Diego,92110,2021,Pleasent,Very Humid,OverCast,Low Rain,""
-493512,San Diego,92101-7446,2021,Pleasent,Very Humid,OverCast,Low Rain,""
-117104,San Dimas,91773-3298,2021,Moderate,Moderate,Sunny,Low Rain,""
-474863,San Dimas,91773-1741,2021,Moderate,Moderate,Sunny,Low Rain,""
-108232,San Francisco,94105,2021,Pleasent,Very Humid,OverCast,Moderate Rain,""
-109086,San Francisco,94102,2021,Pleasent,Very Humid,OverCast,Moderate Rain,""
-110316,San Francisco,94103,2021,Pleasent,Very Humid,OverCast,Moderate Rain,""
-110370,San Francisco,94107-2247,2021,Pleasent,Very Humid,OverCast,Moderate Rain,""
-115083,San Francisco,94105-2968,2021,Pleasent,Very Humid,OverCast,Moderate Rain,""
-122454,San Francisco,94133-2299,2021,Pleasent,Very Humid,OverCast,Moderate Rain,""
-122506,San Francisco,94102-6011,2021,Pleasent,Very Humid,OverCast,Moderate Rain,""
-122597,San Francisco,94132,2021,Pleasent,Very Humid,OverCast,Moderate Rain,""
-122612,San Francisco,94117-1080,2021,Pleasent,Very Humid,OverCast,Moderate Rain,""
-112394,San Jose,95134,2021,Pleasent,Moderate,Sunny,Moderate Rain,""
-122755,San Jose,95192-0001,2021,Pleasent,Moderate,Sunny,Moderate Rain,""
-110422,San Luis Obispo,93407,2021,Hot,Dry,Sunny,Low Rain,""
-488785,San Marcos,92069,2021,Pleasent,Very Humid,Sunny,Low Rain,""
-459213,San Mateo,94403,2021,Pleasent,Very Humid,OverCast,Moderate Rain,""
-113698,San Rafael,94901-2298,2021,Pleasent,Very Humid,Sunny,Moderate Rain,""
-137209,Sanford,32773-6199,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-121619,Santa Ana,92706-3398,2021,Pleasent,Humid,OverCast,Low Rain,""
-433013,Santa Ana,92705,2021,Pleasent,Humid,OverCast,Low Rain,""
-110705,Santa Barbara,93106,2021,Pleasent,Very Humid,Sunny,Low Rain,""
-125727,Santa Barbara,93108-1089,2021,Pleasent,Very Humid,Sunny,Low Rain,""
-122931,Santa Clara,95053,2021,Pleasent,Moderate,Sunny,Moderate Rain,""
-117751,Santa Clarita,91321-1200,2021,Moderate,Dry,Sunny,Low Rain,""
-110714,Santa Cruz,95064-1011,2021,Pleasent,Moderate,Sunny,Moderate Rain,""
+222831,San Angelo,76909,2021,Moderate,Moderate,Sunny,Moderate Rain,0
+223083,San Antonio,78229,2021,Moderate,Humid,OverCast,Moderate Rain,0
+225627,San Antonio,78209,2021,Moderate,Humid,OverCast,Moderate Rain,0
+227331,San Antonio,78207-4689,2021,Moderate,Humid,OverCast,Moderate Rain,0
+228149,San Antonio,78228,2021,Moderate,Humid,OverCast,Moderate Rain,0
+228644,San Antonio,78229-3900,2021,Moderate,Humid,OverCast,Moderate Rain,0
+229027,San Antonio,78249-1644,2021,Moderate,Humid,OverCast,Moderate Rain,0
+229267,San Antonio,78212-7200,2021,Moderate,Humid,OverCast,Moderate Rain,0
+444398,San Antonio,78224-1364,2021,Moderate,Humid,OverCast,Moderate Rain,0
+458982,San Antonio,78230,2021,Moderate,Humid,OverCast,Moderate Rain,0
+459949,San Antonio,78224,2021,Moderate,Humid,OverCast,Moderate Rain,0
+494630,San Antonio,78254-1000,2021,Moderate,Humid,OverCast,Moderate Rain,0
+110510,San Bernardino,92407-2393,2021,Moderate,Dry,Sunny,Low Rain,0
+123509,San Bruno,94066-1698,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+110468,San Diego,92131,2021,Pleasent,Very Humid,OverCast,Low Rain,0
+113582,San Diego,92121,2021,Pleasent,Very Humid,OverCast,Low Rain,0
+119775,San Diego,92101,2021,Pleasent,Very Humid,OverCast,Low Rain,0
+121275,San Diego,92115-3919,2021,Pleasent,Very Humid,OverCast,Low Rain,0
+121309,San Diego,92106-2899,2021,Pleasent,Very Humid,OverCast,Low Rain,0
+122375,San Diego,92111-4998,2021,Pleasent,Very Humid,OverCast,Low Rain,0
+122409,San Diego,92182-0001,2021,Pleasent,Very Humid,OverCast,Low Rain,0
+122436,San Diego,92110-2492,2021,Pleasent,Very Humid,OverCast,Low Rain,0
+154022,San Diego,92123,2021,Pleasent,Very Humid,OverCast,Low Rain,0
+378576,San Diego,92108-4407,2021,Pleasent,Very Humid,OverCast,Low Rain,0
+447050,San Diego,92108,2021,Pleasent,Very Humid,OverCast,Low Rain,0
+480781,San Diego,92108,2021,Pleasent,Very Humid,OverCast,Low Rain,0
+490063,San Diego,92110,2021,Pleasent,Very Humid,OverCast,Low Rain,0
+493512,San Diego,92101-7446,2021,Pleasent,Very Humid,OverCast,Low Rain,0
+117104,San Dimas,91773-3298,2021,Moderate,Moderate,Sunny,Low Rain,0
+474863,San Dimas,91773-1741,2021,Moderate,Moderate,Sunny,Low Rain,0
+108232,San Francisco,94105,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+109086,San Francisco,94102,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+110316,San Francisco,94103,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+110370,San Francisco,94107-2247,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+115083,San Francisco,94105-2968,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+122454,San Francisco,94133-2299,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+122506,San Francisco,94102-6011,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+122597,San Francisco,94132,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+122612,San Francisco,94117-1080,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+242617,San German,00683,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+112394,San Jose,95134,2021,Pleasent,Moderate,Sunny,Moderate Rain,0
+122755,San Jose,95192-0001,2021,Pleasent,Moderate,Sunny,Moderate Rain,0
+241331,San Juan,00902-3711,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+241517,San Juan,00926-1931,2021,Pleasent,Very Humid,OverCast,Heavy Rain,0
+241720,San Juan,00918,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+241739,San Juan,00926-2602,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+241766,San Juan,00907-3373,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+241951,San Juan,00902-1112,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+242653,San Juan,00919,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+243203,San Juan,00936-5067,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+243221,San Juan,00931-0000,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+243832,San Juan,00919-2303,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+110422,San Luis Obispo,93407,2021,Hot,Dry,Sunny,Low Rain,0
+228459,San Marcos,78666,2021,Moderate,Moderate,OverCast,Moderate Rain,0
+366711,San Marcos,92096-0001,2021,Pleasent,Very Humid,Sunny,Low Rain,0
+488785,San Marcos,92069,2021,Pleasent,Very Humid,Sunny,Low Rain,0
+459213,San Mateo,94403,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+113698,San Rafael,94901-2298,2021,Pleasent,Very Humid,Sunny,Moderate Rain,0
+241836,San Sebastian,00685,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+137209,Sanford,32773-6199,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+121619,Santa Ana,92706-3398,2021,Pleasent,Humid,OverCast,Low Rain,0
+433013,Santa Ana,92705,2021,Pleasent,Humid,OverCast,Low Rain,0
+110705,Santa Barbara,93106,2021,Pleasent,Very Humid,Sunny,Low Rain,0
+125727,Santa Barbara,93108-1089,2021,Pleasent,Very Humid,Sunny,Low Rain,0
+245847,Santa Barbara,93101,2021,Pleasent,Very Humid,Sunny,Low Rain,0
+122931,Santa Clara,95053,2021,Pleasent,Moderate,Sunny,Moderate Rain,0
+117751,Santa Clarita,91321-1200,2021,Moderate,Dry,Sunny,Low Rain,0
+110714,Santa Cruz,95064-1011,2021,Pleasent,Moderate,Sunny,Moderate Rain,0
 187745,Santa Fe,87508-1300,2021,Moderate,Dry,OverCast,Low Rain,1
-490045,Santa Fe Springs,90670-5611,2021,Pleasent,Humid,Sunny,Low Rain,""
-122852,Santa Maria,93454,2021,Pleasent,Very Humid,Sunny,Low Rain,""
-122977,Santa Monica,90405-1628,2021,Pleasent,Humid,Sunny,Low Rain,""
-124292,Santa Paula,93060,2021,Pleasent,Very Humid,Sunny,Low Rain,""
-112084,Santee,92071,2021,Pleasent,Very Humid,OverCast,Low Rain,""
-136774,Sarasota,34234-5895,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-451671,Sarasota,34243-2049,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
+245652,Santa Fe,87505-4599,2021,Moderate,Dry,OverCast,Low Rain,1
+490045,Santa Fe Springs,90670-5611,2021,Pleasent,Humid,Sunny,Low Rain,0
+122852,Santa Maria,93454,2021,Pleasent,Very Humid,Sunny,Low Rain,0
+122977,Santa Monica,90405-1628,2021,Pleasent,Humid,Sunny,Low Rain,0
+124292,Santa Paula,93060,2021,Pleasent,Very Humid,Sunny,Low Rain,0
+112084,Santee,92071,2021,Pleasent,Very Humid,OverCast,Low Rain,0
+243443,Santurce,00907,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+136774,Sarasota,34234-5895,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+262129,Sarasota,34243-2109,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+451671,Sarasota,34243-2049,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 195526,Saratoga Springs,12866,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 196264,Saratoga Springs,12866-4391,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 170639,Sault Ste Marie,49783,2021,Pleasent,Humid,OverCast,Low Rain,1
-139579,Savannah,31406,2021,Moderate,Very Humid,OverCast,Moderate Rain,""
-140951,Savannah,31402-3146,2021,Moderate,Very Humid,OverCast,Moderate Rain,""
-140960,Savannah,31404-5310,2021,Moderate,Very Humid,OverCast,Moderate Rain,""
-475121,Savannah,31406,2021,Moderate,Very Humid,OverCast,Moderate Rain,""
+139579,Savannah,31406,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
+140951,Savannah,31402-3146,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
+140960,Savannah,31404-5310,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
+475121,Savannah,31406,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
 196866,Schenectady,12308-2311,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 214810,Schuylkill Haven,17972-2202,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 456621,Scott Depot,25560,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
-483124,Scottsdale,85257,2021,Very Hot,Dry,Sunny,Low Rain,""
+483124,Scottsdale,85257,2021,Very Hot,Dry,Sunny,Low Rain,0
 213376,Scranton,18509-3206,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 213826,Scranton,18509-1598,2021,Pleasent,Humid,OverCast,Heavy Rain,1
+215929,Scranton,18510-4699,2021,Pleasent,Humid,OverCast,Heavy Rain,1
+217040,Scranton,18505-2196,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 107044,Searcy,72149-5615,2021,Moderate,Humid,OverCast,Moderate Rain,0
-409698,Seaside,93955-8001,2021,Pleasent,Humid,Sunny,Low Rain,""
-488448,Seattle,98119-1707,2021,Pleasent,Moderate,OverCast,Heavy Rain,""
-102058,Selma,36701,2021,Moderate,Very Humid,Sunny,Moderate Rain,""
+409698,Seaside,93955-8001,2021,Pleasent,Humid,Sunny,Moderate Rain,0
+234915,Seattle,98121,2021,Pleasent,Moderate,OverCast,Heavy Rain,0
+235024,Seattle,98121,2021,Pleasent,Moderate,OverCast,Heavy Rain,0
+236072,Seattle,98103-3599,2021,Pleasent,Moderate,OverCast,Heavy Rain,0
+236504,Seattle,98106-1499,2021,Pleasent,Moderate,OverCast,Heavy Rain,0
+236513,Seattle,98122,2021,Pleasent,Moderate,OverCast,Heavy Rain,0
+236577,Seattle,98119-1997,2021,Pleasent,Moderate,OverCast,Heavy Rain,0
+236595,Seattle,98122-4340,2021,Pleasent,Moderate,OverCast,Heavy Rain,0
+236948,Seattle,98195-4550,2021,Pleasent,Moderate,OverCast,Heavy Rain,0
+245883,Seattle,98121-1814,2021,Pleasent,Moderate,OverCast,Heavy Rain,0
+488448,Seattle,98119-1707,2021,Pleasent,Moderate,OverCast,Heavy Rain,0
+228981,Seguin,78155-5999,2021,Moderate,Humid,OverCast,Moderate Rain,0
+216278,Selinsgrove,17870-1025,2021,Pleasent,Humid,OverCast,Heavy Rain,1
+102058,Selma,36701,2021,Moderate,Very Humid,Sunny,Moderate Rain,0
+221519,Sewanee,37383-1000,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
 180984,Seward,68434-1556,2021,Moderate,Humid,Sunny,Moderate Rain,1
 214634,Sharon,16146-1537,2021,Pleasent,Humid,OverCast,Moderate Rain,1
-207403,Shawnee,74804,2021,Moderate,Humid,Sunny,Moderate Rain,0
-443058,Shawnee,74802,2021,Moderate,Humid,Sunny,Moderate Rain,0
-158477,Shreveport,71104,2021,Moderate,Humid,OverCast,Moderate Rain,""
-159416,Shreveport,71115-2399,2021,Moderate,Humid,OverCast,Moderate Rain,""
-435000,Shreveport,71103,2021,Moderate,Humid,OverCast,Moderate Rain,""
-451866,Shreveport,71101,2021,Moderate,Humid,OverCast,Moderate Rain,""
-487296,Sierra Vista,85635,2021,Moderate,Dry,Sunny,Low Rain,""
-433004,Signal Hill,90755-3612,2021,Pleasent,Humid,Sunny,Low Rain,""
-107141,Siloam Springs,72761,2021,Moderate,Humid,OverCast,Moderate Rain,0
+207403,Shawnee,74804,2021,Moderate,Humid,Sunny,Moderate Rain,1
+443058,Shawnee,74802,2021,Moderate,Humid,Sunny,Moderate Rain,1
+237792,Shepherdstown,25443,2021,Moderate,Humid,OverCast,Heavy Rain,1
+222983,Sherman,75090-4400,2021,Moderate,Moderate,Sunny,Heavy Rain,0
+216010,Shippensburg,17257-2299,2021,Moderate,Humid,OverCast,Heavy Rain,1
+158477,Shreveport,71104,2021,Moderate,Humid,OverCast,Moderate Rain,0
+159416,Shreveport,71115-2399,2021,Moderate,Humid,OverCast,Moderate Rain,0
+435000,Shreveport,71103,2021,Moderate,Humid,OverCast,Moderate Rain,0
+451866,Shreveport,71101,2021,Moderate,Humid,OverCast,Moderate Rain,0
+487296,Sierra Vista,85635,2021,Moderate,Dry,Sunny,Low Rain,0
+433004,Signal Hill,90755-3612,2021,Pleasent,Humid,Sunny,Low Rain,0
+107141,Siloam Springs,72761,2021,Moderate,Humid,OverCast,Moderate Rain,1
 434937,Silver  Spring,20902,2021,Moderate,Humid,OverCast,Heavy Rain,1
-188304,Silver City,88061,2021,Hot,Dry,Sunny,Low Rain,""
+188304,Silver City,88061,2021,Hot,Dry,Sunny,Low Rain,0
 153250,Sioux Center,51250-1606,2021,Pleasent,Humid,OverCast,Low Rain,1
 152992,Sioux City,51104,2021,Pleasent,Humid,OverCast,Low Rain,1
 154004,Sioux City,51106-1751,2021,Pleasent,Humid,OverCast,Low Rain,1
 154262,Sioux City,51104-0263,2021,Pleasent,Humid,OverCast,Low Rain,1
+219000,Sioux Falls,57197-0001,2021,Pleasent,Humid,OverCast,Low Rain,1
+219383,Sioux Falls,57105-1699,2021,Pleasent,Humid,OverCast,Low Rain,1
 145497,Skokie,60077,2021,Pleasent,Humid,OverCast,Moderate Rain,1
+216038,Slippery Rock,16057-1383,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+217165,Smithfield,02917-1291,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 187967,Socorro,87801,2021,Moderate,Dry,OverCast,Low Rain,1
 151342,South Bend,46615-7111,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 488776,South Bend,46601-2352,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
@@ -1615,8 +2035,15 @@ unitId,city,zipCode,year,DoesPlaceHavehotSummer,IsthePlaceHumid,IsthePlaceSunny,
 206154,South Point,45680,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 170675,Southfield,48075-1058,2021,Pleasent,Moderate,OverCast,Moderate Rain,1
 484695,Southfield,48076,2021,Pleasent,Moderate,OverCast,Moderate Rain,1
-439701,Southlake,76092,2021,Moderate,Moderate,OverCast,Moderate Rain,""
+439701,Southlake,76092,2021,Moderate,Moderate,OverCast,Moderate Rain,0
 195243,Sparkill,10976-1050,2021,Pleasent,Humid,OverCast,Heavy Rain,1
+217961,Spartanburg,29302-0006,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+218742,Spartanburg,29303-4999,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+218973,Spartanburg,29303-3663,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+219046,Spearfish,57799-9500,2021,Moderate,Dry,OverCast,Low Rain,1
+235316,Spokane,99258-0001,2021,Moderate,Dry,OverCast,Low Rain,1
+236708,Spokane,99224-5288,2021,Moderate,Dry,OverCast,Low Rain,1
+237066,Spokane,99251,2021,Moderate,Dry,OverCast,Low Rain,1
 475200,Spokane,99251,2021,Moderate,Dry,OverCast,Low Rain,1
 172334,Spring Arbor,49283-9799,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 476717,Spring Valley,10977,2021,Pleasent,Humid,OverCast,Heavy Rain,1
@@ -1632,98 +2059,122 @@ unitId,city,zipCode,year,DoesPlaceHavehotSummer,IsthePlaceHumid,IsthePlaceSunny,
 177339,Springfield,65802-2125,2021,Moderate,Humid,Sunny,Moderate Rain,1
 179566,Springfield,65897,2021,Moderate,Humid,Sunny,Moderate Rain,1
 206525,Springfield,45504,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
+369516,Springfield,65804,2021,Moderate,Humid,Sunny,Moderate Rain,1
 475273,Springfield,01109,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 492801,Springfield,65802,2021,Moderate,Humid,Sunny,Moderate Rain,1
 457688,St Joseph,64506,2021,Moderate,Humid,OverCast,Moderate Rain,1
-160409,St. Benedict,70457,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
+160409,St. Benedict,70457,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 175014,St. Cloud,56301-3713,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 466921,St. Louis,63146,2021,Moderate,Very Humid,OverCast,Moderate Rain,1
 174154,St. Louis Park,55426,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 163912,St. Mary's City,20686,2021,Moderate,Humid,OverCast,Heavy Rain,1
-448840,St. Petersburg,33701-9807,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-461795,Stafford,77477-0000,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
+448840,St. Petersburg,33701-9807,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+461795,Stafford,77477-0000,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 436836,Stamford,06901-2315,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 161518,Standish,04084-5236,2021,Pleasent,Humid,OverCast,Moderate Rain,1
+243744,Stanford,94305,2021,Pleasent,Humid,Sunny,Moderate Rain,0
 190558,Staten Island,10314,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 196583,Staten Island,10312,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 197197,Staten Island,10301-4495,2021,Pleasent,Humid,OverCast,Heavy Rain,1
-139931,Statesboro,30460-8126,2021,Moderate,Very Humid,OverCast,Moderate Rain,""
+139931,Statesboro,30460-8126,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
+232672,Staunton,24401,2021,Moderate,Humid,OverCast,Moderate Rain,1
+228529,Stephenville,76401-0000,2021,Moderate,Moderate,Sunny,Moderate Rain,0
 155937,Sterling,67579,2021,Moderate,Humid,Sunny,Moderate Rain,1
 205957,Steubenville,43952-1763,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
-207388,Stillwater,74078-1015,2021,Moderate,Moderate,OverCast,Moderate Rain,0
-115773,Stockton,95207-3896,2021,Moderate,Dry,Sunny,Low Rain,""
-120883,Stockton,95211-0197,2021,Moderate,Dry,Sunny,Low Rain,""
-488800,Stockton,95206,2021,Moderate,Dry,Sunny,Low Rain,""
+240480,Stevens Point,54481-3897,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+207388,Stillwater,74078-1015,2021,Moderate,Moderate,OverCast,Moderate Rain,1
+115773,Stockton,95207-3896,2021,Moderate,Dry,Sunny,Low Rain,0
+120883,Stockton,95211-0197,2021,Moderate,Dry,Sunny,Low Rain,0
+488800,Stockton,95206,2021,Moderate,Dry,Sunny,Low Rain,0
 196097,Stony Brook,11794-0701,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 153001,Storm Lake,50588,2021,Pleasent,Humid,OverCast,Low Rain,1
 129020,Storrs,06269,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 441609,Suffern,10901-4003,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 430184,Suitland,20746,2021,Moderate,Humid,OverCast,Heavy Rain,1
 211477,Summerdale,17093-0309,2021,Moderate,Humid,OverCast,Heavy Rain,1
-464226,Surprise,85374,2021,Very Hot,Dry,Sunny,Low Rain,""
-139621,Swainsboro,30401,2021,Moderate,Very Humid,OverCast,Moderate Rain,""
-199865,Swannanoa,28778-2099,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+218399,Sumter,29150-3599,2021,Moderate,Humid,Sunny,Moderate Rain,0
+240426,Superior,54880-4500,2021,Pleasent,Humid,OverCast,Moderate Rain,1
+464226,Surprise,85374,2021,Very Hot,Dry,Sunny,Low Rain,0
+139621,Swainsboro,30401,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
+199865,Swannanoa,28778-2099,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+216287,Swarthmore,19081,2021,Pleasent,Humid,OverCast,Heavy Rain,1
+233718,Sweet Briar,24595-9998,2021,Moderate,Humid,OverCast,Moderate Rain,1
 203757,Sylvania,43560-2898,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 418126,Syosset,11791-4413,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 192323,Syracuse,13214-1301,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 196103,Syracuse,13210,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 196307,Syracuse,13210,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 196413,Syracuse,13244,2021,Pleasent,Humid,OverCast,Moderate Rain,1
-443049,Tacoma,98407-0186,2021,Pleasent,Humid,OverCast,Heavy Rain,""
-207263,Tahlequah,74464-2399,2021,Moderate,Humid,OverCast,Moderate Rain,0
+236230,Tacoma,98447-0003,2021,Pleasent,Humid,OverCast,Heavy Rain,0
+236328,Tacoma,98416,2021,Pleasent,Humid,OverCast,Heavy Rain,0
+236753,Tacoma,98466-6100,2021,Pleasent,Humid,OverCast,Heavy Rain,0
+377546,Tacoma,98402,2021,Pleasent,Humid,OverCast,Heavy Rain,0
+377564,Tacoma,98402-3100,2021,Pleasent,Humid,OverCast,Heavy Rain,0
+443049,Tacoma,98407-0186,2021,Pleasent,Humid,OverCast,Heavy Rain,0
+207263,Tahlequah,74464-2399,2021,Moderate,Humid,OverCast,Moderate Rain,1
 162210,Takoma Park,20912,2021,Moderate,Humid,OverCast,Heavy Rain,1
 102298,Talladega,35160,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
-133650,Tallahassee,32307,2021,Moderate,Very Humid,OverCast,Moderate Rain,""
-134097,Tallahassee,32306-1037,2021,Moderate,Very Humid,OverCast,Moderate Rain,""
-137759,Tallahassee,32304-2895,2021,Moderate,Very Humid,OverCast,Moderate Rain,""
-137351,Tampa,33620-9951,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-137801,Tampa,33614-5801,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-137847,Tampa,33606-1490,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-449038,Tampa,33610,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-449898,Tampa,33614-7095,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-112570,Tarzana,91356-1411,2021,Moderate,Moderate,Sunny,Low Rain,""
+133650,Tallahassee,32307,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
+134097,Tallahassee,32306-1037,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
+137759,Tallahassee,32304-2895,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
+137351,Tampa,33620-9951,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+137801,Tampa,33614-5801,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+137847,Tampa,33606-1490,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+404338,Tampa,33602,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+449038,Tampa,33610,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+449898,Tampa,33614-7095,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+112570,Tarzana,91356-1411,2021,Moderate,Moderate,Sunny,Low Rain,0
 184603,Teaneck,07666,2021,Pleasent,Humid,OverCast,Heavy Rain,1
-104151,Tempe,85287,2021,Very Hot,Dry,Sunny,Low Rain,""
-110219,Tempe,85281,2021,Very Hot,Dry,Sunny,Low Rain,""
-133809,Temple Terrace,33617,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
+104151,Tempe,85287,2021,Very Hot,Dry,Sunny,Low Rain,0
+110219,Tempe,85281,2021,Very Hot,Dry,Sunny,Low Rain,0
+363934,Tempe,85283,2021,Very Hot,Dry,Sunny,Low Rain,0
+133809,Temple Terrace,33617,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 151324,Terre Haute,47809,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 152318,Terre Haute,47803-3920,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
-159966,Thibodaux,70310,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-141167,Thomasville,31792,2021,Moderate,Very Humid,OverCast,Moderate Rain,""
-110413,Thousand Oaks,91360-2787,2021,Pleasent,Humid,Sunny,Low Rain,""
+228486,Terrell,75160-4812,2021,Moderate,Moderate,OverCast,Heavy Rain,0
+224545,Texarkana,75503,2021,Moderate,Humid,OverCast,Moderate Rain,0
+159966,Thibodaux,70310,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+141167,Thomasville,31792,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
+110413,Thousand Oaks,91360-2787,2021,Pleasent,Humid,Sunny,Low Rain,0
 196291,Throggs Neck,10465-4198,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 203085,Tiffin,44883-2462,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 206048,Tiffin,44883,2021,Pleasent,Humid,OverCast,Moderate Rain,1
-138558,Tifton,31793-2601,2021,Moderate,Very Humid,OverCast,Moderate Rain,""
+138558,Tifton,31793-2601,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
+218441,Tigerville,29688-1892,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 141185,Toccoa Falls,30598,2021,Moderate,Humid,OverCast,Moderate Rain,0
 203960,Toledo,43604-1132,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 206084,Toledo,43606-3390,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 156082,Topeka,66621-0001,2021,Moderate,Humid,Sunny,Moderate Rain,1
 480657,Topeka,66606,2021,Moderate,Humid,Sunny,Moderate Rain,1
-457086,Torrance,90505,2021,Pleasent,Humid,Sunny,Moderate Rain,""
-176406,Tougaloo,39174,2021,Moderate,Very Humid,Sunny,Moderate Rain,""
+235422,Toppenish,98948,2021,Moderate,Dry,OverCast,Low Rain,1
+457086,Torrance,90505,2021,Pleasent,Humid,Sunny,Moderate Rain,0
+176406,Tougaloo,39174,2021,Moderate,Very Humid,Sunny,Moderate Rain,0
 164076,Towson,21252-0001,2021,Moderate,Humid,OverCast,Heavy Rain,1
 171483,Traverse City,49686,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 187046,Trenton,08608,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 443784,Trevose,19053,2021,Pleasent,Humid,OverCast,Heavy Rain,1
-137962,Trinity,34655-4401,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-102368,Troy,36082-0001,2021,Moderate,Very Humid,Sunny,Moderate Rain,""
+137962,Trinity,34655-4401,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+102368,Troy,36082-0001,2021,Moderate,Very Humid,Sunny,Moderate Rain,0
 172608,Troy,48083-5066,2021,Pleasent,Moderate,OverCast,Moderate Rain,1
 194824,Troy,12180-3590,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 195128,Troy,12180,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 486947,Troy,48084,2021,Pleasent,Moderate,OverCast,Moderate Rain,1
+241614,Trujillo Alto,00978-0901,2021,Pleasent,Very Humid,OverCast,Heavy Rain,0
 105297,Tsaile,86556,2021,Moderate,Dry,OverCast,Low Rain,1
-104179,Tucson,85721-0066,2021,Hot,Dry,Sunny,Low Rain,""
-105534,Tucson,85712,2021,Hot,Dry,Sunny,Low Rain,""
-438179,Tucson,85711,2021,Hot,Dry,Sunny,Low Rain,""
-207254,Tulsa,74115,2021,Moderate,Humid,OverCast,Moderate Rain,0
-207582,Tulsa,74171,2021,Moderate,Humid,OverCast,Moderate Rain,0
-207971,Tulsa,74104-3189,2021,Moderate,Humid,OverCast,Moderate Rain,0
-110495,Turlock,95382-0299,2021,Hot,Dry,Sunny,Low Rain,""
+104179,Tucson,85721-0066,2021,Hot,Dry,Sunny,Low Rain,0
+105534,Tucson,85712,2021,Hot,Dry,Sunny,Low Rain,0
+438179,Tucson,85711,2021,Hot,Dry,Sunny,Low Rain,0
+207254,Tulsa,74115,2021,Moderate,Humid,OverCast,Moderate Rain,1
+207582,Tulsa,74171,2021,Moderate,Humid,OverCast,Moderate Rain,1
+207971,Tulsa,74104-3189,2021,Moderate,Humid,OverCast,Moderate Rain,1
+110495,Turlock,95382-0299,2021,Hot,Dry,Sunny,Low Rain,0
 100751,Tuscaloosa,35487-0100,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
 102270,Tuscaloosa,35401,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
-102377,Tuskegee,36088-1920,2021,Moderate,Very Humid,Sunny,Moderate Rain,""
-128328,USAF Academy,80840-5002,2021,Pleasent,Dry,Sunny,Low Rain,0
+102377,Tuskegee,36088-1920,2021,Moderate,Very Humid,Sunny,Moderate Rain,0
+228802,Tyler,75799-6699,2021,Moderate,Moderate,OverCast,Heavy Rain,0
+228884,Tyler,75702,2021,Moderate,Moderate,OverCast,Heavy Rain,0
+229355,Tyler,75701,2021,Moderate,Moderate,OverCast,Heavy Rain,0
+128328,USAF Academy,80840-5002,2021,Pleasent,Dry,Sunny,Low Rain,1
 185262,Union,07083,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 476692,Union,07083-3618,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 161572,Unity,04988,2021,Pleasent,Very Humid,OverCast,Low Rain,1
@@ -1733,24 +2184,39 @@ unitId,city,zipCode,year,DoesPlaceHavehotSummer,IsthePlaceHumid,IsthePlaceSunny,
 145336,University Park,60484,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 214777,University Park,16802-1503,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 479956,University Park,16802-1503,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+233374,University of Richmond,23173,2021,Moderate,Humid,OverCast,Moderate Rain,1
 152530,Upland,46989-1001,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 196112,Utica,13502,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 197045,Utica,13502-4892,2021,Pleasent,Humid,OverCast,Moderate Rain,1
-141264,Valdosta,31698,2021,Moderate,Very Humid,OverCast,Moderate Rain,""
-111081,Valencia,91355-2397,2021,Moderate,Dry,Sunny,Low Rain,""
-111188,Vallejo,94590-8181,2021,Pleasent,Humid,Sunny,Moderate Rain,""
-200572,Valley City,58072,2021,Pleasent,Humid,OverCast,Low Rain,0
+243188,Utuado,00641,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+141264,Valdosta,31698,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
+111081,Valencia,91355-2397,2021,Moderate,Dry,Sunny,Low Rain,0
+111188,Vallejo,94590-8181,2021,Pleasent,Humid,Sunny,Moderate Rain,0
+200572,Valley City,58072,2021,Pleasent,Humid,OverCast,Low Rain,1
 152600,Valparaiso,46383,2021,Pleasent,Humid,OverCast,Moderate Rain,1
-490124,Van Nuys,91406-2127,2021,Moderate,Moderate,Sunny,Low Rain,""
-102845,Vancouver,98683-7575,2021,Pleasent,Moderate,OverCast,Heavy Rain,""
+490124,Van Nuys,91406-2127,2021,Moderate,Moderate,Sunny,Low Rain,0
+102845,Vancouver,98683-7575,2021,Pleasent,Moderate,OverCast,Heavy Rain,0
+234933,Vancouver,98663-3598,2021,Pleasent,Moderate,OverCast,Heavy Rain,0
+363916,Vega Baja,00964,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+219471,Vermillion,57069-2390,2021,Pleasent,Humid,OverCast,Low Rain,1
 196079,Vestal,13850-6000,2021,Pleasent,Humid,OverCast,Moderate Rain,1
+225502,Victoria,77901,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
+237640,Vienna,26105-8000,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 460871,Vienna,22182,2021,Moderate,Humid,OverCast,Heavy Rain,1
 483780,Vienna,22182-2734,2021,Moderate,Humid,OverCast,Heavy Rain,1
+216597,Villanova,19085-1699,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 152637,Vincennes,47591,2021,Moderate,Very Humid,OverCast,Moderate Rain,1
+231651,Virginia Beach,23464,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+231785,Virginia Beach,23462,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+232016,Virginia Beach,23452-7431,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+234173,Virginia Beach,23455,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+248934,Virginia Beach,23462,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 458496,Virginia Beach,23462,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 459268,Virginia Beach,23452,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+223232,Waco,76798,2021,Moderate,Moderate,Sunny,Moderate Rain,0
 199759,Wake Forest,27587-1889,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 140872,Waleska,30183-2981,2021,Moderate,Humid,OverCast,Heavy Rain,0
+237057,Walla Walla,99362,2021,Moderate,Dry,OverCast,Low Rain,1
 107877,Walnut Ridge,72476,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
 164739,Waltham,02452-4705,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 165015,Waltham,02454-9110,2021,Pleasent,Humid,OverCast,Heavy Rain,1
@@ -1766,30 +2232,41 @@ unitId,city,zipCode,year,DoesPlaceHavehotSummer,IsthePlaceHumid,IsthePlaceSunny,
 131520,Washington,20059,2021,Moderate,Humid,OverCast,Heavy Rain,1
 131803,Washington,20005,2021,Moderate,Humid,OverCast,Heavy Rain,1
 131876,Washington,20017-1094,2021,Moderate,Humid,OverCast,Heavy Rain,1
+216667,Washington,15301,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+384412,Washington,20005,2021,Moderate,Humid,OverCast,Heavy Rain,1
 459994,Washington,20005,2021,Moderate,Humid,OverCast,Heavy Rain,1
 130183,Waterbury,06723,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 436818,Waterbury,06702,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 152798,Waterloo,50703-1999,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+239071,Watertown,53094,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 161086,Waterville,04901-8840,2021,Pleasent,Very Humid,OverCast,Low Rain,1
 161563,Waterville,04901-5097,2021,Pleasent,Very Humid,OverCast,Low Rain,1
+238458,Waukesha,53186,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 451750,Wauwatosa,53226,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 154527,Waverly,50677-0903,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+228325,Waxahachie,75165,2021,Moderate,Moderate,Sunny,Heavy Rain,0
 181783,Wayne,68787,2021,Moderate,Humid,OverCast,Moderate Rain,1
 187444,Wayne,07470,2021,Pleasent,Humid,OverCast,Heavy Rain,1
-207865,Weatherford,73096-3001,2021,Moderate,Moderate,OverCast,Moderate Rain,0
+216694,Waynesburg,15370-1257,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+207865,Weatherford,73096-3001,2021,Moderate,Moderate,OverCast,Moderate Rain,1
 164580,Wellesley,02457-0310,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 168218,Wellesley,02481-8203,2021,Pleasent,Humid,OverCast,Heavy Rain,1
+236975,Wenatchee,98801-1799,2021,Moderate,Dry,OverCast,Low Rain,1
+233602,Wendell,27591-9072,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 165936,Wenham,01984,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 494685,Wentzville,63385,2021,Moderate,Very Humid,OverCast,Moderate Rain,1
 197036,West  Point,10996-1905,2021,Pleasent,Humid,OverCast,Heavy Rain,1
+216764,West Chester,19383,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 129525,West Hartford,06117-1599,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 130314,West Hartford,06117,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 129941,West Haven,06516-1916,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
+243780,West Lafayette,47907-2040,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 489779,West Lafayette,47906,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+237932,West Liberty,26074,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 185572,West Long Branch,07764-1898,2021,Pleasent,Humid,OverCast,Heavy Rain,1
-136330,West Palm Beach,33401,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-490054,West Palm Beach,33409-5189,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-138868,West Point,31833,2021,Moderate,Very Humid,OverCast,Moderate Rain,""
+136330,West Palm Beach,33401,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+490054,West Palm Beach,33409-5189,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+138868,West Point,31833,2021,Moderate,Very Humid,OverCast,Moderate Rain,0
 203386,Westerville,43081,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 204936,Westerville,43081,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 168263,Westfield,01086-1630,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
@@ -1798,28 +2275,35 @@ unitId,city,zipCode,year,DoesPlaceHavehotSummer,IsthePlaceHumid,IsthePlaceSunny,
 482440,Westminster,80234,2021,Moderate,Dry,Sunny,Low Rain,1
 167598,Weston,02493-1571,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 149781,Wheaton,60187-5593,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
+238078,Wheeling,26003,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 197285,White Plains,10606-1200,2021,Pleasent,Humid,OverCast,Heavy Rain,1
+240189,Whitewater,53190-1790,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 150172,Whiting,46394,2021,Pleasent,Humid,OverCast,Moderate Rain,1
-117672,Whittier,90604,2021,Pleasent,Humid,Sunny,Low Rain,""
-121886,Whittier,90601-1616,2021,Moderate,Moderate,Sunny,Low Rain,""
-125763,Whittier,90601,2021,Pleasent,Humid,Sunny,Low Rain,""
+117672,Whittier,90604,2021,Pleasent,Humid,Sunny,Low Rain,0
+121886,Whittier,90601-1616,2021,Moderate,Moderate,Sunny,Low Rain,0
+125763,Whittier,90601,2021,Pleasent,Humid,Sunny,Low Rain,0
 155089,Wichita,67213,2021,Moderate,Humid,Sunny,Moderate Rain,1
 155335,Wichita,67213-2097,2021,Moderate,Humid,Sunny,Moderate Rain,1
 156125,Wichita,67260-0124,2021,Moderate,Humid,Sunny,Moderate Rain,1
+226833,Wichita Falls,76308-2099,2021,Hot,Moderate,Sunny,Low Rain,0
 205124,Wickliffe,44092,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 201690,Wilberforce,45384-1004,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 206491,Wilberforce,45384-1001,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 213321,Wilkes-Barre,18711-0801,2021,Pleasent,Humid,OverCast,Heavy Rain,1
-156541,Williamsburg,40769,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+216931,Wilkes-Barre,18766,2021,Pleasent,Humid,OverCast,Heavy Rain,1
+156541,Williamsburg,40769,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
+231624,Williamsburg,23187-8795,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 213668,Williamsport,17701-5192,2021,Pleasent,Humid,OverCast,Heavy Rain,1
+366252,Williamsport,17701-5799,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 168342,Williamstown,01267,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 129215,Willimantic,06226,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 130989,Wilmington,19808,2021,Pleasent,Humid,OverCast,Heavy Rain,1
-199218,Wilmington,28403-5963,2021,Moderate,Very Humid,Sunny,Moderate Rain,""
+199218,Wilmington,28403-5963,2021,Moderate,Very Humid,Sunny,Moderate Rain,0
 206507,Wilmington,45177,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 450298,Wilmington,19801,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 156213,Wilmore,40390-1198,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 197911,Wilson,27893-7000,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+233541,Winchester,22601-5195,2021,Moderate,Humid,OverCast,Heavy Rain,1
 155900,Winfield,67156-2499,2021,Moderate,Humid,Sunny,Moderate Rain,1
 199962,Wingate,28174-0159,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
 174817,Winona,55987-1399,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
@@ -1831,9 +2315,11 @@ unitId,city,zipCode,year,DoesPlaceHavehotSummer,IsthePlaceHumid,IsthePlaceSunny,
 199847,Winston-Salem,27106,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 199999,Winston-Salem,27110-0001,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 489937,Winston-Salem,27101,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
-136516,Winter Haven,33881-4299,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-134237,Winter Park,32792-7429,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
-136950,Winter Park,32789-4499,2021,Moderate,Very Humid,OverCast,Heavy Rain,""
+136516,Winter Haven,33881-4299,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+134237,Winter Park,32792-7429,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+136950,Winter Park,32789-4499,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+386472,Winter Park,32792,2021,Moderate,Very Humid,OverCast,Heavy Rain,0
+233897,Wise,24293-4400,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 183789,Woodland Park,07424,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 206589,Wooster,44691,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 164562,Worcester,01609-1296,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
@@ -1841,11 +2327,16 @@ unitId,city,zipCode,year,DoesPlaceHavehotSummer,IsthePlaceHumid,IsthePlaceSunny,
 166124,Worcester,01610-2395,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 168421,Worcester,01609-2280,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 168430,Worcester,01602-2597,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
+216047,Wynnewood,19096,2021,Pleasent,Humid,OverCast,Heavy Rain,1
 170000,Wyoming,49509,2021,Pleasent,Humid,OverCast,Moderate Rain,1
-404806,Yauco,00698,2021,Pleasent,Very Humid,OverCast,Moderate Rain,""
+237109,Yakima,98907-2520,2021,Moderate,Dry,OverCast,Low Rain,1
+219198,Yankton,57078-3724,2021,Pleasent,Humid,OverCast,Low Rain,1
+404806,Yauco,00698,2021,Pleasent,Very Humid,OverCast,Heavy Rain,0
+245892,Yellow Springs,45387,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 483018,Yellow Springs,45387,2021,Pleasent,Very Humid,OverCast,Heavy Rain,1
 181853,York,68467-2699,2021,Moderate,Humid,Sunny,Moderate Rain,1
 214829,York,17403-3326,2021,Moderate,Humid,OverCast,Heavy Rain,1
-141361,Young Harris,30582,2021,Pleasent,Very Humid,OverCast,Moderate Rain,0
+217059,York,17403-3651,2021,Moderate,Humid,OverCast,Heavy Rain,1
+141361,Young Harris,30582,2021,Pleasent,Very Humid,OverCast,Moderate Rain,1
 206695,Youngstown,44555-0001,2021,Pleasent,Humid,OverCast,Moderate Rain,1
 169798,Ypsilanti,48197,2021,Pleasent,Humid,OverCast,Heavy Rain,1
