@@ -16,4 +16,7 @@ download_images.py
 image_column.py
 temp5.csv
 
+join_weather.py
+temp6.csv
+
 
