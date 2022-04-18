@@ -9,6 +9,6 @@ weather = weather.loc[:, ['unitId', 'DoesPlaceHavehotSummer', 'IsthePlaceHumid',
 
 combined = pd.merge(colleges, weather, left_on='UNITID', right_on='unitId', how='left')
 combined.drop('unitId', axis=1, inplace=True)
-combined.rename({'DoesPlaceHavehotSummer':'HOT_SUMMER', 'IsthePlaceHumid':'HUMID', 'IsthePlaceSunny':'SUNNY', 'IsthePlaceRainy':'RAINY', 'IsthePlaceSnowy':'SNOWY'})
+combined.rename({'DoesPlaceHavehotSummer':'HOT_SUMMER', 'IsthePlaceHumid':'HUMIDITY', 'IsthePlaceSunny':'SUNNY', 'IsthePlaceRainy':'RAINY', 'IsthePlaceSnowy':'SNOWY'})
 
 combined.to_csv('../data/temp6.csv', index=False)

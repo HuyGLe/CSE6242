@@ -9,9 +9,11 @@ colleges = pd.read_csv('../data/temp2.csv', na_values=na_values)
 
 key = '649ac8dea8e5eea6e723f1b76c'
 url = 'https://api.collegeai.com/v1/api/college/info?api_key=' + key + '&college_unit_ids='
-info_ids = '&info_ids=gpa_bottom_ten_percent'
+info_ids = '&info_ids=gpa_bottom_ten_percent%2Cinfo_ids=short_description%2Clong_description'
 
 colleges['GPA_BOTTOM_TEN_PERCENT'] = np.nan
+colleges['SHORT_DESCRIPTION'] = ''
+colleges['LONG_DESCRIPTION'] = ''
 
 for i in colleges.index:
     try:
@@ -20,6 +22,8 @@ for i in colleges.index:
         response_json = json.loads(response_str)
         if response_json['success'] == True:
             colleges.loc[i, "GPA_BOTTOM_TEN_PERCENT"] = response_json['colleges'][0]['gpaBottomTenPercent']
+            colleges.loc[i, "SHORT_DESCRIPTION"] = response_json['colleges'][0]['shortDescription']
+            colleges.loc[i, "LONG_DESCRIPTION"] = response_json['colleges'][0]['longDescription']
     except Exception:
         pass
  
