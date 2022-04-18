@@ -146,7 +146,6 @@ integer_cols <- c(
     ,"NPT44"
     ,"NPT45"
     ,"C150_4"
-    ,"GPA_BOTTOM_TEN_PERCENT"
     ,"UGDS_WHITE"
     ,"UGDS_BLACK"
     ,"UGDS_HISP"
@@ -205,6 +204,7 @@ integer_cols <- c(
 numeric_cols <- c(
     'LATITUDE'
     ,'LONGITUDE'
+    ,"GPA_BOTTOM_TEN_PERCENT"
 )
 created_cols <- c()
 input_cols <- c(character_cols, cip_cols, factor_cols, integer_cols, numeric_cols, 'ROOM', 'HIGHDEG')
@@ -221,6 +221,20 @@ levels(colleges$HOT_SUMMER) <- c('hot', 'moderate', 'pleasant', 'very_hot')
 levels(colleges$HUMIDITY) <- c('dry', 'humid', 'moderate', 'very_humid')
 levels(colleges$SUNNY) <- c('always_sunny', 'overcast', 'sunny')
 levels(colleges$RAINY) <- c('desert', 'heavy_rain', 'low_rain', 'moderate_rain')
+
+# fix persisting issues
+url_components <- strsplit(colleges$INSTURL, '[.]') 
+url_fix <- function(x) {
+    top_domain <- x[[length(x)]]
+    mid_domain <- x[[length(x) - 1]]
+    mid_split <- strsplit(mid_domain, 'https://', fixed=TRUE)[[1]]
+    if (length(mid_split) == 1)
+        paste0('https://www.', x[length(x)-1], '.', x[length(x)])
+    else
+        paste0('https://www.', mid_split[length(mid_split)], '.', x[length(x)])
+}
+colleges$INSTURL <- sapply(url_components, url_fix)
+
 
 # add/modify columns pre-imputation
 colleges$LOCALE_FIRST <- as.factor(substr(as.character(colleges$LOCALE), 1, 1))
@@ -331,6 +345,9 @@ colleges_standardized[, !(names(colleges_standardized) %in% not_standardized)] <
 ## Create selectivity and teaching quality columns
 colleges_standardized$SELECT <- -0.30*colleges_standardized$ADM_RATE + 0.70*colleges_standardized$GPA_BOTTOM_TEN_PERCENT
 colleges_standardized$TEACH_QUAL <- 0.20*colleges_standardized$INEXPFTE + 0.48*colleges_standardized$AVGFACSAL + 0.12*colleges_standardized$PFTFAC + 0.20*colleges_standardized$STUFACR
+colleges$SELECT <- colleges_standardized$SELECT
+colleges$TEACH_QUAL <- colleges_standardized$TEACH_QUAL
+created_cols <- c(created_cols, 'TEACH_QUAL', 'SELECT')
 
 # write the dataframes to files
 not_output <- c(
@@ -348,8 +365,8 @@ not_output <- c(
     ,"NPT44"
     ,"NPT45"
 )
-standardized_output_cols <- setdiff(c(input_cols, created_cols), c(not_output, dummy_source_cols))
+standardized_output_cols <- setdiff(c(input_cols, created_cols, dummy_cols), c(not_output, dummy_source_cols))
 write.csv(colleges_standardized[, standardized_output_cols], file="..//data//final_standardized.csv", row.names=F)
-output_cols <- setdiff(c(input_cols, created_cols), c(not_output, dummy_cols))
+output_cols <- setdiff(c(input_cols, created_cols), c(not_output))
 quote <- which(output_cols == "INSTURL" | output_cols == "LONG_DESCRIPTION")
 write.csv(colleges[, output_cols], file="..\\data\\final.csv", row.names=F, quote=quote)
