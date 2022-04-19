@@ -1,8 +1,10 @@
 from dash import Dash, dcc, html, callback, Output, Input
+from whitenoise import WhiteNoise
 import sys
 sys.path.append('./Dash')
 import front_end
 import callbacks
+
 
 
 app = Dash(__name__,
@@ -32,8 +34,9 @@ def change_page(new_page):
         return front_end.page_1_layout
     else:
         return front_end.page_3_layout
-
+    
 server = app.server
+server.wsgi_app = WhiteNoise(server.wsgi_app, root='static/')
 
 if __name__ == '__main__':
     app.run_server(debug=True)
