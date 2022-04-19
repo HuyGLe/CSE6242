@@ -9,7 +9,7 @@ app = Dash(__name__,
            title='College Recommendation System',
            meta_tags=[{'name': 'viewport', 'content': 'width=device-width, initial-scale=1.0'}],
            suppress_callback_exceptions=True,
-           external_stylesheets=['assets/style.css'])
+           external_stylesheets=['/assets/style.css'])
 
 app.layout = html.Div([
     dcc.Location(id='url', refresh=False),

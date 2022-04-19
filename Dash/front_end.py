@@ -28,11 +28,11 @@ def create_slider(name):
 
 def create_school_card(info):
     card = html.A(className='card', href=f'/college/{info.UNITID}', children=[
-        html.Picture(className='thumbnail', children=[
+        #html.Picture(className='thumbnail', children=[
             ###Get school picture
             #html.Img(className='category__01', src=f'assets/images/colleges/{info.IMAGE}')
-            html.Img(className='category__01', src=f'assets/images/colleges/{info.IMAGE}')
-        ]),
+        #    html.Img(className='category__01', src=f'/assets/images/colleges/{info.IMAGE}')
+        #]),
         html.Div(className='card-content', children=[
             ###Get school long name
             html.H4(f'{info.INSTNM}', className=''),
