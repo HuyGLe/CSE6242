@@ -94,10 +94,14 @@ def page_1_input(major, zipcode, gpa, sat, act, state, state_imp, ugds, ugds_imp
 ##############################  Page 2 ##############################
 def filter_vals(filter_dict, reset):
     if reset == True:
-        state = None
+        zip_ii = None
+        distance = None
+        state_ii = None
     else:
-        state =  stabbr_to_state[filter_dict['STABBR'][0]] if 'STABBR' in filter_dict else None
-    return [state]
+        zip_ii = filter_dict['ZIP'][0] if 'ZIP' in filter_dict else None
+        distance = f'{filter_dict["DISTANCE"][0]} miles' if 'DISTANCE' in filter_dict else None
+        state_ii =  stabbr_to_state[filter_dict['STABBR'][0]] if 'STABBR' in filter_dict else None
+    return [zip_ii, distance, state_ii]
 
 def create_user_info_dict(form):
     info = dict()
@@ -116,6 +120,8 @@ def create_user_info_dict(form):
 @callback(Output('page-2-main', 'children'),
           Output('map', 'children'),
           Output('2s', 'data'),
+          Output('zip-ii', 'value'),
+          Output('distance', 'value'),
           Output('state-ii', 'value'),
           Input('page-2-title', 'children'),
           State('last-page', 'data'),
@@ -230,9 +236,15 @@ def page_2_load(unused, last_page, new_page, store1, store2, store2_filter):
 
 
 @callback(Output('2s-filter', 'data'),
+          Input('zip-ii', 'value'),
+          Input('distance', 'value'),
           Input('state-ii', 'value'))
-def filter_input(state):
+def filter_input(zip_i, distance, state):
     filter_dict = {}
+    if zip_i is not None:
+        filter_dict['ZIP'] = [zip_i, '*']
+    if distance is not None:
+        filter_dict['DISTANCE'] = [int(distance.split(' ')[0]), '*']
     if state is not None:
         filter_dict['STABBR'] = [state_to_stabbr[state], '==']
     print('filter_input(): state is ' + ('not' if state is not None else '') + 'None; setting state-ii to ' + json.dumps(filter_dict))

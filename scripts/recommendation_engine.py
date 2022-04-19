@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 from sklearn.neighbors import NearestNeighbors
 from sklearn.metrics.pairwise import haversine_distances
+from scipy.spatial import KDTree
 
 
 # Allows school prototype to have a location
@@ -141,6 +142,13 @@ zip_to_state = pd.read_csv('data/zip_to_state.csv')
 zip_to_coords = pd.read_csv('data/zip_to_coords.csv', index_col='ZIPCODE')
 columns = pd.read_excel('data/scorecard/columns-simplified.xlsx')
 
+tree_kd = KDTree(data[['LATITUDE', 'LONGITUDE']])
+def dist_to_lat(dist, unit='kilometers'):
+    if unit == 'miles':
+        dist *= 1.60934
+        return dist*1.60934/110.574
+
+
 def similar_colleges(college_id, weights):
     query = norm.loc[college_id, :].drop('UNITID', axis=1)
     x = norm.drop('UNITID', axis=1)
@@ -228,17 +236,16 @@ def submit_form(school_dict, user_info, misc):
 def get_data(rows):
     return (data.loc[rows.index, :])[rows]
 
-def filt(local_df, filter_dict):
+def filt(local_df, filters):
     print('filt() - filter_dict keys:')
-    print(list(filter_dict.keys()))
+    print(list(filters.keys()))
     df = data.loc[local_df.index, :]
-    mask = np.ones(len(local_df), dtype=bool)
-    filter_cols = list(filter_dict.keys())
-    filter_values = list(filter_dict.values())
-    for i in range(len(filter_cols)):
-        col = filter_cols[i]
-        val = filter_values[i][0]
-        how = filter_values[i][1]
+    mask = pd.Series(np.ones(len(local_df), dtype=bool), index=local_df.index)
+    col_filters = [[k,v] for k,v in filters.items() if v[1] != '*']
+    for i in range(len(col_filters)):
+        col = col_filters[i][0]
+        val = col_filters[i][1][0]
+        how = col_filters[i][1][1]
         if how == ">":
             mask = mask & (df.loc[:, col] > val)
         elif how == ">=":
@@ -251,6 +258,14 @@ def filt(local_df, filter_dict):
             mask = mask & (df.loc[:, col] == val)
         else:
             raise ValueError("Value for how should be one of >, >=, ==, <, <=")
+    if 'DISTANCE' in filters and 'ZIP' in filters:
+        coords = zip_to_coords.loc[filters['ZIP'][0], ['LATITUDE', 'LONGITUDE']]
+        distance = filters['DISTANCE'][0]
+        query_kd = tree_kd.query_ball_point(coords, dist_to_lat(distance, 'miles'))
+        kd_mask = pd.Series(np.zeros(len(local_df), dtype=bool), index=local_df.index)
+        kd_mask.loc[data.index[query_kd]] = np.ones(len(query_kd), dtype=bool)
+        mask = mask & kd_mask
+        
     df = df.loc[mask, :]
     mask = pd.Series(mask, local_df.index)
     return mask, df
