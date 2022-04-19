@@ -172,6 +172,7 @@ def submit_form(school_dict, user_info, misc):
     school_dict['UGDS'][0] = standardize(size_ref[school_dict['UGDS'][0]], data.UGDS)
     school_dict['TEACH_QUAL'][0] = max(norm['TEACH_QUAL'])
     school_dict['SELECT'][0] = max(norm['SELECT'])
+    school_dict['DIVERSITY'][0] = max(norm['DIVERSITY'])
     zipcode = int(user_info['zip'])
     user_state = zip_to_state[(zip_to_state['Zip Min'] <= zipcode) & (zip_to_state['Zip Max'] >= zipcode)].iloc[0, 0]
     # TUITION
@@ -198,7 +199,6 @@ def submit_form(school_dict, user_info, misc):
     # ABHISHEK'S ORDINAL COLS
     for col in ['HOT_SUMMER', 'HUMIDITY', 'SUNNY', 'RAINY']:
         school_dict[col][0] = standardize(school_dict[col][0], data.loc[:, col])
-    # TODO EXAMINE THE REST OF THIS FUNCTION (MAKE SURE DUMMY VARS ARE HANDLED)
     print('---------------------------')
     print('school_dict:')
     print(school_dict)

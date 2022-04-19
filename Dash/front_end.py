@@ -30,7 +30,7 @@ def create_school_card(info):
     card = html.A(className='card', href=f'/college/{info.UNITID}', children=[
         html.Picture(className='thumbnail', children=[
             ###Get school picture
-            #html.Img(className='category__01', src=f'/assets/images/colleges/{info.IMAGE}')
+            html.Img(className='category__01', src=f'/assets/images/colleges/{info.IMAGE}')
         ]),
         html.Div(className='card-content', children=[
             ###Get school long name
@@ -275,7 +275,9 @@ page1Content = html.Main(children=[
                 html.P('How important is teaching quality to you?'),
                 create_slider('teach-qual'),
                 html.P('How important is projected earnings to you?'),
-                create_slider('exp-earnings')
+                create_slider('exp-earnings'),
+                html.P('How important is student diversity to you?'),
+                create_slider('diversity')
             ])
         ])
     ])

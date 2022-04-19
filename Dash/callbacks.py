@@ -62,10 +62,11 @@ def url_update(pathname, new_page, last_page):
           Input('tuition-imp', 'value'),
           Input('select-imp', 'value'),
           Input('teach-qual-imp', 'value'),
-          Input('exp-earnings-imp', 'value'), prevent_initial_call=True)
+          Input('exp-earnings-imp', 'value'),
+          Input('diversity-imp', 'value'), prevent_initial_call=True)
 def page_1_input(major, zipcode, gpa, sat, act, state, state_imp, ugds, ugds_imp, locale_first, locale_first_imp,
                  climate_zone, hot_summer, humidity, sunny, rainy, snowy, weather_imp, tuition_imp, select_imp,
-                 teach_qual_imp, exp_earnings_imp):
+                 teach_qual_imp, exp_earnings_imp, diversity_imp):
     form = dict()
     form['major-i'] = major
     form['zip-i'] = zipcode
@@ -89,6 +90,7 @@ def page_1_input(major, zipcode, gpa, sat, act, state, state_imp, ugds, ugds_imp
     form['select-imp'] = select_imp
     form['teach-qual-imp'] = teach_qual_imp
     form['exp-earnings-imp'] = exp_earnings_imp
+    form['diversity-imp'] = diversity_imp
     return json.dumps(form)
 
 ##############################  Page 2 ##############################
@@ -132,9 +134,10 @@ def create_user_info_dict(form):
 def page_2_load(unused, last_page, new_page, store1, store2, store2_filter):
     hovertemplate = '%{customdata[1]}<br>%{customdata[2]}, %{customdata[3]}'
     custom_data = ['UNITID', 'INSTNM', 'CITY', 'STABBR']
-    filter_dict = dict(json.loads(store2_filter))
+    filter_dict = store2_filter
     if new_page == '/2/filter':
         print('page_2_load() - new_page= /2/filter')
+        filter_dict = dict(json.loads(store2_filter))
         local_df = pd.read_json(store2, typ='series')
         local_df, df = rec.filt(local_df, filter_dict)
         if df.shape[0] > 0:
@@ -195,11 +198,12 @@ def page_2_load(unused, last_page, new_page, store1, store2, store2_filter):
             form_dict['SUNNY'] = [sunny_to_level[form['sunny-i']], int(form["weather-imp"])]
         if 'rainy-i' in form:
             form_dict['RAINY'] = [rainy_to_level[form['rainy-i']], int(form["weather-imp"])]
-        form_dict['SNOWY'] = [1 if len(form['snowy-i'])==1 else 0, form["weather-imp"]]
+        form_dict['SNOWY'] = [1 * ('snowy-i' in form), form["weather-imp"]]
         form_dict['TUITION'] = [None, int(form['tuition-imp'])]
         form_dict['SELECT'] = [None, int(form['select-imp'])]
         form_dict['TEACH_QUAL'] = [None, int(form['teach-qual-imp'])]
         form_dict['EXP_EARNINGS'] = [None, int(form['exp-earnings-imp'])]
+        form_dict['DIVERSITY'] = [None, int(form['diversity-imp'])]
         df = rec.submit_form(form_dict, create_user_info_dict(form), misc)
         local_df = pd.Series(data=True, index=df.index)
         new_children = [fe.create_school_card(df.iloc[i, :]) for i in range(n)]
