@@ -15,6 +15,7 @@ app.layout = html.Div([
     dcc.Location(id='url', refresh=False),
     dcc.Store(id='1s', storage_type='session'),
     dcc.Store(id='2s', storage_type='session'),
+    dcc.Store(id='2s-filter', storage_type='session'),
     dcc.Store(id='last-page', data='/1', storage_type='session'),
     dcc.Store(id='new-page', data='/1', storage_type='session'),
     html.Div(id='pc', children=front_end.page_1_layout)
@@ -25,7 +26,7 @@ app.layout = html.Div([
 def change_page(new_page):
     if new_page == '/1':
         return front_end.page_1_layout
-    elif new_page == '/2':
+    elif new_page == '/2' or new_page == '/2/filter' or new_page == '/2/filter0':
         return front_end.page_2_layout
     elif new_page is None or new_page == '':
         return front_end.page_1_layout

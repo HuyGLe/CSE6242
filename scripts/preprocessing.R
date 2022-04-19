@@ -204,6 +204,8 @@ integer_cols <- c(
 numeric_cols <- c(
     'LATITUDE'
     ,'LONGITUDE'
+    ,'LAT_RAD'
+    ,'LON_RAD'
     ,"GPA_BOTTOM_TEN_PERCENT"
 )
 created_cols <- c()
@@ -217,10 +219,20 @@ for (name in names(colleges)){
     else
         colleges[, name] <- as.numeric(colleges[, name])
 }
-levels(colleges$HOT_SUMMER) <- c('hot', 'moderate', 'pleasant', 'very_hot')
-levels(colleges$HUMIDITY) <- c('dry', 'humid', 'moderate', 'very_humid')
-levels(colleges$SUNNY) <- c('always_sunny', 'overcast', 'sunny')
-levels(colleges$RAINY) <- c('desert', 'heavy_rain', 'low_rain', 'moderate_rain')
+#levels(colleges$HOT_SUMMER) <- c('hot', 'moderate', 'pleasant', 'very_hot')
+#levels(colleges$HUMIDITY) <- c('dry', 'humid', 'moderate', 'very_humid')
+#levels(colleges$SUNNY) <- c('always_sunny', 'overcast', 'sunny')
+#levels(colleges$RAINY) <- c('desert', 'heavy_rain', 'low_rain', 'moderate_rain')
+levels(colleges$HOT_SUMMER) <- c(3, 2, 1, 4)
+levels(colleges$HUMIDITY) <- c(1, 3, 2, 4)
+levels(colleges$SUNNY) <- c(3, 1, 2)
+levels(colleges$RAINY) <- c(1, 4, 2, 3)
+colleges$HOT_SUMMER <- as.numeric(levels(colleges$HOT_SUMMER))[colleges$HOT_SUMMER]
+colleges$HUMIDITY <- as.numeric(levels(colleges$HUMIDITY))[colleges$HUMIDITY]
+colleges$SUNNY <- as.numeric(levels(colleges$SUNNY))[colleges$SUNNY]
+colleges$RAINY <- as.numeric(levels(colleges$RAINY))[colleges$RAINY]
+factor_cols <- setdiff(factor_cols, c('HOT_SUMMER', 'HUMIDITY', 'SUNNY', 'RAINY'))
+integer_cols <- c(integer_cols, c('HOT_SUMMER', 'HUMIDITY', 'SUNNY', 'RAINY'))
 
 # fix persisting issues
 url_components <- strsplit(colleges$INSTURL, '[.]') 
@@ -259,7 +271,7 @@ registerDoParallel(cores=12)
 # note: missForest takes ~4 minutes per iteration using default params
 # note: missForest takes ~.6 minutes per iteration using default params and 8 cores
 #rf <- missForest(colleges[, imputation_cols], maxiter=30, ntree=300, parallelize="variables")
-rf <- missForest(colleges[, imputation_cols], maxiter=30, ntree=100, parallelize="variables")
+rf <- missForest(colleges[, imputation_cols], maxiter=8, ntree=100, parallelize="variables")
 colleges[, imputation_cols] <- rf$ximp
 
 # perform imputation checks and adjustments
@@ -318,10 +330,6 @@ dummy_source_cols <- c(
     ,"SPORT3"
     ,"SPORT4"
     ,"LOCALE_FIRST"
-    ,"HOT_SUMMER"
-    ,"HUMIDITY"
-    ,"SUNNY"
-    ,"RAINY"
 )
 dummy_cols <- c()
 i = 1
@@ -336,7 +344,7 @@ while (i <= n) {
 }
 
 # create standardized data frame
-not_standardized <- c(dummy_source_cols, character_cols, factor_cols, cip_cols, "LONGITUDE", "LATITUDE")
+not_standardized <- c(dummy_source_cols, dummy_cols, character_cols, factor_cols, cip_cols, "LONGITUDE", "LATITUDE", 'LAT_RAD', 'LON_RAD')
 colleges_standardized <- colleges
 standardize <- function(x) {
     (x - mean(x)) / sd(x)
@@ -349,8 +357,13 @@ colleges$SELECT <- colleges_standardized$SELECT
 colleges$TEACH_QUAL <- colleges_standardized$TEACH_QUAL
 created_cols <- c(created_cols, 'TEACH_QUAL', 'SELECT')
 
+# Use selectivity to create selectivity category column
+quantiles <- quantile(colleges_standardized$SELECT, probs=c(0, .25, .45, .65, .8, .9, .95, .99, 1))
+colleges$SELECT_CAT <- cut(colleges_standardized$SELECT, breaks=c(quantiles[1]-1, quantiles[2:8], quantiles[9]+1), labels=c('8', '7', '6', '5', '4', '3', '2', '1'))
+created_cols <- c(created_cols, 'SELECT_CAT')
+
 # write the dataframes to files
-not_output <- c(
+not_output_shared <- c(
     "PREDDEG"
     ,"CCBASIC"
     ,"CCUGPROF"
@@ -365,8 +378,18 @@ not_output <- c(
     ,"NPT44"
     ,"NPT45"
 )
-standardized_output_cols <- setdiff(c(input_cols, created_cols, dummy_cols), c(not_output, dummy_source_cols))
+not_standardized_output <- c(
+    not_output_shared,
+    dummy_source_cols,
+    setdiff(character_cols, 'UNITID'),
+    'LATITUDE',
+    'LONGITUDE',
+    'LAT_RAD',
+    'LON_RAD',
+    'SELECT_CAT'
+)
+standardized_output_cols <- setdiff(c(input_cols, created_cols, dummy_cols), c(not_output_shared, not_standardized_output))
 write.csv(colleges_standardized[, standardized_output_cols], file="..//data//final_standardized.csv", row.names=F)
-output_cols <- setdiff(c(input_cols, created_cols), c(not_output))
+output_cols <- setdiff(c(input_cols, created_cols), c(not_output_shared))
 quote <- which(output_cols == "INSTURL" | output_cols == "LONG_DESCRIPTION")
 write.csv(colleges[, output_cols], file="..\\data\\final.csv", row.names=F, quote=quote)
