@@ -14,6 +14,6 @@ for i in range(len(images)):
     if unitid == 'default':
         continue
     else:
-        colleges.loc[colleges.UNITID == int(unitid), 'IMAGE'] = unitid + ext
+        colleges.loc[colleges.UNITID == int(unitid), 'IMAGE'] = unitid + '.' + ext
 
 colleges.to_csv('../data/temp5.csv', index=False)
