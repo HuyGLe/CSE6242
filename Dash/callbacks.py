@@ -113,7 +113,7 @@ def filter_vals(filter_dict, reset):
         snowy_ii = None
     else:
         zip_ii = filter_dict['zip-ii'] if 'zip-ii' in filter_dict else None
-        distance = f'{filter_dict["distance"]} miles' if 'distance' in filter_dict else None
+        distance = filter_dict["distance"] if 'distance' in filter_dict else None
         state_ii =  filter_dict['state-ii'] if 'state-ii' in filter_dict else None
         tuition_ii = filter_dict['tuition-ii']
         applfeeu_ii = filter_dict['applfeeu-ii'] if 'applfeeu-ii' in filter_dict else None
