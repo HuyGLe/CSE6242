@@ -40,9 +40,9 @@ def create_school_card(info):
         html.Footer(className='card-footer', children=[
             html.Div(className='post-meta', children=[
                 html.Span(className='', children=[
-                    html.P(f'Required GPA: {info.GPA_BOTTOM_TEN_PERCENT}'),
-                    html.P(f'Average SAT Score: {info.SAT_AVG}'),
-                    html.P(f'Average ACT Score: {info.ACTCMMID}')
+                    html.P(f'Required GPA: {round(info.GPA_BOTTOM_TEN_PERCENT, 1)}'),
+                    html.P(f'Average SAT Score: {int(info.SAT_AVG)}'),
+                    html.P(f'Average ACT Score: {int(info.ACTCMMID)}')
                 ])
             ])
         ])
@@ -213,23 +213,23 @@ page1Content = html.Main(children=[
             html.H3('User Information'),
             html.Div(children=[
                 html.Label('Select your desired major'),
-                dcc.Dropdown(majors, id='major-i', optionHeight=80),
+                dcc.Dropdown(majors, id='major-i', optionHeight=80, value=None),
                 html.Br(),
                 
-                html.Label('Enter your home zip code'),
-                dcc.Input(placeholder='Zip Code', type='number', min=1, max=99950, value='', id='zip-i', debounce=True),
+                html.Label('Enter your home ZIP code'),
+                dcc.Input(placeholder='ZIP Code', type='number', min=1, max=99950, value=None, id='zip-i', debounce=True),
                 html.Br(),
 
                 html.Label('Enter your unweighted GPA'),
-                dcc.Input(placeholder='X.XX', type='number', min=0, max=4, value = '', id='gpa-i', debounce =True),
+                dcc.Input(type='number', min=0, max=4, value=None, id='gpa-i', debounce=True),
                 html.Br(),
             
                 html.Label('Enter your SAT score'),
-                dcc.Input(placeholder='XXXX', type='number', value = '', id='sat-i', debounce=True),
+                dcc.Input(type='number', value=None, id='sat-i', debounce=True),
                 html.Br(),
             
                 html.Label('Enter your ACT score'),
-                dcc.Input(placeholder='XXXX', type='number', value = '', id='act-i', debounce=True),
+                dcc.Input(type='number', value=None, id='act-i', debounce=True),
                 html.Br(),
             ])
         ]),
@@ -238,29 +238,29 @@ page1Content = html.Main(children=[
         html.Div(children=[
             html.H3('Specific College Preferences'),
             html.Div(children=[
-                html.Label('Select your desired location'),
-                dcc.Dropdown(id='state-i', placeholder='Preferred State', options=['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming']),
+                html.Label('Select your preferred state'),
+                dcc.Dropdown(id='state-i', value=None, options=['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming']),
                 create_slider('state'),
-                html.Br(),
+                html.Hr(),html.Br(),
                 
                 html.Label('Select your desired school size'),
-                dcc.Slider(1, 5, 1, value=1, marks={1:'Small', 3:'Medium', 5:'Large'}, id='ugds-i', className='slider'),
+                dcc.Slider(1, 5, 1, value=3, marks={1:'Small', 3:'Medium', 5:'Large'}, id='ugds-i', className='slider'),
                 create_slider('ugds'),
-                html.Br(),
+                html.Hr(),html.Br(),
                 
                 html.Label('Select your desired school environment'),
-                dcc.Dropdown(['City', 'Suburb', 'Town', 'Rural'], id='locale-first-i'),
+                dcc.Dropdown(['City', 'Suburb', 'Town', 'Rural'], id='locale-first-i', value=None),
                 create_slider('locale-first'),
+                html.Hr(), html.Br(),
 
                 html.Label('Select your desired weather'),
-                dcc.Dropdown(id='climate-zone-i', placeholder='Climate Zone', options=list(climate_zones.keys())),
-                dcc.Dropdown(id='hot-summer-i', placeholder='Summer Temperature', options=['Cool', 'Moderate', 'Warm', 'Hot']),
-                dcc.Dropdown(id='humidity-i', placeholder='Humidity', options=['Dry', 'Moderate', 'Humid', 'Very Humid']),
-                dcc.Dropdown(id='sunny-i', placeholder='Sunshine', options=['Cloudy', 'Some Sun', 'Very Sunny']),
-                dcc.Dropdown(id='rainy-i', placeholder='Rain', options=['Desert', 'Low', 'Moderate', 'Rainy']),
-                dcc.Checklist(['Snowy Winters'], id='snowy-i'),
+                dcc.Dropdown(id='climate-zone-i', value=None, placeholder='Climate Zone', options=list(climate_zones.keys())),
+                dcc.Dropdown(id='hot-summer-i', value=None, placeholder='Summer Temperature', options=['Cool', 'Moderate', 'Warm', 'Hot']),
+                dcc.Dropdown(id='humidity-i', value=None, placeholder='Humidity', options=['Dry', 'Moderate', 'Humid', 'Very Humid']),
+                dcc.Dropdown(id='sunny-i', value=None, placeholder='Sunshine', options=['Cloudy', 'Some Sun', 'Very Sunny']),
+                dcc.Dropdown(id='rainy-i', value=None, placeholder='Rain', options=['Desert', 'Low', 'Moderate', 'Rainy']),
+                dcc.Dropdown(id='snowy-i', value=None, placeholder='Snowy Winters', options=['Yes', 'No']),
                 create_slider('weather'),
-                html.Br()
             ])
         ]),
 
@@ -270,12 +270,16 @@ page1Content = html.Main(children=[
             html.Div(children=[
                 html.Label('How important is a low tuition cost to you?'),
                 create_slider('tuition'),
+                html.Br(),
                 html.P('How important is school selectivity to you?'),
                 create_slider('select'),
+                html.Br(),
                 html.P('How important is teaching quality to you?'),
                 create_slider('teach-qual'),
+                html.Br(),
                 html.P('How important is projected earnings to you?'),
                 create_slider('exp-earnings'),
+                html.Br(),
                 html.P('How important is student diversity to you?'),
                 create_slider('diversity')
             ])
@@ -306,7 +310,7 @@ page2Content = html.Main(children=[
                 html.H4('Location'),
                 
                 html.Label('ZIP Code'),
-                dcc.Input(placeholder='Zip Code', type='number', min=1, max=99950, value='', id='zip-ii', debounce=True),
+                dcc.Input(placeholder='ZIP Code', type='number', min=1, max=99950, value='', id='zip-ii', debounce=True),
                 
                 html.Label('Distance From ZIP Code'),
                 dcc.Dropdown(['5 miles','10 miles','25 miles','50 miles','100 miles','250 miles','500 miles'],
@@ -317,21 +321,45 @@ page2Content = html.Main(children=[
                 dcc.Dropdown(['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'], id='state-ii'),
                 html.Br(),
 
-                html.H4('Tuition'),
-                dcc.Slider(0, 50000, 1, id=f'tuition-ii', value=25000, className='slider',
-                    marks={1: '0', 50000: '50000'}),
-
-                html.H4('Minimum Projected Salary'),
-                dcc.Input(placeholder='Salary', type='number', min=1, max=99950, value='', id='salary-ii', debounce=True),
+                html.H4('Cost/Earnings'),
+                
+                html.Label('Tuition'),
+                dcc.RangeSlider(0, 50000, step=10000, value=[0, 50000], id='tuition-ii'),
+                html.Hr(),
+                html.Label('Max Application Fee'),
+                dcc.Dropdown(id='applfeeu-ii', options=[0, 20, 40, 60, 80, 100]),
+                html.Hr(),
+                html.Label('Projected Salary'),
+                dcc.RangeSlider(0, 125000, step=25000, value=[0, 125000], id='exp-earnings-ii'),
                 html.Br(),
-
-                html.H4('Admission Charges'),
-                dcc.Slider(0, 10000, 1, id=f'admission-cost-ii', value=5000, className='slider', marks={1: '0', 10000: '10000'}),
+                
+                html.H4('Acceptance Chance'),
+                dcc.Checklist(id='select-cat-ii', options=['Safety Schools', '50/50 Schools', 'Reach Schools'], value=['Safety Schools', '50/50 Schools', 'Reach Schools']),
+                
+                html.H4('Weather'),
+                
+                html.Label('Climate Zone'),
+                dcc.Dropdown(id='climate-zone-ii', options=['Tropical', 'Arid', 'Temperate', 'Continental']),
+                html.Hr(),
+                html.Label('Summer Temperature'),
+                dcc.Dropdown(id='hot-summer-ii', options=['Cool', 'Moderate', 'Warm', 'Hot']),
+                html.Hr(),
+                html.Label('Humidity'),
+                dcc.Dropdown(id='humidity-ii', options=['Dry', 'Moderate', 'Humid', 'Very Humid']),
+                html.Hr(),
+                html.Label('Sunshine'),
+                dcc.Dropdown(id='sunny-ii', options=['Cloudy', 'Some Sun', 'Very Sunny']),
+                html.Hr(),
+                html.Label('Rain'),
+                dcc.Dropdown(id='rainy-ii', options=['Desert', 'Low', 'Moderate', 'Rainy']),
+                html.Hr(),
+                html.Label('Snow'),
+                dcc.Dropdown(id='snowy-ii', options=['Yes', 'No']),
+                
                 html.Br(),
-
-                dcc.Link(html.Button('Submit', className='submit-btn block'), href='/2/filter'),
+                dcc.Link(html.Button('Apply Filters', className='submit-btn block'), href='/2/filter'),
                 html.Br(),
-                dcc.Link(html.Button('Reset Filters', className='submit-btn block'), href='/2/filter0')
+                dcc.Link(html.Button('Clear Filters', className='submit-btn block'), href='/2/filter0')
             ])
         ]),
 

@@ -162,7 +162,7 @@ def similar_colleges(college_id, weights):
     neigh.fit(x)
     return data.iloc[neigh.kneighbors(query, 4, return_distance=False)[0][1:], ]
 
-def submit_form(school_dict, user_info, misc):
+def submit_form(school_dict, user_info):
     print('submit_form()')
     print('school_dict:')
     print(school_dict)
@@ -174,7 +174,7 @@ def submit_form(school_dict, user_info, misc):
     school_dict['SELECT'][0] = max(norm['SELECT'])
     school_dict['DIVERSITY'][0] = max(norm['DIVERSITY'])
     zipcode = int(user_info['zip'])
-    user_state = zip_to_state[(zip_to_state['Zip Min'] <= zipcode) & (zip_to_state['Zip Max'] >= zipcode)].iloc[0, 0]
+    user_state = user_info['state']
     # TUITION
     cost_col = data.TUITIONFEE_OUT.copy()
     cost_col.loc[data.STABBR == user_state] = data.TUITIONFEE_IN
@@ -185,12 +185,12 @@ def submit_form(school_dict, user_info, misc):
     std_exp_earnings_col = standardize(exp_earnings_col)
     school_dict['EXP_EARNINGS'][0] = max(std_exp_earnings_col)
     # DISTANCE
-    latitude, longitude = state_to_coords[misc['state'][0]]
+    latitude, longitude = state_to_coords[user_info['state']]
     lat_rad = np.radians(latitude)
     lon_rad = np.radians(longitude)
     distance_col = data.loc[:,['LAT_RAD', 'LON_RAD']].apply(lambda x: haversine_distances([[lat_rad, lon_rad], [x.LAT_RAD, x.LON_RAD]])[0, 1], axis=1)
     std_distance_col = standardize(distance_col)
-    school_dict['DISTANCE'] = [min(std_distance_col), misc['state'][1]/3]
+    school_dict['DISTANCE'] = [min(std_distance_col), int(user_info['zip'][1])/3]
     # SELECTIVITY RANK DISTANCE
     student_rank = rank_student(user_info['gpa'], user_info['sat'], user_info['act'])
     rank_distance_col = np.abs(student_rank - data.SELECT_CAT)
@@ -204,19 +204,6 @@ def submit_form(school_dict, user_info, misc):
     print(school_dict)
     
     query = pd.DataFrame(pd.DataFrame(school_dict).iloc[0, :]).T
-    '''
-    non_stand_col = [col for col in query.columns if col[0:12] == 'CLIMATE_ZONE' or col[0:6] == 'STABBR'] 
-    major_names = degree_dicts(data, columns).values()
-    non_stand_col.append('TEACH_QUAL')
-    non_stand_col.append('SELECT')
-    non_stand_col.append('TUITION') # have to do this manually
-    non_stand_col.extend([col for col in query.columns if col in major_names])
-    for col in query.columns:
-        if col in non_stand_col:
-            continue
-        mean = np.mean(data[col])
-        std = np.std(data[col])
-        query.loc[:, col] = (query.loc[:, col] - mean) / std'''
     weights = pd.DataFrame(school_dict).iloc[1, :]
     
     # SET UP NN DATAFRAME
@@ -236,9 +223,9 @@ def submit_form(school_dict, user_info, misc):
 def get_data(rows):
     return (data.loc[rows.index, :])[rows]
 
-def filt(local_df, filters):
-    print('filt() - filter_dict keys:')
-    print(list(filters.keys()))
+def filt(local_df, filters, user_info):
+    print('filt() - filters:')
+    print(filters)
     df = data.loc[local_df.index, :]
     mask = pd.Series(np.ones(len(local_df), dtype=bool), index=local_df.index)
     col_filters = [[k,v] for k,v in filters.items() if v[1] != '*']
@@ -247,15 +234,15 @@ def filt(local_df, filters):
         val = col_filters[i][1][0]
         how = col_filters[i][1][1]
         if how == ">":
-            mask = mask & (df.loc[:, col] > val)
+            mask &= (df.loc[:, col] > val)
         elif how == ">=":
-            mask = mask & (df.loc[:, col] >= val)
+            mask &= (df.loc[:, col] >= val)
         elif how == "<=":
-            mask = mask & (df.loc[:, col] <= val)
+            mask &= (df.loc[:, col] <= val)
         elif how == "<":
-            mask = mask & (df.loc[:, col] < val)
+            mask &= (df.loc[:, col] < val)
         elif how == "==":
-            mask = mask & (df.loc[:, col] == val)
+            mask &= (df.loc[:, col] == val)
         else:
             raise ValueError("Value for how should be one of >, >=, ==, <, <=")
     if 'DISTANCE' in filters and 'ZIP' in filters:
@@ -264,7 +251,25 @@ def filt(local_df, filters):
         query_kd = tree_kd.query_ball_point(coords, dist_to_lat(distance, 'miles'))
         kd_mask = pd.Series(np.zeros(len(local_df), dtype=bool), index=local_df.index)
         kd_mask.loc[data.index[query_kd]] = np.ones(len(query_kd), dtype=bool)
-        mask = mask & kd_mask
+        mask &= kd_mask
+    if 'TUITION' in filters:
+        min_tuition, max_tuition = filters['TUITION'][0]
+        tuition = df.TUITIONFEE_OUT.copy()
+        tuition.loc[df.STABBR == user_info['state']] = df.TUITIONFEE_IN
+        mask &= (min_tuition <= tuition) & (tuition <= max_tuition)
+    if 'EARNINGS' in filters:
+        min_earnings, max_earnings = filters['EARNINGS'][0]
+        earnings = df.EXP_EARNINGS * majors_scale[user_info['major']]
+        mask &= (min_earnings <= earnings) & (earnings <= max_earnings)
+    if 'SELECT_CAT' in filters:
+        user_cat = rank_student(user_info['gpa'], user_info['sat'], user_info['act'])
+        if 'Safety Schools' not in filters['SELECT_CAT'][0]:
+            mask &= ~(df.SELECT_CAT <= user_cat - 2)
+        if '50/50 Schools' not in filters['SELECT_CAT'][0]:
+            mask &= ~((user_cat - 1 <= df.SELECT_CAT) & (df.SELECT_CAT <= user_cat + 1))
+        if 'Reach Schools' not in filters['SELECT_CAT'][0]:
+            mask &= ~(user_cat + 2 <= df.SELECT_CAT)       
+        
         
     df = df.loc[mask, :]
     mask = pd.Series(mask, local_df.index)
