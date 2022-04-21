@@ -262,7 +262,7 @@ def page_2_load(unused, last_page, new_page, store1, store2, store2_filter):
     form = json.loads(store1)
     hovertemplate = '%{customdata[1]}<br>%{customdata[2]}, %{customdata[3]}'
     custom_data = ['UNITID', 'INSTNM', 'CITY', 'STABBR']
-    filter_dict = dict(json.loads(store2_filter))
+    filter_dict = dict(json.loads(store2_filter)) if store2_filter is not None else dict()
     if new_page == '/2/filter':
         print('page_2_load() - new_page= /2/filter')
         #filter_dict = dict(json.loads(store2_filter))

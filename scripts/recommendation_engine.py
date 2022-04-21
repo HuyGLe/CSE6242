@@ -264,11 +264,11 @@ def filt(local_df, filters, user_info):
     if 'SELECT_CAT' in filters:
         user_cat = rank_student(user_info['gpa'], user_info['sat'], user_info['act'])
         if 'Safety Schools' not in filters['SELECT_CAT'][0]:
-            mask &= ~(df.SELECT_CAT <= user_cat - 2)
+            mask &= ~(user_cat + 2 <= df.SELECT_CAT)
         if '50/50 Schools' not in filters['SELECT_CAT'][0]:
             mask &= ~((user_cat - 1 <= df.SELECT_CAT) & (df.SELECT_CAT <= user_cat + 1))
         if 'Reach Schools' not in filters['SELECT_CAT'][0]:
-            mask &= ~(user_cat + 2 <= df.SELECT_CAT)       
+            mask &= ~(user_cat - 2 >= df.SELECT_CAT)       
         
         
     df = df.loc[mask, :]
