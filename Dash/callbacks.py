@@ -274,13 +274,7 @@ def page_2_load(unused, last_page, new_page, store1, store2, store2_filter):
             new_children = []
         fig_map = px.scatter_mapbox(df.iloc[1:n, :], lat="LATITUDE", lon="LONGITUDE", custom_data=custom_data, color_discrete_sequence=["fuchsia"], zoom=3, height=300)
         fig_map.update_traces(hovertemplate=hovertemplate, marker_size=10)
-        fig_map.update_layout(mapbox_style="white-bg", margin={"r":0, "t":0, "l":0, "b":0}, mapbox_layers=[
-            {
-                'below':'traces',
-                'sourcetype':'raster',
-                'sourceattribution':'United States Geological Survey',
-                'source':['https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryOnly/MapServer/tile/{z}/{y}/{x}']
-            }])
+        fig_map.update_layout(mapbox_style="open-street-map", margin={"r":0, "t":0, "l":0, "b":0})
         print(f'...returning from page_2_load... local_df sum: {np.sum(local_df)}')
         return new_children, dcc.Graph(id='map', figure=fig_map), local_df.to_json(), *filter_vals(filter_dict, reset=False)        
     elif new_page == '/2/filter0':
@@ -293,13 +287,7 @@ def page_2_load(unused, last_page, new_page, store1, store2, store2_filter):
             new_children = []
         fig_map = px.scatter_mapbox(df.iloc[1:n, :], lat="LATITUDE", lon="LONGITUDE", custom_data=custom_data, color_discrete_sequence=["fuchsia"], zoom=3, height=300)
         fig_map.update_traces(hovertemplate=hovertemplate, marker_size=10)
-        fig_map.update_layout(mapbox_style="white-bg", margin={"r":0, "t":0, "l":0, "b":0}, mapbox_layers=[
-            {
-                'below':'traces',
-                'sourcetype':'raster',
-                'sourceattribution':'United States Geological Survey',
-                'source':['https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryOnly/MapServer/tile/{z}/{y}/{x}']
-            }])
+        fig_map.update_layout(mapbox_style="open-street-map", margin={"r":0, "t":0, "l":0, "b":0})
         print(f'...returning from page_2_load... local_df sum: {np.sum(local_df)}')
         return new_children, dcc.Graph(id='map', figure=fig_map), local_df.to_json(), *filter_vals(filter_dict, reset=True)
     elif last_page == '/1':  # if we came from page 1
@@ -312,13 +300,7 @@ def page_2_load(unused, last_page, new_page, store1, store2, store2_filter):
         new_children = [fe.create_school_card(df.iloc[i, :]) for i in range(n)]
         fig_map = px.scatter_mapbox(df.iloc[1:n, :], lat="LATITUDE", lon="LONGITUDE", custom_data=custom_data, color_discrete_sequence=["fuchsia"], zoom=3, height=300)
         fig_map.update_traces(hovertemplate=hovertemplate, marker_size=10)
-        fig_map.update_layout(mapbox_style="white-bg", margin={"r":0, "t":0, "l":0, "b":0}, mapbox_layers=[
-            {
-                'below':'traces',
-                'sourcetype':'raster',
-                'sourceattribution':'United States Geological Survey',
-                'source':['https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryOnly/MapServer/tile/{z}/{y}/{x}']
-            }])
+        fig_map.update_layout(mapbox_style="open-street-map", margin={"r":0, "t":0, "l":0, "b":0})
         print(f'...returning from page_2_load... local_df sum: {np.sum(local_df)}')
         return new_children, dcc.Graph(id='map', figure=fig_map), local_df.to_json(), *filter_vals(filter_dict, reset=True)
     else:
@@ -331,13 +313,7 @@ def page_2_load(unused, last_page, new_page, store1, store2, store2_filter):
             new_children = []
         fig_map = px.scatter_mapbox(df.iloc[1:n, :], lat="LATITUDE", lon="LONGITUDE", custom_data=custom_data, color_discrete_sequence=["fuchsia"], zoom=3, height=300)
         fig_map.update_traces(hovertemplate=hovertemplate, marker_size=10)
-        fig_map.update_layout(mapbox_style="white-bg", margin={"r":0, "t":0, "l":0, "b":0}, mapbox_layers=[
-            {
-                'below':'traces',
-                'sourcetype':'raster',
-                'sourceattribution':'United States Geological Survey',
-                'source':['https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryOnly/MapServer/tile/{z}/{y}/{x}']
-            }])
+        fig_map.update_layout(mapbox_style="open-street-map", margin={"r":0, "t":0, "l":0, "b":0})
         print(f'...returning from page_2_load... local_df sum: {np.sum(local_df)}')
         return new_children, dcc.Graph(id='map', figure=fig_map), local_df.to_json(), *filter_vals(filter_dict, reset=False)
 
@@ -413,4 +389,4 @@ def page_3_content(children, new_page, store1):
         stabbr = state_to_stabbr[form['state-i']]
     unitid = int(new_page[9:])
     df = rec.get_data(pd.Series(data=[True], index=[unitid])).squeeze()
-    return fe.create_college_info(df, stabbr)
+    return fe.create_college_info(df, stabbr, rec.similar_schools(unitid))

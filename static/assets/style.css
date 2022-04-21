@@ -64,7 +64,7 @@ h4.card-section {
 }
 .container {
     max-width: 1200px;
-    margin: auto 60px;
+    margin: 0 auto;
 }
 
 .flex.container {
@@ -100,12 +100,18 @@ h4.card-section {
     border-top: 1px solid #108de4;
 }
 
+.summary-card .key-val {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
 .key-val .key {
-    width: fit-content;
+    width: max-content;
 }
 
 .key-val .val {
-    width: 100%;
+    /* width: 100%; */
+    flex: 1 0 0;
     text-align: right;
     font-weight: 700;
 }
@@ -180,7 +186,7 @@ a {
 
 /***************************           College Cards            *******************************/
 
-.cards {
+.cards { 
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* see notes below */
     grid-auto-rows: minmax(200px, auto);
@@ -201,13 +207,29 @@ a {
     text-decoration: none;
     background: #fff;
 }
-  
+
+.thumbnail {
+    position: relative;
+}
+.thumbnail::after {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: ' ';
+    *background-color: rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 -20px 60px rgba(0, 0, 0, 0.075);
+
+}
 .thumbnail img {
-    fill: #c7c4c4;
-    height: 135px;
+    *fill: #c7c4c4;
+    height: 160px;
     width: 100%;
     object-fit: cover;
     padding: 0;
+    display: block;
 }
 
 .card.large {
@@ -215,7 +237,7 @@ a {
 }
 
 .card.large .thumbnail img {
-    height: 200px;
+    height: 280px;
 }
   
 .card-content {
@@ -236,6 +258,19 @@ h3.college-name {
     margin: 10px 0;
     padding: 0;
     line-height: 40px;
+}
+
+h4.college-name {
+    margin: 10px 0 5px;
+    padding: 0;
+    line-height: 24px;
+}
+
+h5.college-city {
+    margin: 0 0 10px;
+    padding: 0 0 10px;
+    opacity: 0.8;
+    border-bottom: 1px solid #108de4;
 }
 .card.large .card-content {
     font-size: 1rem;
@@ -258,6 +293,11 @@ h3.college-name {
     text-transform: uppercase;
 }
 
+#map {
+    margin: 20px 0;
+    border-radius: 6px;
+    overflow: hidden;
+}
 /*
 
 html.A(className='card', children=[

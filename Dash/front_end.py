@@ -26,30 +26,75 @@ def create_slider(name):
         className='slider'
     )
 
+# test card for similar colleges
+def create_school_test_card(info):
+    card = html.A(className='card summary-card', href=f'/college/168740', children=[
+        html.Picture(className='thumbnail', children=[
+            ###Get school picture
+            html.Img(className='category__01', src=f'/assets/images/colleges/168740.jpg')
+        ]),
+        html.Div(className='card-content', children=[
+            ###Get school long name
+            html.H4(f'Andrews University', className='college-name'),
+            html.H5(f'Berrien Springs, MI', className='college-city'),
+
+            html.Div(className='key-val', children=[
+                html.Span('Required GPA', className='key'),
+                html.Span(f'3.50', className='val'),
+            ]),
+            
+            html.Div(className='key-val', children=[
+                html.Span('Average SAT Score', className='key'),
+                html.Span(f'1400', className='val'),
+            ]),
+            
+            html.Div(className='key-val', children=[
+                html.Span('Average ACT Score', className='key'),
+                html.Span(f'34', className='val'),
+            ]),
+        ]),
+        # html.Footer(className='card-footer', children=[
+        #     html.Div(className='post-meta', children=[
+        #         html.Span(className='', children=[
+        #             html.P(f'Required GPA: {info.GPA_BOTTOM_TEN_PERCENT}'),
+        #             html.P(f'Average SAT Score: {info.SAT_AVG}'),
+        #             html.P(f'Average ACT Score: {info.ACTCMMID}')
+        #         ])
+        #     ])
+        # ])
+    ])
+    return card
+
 def create_school_card(info):
-    card = html.A(className='card', href=f'/college/{info.UNITID}', children=[
+    card = html.A(className='card summary-card', href=f'/college/{info.UNITID}', children=[
         html.Picture(className='thumbnail', children=[
             ###Get school picture
             html.Img(className='category__01', src=f'/assets/images/colleges/{info.IMAGE}')
         ]),
         html.Div(className='card-content', children=[
             ###Get school long name
-            html.H4(f'{info.INSTNM}', className=''),
-            html.H5(f'{info.CITY}, {info.STABBR}')
+            html.H4(f'{info.INSTNM}', className='college-name'),
+            html.H5(f'{info.CITY}, {info.STABBR}', className='college-city'),
+
+            html.Div(className='key-val', children=[
+                html.Span('Required GPA', className='key'),
+                html.Span(f'{round(info.GPA_BOTTOM_TEN_PERCENT, 1)}', className='val'),
+            ]),
+            
+            html.Div(className='key-val', children=[
+                html.Span('Average SAT Score', className='key'),
+                html.Span(f'{int(info.SAT_AVG)}', className='val'),
+            ]),
+            
+            html.Div(className='key-val', children=[
+                html.Span('Average ACT Score', className='key'),
+                html.Span(f'{int(info.ACTCMMID)}', className='val'),
+            ]),
         ]),
-        html.Footer(className='card-footer', children=[
-            html.Div(className='post-meta', children=[
-                html.Span(className='', children=[
-                    html.P(f'Required GPA: {round(info.GPA_BOTTOM_TEN_PERCENT, 1)}'),
-                    html.P(f'Average SAT Score: {int(info.SAT_AVG)}'),
-                    html.P(f'Average ACT Score: {int(info.ACTCMMID)}')
-                ])
-            ])
-        ])
     ])
     return card
 
-def create_college_info(info, users_state):
+def create_college_info(info, users_state, similar_schools):
     if info.UGDS < 2500:
         size = 'Very Small'
     elif info.UGDS < 5000:
@@ -65,133 +110,150 @@ def create_college_info(info, users_state):
     other_expenses = (info.OTHEREXPENSE_ON + info.OTHEREXPENSE_OFF) / 2
     room_and_board = (info.ROOMBOARD_ON + info.ROOMBOARD_OFF) / 2
 
-    card = html.Div(className='card large', children=[    
-        html.Picture(className='thumbnail', children=[
-            html.Img(className='category__01', src=f'/assets/images/colleges/{info.IMAGE}')
-        ]),
-        html.Div(className='card-content', children=[
-            ###Get school long name
-            html.H3(info.INSTNM, className='college-name'),
-            ###Get school description
-            html.P(info.LONG_DESCRIPTION, className=''),
-        ]),
-
-        # Overview
-        html.Div(className='card-content', children=[
-            html.H4('Overview', className='card-section'),
-            html.Div(className='two-col', children=[
-                html.Div(className='col-1', children=[
-
-                    html.Div(children=[
-                        html.Span('Student Population', className='item-header'),
-                        html.Span(f'{info.UGDS}', className='item-info'),
-                    ]),
-
-                    html.Div(className='key-val', children=[
-                        html.Span('City', className='key'),
-                        # df field: CITY, STABBR 
-                        html.Span(f'{info.CITY}, {info.STABBR}', className='val'),
-                    ]),
-                    
-                    html.Div(className='key-val', children=[
-                        html.Span('Website', className='key'),
-                        # df field: INSTURL
-                        html.A(info.INSTURL, href=info.INSTURL, target='_blank', className='val'),
-                    ]),
-                    html.Div(className='key-val', children=[
-                        html.Span('School Type', className='key'),
-                        html.Span('Public' if info.CONTROL == 1 else 'Private', className='val'),
-                    ]),
-
-                    html.Div(className='key-val', children=[
-                        html.Span('Setting', className='key'),
-                        html.Span(locale[info.LOCALE], className='val'),
-                    ]),
-                ]),
-
-                html.Div(className='col-2', children=[
-                    html.Div(children=[
-                        html.Span('Best College Rank', className='item-header'),
-                        html.Span("NOT IMPLEMENTED (WE DON'T HAVE THIS DATA)", className='item-info'),
-                    ]),
-
-                    html.Div(className='key-val', children=[
-                        html.Span('Size', className='key'),
-                        html.Span(size, className='val'),
-                    ]),
-                    html.Div(className='key-val', children=[
-                        html.Span('Status', className='key'),
-                        html.Span('Non-Profit' if info.CONTROL <= 2 else 'For-Profit', className='val'),
-                    ]),
-
-                    html.Div(className='key-val', children=[
-                        html.Span('On-Campus Housing', className='key'),
-                        html.Span("Yes" if info.ROOM == 1 else "No", className='val'),
-                    ]),
-                    
-                    html.Div(className='key-val', children=[
-                        html.Span('Level of Study', className='key'),
-                        html.Span('Undergrad/Graduate' if info.HIGHDEG == 4 else 'Undergrad', className='val'),
-                    ]),
-                ])
+    card = html.Div(children=[
+        html.Div(className='card large', children=[    
+            html.Picture(className='thumbnail', children=[
+                html.Img(className='category__01', src=f'/assets/images/colleges/{info.IMAGE}')
             ]),
-            html.P(info.LONG_DESCRIPTION, className=''),
-        ]),
-
-        # Cost
-        html.Div(className='card-content', children=[
-            html.H4('Cost', className='card-section'),
-            html.Div(className='two-col', children=[
-                html.Div(className='col-1', children=[
-
-                    html.Div(children=[
-                        html.Span('Sticker Price', className='item-header'),
-                        html.Span('NOT EXACTLY SURE WHAT THIS SHOULD BE', className='item-info'),
-                    ]),
-
-                    html.Div(className='key-val', children=[
-                        html.Span('Tuition/Fees', className='key'),
-                        html.Span('$'+str(tuition_and_fees), className='val'),
-                    ]),
-                    
-                    html.Div(className='key-val', children=[
-                        html.Span('Books and Supplies', className='key'),
-                        html.Span(f'${info.BOOKSUPPLY}', className='val'),
-                    ]),
-
-                    html.Div(className='key-val', children=[
-                        html.Span('Other Fees', className='key'),
-                        html.Span('THIS IS INCLUDED IN Tuition/Fees', className='val'),
-                    ]),
-                ]),
-
-                html.Div(className='col-2', children=[
-                    html.Div(children=[
-                        html.Span('Average Net Price 2019/2020', className='item-header'),
-                        html.Span('$' + str(tuition_and_fees + info['BOOKSUPPLY'] + room_and_board + other_expenses), className='item-info'),
-                    ]),
-
-                    html.Div(className='key-val', children=[
-                        html.Span('Room and Board', className='key'),
-                        html.Span('$' + str(room_and_board), className='val'),
-                    ]),
-
-                    html.Div(className='key-val', children=[
-                        html.Span('Other Expenses', className='key'),
-                        html.Span('$' + str(other_expenses), className='val'),
-                    ]),
-
-                    # etc
-
-
-                ])
+            html.Div(className='card-content', children=[
+                ###Get school long name
+                html.H3(info.INSTNM, className='college-name'),
+                ###Get school description
+                html.P(info.LONG_DESCRIPTION, className=''),
             ]),
-            html.P(f'Net price is indicative of what it actually costs to attend {info.INSTNM} when typical grants and scholarships are considered. The net price varies by family income and financial need.', className=''),
+
+            # Overview
+            html.Div(className='card-content', children=[
+                html.H4('Overview', className='card-section'),
+                html.Div(className='two-col', children=[
+                    html.Div(className='col-1', children=[
+
+                        html.Div(children=[
+                            html.Span('Student Population', className='item-header'),
+                            html.Span(f'{info.UGDS}', className='item-info'),
+                        ]),
+
+                        html.Div(className='key-val', children=[
+                            html.Span('City', className='key'),
+                            # df field: CITY, STABBR 
+                            html.Span(f'{info.CITY}, {info.STABBR}', className='val'),
+                        ]),
+                        
+                        html.Div(className='key-val', children=[
+                            html.Span('Website', className='key'),
+                            # df field: INSTURL
+                            html.A(info.INSTURL, href=info.INSTURL, target='_blank', className='val'),
+                        ]),
+                        html.Div(className='key-val', children=[
+                            html.Span('School Type', className='key'),
+                            html.Span('Public' if info.CONTROL == 1 else 'Private', className='val'),
+                        ]),
+
+                        html.Div(className='key-val', children=[
+                            html.Span('Setting', className='key'),
+                            html.Span(locale[info.LOCALE], className='val'),
+                        ]),
+                                                html.Div(className='key-val', children=[
+                            html.Span('Size', className='key'),
+                            html.Span(size, className='val'),
+                        ]),
+                        html.Div(className='key-val', children=[
+                            html.Span('Status', className='key'),
+                            html.Span('Non-Profit' if info.CONTROL <= 2 else 'For-Profit', className='val'),
+                        ]),
+
+                        html.Div(className='key-val', children=[
+                            html.Span('On-Campus Housing', className='key'),
+                            html.Span("Yes" if info.ROOM == 1 else "No", className='val'),
+                        ]),
+                        
+                        html.Div(className='key-val', children=[
+                            html.Span('Level of Study', className='key'),
+                            html.Span('Undergrad/Graduate' if info.HIGHDEG == 4 else 'Undergrad', className='val'),
+                        ]),
+                    ]),
+
+                    html.Div(className='col-2', children=[
+
+
+
+                    ])
+                ]),
+                # html.P(info.LONG_DESCRIPTION, className=''),
+            ]),
+
+            # Cost
+            html.Div(className='card-content', children=[
+                html.H4('Cost', className='card-section'),
+                html.Div(className='two-col', children=[
+                    html.Div(className='col-1', children=[
+
+                        html.Div(children=[
+                            html.Span('Sticker Price', className='item-header'),
+                            # html.Span('NOT EXACTLY SURE WHAT THIS SHOULD BE', className='item-info'),
+                            html.Span('$' + str(int(round(tuition_and_fees + info['BOOKSUPPLY'] + room_and_board + other_expenses, -3))), className='item-info'),
+                        ]),
+
+                        html.Div(className='key-val', children=[
+                            html.Span('Tuition/Fees', className='key'),
+                            html.Span('$'+str(tuition_and_fees), className='val'),
+                        ]),
+                        
+                        html.Div(className='key-val', children=[
+                            html.Span('Books and Supplies', className='key'),
+                            html.Span(f'${info.BOOKSUPPLY}', className='val'),
+                        ]),
+
+                        # html.Div(className='key-val', children=[
+                        #     html.Span('Other Fees', className='key'),
+                        #     html.Span('INCLUDED IN Tuition/Fees', className='val'),
+                        # ]),
+                    ]),
+
+                    html.Div(className='col-2', children=[
+                        html.Div(children=[
+                            html.Span('Average Net Price 2019/2020', className='item-header'),
+                            html.Span('$' + str(tuition_and_fees + info['BOOKSUPPLY'] + room_and_board + other_expenses), className='item-info'),
+                        ]),
+
+                        html.Div(className='key-val', children=[
+                            html.Span('Room and Board', className='key'),
+                            html.Span('$' + str(room_and_board), className='val'),
+                        ]),
+
+                        html.Div(className='key-val', children=[
+                            html.Span('Other Expenses', className='key'),
+                            html.Span('$' + str(other_expenses), className='val'),
+                        ]),
+
+                        # etc
+
+
+                    ])
+                ]),
+                html.P(f'Net price is indicative of what it actually costs to attend {info.INSTNM} when typical grants and scholarships are considered. The net price varies by family income and financial need.', className=''),
+            ]),
+
+            # Similar schools
+            # html.Div(className='card-content', children=[
+            #     html.H4('Similar Schools', className='card-section'),
+            #     html.Div(className='similar-cards', children=[
+                    
+            #     ]),
+            # ]),
+
+            # Etc
         ]),
 
-        # Etc
+        # Similar colleges
+        html.H3('Similar Colleges'),
+
+        # populate with 4 most similar schools
+        html.Div(className='cards', children=[
+            create_school_card(similar_schools.iloc[i, :]) for i in range(min(4, similar_schools.shape[0]))
+        ])
+
     ])
-
     return card
 
 
@@ -366,12 +428,14 @@ page2Content = html.Main(children=[
         # main content
         html.Div(className='main-section', children=[
             html.H3('Recommendations', id='page-2-title'),
-            html.Div(className='cards', id='page-2-main')
+            html.Div(className='cards', id='page-2-main'),
+            
         ]),
+        
 
     ]),
 
-    html.Div(className='flexcols container', children=[
+    html.Div(className='container', children=[
         html.Div(id='map'),
     ]),
 ])
@@ -389,7 +453,7 @@ page_2_layout = html.Div([
 page3Content = html.Main(children=[
     html.Div(className='flexcols container', children=[
         # left sidebar
-        html.Div(className='sidebar'),
+        #html.Div(className='sidebar'),
 
         # main content
         html.Div(className='main-section', children=[
@@ -398,7 +462,7 @@ page3Content = html.Main(children=[
         ]),
 
         # right sidebar
-        html.Div(className='sidebar'),
+        #html.Div(className='sidebar'),
     ])
 ])
 

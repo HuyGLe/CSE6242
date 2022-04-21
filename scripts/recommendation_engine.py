@@ -149,18 +149,18 @@ def dist_to_lat(dist, unit='kilometers'):
         return dist*1.60934/110.574
 
 
-def similar_colleges(college_id, weights):
-    query = norm.loc[college_id, :].drop('UNITID', axis=1)
-    x = norm.drop('UNITID', axis=1)
-    weights = pd.DataFrame(weights)
-    for col in x:
-        if col not in weights.columns:
-            weights[col] = 3
-    weights = weights[query.columns]
-    weights = list(weights.T.iloc[:,0])
+def similar_schools(college_id):
+    cols = ['ADM_RATE', 'ACTCMMID', 'SAT_AVG', 'UGDS', 'DIVERSITY', 'TEACH_QUAL', 'SELECT',
+            'TUITIONFEE_IN','TUITIONFEE_OUT']
+    query = norm.loc[data[data['UNITID'] == college_id].index, cols]
+
+    weights = {}
+    for col in cols:
+        weights[col] = [1]
+    weights = pd.DataFrame(weights).iloc[0,:]
     neigh = NearestNeighbors(metric=custom_dist, metric_params = {'weights': weights})
-    neigh.fit(x)
-    return data.iloc[neigh.kneighbors(query, 4, return_distance=False)[0][1:], ]
+    neigh.fit(norm[cols])
+    return data.iloc[neigh.kneighbors(query, 5, return_distance=False)[0][1:], ]
 
 def submit_form(school_dict, user_info):
     print('submit_form()')
