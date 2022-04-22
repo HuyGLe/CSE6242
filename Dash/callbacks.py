@@ -447,7 +447,7 @@ def create_graphs(data, std_data, unitid, user_state):
     sizes = [lo, m1, m2, h1, h2]
     df = pd.DataFrame([labels, sizes]).T
     df.columns = ["Income", "Percentage"]
-    inc = px.pie(df, values="Percentage", names="Income", title="Income")
+    inc = px.pie(df, values="Percentage", names="Income", title="Family Income")
     graphs['income'] = inc
     
     # Majors

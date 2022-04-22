@@ -5,7 +5,7 @@ import recommendation_engine as rec
 
 
 majors = ["Agriculture, Agriculture Operations, And Related Sciences", "Natural Resources And Conservation", "Architecture And Related Services", "Area, Ethnic, Cultural, Gender, And Group Studies", "Communication, Journalism, And Related Programs", "Communications Technologies/Technicians And Support Services", "Computer And Information Sciences And Support Services", "Personal And Culinary Services", "Education", "Engineering", "Engineering Technologies And Engineering-Related Fields", "Foreign Languages, Literatures, And Linguistics",	"Family And Consumer Sciences/Human Sciences", "Legal Professions And Studies", "English Language And Literature/Letters", "Liberal Arts And Sciences, General Studies And Humanities", "Library Science", "Biological And Biomedical Sciences", "Mathematics And Statistics", "Military Technologies And Applied Sciences", "Multi/Interdisciplinary Studies",	"Parks, Recreation, Leisure, And Fitness Studies", "Philosophy And Religious Studies", "Theology And Religious Vocations", "Physical Sciences", "Science Technologies/Technicians", "Psychology", "Homeland Security, Law Enforcement, Firefighting And Related Protective Services", "Public Administration And Social Service Professions", "Social Sciences", "Construction Trades", "Mechanic And Repair Technologies/Technicians", "Precision Production", "Transportation And Materials Moving", "Visual And Performing Arts", "Health Professions And Related Programs", "Business, Management, Marketing, And Related Support Services", "History"]
-climate_zone_groups = {'Tropical (e.g. Miami)':'A', 'Arid (e.g. Pheonix)':'B', 'Temperate (e.g. San Francisco)':'C', 'Continental (e.g. Boston)':'D'}
+climate_zone_groups = {'Tropical (e.g. Miami)':'A', 'Arid (e.g. Phoenix)':'B', 'Temperate (e.g. San Francisco)':'C', 'Continental (e.g. Boston)':'D'}
 climate_zone_groups_inv = {v:k for k,v in climate_zone_groups.items()}
 hot_summer_to_level = {'Cool':1, 'Moderate':2, 'Warm':3, 'Hot':4}
 level_to_hot_summer = {v:k for k,v in hot_summer_to_level.items()}
@@ -179,7 +179,7 @@ def create_college_info(info, graphs, similar_schools, other_info):
                         html.P(f'Net price is indicative of what it actually costs to attend {info.INSTNM} when typical grants and scholarships are considered. The net price varies by family income and financial need.', className=''),
                         html.Div(children=[
                             html.Span('Expected Salary (Considering the probability of graduating and of getting a job)', className='item-header'),
-                            html.Span(f'${info.EXP_EARNINGS * rec.majors_scale[other_info["major"]]:,} ', className='item-info'),
+                            html.Span(f'${int(info.EXP_EARNINGS * rec.majors_scale[other_info["major"]]):,} ', className='item-info'),
                         ])
                     ]),
 
