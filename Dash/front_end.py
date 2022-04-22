@@ -39,11 +39,12 @@ def create_slider(name):
         className='slider'
     )
 
-def create_gauge(name):
+def create_gauge(rank_diff):
     return daq.Gauge(
         color={"gradient":True,"ranges":{"red":[-7,-2.33],"yellow":[-2.33,2.33],"green":[2.33,7]}},
         max=7,
         min=-7,
+        value=rank_diff,
         scale= {
                 "custom": {
                     -7: {"label": "Unlikely", 'style':{'font-size':'10px'}},
@@ -118,7 +119,7 @@ def create_college_info(info, graphs, similar_schools, other_info):
                 html.H4('Chances of being accepted', className='card-section chart-title'),
                 ###Gauge
                 html.Div(className='chart-container', children=[
-                    create_gauge(None)
+                    create_gauge(info['SELECT_CAT'] - rec.rank_student(other_info['gpa'], other_info['sat'], other_info['act']))
                 ])
             ]),
 

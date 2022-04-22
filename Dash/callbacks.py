@@ -508,12 +508,8 @@ def page_3_content(children, new_page, store1):
     print('page_3_content() - store1:')
     print(store1)
     form = json.loads(store1)
-    other_info = dict()
-    if form['state-i'] is None:
-        stabbr = 'IL'
-    else:
-        stabbr = state_to_stabbr[form['state-i']]
-    other_info['state'] = stabbr
+    other_info = create_user_info_dict(form)
+
     unitid = int(new_page[9:])
     row = rec.get_data(pd.Series(data=[True], index=[unitid])).squeeze()
     df, std_df = rec.get_all_data()
@@ -530,7 +526,6 @@ def page_3_content(children, new_page, store1):
     else:
         diversity_cat = 'Very Low Diversity'
     other_info['diversity'] = diversity_cat
-    other_info['major'] = form['major-i'] if form['major-i'] is not None else 'Engineering'
     if (row[f'CIP{major_to_num[other_info["major"]]}BACHL'] == 1):
         other_info['exp-salary'] = row.EXP_EARNINGS * rec.majors_scale[other_info["major"]]
         other_info['exp-salary-desc'] = f'Note: The expected salary represents our best guess for someone who decides to go to {row.INSTNM}.  The estimate is based on choice of major, choice of school, the school\'s graduation rate, and the success that the school\'s graduates have had in getting jobs.  The expected salary for someone who successfully graduates from {row.INSTNM} will be higher; for someone who graduates and lands a job, the estimate will be higher still.'
