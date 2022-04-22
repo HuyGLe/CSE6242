@@ -396,7 +396,7 @@ def create_graphs(data, std_data, unitid, other_info):
     graphs['cost'] = cost_graph
     
     # Diversity
-    ## Race
+    ## Race 
     cols = ["UNITID", "UGDS_WHITE", "UGDS_BLACK", "UGDS_HISP", "UGDS_ASIAN", "UGDS_AIAN", "UGDS_NHPI",
             "UGDS_2MOR", "UGDS_NRA", "UGDS_MEN", "UG25ABV"]
     races = data.loc[:, cols]
