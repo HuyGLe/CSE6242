@@ -370,7 +370,7 @@ def display_click_data(clickData):
 
 
 ##############################  Page 3 ##############################
-def create_graphs(data, std_data, unitid, user_state):
+def create_graphs(data, std_data, unitid, other_info):
     graphs = dict()
     cols = ["UNITID",'TUITIONFEE_IN', "TUITIONFEE_OUT", "BOOKSUPPLY", "ROOMBOARD_ON", "OTHEREXPENSE_ON",
             "ROOMBOARD_OFF", "OTHEREXPENSE_OFF"]
@@ -379,12 +379,13 @@ def create_graphs(data, std_data, unitid, user_state):
     
     # Costs
     labels = ["On Campus", "Off Campus"]
-    tuition = np.array(curr_school[["TUITIONFEE_IN", "TUITIONFEE_IN"]])
+    tuition_type = 'TUITIONFEE_IN' if other_info['state'] == data.loc[unitid, 'STABBR'] else 'TUITIONFEE_OUT'
+    tuition = np.array(curr_school[[tuition_type, tuition_type]])
     book_supply = np.array(curr_school[["BOOKSUPPLY", "BOOKSUPPLY"]])
     room_board = np.array(curr_school[["ROOMBOARD_ON", "ROOMBOARD_OFF"]])
     other_expense = np.array(curr_school[["OTHEREXPENSE_ON", "OTHEREXPENSE_OFF"]])
     categories = [tuition, book_supply, room_board, other_expense]
-    names = ["Tuition", "Books and Supplies", "Room and Board", "Other Expenses"]
+    names = [("In"if other_info['state'] == data.loc[unitid, 'STABBR'] else"Out-Of") + "-State Tuition", "Books and Supplies", "Room and Board", "Other Expenses"]
     df = []
     for i in range(len(labels)):
         for x in zip(categories, names):
@@ -479,14 +480,21 @@ def create_graphs(data, std_data, unitid, user_state):
     cols = ["UNITID", "MD_EARN_WNE_P6", "MD_EARN_WNE_P8", "MD_EARN_WNE_P10"]
     earnings = data.loc[:, cols]
     curr_school = earnings.loc[unitid]
-    six = curr_school["MD_EARN_WNE_P6"]
-    eight = curr_school["MD_EARN_WNE_P8"]
-    ten = curr_school["MD_EARN_WNE_P10"]
+    if (data.loc[unitid, f'CIP{major_to_num[other_info["major"]]}BACHL'] == 1):
+        six = curr_school["MD_EARN_WNE_P6"] * rec.majors_scale[other_info['major']]
+        eight = curr_school["MD_EARN_WNE_P8"] * rec.majors_scale[other_info['major']]
+        ten = curr_school["MD_EARN_WNE_P10"] * rec.majors_scale[other_info['major']]
+        title = f"Salary of Alumni who Majored in<br>{other_info['major']}"
+    else:
+        six = curr_school["MD_EARN_WNE_P6"]
+        eight = curr_school["MD_EARN_WNE_P8"]
+        ten = curr_school["MD_EARN_WNE_P10"]
+        title = "Salary of Alumni"
     year = [6, 8, 10]
     earns = [six, eight, ten]
     df = pd.DataFrame([year, earns]).T
     df.columns = ["Years After Graduation", "Earnings"]
-    earn = px.line(df, x='Years After Graduation', y='Earnings', markers=True, title="Earnings of Employeed Graduates")
+    earn = px.line(df, x='Years After Graduation', y='Earnings', markers=True, title=title)
     earn.update_yaxes(range=[0, max(earns) + 0.15*max(earns)])
     graphs['earnings'] = earn
     
@@ -523,4 +531,10 @@ def page_3_content(children, new_page, store1):
         diversity_cat = 'Very Low Diversity'
     other_info['diversity'] = diversity_cat
     other_info['major'] = form['major-i'] if form['major-i'] is not None else 'Engineering'
-    return fe.create_college_info(row, create_graphs(df, std_df, unitid, stabbr), rec.similar_schools(unitid), other_info)
+    if (row[f'CIP{major_to_num[other_info["major"]]}BACHL'] == 1):
+        other_info['exp-salary'] = row.EXP_EARNINGS * rec.majors_scale[other_info["major"]]
+        other_info['exp-salary-desc'] = f'Note: The expected salary represents our best guess for someone who decides to go to {row.INSTNM}.  The estimate is based on choice of major, choice of school, the school\'s graduation rate, and the success that the school\'s graduates have had in getting jobs.  The expected salary for someone who successfully graduates from {row.INSTNM} will be higher; for someone who graduates and lands a job, the estimate will be higher still.'
+    else:
+        other_info['exp-salary'] = row.EXP_EARNINGS
+        other_info['exp-salary-desc'] = f'Note: The expected salary represents our best guess for someone who decides to go to {row.INSTNM}.  Since the school doesn\'t offer a degree in {(other_info["major"].lower())},  the estimate is based on the school, its graduation rate, and the success that its graduates have had in getting jobs.  The expected salary for someone who successfully graduates from {row.INSTNM} will be higher; for someone who graduates and lands a job, the estimate will be higher still.'
+    return fe.create_college_info(row, create_graphs(df, std_df, unitid, other_info), rec.similar_schools(unitid), other_info)

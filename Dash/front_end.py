@@ -144,7 +144,7 @@ def create_college_info(info, graphs, similar_schools, other_info):
                         ]),
                     ])
                 ]),
-            ]),
+            ]),html.Br(), html.Br(),
             
             # Cost
             html.Div(className='card-content', children=[
@@ -178,8 +178,9 @@ def create_college_info(info, graphs, similar_schools, other_info):
                         ]),
                         html.P(f'Net price is indicative of what it actually costs to attend {info.INSTNM} when typical grants and scholarships are considered. The net price varies by family income and financial need.', className=''),
                         html.Div(children=[
-                            html.Span('Expected Salary (Considering the probability of graduating and of getting a job)', className='item-header'),
-                            html.Span(f'${int(info.EXP_EARNINGS * rec.majors_scale[other_info["major"]]):,} ', className='item-info'),
+                            html.Span('Expected Salary', className='item-header'),
+                            html.Span(f'${int(other_info["exp-salary"]):,} ', className='item-info'),
+                            html.P(other_info['exp-salary-desc'])
                         ])
                     ]),
 
@@ -188,7 +189,7 @@ def create_college_info(info, graphs, similar_schools, other_info):
                         dcc.Graph(figure = graphs['earnings'])
                     ])
                 ]),
-            ]),
+            ]),html.Br(), html.Br(),
             
             # Diversity
             html.Div(className='card-content', children=[
@@ -208,7 +209,7 @@ def create_college_info(info, graphs, similar_schools, other_info):
                         dcc.Graph(figure=graphs['income'])
                     ])
                 ]),
-            ]),
+            ]),html.Br(), html.Br(),
             
             # Weather 
             html.Div(className='card-content', children=[
@@ -251,7 +252,7 @@ def create_college_info(info, graphs, similar_schools, other_info):
                     ])
                 ])
             ]),
-        ]),
+        ]),html.Br(), html.Br(),
 
         html.H3('Similar Colleges'),
 
