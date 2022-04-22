@@ -1,8 +1,20 @@
 from dash import html, dcc
+import sys
+sys.path.append('./scripts')
+import recommendation_engine as rec
 
 
 majors = ["Agriculture, Agriculture Operations, And Related Sciences", "Natural Resources And Conservation", "Architecture And Related Services", "Area, Ethnic, Cultural, Gender, And Group Studies", "Communication, Journalism, And Related Programs", "Communications Technologies/Technicians And Support Services", "Computer And Information Sciences And Support Services", "Personal And Culinary Services", "Education", "Engineering", "Engineering Technologies And Engineering-Related Fields", "Foreign Languages, Literatures, And Linguistics",	"Family And Consumer Sciences/Human Sciences", "Legal Professions And Studies", "English Language And Literature/Letters", "Liberal Arts And Sciences, General Studies And Humanities", "Library Science", "Biological And Biomedical Sciences", "Mathematics And Statistics", "Military Technologies And Applied Sciences", "Multi/Interdisciplinary Studies",	"Parks, Recreation, Leisure, And Fitness Studies", "Philosophy And Religious Studies", "Theology And Religious Vocations", "Physical Sciences", "Science Technologies/Technicians", "Psychology", "Homeland Security, Law Enforcement, Firefighting And Related Protective Services", "Public Administration And Social Service Professions", "Social Sciences", "Construction Trades", "Mechanic And Repair Technologies/Technicians", "Precision Production", "Transportation And Materials Moving", "Visual And Performing Arts", "Health Professions And Related Programs", "Business, Management, Marketing, And Related Support Services", "History"]
-climate_zones = {'Tropical (examples: Honolulu and Miami)':'A', 'Arid (examples: Pheonix and Denver)':'B', 'Temperate (examples: San Francisco and Atlanta)':'C', 'Continental (examples: Boston and Detroit)':'D'}
+climate_zone_groups = {'Tropical (e.g. Miami)':'A', 'Arid (e.g. Pheonix)':'B', 'Temperate (e.g. San Francisco)':'C', 'Continental (e.g. Boston)':'D'}
+climate_zone_groups_inv = {v:k for k,v in climate_zone_groups.items()}
+hot_summer_to_level = {'Cool':1, 'Moderate':2, 'Warm':3, 'Hot':4}
+level_to_hot_summer = {v:k for k,v in hot_summer_to_level.items()}
+humidity_to_level = {'Dry':1, 'Moderate':2, 'Humid':3, 'Very Humid':4}
+level_to_humidity = {v:k for k,v in humidity_to_level.items()}
+sunny_to_level = {'Cloudy':1, 'Some Sun':2, 'Very Sunny':3}
+level_to_sunny = {v:k for k,v in sunny_to_level.items()}
+rainy_to_level = {'Desert':1, 'Low':2, 'Moderate':3, 'Rainy':4}
+level_to_rainy = {v:k for k,v in rainy_to_level.items()}
 locale = {
     11:'Large City',
     12:'Midsize City',
@@ -25,45 +37,6 @@ def create_slider(name):
         marks={1: 'Not Important', 3: 'Moderately Important', 5: 'Extremely Important'},
         className='slider'
     )
-
-# test card for similar colleges
-def create_school_test_card(info):
-    card = html.A(className='card summary-card', href=f'/college/168740', children=[
-        html.Picture(className='thumbnail', children=[
-            ###Get school picture
-            html.Img(className='category__01', src=f'/assets/images/colleges/168740.jpg')
-        ]),
-        html.Div(className='card-content', children=[
-            ###Get school long name
-            html.H4(f'Andrews University', className='college-name'),
-            html.H5(f'Berrien Springs, MI', className='college-city'),
-
-            html.Div(className='key-val', children=[
-                html.Span('Required GPA', className='key'),
-                html.Span(f'3.50', className='val'),
-            ]),
-            
-            html.Div(className='key-val', children=[
-                html.Span('Average SAT Score', className='key'),
-                html.Span(f'1400', className='val'),
-            ]),
-            
-            html.Div(className='key-val', children=[
-                html.Span('Average ACT Score', className='key'),
-                html.Span(f'34', className='val'),
-            ]),
-        ]),
-        # html.Footer(className='card-footer', children=[
-        #     html.Div(className='post-meta', children=[
-        #         html.Span(className='', children=[
-        #             html.P(f'Required GPA: {info.GPA_BOTTOM_TEN_PERCENT}'),
-        #             html.P(f'Average SAT Score: {info.SAT_AVG}'),
-        #             html.P(f'Average ACT Score: {info.ACTCMMID}')
-        #         ])
-        #     ])
-        # ])
-    ])
-    return card
 
 def create_school_card(info):
     card = html.A(className='card summary-card', href=f'/college/{info.UNITID}', children=[
@@ -94,7 +67,7 @@ def create_school_card(info):
     ])
     return card
 
-def create_college_info(info, users_state, similar_schools):
+def create_college_info(info, graphs, similar_schools, other_info):
     if info.UGDS < 2500:
         size = 'Very Small'
     elif info.UGDS < 5000:
@@ -105,7 +78,7 @@ def create_college_info(info, users_state, similar_schools):
         size = 'Large'
     else:
         size = 'Very Large'   
-    state_status = 'IN' if users_state == info.STABBR else 'OUT'
+    state_status = 'IN' if other_info['state'] == info.STABBR else 'OUT'
     tuition_and_fees = info[f'TUITIONFEE_{state_status}']
     other_expenses = (info.OTHEREXPENSE_ON + info.OTHEREXPENSE_OFF) / 2
     room_and_board = (info.ROOMBOARD_ON + info.ROOMBOARD_OFF) / 2
@@ -127,12 +100,7 @@ def create_college_info(info, users_state, similar_schools):
                 html.H4('Overview', className='card-section'),
                 html.Div(className='two-col', children=[
                     html.Div(className='col-1', children=[
-
-                        html.Div(children=[
-                            html.Span('Student Population', className='item-header'),
-                            html.Span(f'{info.UGDS}', className='item-info'),
-                        ]),
-
+                        
                         html.Div(className='key-val', children=[
                             html.Span('City', className='key'),
                             # df field: CITY, STABBR 
@@ -153,7 +121,10 @@ def create_college_info(info, users_state, similar_schools):
                             html.Span('Setting', className='key'),
                             html.Span(locale[info.LOCALE], className='val'),
                         ]),
-                                                html.Div(className='key-val', children=[
+                    ]),
+
+                    html.Div(className='col-2', children=[
+                        html.Div(className='key-val', children=[
                             html.Span('Size', className='key'),
                             html.Span(size, className='val'),
                         ]),
@@ -171,17 +142,10 @@ def create_college_info(info, users_state, similar_schools):
                             html.Span('Level of Study', className='key'),
                             html.Span('Undergrad/Graduate' if info.HIGHDEG == 4 else 'Undergrad', className='val'),
                         ]),
-                    ]),
-
-                    html.Div(className='col-2', children=[
-
-
-
                     ])
                 ]),
-                # html.P(info.LONG_DESCRIPTION, className=''),
             ]),
-
+            
             # Cost
             html.Div(className='card-content', children=[
                 html.H4('Cost', className='card-section'),
@@ -189,66 +153,108 @@ def create_college_info(info, users_state, similar_schools):
                     html.Div(className='col-1', children=[
 
                         html.Div(children=[
-                            html.Span('Sticker Price', className='item-header'),
-                            # html.Span('NOT EXACTLY SURE WHAT THIS SHOULD BE', className='item-info'),
-                            html.Span('$' + str(int(round(tuition_and_fees + info['BOOKSUPPLY'] + room_and_board + other_expenses, -3))), className='item-info'),
+                            html.Span('Average Net Price 2019/2020', className='item-header'),
+                            html.Span(f'${int(tuition_and_fees + info["BOOKSUPPLY"] + room_and_board + other_expenses):,}', className='item-info'),
                         ]),
 
                         html.Div(className='key-val', children=[
                             html.Span('Tuition/Fees', className='key'),
-                            html.Span('$'+str(tuition_and_fees), className='val'),
+                            html.Span(f'${int(tuition_and_fees):,}', className='val'),
+                        ]),
+                        
+                        html.Div(className='key-val', children=[
+                            html.Span('Room and Board', className='key'),
+                            html.Span(f'${int(room_and_board):,}', className='val'),
                         ]),
                         
                         html.Div(className='key-val', children=[
                             html.Span('Books and Supplies', className='key'),
-                            html.Span(f'${info.BOOKSUPPLY}', className='val'),
+                            html.Span(f'${int(info.BOOKSUPPLY):,}', className='val'),
                         ]),
-
-                        # html.Div(className='key-val', children=[
-                        #     html.Span('Other Fees', className='key'),
-                        #     html.Span('INCLUDED IN Tuition/Fees', className='val'),
-                        # ]),
+                        
+                        html.Div(className='key-val', children=[
+                            html.Span('Other Expenses', className='key'),
+                            html.Span(f'${int(other_expenses):,}', className='val'),
+                        ]),
+                        html.P(f'Net price is indicative of what it actually costs to attend {info.INSTNM} when typical grants and scholarships are considered. The net price varies by family income and financial need.', className=''),
+                        html.Div(children=[
+                            html.Span('Expected Salary (Considering the probability of graduating and of getting a job)', className='item-header'),
+                            html.Span(f'${info.EXP_EARNINGS * rec.majors_scale[other_info["major"]]:,} ', className='item-info'),
+                        ])
                     ]),
 
                     html.Div(className='col-2', children=[
-                        html.Div(children=[
-                            html.Span('Average Net Price 2019/2020', className='item-header'),
-                            html.Span('$' + str(tuition_and_fees + info['BOOKSUPPLY'] + room_and_board + other_expenses), className='item-info'),
-                        ]),
-
-                        html.Div(className='key-val', children=[
-                            html.Span('Room and Board', className='key'),
-                            html.Span('$' + str(room_and_board), className='val'),
-                        ]),
-
-                        html.Div(className='key-val', children=[
-                            html.Span('Other Expenses', className='key'),
-                            html.Span('$' + str(other_expenses), className='val'),
-                        ]),
-
-                        # etc
-
-
+                        dcc.Graph(figure = graphs['cost']),
+                        dcc.Graph(figure = graphs['earnings'])
                     ])
                 ]),
-                html.P(f'Net price is indicative of what it actually costs to attend {info.INSTNM} when typical grants and scholarships are considered. The net price varies by family income and financial need.', className=''),
             ]),
+            
+            # Diversity
+            html.Div(className='card-content', children=[
+                html.H4('Student Diversity', className='card-section'),
+                html.Div(children=[
+                    html.Span('Diversity Index Rating', className='item-header'),
+                    html.Span(other_info['diversity'], className='item-info'),
+                ]),
+                html.Div(className='two-col', children=[
+                    html.Div(className='col-1', children=[
+                        dcc.Graph(figure=graphs['race']),
+                        dcc.Graph(figure=graphs['age'])
+                    ]),
 
-            # Similar schools
-            # html.Div(className='card-content', children=[
-            #     html.H4('Similar Schools', className='card-section'),
-            #     html.Div(className='similar-cards', children=[
-                    
-            #     ]),
-            # ]),
+                    html.Div(className='col-2', children=[
+                        dcc.Graph(figure=graphs['sex']),
+                        dcc.Graph(figure=graphs['income'])
+                    ])
+                ]),
+            ]),
+            
+            # Weather 
+            html.Div(className='card-content', children=[
+                html.H4('Weather', className='card-section'),
+                html.Div(className='two-col', children=[
+                    html.Div(className='col-1', children=[
+                       html.Div(className='key-val', children=[
+                           html.Span('Climate Zone', className='key'),
+                           html.Span(climate_zone_groups_inv[info['CLIMATE_ZONE_GROUP']], className='val'),
+                       ]),
+                       html.Div(className='key-val', children=[
+                           html.Span('Rain', className='key'),
+                           html.Span(level_to_rainy[info['RAINY']], className='val'),
+                           html.Img(src='/assets/images/icons/'+"rainy_"+str(info['RAINY'])+'.png', className='rowimg')
+                       ]),
+                       html.Div(className='key-val', children=[
+                           html.Span('Snow', className='key'),
+                           html.Span('Yes' if info['SNOWY'] == 1 else 'No', className='val'),
+                           html.Img(className='rowimg', src='/assets/images/icons/'+"snowy_"+str(info["SNOWY"])+'.png'),
+                           
+                       ]),
+                    ]),
 
-            # Etc
+                    html.Div(className='col-2', children=[
+                        html.Div(className='key-val', children=[
+                            html.Span('Sun', className='key'),
+                            html.Span(level_to_sunny[info['SUNNY']], className='val'),
+                            html.Img(className='rowimg', src='/assets/images/icons/'+"sunny_"+str(info["SUNNY"])+'.png'),
+                        ]),
+                        html.Div(className='key-val', children=[
+                            html.Span('Humidity', className='key'),
+                            html.Span(level_to_humidity[info['HUMIDITY']], className='val'),
+                            html.Img(className='rowimg', src='/assets/images/icons/'+"humidity_"+str(info["HUMIDITY"])+'.png'),
+                        ]),
+                        html.Div(className='key-val', children=[
+                            html.Span('Summers', className='key'),
+                            html.Span(level_to_hot_summer[info['HOT_SUMMER']], className='val'),
+                            html.Img(className='rowimg', src='/assets/images/icons/'+"hot_summer_"+str(info["HOT_SUMMER"])+'.png'),
+                        ])
+                    ])
+                ])
+            ]),
         ]),
 
-        # Similar colleges
         html.H3('Similar Colleges'),
 
-        # populate with 4 most similar schools
         html.Div(className='cards', children=[
             create_school_card(similar_schools.iloc[i, :]) for i in range(min(4, similar_schools.shape[0]))
         ])
@@ -316,7 +322,7 @@ page1Content = html.Main(children=[
                 html.Hr(), html.Br(),
 
                 html.Label('Select your desired weather'),
-                dcc.Dropdown(id='climate-zone-i', value=None, placeholder='Climate Zone', options=list(climate_zones.keys())),
+                dcc.Dropdown(id='climate-zone-i', value=None, placeholder='Climate Zone', options=list(climate_zone_groups.keys())),
                 dcc.Dropdown(id='hot-summer-i', value=None, placeholder='Summer Temperature', options=['Cool', 'Moderate', 'Warm', 'Hot']),
                 dcc.Dropdown(id='humidity-i', value=None, placeholder='Humidity', options=['Dry', 'Moderate', 'Humid', 'Very Humid']),
                 dcc.Dropdown(id='sunny-i', value=None, placeholder='Sunshine', options=['Cloudy', 'Some Sun', 'Very Sunny']),

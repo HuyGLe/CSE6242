@@ -298,6 +298,11 @@ h5.college-city {
     border-radius: 6px;
     overflow: hidden;
 }
+
+.rowimg {
+    max-height: 2.5em;
+    padding-left: .5em;
+}
 /*
 
 html.A(className='card', children=[

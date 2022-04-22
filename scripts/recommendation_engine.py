@@ -223,6 +223,9 @@ def submit_form(school_dict, user_info):
 def get_data(rows):
     return (data.loc[rows.index, :])[rows]
 
+def get_all_data():
+    return data, norm
+
 def filt(local_df, filters, user_info):
     print('filt() - filters:')
     print(filters)

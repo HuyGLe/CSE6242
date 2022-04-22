@@ -11,17 +11,12 @@ import front_end as fe
 n = 12 # number of schools to list on page 2
 state_to_stabbr = dict(zip(['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'], ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY']))
 stabbr_to_state = {v:k for k,v in state_to_stabbr.items()}
-climate_zone_groups = {'Tropical (examples: Honolulu and Miami)':'A', 'Arid (examples: Pheonix and Denver)':'B', 'Temperate (examples: San Francisco and Atlanta)':'C', 'Continental (examples: Boston and Detroit)':'D'}
 weather_type_to_col = {}
 majors = ["Agriculture, Agriculture Operations, And Related Sciences", "Natural Resources And Conservation", "Architecture And Related Services", "Area, Ethnic, Cultural, Gender, And Group Studies", "Communication, Journalism, And Related Programs", "Communications Technologies/Technicians And Support Services", "Computer And Information Sciences And Support Services", "Personal And Culinary Services", "Education", "Engineering", "Engineering Technologies And Engineering-Related Fields", "Foreign Languages, Literatures, And Linguistics",	"Family And Consumer Sciences/Human Sciences", "Legal Professions And Studies", "English Language And Literature/Letters", "Liberal Arts And Sciences, General Studies And Humanities", "Library Science", "Biological And Biomedical Sciences", "Mathematics And Statistics", "Military Technologies And Applied Sciences", "Multi/Interdisciplinary Studies",	"Parks, Recreation, Leisure, And Fitness Studies", "Philosophy And Religious Studies", "Theology And Religious Vocations", "Physical Sciences", "Science Technologies/Technicians", "Psychology", "Homeland Security, Law Enforcement, Firefighting And Related Protective Services", "Public Administration And Social Service Professions", "Social Sciences", "Construction Trades", "Mechanic And Repair Technologies/Technicians", "Precision Production", "Transportation And Materials Moving", "Visual And Performing Arts", "Health Professions And Related Programs", "Business, Management, Marketing, And Related Support Services", "History"]
 major_nums = ['01', '03', '04', '05', '09', '10', '11', '12', '13', '14', '15', '16', '19', '22', '23', '24', '25', '26', '27', '29', '30', '31', '38', '39', '40' ,'41', '42', '43', '44', '45' ,'46', '47' , '48', '49', '50', '51', '52', '54']
 major_to_num = dict(zip(majors, major_nums))
 locale_first_to_num = {'City':'1', 'Suburb':'2', 'Town':'3', 'Rural':'4'}
 dcc.Dropdown(id='rainy-i', placeholder='Rain', options=['Desert', 'Low', 'Moderate', 'Rainy']),
-hot_summer_to_level = {'Cool':1, 'Moderate':2, 'Warm':3, 'Hot':4}
-humidity_to_level = {'Dry':1, 'Moderate':2, 'Humid':3, 'Very Humid':4}
-sunny_to_level = {'Cloudy':1, 'Some Sun':2, 'Very Sunny':3}
-rainy_to_level = {'Desert':1, 'Low':2, 'Moderate':3, 'Rainy':4}
 
 ##############################  Global ##############################
 @callback(Output('new-page', 'data'),
@@ -169,23 +164,23 @@ def fill_form(form, form_dict):
     else:
         form_dict['LOCALE_FIRST.2'] = [1 , 1]
     if form['climate-zone-i'] is not None: 
-        form_dict[f'CLIMATE_ZONE_GROUP.{climate_zone_groups[form["climate-zone-i"]]}'] = [1, int(form['weather-imp'])*.6]
+        form_dict[f'CLIMATE_ZONE_GROUP.{fe.climate_zone_groups[form["climate-zone-i"]]}'] = [1, int(form['weather-imp'])*.6]
     else:
         form_dict['CLIMATE_ZONE_GROUP.C'] = [1, 1]
     if form['hot-summer-i'] is not None:
-        form_dict['HOT_SUMMER'] = [hot_summer_to_level[form['hot-summer-i']], int(form["weather-imp"])*.08]
+        form_dict['HOT_SUMMER'] = [fe.hot_summer_to_level[form['hot-summer-i']], int(form["weather-imp"])*.08]
     else:
         form_dict['HOT_SUMMER'] = [3, 1]
     if form['humidity-i'] is not None:
-        form_dict['HUMIDITY'] = [humidity_to_level[form['humidity-i']], int(form["weather-imp"])*.08]
+        form_dict['HUMIDITY'] = [fe.humidity_to_level[form['humidity-i']], int(form["weather-imp"])*.08]
     else:
         form_dict['HUMIDITY'] = [2, 1]
     if form['sunny-i'] is not None:
-        form_dict['SUNNY'] = [sunny_to_level[form['sunny-i']], int(form["weather-imp"])*.08]
+        form_dict['SUNNY'] = [fe.sunny_to_level[form['sunny-i']], int(form["weather-imp"])*.08]
     else:
         form_dict['SUNNY'] = [2, 1]
     if form['rainy-i'] is not None:
-        form_dict['RAINY'] = [rainy_to_level[form['rainy-i']], int(form["weather-imp"])*.08]
+        form_dict['RAINY'] = [fe.rainy_to_level[form['rainy-i']], int(form["weather-imp"])*.08]
     else:
         form_dict['RAINY'] = [1, 1]
     if form['snowy-i'] is not None:
@@ -225,13 +220,13 @@ def prepare_filters(filter_dict):
             level = 'D'
         new_dict['CLIMATE_ZONE_GROUP'] = [level, '==']
     if 'hot_summer-ii' in filter_dict:
-        new_dict['HOT_SUMMER'] = [hot_summer_to_level[filter_dict['hot_summer-ii']], '==']
+        new_dict['HOT_SUMMER'] = [fe.hot_summer_to_level[filter_dict['hot_summer-ii']], '==']
     if 'humidity-ii' in filter_dict:
-        new_dict['HUMIDITY'] = [humidity_to_level[filter_dict['humidity-ii']], '==']
+        new_dict['HUMIDITY'] = [fe.humidity_to_level[filter_dict['humidity-ii']], '==']
     if 'sunny-ii' in filter_dict:
-        new_dict['SUNNY'] = [sunny_to_level[filter_dict['sunny-ii']], '==']
+        new_dict['SUNNY'] = [fe.sunny_to_level[filter_dict['sunny-ii']], '==']
     if 'rainy-ii' in filter_dict:
-        new_dict['RAINY'] = [rainy_to_level[filter_dict['rainy-ii']], '==']
+        new_dict['RAINY'] = [fe.rainy_to_level[filter_dict['rainy-ii']], '==']
     if 'snowy-ii' in filter_dict:
         new_dict['SNOWY'] = [1 if filter_dict['SNOWY'] == 'Yes' else 0, '==']
     return new_dict
@@ -374,7 +369,129 @@ def display_click_data(clickData):
         return f'/college/{clickData["points"][0]["customdata"][0]}'
 
 
-##############################  Page 3 ############################## 
+##############################  Page 3 ##############################
+def create_graphs(data, std_data, unitid, user_state):
+    graphs = dict()
+    cols = ["UNITID",'TUITIONFEE_IN', "TUITIONFEE_OUT", "BOOKSUPPLY", "ROOMBOARD_ON", "OTHEREXPENSE_ON",
+            "ROOMBOARD_OFF", "OTHEREXPENSE_OFF"]
+    costs = data.loc[:, cols]
+    curr_school = costs.loc[unitid]
+    
+    # Costs
+    labels = ["On Campus", "Off Campus"]
+    tuition = np.array(curr_school[["TUITIONFEE_IN", "TUITIONFEE_IN"]])
+    book_supply = np.array(curr_school[["BOOKSUPPLY", "BOOKSUPPLY"]])
+    room_board = np.array(curr_school[["ROOMBOARD_ON", "ROOMBOARD_OFF"]])
+    other_expense = np.array(curr_school[["OTHEREXPENSE_ON", "OTHEREXPENSE_OFF"]])
+    categories = [tuition, book_supply, room_board, other_expense]
+    names = ["Tuition", "Books and Supplies", "Room and Board", "Other Expenses"]
+    df = []
+    for i in range(len(labels)):
+        for x in zip(categories, names):
+            df.append([labels[i], x[1], x[0][i]])
+    df = pd.DataFrame(df)
+    df.columns = ["Living Situation", "Category", "Cost"]
+    cost_graph = px.bar(df, x = "Living Situation", y = "Cost", color = "Category", title="Net Cost")
+    graphs['cost'] = cost_graph
+    
+    # Diversity
+    ## Race
+    cols = ["UNITID", "UGDS_WHITE", "UGDS_BLACK", "UGDS_HISP", "UGDS_ASIAN", "UGDS_AIAN", "UGDS_NHPI",
+            "UGDS_2MOR", "UGDS_NRA", "UGDS_MEN", "UG25ABV"]
+    races = data.loc[:, cols]
+    curr_school = races.loc[unitid]
+    white = curr_school['UGDS_WHITE']*100
+    black = curr_school['UGDS_BLACK']*100
+    hisp = curr_school['UGDS_HISP']*100
+    asian = curr_school['UGDS_ASIAN']*100
+    aian = curr_school['UGDS_AIAN']*100
+    nhpi = curr_school["UGDS_NHPI"]*100
+    mor2 = curr_school["UGDS_2MOR"]*100
+    nra = curr_school["UGDS_NRA"]*100
+    other = 100 - (white + black + hisp + asian + aian + nhpi + mor2 + nra)
+    labels = ["White", "Black", "Hispanic", "Asian", "American Indian/Alaska Native", 
+          "Native Hawaiian/Pacific Islander", "Two or More Races", "Non-Resident Aliens", "Other"]
+    sizes = [white, black, hisp, asian, aian, nhpi, mor2, nra, other]
+    df = pd.DataFrame([labels, sizes]).T
+    df.columns = ["Race", "Percentage"]
+    race = px.pie(df, values="Percentage", names="Race", title="Race")
+    graphs['race'] = race
+    ## Sex
+    men = curr_school["UGDS_MEN"]*100
+    women = 100 - men
+    labels = ["Men", "Women"]
+    sizes = [men, women]
+    df = pd.DataFrame([labels, sizes]).T
+    df.columns = ["Sex", "Percentage"]
+    sex = px.pie(df, values="Percentage", names="Sex", title="Sex")
+    graphs['sex'] = sex
+    ## Age
+    old = curr_school["UG25ABV"]*100
+    young = 100 - men
+    labels = ["Younger than 25", "Older than 25"]
+    sizes = [young, old]
+    df = pd.DataFrame([labels, sizes]).T
+    df.columns = ["Age", "Percentage"]
+    age = px.pie(df, values="Percentage", names="Age", title="Age")
+    graphs['age'] = age
+    ## Income
+    cols = ["UNITID", "INC_PCT_LO", "INC_PCT_M1", "INC_PCT_M2", "INC_PCT_H1", "INC_PCT_H2"]
+    income = data.loc[:, cols]
+    curr_school = income.loc[unitid]
+    lo = round(float(curr_school["INC_PCT_LO"])*100, 2)
+    m1 = round(float(curr_school["INC_PCT_M1"])*100, 2)
+    m2 = round(float(curr_school["INC_PCT_M2"])*100, 2)
+    h1 = round(float(curr_school["INC_PCT_H1"])*100, 2)
+    h2 = round(float(curr_school["INC_PCT_H2"])*100, 2)
+    labels = ['0-30,000', "30,001-48,000", "48,001-75,000", "75,001-110,000", "110,000+"]
+    sizes = [lo, m1, m2, h1, h2]
+    df = pd.DataFrame([labels, sizes]).T
+    df.columns = ["Income", "Percentage"]
+    inc = px.pie(df, values="Percentage", names="Income", title="Income")
+    graphs['income'] = inc
+    
+    # Majors
+    arts = ["PCIP04", "PCIP12", "PCIP50"]
+    science_math = ["PCIP01", "PCIP03", "PCIP25", "PCIP27", "PCIP29", "PCIP40", "PCIP41",
+                   "PCIP42", "PCIP51"]
+    business = ["PCIP52"]
+    engineering_tech = ["PCIP10", "PCIP11", "PCIP14", "PCIP15", "PCIP46",
+                       "PCIP47", "PCIP48", "PCIP49"]
+    social_science = ["PCIP05", "PCIP09", "PCIP13", "PCIP16", "PCIP19", 
+                      "PCIP22", "PCIP23", "PCIP24", "PCIP25", "PCIP30", "PCIP31",
+                     "PCIP38", "PCIP39", "PCIP43", "PCIP44", "PCIP45", "PCIP54"]
+    majors = data.loc[:, ["UNITID"] + arts + science_math + business + engineering_tech + social_science]
+    curr_school = majors.loc[unitid]
+    arts_m = curr_school[arts].sum()*100
+    science_math_m = curr_school[science_math].sum()*100
+    business_m = curr_school[business].sum()*100
+    engineering_tech_m = curr_school[engineering_tech].sum()*100
+    social_science_m = curr_school[social_science].sum()*100
+    labels = ["Arts", "Science and Math", "Business", 
+          "Engineering and Technology", "Literature, Language and Social Science"]
+    sizes = [arts_m, science_math_m, business_m, engineering_tech_m, social_science_m]
+    df = pd.DataFrame([labels, sizes]).T
+    df.columns = ["Majors", "Percentage"]
+    maj = px.bar(df, x="Percentage", y="Majors", orientation='h', title='Distribution of Majors')
+    graphs['majors'] = maj
+    
+    # Earnings
+    cols = ["UNITID", "MD_EARN_WNE_P6", "MD_EARN_WNE_P8", "MD_EARN_WNE_P10"]
+    earnings = data.loc[:, cols]
+    curr_school = earnings.loc[unitid]
+    six = curr_school["MD_EARN_WNE_P6"]
+    eight = curr_school["MD_EARN_WNE_P8"]
+    ten = curr_school["MD_EARN_WNE_P10"]
+    year = [6, 8, 10]
+    earns = [six, eight, ten]
+    df = pd.DataFrame([year, earns]).T
+    df.columns = ["Years After Graduation", "Earnings"]
+    earn = px.line(df, x='Years After Graduation', y='Earnings', markers=True, title="Earnings of Employeed Graduates")
+    earn.update_yaxes(range=[0, max(earns) + 0.15*max(earns)])
+    graphs['earnings'] = earn
+    
+    return graphs
+    
 @callback(Output('page-3-main', 'children'),
           Input('page-3-title', 'children'),
           State('new-page', 'data'),
@@ -383,10 +500,27 @@ def page_3_content(children, new_page, store1):
     print('page_3_content() - store1:')
     print(store1)
     form = json.loads(store1)
+    other_info = dict()
     if form['state-i'] is None:
         stabbr = 'IL'
     else:
         stabbr = state_to_stabbr[form['state-i']]
+    other_info['state'] = stabbr
     unitid = int(new_page[9:])
-    df = rec.get_data(pd.Series(data=[True], index=[unitid])).squeeze()
-    return fe.create_college_info(df, stabbr, rec.similar_schools(unitid))
+    row = rec.get_data(pd.Series(data=[True], index=[unitid])).squeeze()
+    df, std_df = rec.get_all_data()
+    row_std = std_df.loc[unitid].squeeze()
+    diversity = row_std['DIVERSITY']
+    if diversity > -.5 and diversity < .5:
+        diversity_cat = 'Average Diversity'
+    elif diversity >= .5 and diversity < 1.5:
+        diversity_cat = 'High Diversity'
+    elif diversity >= 1.5:
+        diversity_cat = 'Very High Diversity'
+    elif diversity <= -.5 and diversity > -1.5:
+        diversity_cat = 'Low Diversity'
+    else:
+        diversity_cat = 'Very Low Diversity'
+    other_info['diversity'] = diversity_cat
+    other_info['major'] = form['major-i'] if form['major-i'] is not None else 'Engineering'
+    return fe.create_college_info(row, create_graphs(df, std_df, unitid, stabbr), rec.similar_schools(unitid), other_info)
