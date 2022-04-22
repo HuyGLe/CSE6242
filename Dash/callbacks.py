@@ -164,29 +164,29 @@ def fill_form(form, form_dict):
     else:
         form_dict['LOCALE_FIRST.2'] = [1 , 1]
     if form['climate-zone-i'] is not None: 
-        form_dict[f'CLIMATE_ZONE_GROUP.{fe.climate_zone_groups[form["climate-zone-i"]]}'] = [1, int(form['weather-imp'])*.6]
+        form_dict[f'CLIMATE_ZONE_GROUP.{fe.climate_zone_groups[form["climate-zone-i"]]}'] = [1, int(form['weather-imp'])*0.4]
     else:
-        form_dict['CLIMATE_ZONE_GROUP.C'] = [1, 1]
+        form_dict['CLIMATE_ZONE_GROUP.C'] = [1, 0.4]
     if form['hot-summer-i'] is not None:
-        form_dict['HOT_SUMMER'] = [fe.hot_summer_to_level[form['hot-summer-i']], int(form["weather-imp"])*.08]
+        form_dict['HOT_SUMMER'] = [fe.hot_summer_to_level[form['hot-summer-i']], int(form["weather-imp"])*0.12]
     else:
-        form_dict['HOT_SUMMER'] = [3, 1]
+        form_dict['HOT_SUMMER'] = [3, 0.12]
     if form['humidity-i'] is not None:
-        form_dict['HUMIDITY'] = [fe.humidity_to_level[form['humidity-i']], int(form["weather-imp"])*.08]
+        form_dict['HUMIDITY'] = [fe.humidity_to_level[form['humidity-i']], int(form["weather-imp"])*0.12]
     else:
-        form_dict['HUMIDITY'] = [2, 1]
+        form_dict['HUMIDITY'] = [2, 0.12]
     if form['sunny-i'] is not None:
-        form_dict['SUNNY'] = [fe.sunny_to_level[form['sunny-i']], int(form["weather-imp"])*.08]
+        form_dict['SUNNY'] = [fe.sunny_to_level[form['sunny-i']], int(form["weather-imp"])*0.12]
     else:
-        form_dict['SUNNY'] = [2, 1]
+        form_dict['SUNNY'] = [2, 0.12]
     if form['rainy-i'] is not None:
-        form_dict['RAINY'] = [fe.rainy_to_level[form['rainy-i']], int(form["weather-imp"])*.08]
+        form_dict['RAINY'] = [fe.rainy_to_level[form['rainy-i']], int(form["weather-imp"])*0.12]
     else:
-        form_dict['RAINY'] = [1, 1]
+        form_dict['RAINY'] = [1, 0.12]
     if form['snowy-i'] is not None:
-        form_dict['SNOWY'] = [1 if form['snowy-i'] == 'Yes' else 0, form['weather-imp']*.08]
+        form_dict['SNOWY'] = [1 if form['snowy-i'] == 'Yes' else 0, form['weather-imp']*0.12]
     else:
-        form_dict['SNOWY'] = [1, 1]
+        form_dict['SNOWY'] = [1, 0.12]
     form_dict['TUITION'] = [None, int(form['tuition-imp'])]
     form_dict['SELECT'] = [None, int(form['select-imp'])]
     form_dict['TEACH_QUAL'] = [None, int(form['teach-qual-imp'])]
@@ -527,9 +527,9 @@ def page_3_content(children, new_page, store1):
         diversity_cat = 'Very Low Diversity'
     other_info['diversity'] = diversity_cat
     if (row[f'CIP{major_to_num[other_info["major"]]}BACHL'] == 1):
-        other_info['exp-salary'] = row.EXP_EARNINGS * rec.majors_scale[other_info["major"]]
+        other_info['exp-salary'] = (row.EXP_EARNINGS * rec.majors_scale[other_info["major"]]) + row.EXP_EARNINGS_DROPOUT
         other_info['exp-salary-desc'] = f'Note: The expected salary represents our best guess for someone who decides to go to {row.INSTNM}.  The estimate is based on choice of major, choice of school, the school\'s graduation rate, and the success that the school\'s graduates have had in getting jobs.  The expected salary for someone who successfully graduates from {row.INSTNM} will be higher; for someone who graduates and lands a job, the estimate will be higher still.'
     else:
-        other_info['exp-salary'] = row.EXP_EARNINGS
+        other_info['exp-salary'] = row.EXP_EARNINGS + row.EXP_EARNINGS_DROPOUT
         other_info['exp-salary-desc'] = f'Note: The expected salary represents our best guess for someone who decides to go to {row.INSTNM}.  Since the school doesn\'t offer a degree in {(other_info["major"].lower())},  the estimate is based on the school, its graduation rate, and the success that its graduates have had in getting jobs.  The expected salary for someone who successfully graduates from {row.INSTNM} will be higher; for someone who graduates and lands a job, the estimate will be higher still.'
     return fe.create_college_info(row, create_graphs(df, std_df, unitid, other_info), rec.similar_schools(unitid), other_info)

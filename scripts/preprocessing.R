@@ -1,3 +1,5 @@
+set.seed(1)
+
 colleges <- read.table(file = "..\\data\\temp9.csv",
                        header = T,
                        sep = ",",
@@ -58,9 +60,9 @@ cip_cols <- c(
     ,"CIP54BACHL"
 )
 factor_cols <- c(
-    "MAIN"
+    cip_cols
+    ,"MAIN"
     ,"STABBR"
-    ,"NUMBRANCH"
     ,"PREDDEG"
     ,"CONTROL"
     ,"REGION"
@@ -92,6 +94,8 @@ factor_cols <- c(
     ,"SUNNY"
     ,"RAINY"
     ,"SNOWY"
+    ,"ROOM"
+    ,"HIGHDEG"
 )
 integer_cols <- c(
     "ADM_RATE"
@@ -200,6 +204,7 @@ integer_cols <- c(
     ,"PCIP51"
     ,"PCIP52"
     ,"PCIP54"
+    ,"NUMBRANCH"
 )
 numeric_cols <- c(
     'LATITUDE'
@@ -209,11 +214,32 @@ numeric_cols <- c(
     ,"GPA_BOTTOM_TEN_PERCENT"
 )
 created_cols <- c()
-input_cols <- c(character_cols, cip_cols, factor_cols, integer_cols, numeric_cols, 'ROOM', 'HIGHDEG')
+input_cols <- c(character_cols, factor_cols, integer_cols, numeric_cols)
 colleges <- colleges[, input_cols]
 for (name in names(colleges)){
-    if (name %in% factor_cols)
+    if (name %in% factor_cols){
         colleges[, name] <- as.factor(colleges[, name])
+        if (name %in% cip_cols) {
+            colleges[!is.na(colleges[, name]) & colleges[, name] == '2', name] <- "1"
+            colleges[, name] <- droplevels(colleges[, name])
+        }
+        else if (name %in% c('SPORT1', 'SPORT2', 'SPORT3', 'SPORT4')){
+            levels(colleges[, name]) <- c(levels(colleges[, name]), '0')
+            colleges[!is.na(colleges[, name]) & colleges[, name] == '2', name] <- "0"
+            colleges[, name] <- droplevels(colleges[, name])
+        }
+        else if (name == 'ROOM'){
+            levels(colleges[, name]) <- c(levels(colleges[, name]), '0')
+            colleges[!is.na(colleges[, name]) & colleges[, name] == "2", name] <- "0"
+            colleges[, name] <- droplevels(colleges[, name])
+        }
+        else if (name == 'HIGHDEG'){
+            levels(colleges[, name]) <- c(levels(colleges[name]), '0', '1')
+            colleges[!is.na(colleges[, name]) & colleges[, name] == "3", name] <- "0"
+            colleges[!is.na(colleges[, name]) & colleges[, name] == "4", name] <- "1"
+            colleges[, name] <- droplevels(colleges[, name])
+        }
+    }
     else if (name %in% character_cols)
         colleges[, name] <- as.character(colleges[, name])
     else
@@ -246,40 +272,67 @@ url_fix <- function(x) {
         paste0('https://www.', mid_split[length(mid_split)], '.', x[length(x)])
 }
 colleges$INSTURL <- sapply(url_components, url_fix)
-
+colleges$LOCALE[colleges$LOCALE == '-3'] <- "31"
+colleges$LOCALE <- droplevels(colleges$LOCALE)
+colleges$ADM_RATE[colleges$INSTNM == 'Yeshivat Hechal Shemuel'] <- 1
+colleges$ADM_RATE_ALL[colleges$INSTNM == 'Yeshivat Hechal Shemuel'] <- 1
+x <- !is.na(colleges$MD_EARN_WNE_P6 >= colleges$MD_EARN_WNE_P8) & colleges$MD_EARN_WNE_P6 >= colleges$MD_EARN_WNE_P8
+colleges[x, 'MD_EARN_WNE_P8'] <- colleges[x, 'MD_EARN_WNE_P6'] * (1.05 + rnorm(sum(x), mean=0.01, sd=0.008))
+x <- !is.na(colleges$MD_EARN_WNE_P8 >= colleges$MD_EARN_WNE_P10) & colleges$MD_EARN_WNE_P8 >= colleges$MD_EARN_WNE_P10
+colleges[x, 'MD_EARN_WNE_P10'] <- colleges[x, 'MD_EARN_WNE_P8'] * (1.05 + rnorm(sum(x), mean=0.01, sd=0.008))
+x <- !is.na(colleges$PCT25_EARN_WNE_P6 >= colleges$PCT25_EARN_WNE_P8) & colleges$PCT25_EARN_WNE_P6 >= colleges$PCT25_EARN_WNE_P8
+colleges[x, 'PCT25_EARN_WNE_P8'] <- colleges[x, 'PCT25_EARN_WNE_P6'] * (1.05 + rnorm(sum(x), mean=0.01, sd=0.008))
+x <- !is.na(colleges$PCT75_EARN_WNE_P8 >= colleges$PCT75_EARN_WNE_P10) & colleges$PCT75_EARN_WNE_P8 >= colleges$PCT75_EARN_WNE_P10
+colleges[x, 'PCT75_EARN_WNE_P10'] <- colleges[x, 'PCT75_EARN_WNE_P8'] * (1.05 + rnorm(sum(x), mean=0.01, sd=0.008))
+x <- !is.na(colleges$C150_4)
+colleges$C150_4[x] <- colleges$C150_4[x] + 0.1*(1 - colleges$C150_4[x])^4
+x <- !is.na(colleges$C150_4) & colleges$C150_4 <= 0.11
+colleges$C150_4[x] <- colleges$C150_4[x] - rnorm(sum(x), mean=0.003, sd=0.001)
+x <- !is.na(colleges$UG25ABV)
+colleges$UG25ABV[x] <- colleges$UG25ABV[x] + 0.02*(1 - colleges$UG25ABV[x])^4
+x <- x & colleges$UG25ABV <= .025
+colleges$UG25ABV[x] <- colleges$UG25ABV[x] - rnorm(sum(x), mean=0.01, sd=0.002)
+colleges$UGDS[c(71, 158, 1396, 1465, 1466, 1467, 1468, 1469, 1470, 1471, 1472, 1473, 1474, 1475, 1476, 1477, 1478, 1480, 1481, 1482, 1483, 1484, 1594, 1944, 1947, 1956, 2133, 2202, 2252, 2305)] <- c(32, 315, 690, 3870, 480, 475, 375, 995, 810, 3320, 555, 2030, 3550, 1090, 605, 755, 790, 335, 910, 3100, 600, 600, 105, 180, 3, 5, 25, 8360, 115, 20)
+colleges[!is.na(rowSums(colleges[, c('UGDS_WHITE', "UGDS_BLACK", "UGDS_HISP",  "UGDS_ASIAN", "UGDS_AIAN",  "UGDS_NHPI",  "UGDS_2MOR", 'UGDS_NRA', 'UGDS_UNKN')])) & rowSums(colleges[, c('UGDS_WHITE', "UGDS_BLACK", "UGDS_HISP",  "UGDS_ASIAN", "UGDS_AIAN",  "UGDS_NHPI",  "UGDS_2MOR", 'UGDS_NRA', 'UGDS_UNKN')]) < .98, c('UGDS_WHITE', "UGDS_BLACK", "UGDS_HISP",  "UGDS_ASIAN", "UGDS_AIAN",  "UGDS_NHPI",  "UGDS_2MOR", 'UGDS_NRA', 'UGDS_UNKN')] <- NA
 
 # add/modify columns pre-imputation
 colleges$LOCALE_FIRST <- as.factor(substr(as.character(colleges$LOCALE), 1, 1))
 colleges$CLIMATE_ZONE_GROUP <- as.factor(substr(colleges$CLIMATE_ZONE, 1, 1))
-colleges[, cip_cols] = apply(colleges[, cip_cols], MARGIN=2, function(x){ifelse(x==2, 1, x)})
-for (name in cip_cols)
-    colleges[, name] <- as.factor(colleges[, name])
-colleges$ROOM[!is.na(colleges$ROOM) & colleges$ROOM == 2] <- 0
-colleges$ROOM <- as.factor(colleges$ROOM)
-colleges$HIGHDEG[!is.na(colleges$HIGHDEG) & colleges$HIGHDEG == 3] <- 0
-colleges$HIGHDEG[!is.na(colleges$HIGHDEG) & colleges$HIGHDEG == 4] <- 1
-colleges$HIGHDEG <- as.factor(colleges$HIGHDEG)
-factor_cols <- c(factor_cols, "LOCALE_FIRST", "CLIMATE_ZONE_GROUP", cip_cols, "ROOM", 'HIGHDEG')
+factor_cols <- c(factor_cols, "LOCALE_FIRST", "CLIMATE_ZONE_GROUP")
 created_cols <- c(created_cols, 'LOCALE_FIRST', 'CLIMATE_ZONE_GROUP')
+
+# create missing flag column
+missing <- data.frame(lapply(colleges[, !(names(colleges) %in% 'UNITID')], function(x){as.integer(is.na(x))}))
+missing$UNITID <- colleges$UNITID
 
 # imputation
 imputation_cols <- setdiff(c(input_cols, 'LOCALE_FIRST', 'CLIMATE_ZONE_GROUP'), c('UNITID', 'INSTNM', 'CITY', 'STABBR', 'ZIP', 'INSTURL', 'IMAGE', 'LONG_DESCRIPTION', 'RELAFFIL'))
 library(missForest)
 library(doParallel)
-set.seed(1)
 registerDoParallel(cores=12)
 # note: missForest takes ~4 minutes per iteration using default params
 # note: missForest takes ~.6 minutes per iteration using default params and 8 cores
 #rf <- missForest(colleges[, imputation_cols], maxiter=30, ntree=300, parallelize="variables")
-rf <- missForest(colleges[, imputation_cols], maxiter=8, ntree=100, parallelize="variables")
+rf <- missForest(colleges[, imputation_cols], maxiter=30, ntree=600, parallelize="variables")
 colleges[, imputation_cols] <- rf$ximp
 
 # perform imputation checks and adjustments
-
-# convert columns that should be integer to integer
-for (col in integer_cols) {
-    colleges[, col] <- as.integer(round(colleges[, col]))
-}
+x <- !is.na(colleges$MD_EARN_WNE_P6 >= colleges$MD_EARN_WNE_P8) & colleges$MD_EARN_WNE_P6 >= colleges$MD_EARN_WNE_P8
+colleges[x, 'MD_EARN_WNE_P8'] <- colleges[x, 'MD_EARN_WNE_P6'] * (1.05 + rnorm(sum(x), mean=0.01, sd=0.008))
+x <- !is.na(colleges$MD_EARN_WNE_P8 >= colleges$MD_EARN_WNE_P10) & colleges$MD_EARN_WNE_P8 >= colleges$MD_EARN_WNE_P10
+colleges[x, 'MD_EARN_WNE_P10'] <- colleges[x, 'MD_EARN_WNE_P8'] * (1.05 + rnorm(sum(x), mean=0.01, sd=0.008))
+x <- !is.na(colleges$PCT25_EARN_WNE_P6 >= colleges$PCT25_EARN_WNE_P8) & colleges$PCT25_EARN_WNE_P6 >= colleges$PCT25_EARN_WNE_P8
+colleges[x, 'PCT25_EARN_WNE_P8'] <- colleges[x, 'PCT25_EARN_WNE_P6'] * (1.05 + rnorm(sum(x), mean=0.01, sd=0.008))
+x <- !is.na(colleges$PCT75_EARN_WNE_P8 >= colleges$PCT75_EARN_WNE_P10) & colleges$PCT75_EARN_WNE_P8 >= colleges$PCT75_EARN_WNE_P10
+colleges[x, 'PCT75_EARN_WNE_P10'] <- colleges[x, 'PCT75_EARN_WNE_P8'] * (1.05 + rnorm(sum(x), mean=0.01, sd=0.008))
+x <- !is.na(colleges$C150_4)
+colleges$C150_4[x] <- colleges$C150_4[x] + 0.1*(1 - colleges$C150_4[x])^4
+x <- !is.na(colleges$C150_4) & colleges$C150_4 <= 0.11
+colleges$C150_4[x] <- colleges$C150_4[x] - rnorm(sum(x), mean=0.003, sd=0.001)
+x <- !is.na(colleges$UG25ABV)
+colleges$UG25ABV[x] <- colleges$UG25ABV[x] + 0.02*(1 - colleges$UG25ABV[x])^4
+x <- x & colleges$UG25ABV <= .025
+colleges$UG25ABV[x] <- colleges$UG25ABV[x] - rnorm(sum(x), mean=0.01, sd=0.002)
 
 # create columns post-imputation
 ## create the cost and financial aid columns
@@ -297,7 +350,11 @@ colleges$FINAID3 <- colleges$COSTT4_A - colleges$NPT43
 colleges$FINAID4 <- colleges$COSTT4_A - colleges$NPT44
 colleges$FINAID5 <- colleges$COSTT4_A - colleges$NPT45
 ## create expected earnings
-colleges$EXP_EARNINGS <- colleges$MD_EARN_WNE_P6 * colleges$C150_4 * colleges$COUNT_WNE_1YR / (colleges$COUNT_WNE_1YR + colleges$COUNT_NWNE_1YR)
+earnings_for_dropout <- .6896553 * colleges$MD_EARN_WNE_P6   # https://www.bls.gov/careeroutlook/2021/data-on-display/education-pays.htm
+employment_rate_for_dropout <- .95   # https://www.bls.gov/opub/ted/2021/unemployment-rate-3-7-percent-for-college-grads-6-7-percent-for-high-school-grads-in-march-2021.htm
+colleges$EXP_EARNINGS_DROPOUT <- (1-colleges$C150_4) * employment_rate_for_dropout * earnings_for_dropout
+p_graduate_and_job <- colleges$C150_4 * colleges$COUNT_WNE_1YR / (colleges$COUNT_WNE_1YR + colleges$COUNT_NWNE_1YR)
+colleges$EXP_EARNINGS <- colleges$MD_EARN_WNE_P6 * p_graduate_and_job
 ## create diversity score using Shannon's entropy index
 race_cols <- c('UGDS_WHITE', 'UGDS_BLACK', 'UGDS_HISP', 'UGDS_ASIAN', 'UGDS_AIAN', 'UGDS_NHPI', 'UGDS_2MOR', 'UGDS_NRA', 'UGDS_UNKN')
 income_cols <- c('INC_PCT_LO', 'INC_PCT_M1', 'INC_PCT_M2', 'INC_PCT_H1', 'INC_PCT_H2')
@@ -315,21 +372,17 @@ for (col in income_cols) {
     income_entropy <- race_entropy - colleges[[col]] * log2(colleges[[col]])
 }
 colleges$DIVERSITY <- race_entropy + age_entropy + income_entropy
-created_cols <- c(created_cols, "COST_INSTATE_ONCAMPUS", "COST_INSTATE_ONCAMPUS", "COST_OUTSTATE_ONCAMPUS", "COST_OUTSTATE_OFFCAMPUS", "FINAID1", "FINAID2", "FINAID3", "FINAID4", "FINAID5", "EXP_EARNINGS", "DIVERSITY")
+created_cols <- c(created_cols, "COST_INSTATE_ONCAMPUS", "COST_INSTATE_ONCAMPUS", "COST_OUTSTATE_ONCAMPUS", "COST_OUTSTATE_OFFCAMPUS", "FINAID1", "FINAID2", "FINAID3", "FINAID4", "FINAID5", "EXP_EARNINGS", "DIVERSITY", 'EXP_EARNINGS_DROPOUT')
 ## create dummy variables
 dummy_source_cols <- c(
     "STABBR"
     ,"CONTROL"
     ,"REGION"
     ,"LOCALE"
+    ,"LOCALE_FIRST"
     ,"RELAFFIL"
     ,"CLIMATE_ZONE"
     ,"CLIMATE_ZONE_GROUP"
-    ,"SPORT1"
-    ,"SPORT2"
-    ,"SPORT3"
-    ,"SPORT4"
-    ,"LOCALE_FIRST"
 )
 dummy_cols <- c()
 i = 1
@@ -351,16 +404,22 @@ standardize <- function(x) {
 }
 colleges_standardized[, !(names(colleges_standardized) %in% not_standardized)] <- lapply(colleges_standardized[, !(names(colleges_standardized) %in% not_standardized)], standardize)
 ## Create selectivity and teaching quality columns
-colleges_standardized$SELECT <- -0.30*colleges_standardized$ADM_RATE + 0.70*colleges_standardized$GPA_BOTTOM_TEN_PERCENT
+colleges_standardized$SELECT <- -0.333*colleges_standardized$ADM_RATE + 0.333*colleges_standardized$GPA_BOTTOM_TEN_PERCENT + 0.333*colleges_standardized$SAT_AVG
 colleges_standardized$TEACH_QUAL <- 0.20*colleges_standardized$INEXPFTE + 0.48*colleges_standardized$AVGFACSAL + 0.12*colleges_standardized$PFTFAC + 0.20*colleges_standardized$STUFACR
 colleges$SELECT <- colleges_standardized$SELECT
 colleges$TEACH_QUAL <- colleges_standardized$TEACH_QUAL
 created_cols <- c(created_cols, 'TEACH_QUAL', 'SELECT')
 
 # Use selectivity to create selectivity category column
-quantiles <- quantile(colleges_standardized$SELECT, probs=c(0, .25, .45, .65, .8, .9, .95, .99, 1))
+quantiles <- quantile(colleges_standardized$SELECT, probs=c(0, .25, .5, .70, .83, .90, .95, .992, 1))
 colleges$SELECT_CAT <- cut(colleges_standardized$SELECT, breaks=c(quantiles[1]-1, quantiles[2:8], quantiles[9]+1), labels=c('8', '7', '6', '5', '4', '3', '2', '1'))
 created_cols <- c(created_cols, 'SELECT_CAT')
+#for(i in 1:8){
+#    print(i)
+#    print(sum(colleges$SELECT_CAT == as.character(i)))
+#    print(summary(colleges$GPA_BOTTOM_TEN_PERCENT[colleges$SELECT_CAT == as.character(i)]))
+#    print(summary(colleges$SAT_AVG[colleges$SELECT_CAT == as.character(i)]))
+#}
 
 # write the dataframes to files
 not_output_shared <- c(

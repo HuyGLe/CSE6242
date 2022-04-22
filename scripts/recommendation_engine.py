@@ -125,6 +125,7 @@ def degree_dicts(df, columns):
     degs = degs.astype('string')
     return dict(zip(degs, var_name))
 
+
 ## Custom distance metric
 def custom_dist(x, y, weights):
     sum_dist = 0
@@ -147,17 +148,24 @@ def dist_to_lat(dist, unit='kilometers'):
     if unit == 'miles':
         dist *= 1.60934
         return dist*1.60934/110.574
+    
+def adjust_weights(school_dict):
+    for key in school_dict.keys():
+        weight = school_dict[key][1]
+        if weight == 5 or weight == 5*0.12 or weight == 5*0.4:
+            weight *= 1.2
+        elif weight == 1 or weight == 0.12 or weight == 0.4 or weight == 0.33:
+            weight *= 0.5
 
 
 def similar_schools(college_id):
-    cols = ['ADM_RATE', 'ACTCMMID', 'SAT_AVG', 'UGDS', 'DIVERSITY', 'TEACH_QUAL', 'SELECT',
-            'TUITIONFEE_IN','TUITIONFEE_OUT']
+    cols = ['ADM_RATE', 'SAT_AVG', 'UGDS', 'DIVERSITY', 'TEACH_QUAL', 'TUITIONFEE_IN',
+            f'STABBR.{data.loc[college_id, "STABBR"]}',f'RELAFFIL.{data.loc[college_id, "RELAFFIL"]}',
+            'GPA_BOTTOM_TEN_PERCENT', f'CLIMATE_ZONE_GROUP.{data.loc[college_id, "CLIMATE_ZONE_GROUP"]}',
+            'EXP_EARNINGS', 'MAIN']
+    weights= [1, 1, 1.5, 2, 3, 3, 2, 2.5, 1, 1, 3, 1]
     query = norm.loc[data[data['UNITID'] == college_id].index, cols]
 
-    weights = {}
-    for col in cols:
-        weights[col] = [1]
-    weights = pd.DataFrame(weights).iloc[0,:]
     neigh = NearestNeighbors(metric=custom_dist, metric_params = {'weights': weights})
     neigh.fit(norm[cols])
     return data.iloc[neigh.kneighbors(query, 5, return_distance=False)[0][1:], ]
@@ -173,7 +181,6 @@ def submit_form(school_dict, user_info):
     school_dict['TEACH_QUAL'][0] = max(norm['TEACH_QUAL'])
     school_dict['SELECT'][0] = max(norm['SELECT'])
     school_dict['DIVERSITY'][0] = max(norm['DIVERSITY'])
-    zipcode = int(user_info['zip'])
     user_state = user_info['state']
     # TUITION
     cost_col = data.TUITIONFEE_OUT.copy()
@@ -181,7 +188,7 @@ def submit_form(school_dict, user_info):
     std_cost_col = standardize(cost_col)
     school_dict['TUITION'][0] = min(std_cost_col)
     # EXP_EARNINGS
-    exp_earnings_col = data.EXP_EARNINGS * majors_scale[user_info['major']]
+    exp_earnings_col = data.EXP_EARNINGS * majors_scale[user_info['major']] + data.EXP_EARNINGS_DROPOUT
     std_exp_earnings_col = standardize(exp_earnings_col)
     school_dict['EXP_EARNINGS'][0] = max(std_exp_earnings_col)
     # DISTANCE
@@ -196,7 +203,7 @@ def submit_form(school_dict, user_info):
     lon_rad = np.radians(longitude)
     distance_col = data.loc[:,['LAT_RAD', 'LON_RAD']].apply(lambda x: haversine_distances([[lat_rad, lon_rad], [x.LAT_RAD, x.LON_RAD]])[0, 1], axis=1)
     std_distance_col = standardize(distance_col)
-    school_dict['DISTANCE'] = [min(std_distance_col), location_imp/3]
+    school_dict['DISTANCE'] = [min(std_distance_col), location_imp*0.33]
     # SELECTIVITY RANK DISTANCE
     student_rank = rank_student(user_info['gpa'], user_info['sat'], user_info['act'])
     rank_distance_col = np.abs(student_rank - data.SELECT_CAT)
@@ -220,7 +227,7 @@ def submit_form(school_dict, user_info):
     norm_nn['DISTANCE'] = std_distance_col
     norm_nn['RANK_DISTANCE'] = rank_distance_col
     norm_nn = norm_nn.loc[:, school_dict.keys()] # reorder columns to play well with neigh.fit() below 
-    
+    adjust_weights(school_dict)
     # NN
     neigh = NearestNeighbors(metric=custom_dist, metric_params = {'weights': weights})
     neigh.fit(norm_nn)

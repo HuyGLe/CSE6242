@@ -41,17 +41,17 @@ def create_slider(name):
 
 def create_gauge(rank_diff):
     return daq.Gauge(
-        color={"gradient":True,"ranges":{"red":[-7,-2.33],"yellow":[-2.33,2.33],"green":[2.33,7]}},
-        max=7,
-        min=-7,
-        value=rank_diff,
+        color={"gradient":True,"ranges":{"red":[0,6], "yellow":[6, 8], "green":[8, 14]}},
+        max=14,
+        min=0,
+        value=rank_diff+7,
         scale= {
                 "custom": {
-                    -7: {"label": "Unlikely", 'style':{'font-size':'10px'}},
-                    -2.33: {"label": "Not Very Likely",'style':{'font-size':'10px'}},
-                    0: {"label":"Possible", 'style':{'font-size':'10px'}},
-                    2.33: {"label": "Likely", 'style':{'font-size':'10px'}},
-                    7: {"label": "Very Likely", 'style':{'font-size':'10px'}},
+                    0: {"label": "Very Unlikely", 'style':{'font-size':'10px'}},
+                    4: {"label": "Not Likely",'style':{'font-size':'10px'}},
+                    7: {"label":"Possible", 'style':{'font-size':'10px'}},
+                    10: {"label": "Likely", 'style':{'font-size':'10px'}},
+                    14: {"label": "Very Likely", 'style':{'font-size':'10px'}},
                         },
                 },
     )
@@ -204,20 +204,30 @@ def create_college_info(info, graphs, similar_schools, other_info):
                             html.Span('Other Expenses', className='key'),
                             html.Span(f'${int(other_expenses):,}', className='val'),
                         ]),
-                        html.P(f'Net price is indicative of what it actually costs to attend {info.INSTNM} when typical grants and scholarships are considered. The net price varies by family income and financial need.', className=''),
+                        html.P(f'Net price is indicative of what it actually costs to attend {info.INSTNM} when typical grants and scholarships are considered. The net price varies by family income and financial need.', className='')
+                    ]),
+
+                    html.Div(className='col-2', children=[
+                        dcc.Graph(figure = graphs['cost'])
+                    ])
+                ]),
+            ]),html.Br(), html.Br(),
+            
+            html.Div(className='card-content', children=[
+                html.H4('Forecasted Earnings', className='card-section'),
+                html.Div(className='two-col', children=[
+                    html.Div(className='col-1', children=[
                         html.Div(children=[
                             html.Span('Expected Salary', className='item-header'),
                             html.Span(f'${int(other_info["exp-salary"]):,} ', className='item-info'),
                             html.P(other_info['exp-salary-desc'])
                         ])
                     ]),
-
                     html.Div(className='col-2', children=[
-                        dcc.Graph(figure = graphs['cost']),
                         dcc.Graph(figure = graphs['earnings'])
                     ])
-                ]),
-            ]),html.Br(), html.Br(),
+                ]) 
+            ]), html.Br(), html.Br(),
             
             # Diversity
             html.Div(className='card-content', children=[
@@ -323,8 +333,7 @@ page1Content = html.Main(children=[
             
                 html.Label('Enter your SAT score'),
                 dcc.Input(type='number', value=None, id='sat-i', debounce=True),
-                html.Br(),
-            
+                html.H6('And/Or'),
                 html.Label('Enter your ACT score'),
                 dcc.Input(type='number', value=None, id='act-i', debounce=True),
                 html.Br(),
@@ -421,13 +430,13 @@ page2Content = html.Main(children=[
                 html.H4('Cost/Earnings'),
                 
                 html.Label('Tuition'),
-                dcc.RangeSlider(0, 50000, step=10000, value=[0, 50000], id='tuition-ii'),
+                dcc.RangeSlider(0, 75000, step=15000, value=[0, 75000], id='tuition-ii'),
                 html.Hr(),
                 html.Label('Max Application Fee'),
                 dcc.Dropdown(id='applfeeu-ii', options=[0, 20, 40, 60, 80, 100]),
                 html.Hr(),
-                html.Label('Projected Salary'),
-                dcc.RangeSlider(0, 125000, step=25000, value=[0, 125000], id='exp-earnings-ii'),
+                html.Label('Expected Salary'),
+                dcc.RangeSlider(0, 150000, step=30000, value=[0, 150000], id='exp-earnings-ii'),
                 html.Br(),
                 
                 html.H4('Acceptance Chance'),
