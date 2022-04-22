@@ -190,7 +190,7 @@ def submit_form(school_dict, user_info):
     lon_rad = np.radians(longitude)
     distance_col = data.loc[:,['LAT_RAD', 'LON_RAD']].apply(lambda x: haversine_distances([[lat_rad, lon_rad], [x.LAT_RAD, x.LON_RAD]])[0, 1], axis=1)
     std_distance_col = standardize(distance_col)
-    school_dict['DISTANCE'] = [min(std_distance_col), int(user_info['zip'][1])/3]
+    school_dict['DISTANCE'] = [min(std_distance_col), 2] #todo school_dict['STABBR.' + user_state]
     # SELECTIVITY RANK DISTANCE
     student_rank = rank_student(user_info['gpa'], user_info['sat'], user_info['act'])
     rank_distance_col = np.abs(student_rank - data.SELECT_CAT)
