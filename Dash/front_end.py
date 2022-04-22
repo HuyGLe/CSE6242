@@ -2,6 +2,7 @@ from dash import html, dcc
 import sys
 sys.path.append('./scripts')
 import recommendation_engine as rec
+import dash_daq as daq
 
 
 majors = ["Agriculture, Agriculture Operations, And Related Sciences", "Natural Resources And Conservation", "Architecture And Related Services", "Area, Ethnic, Cultural, Gender, And Group Studies", "Communication, Journalism, And Related Programs", "Communications Technologies/Technicians And Support Services", "Computer And Information Sciences And Support Services", "Personal And Culinary Services", "Education", "Engineering", "Engineering Technologies And Engineering-Related Fields", "Foreign Languages, Literatures, And Linguistics",	"Family And Consumer Sciences/Human Sciences", "Legal Professions And Studies", "English Language And Literature/Letters", "Liberal Arts And Sciences, General Studies And Humanities", "Library Science", "Biological And Biomedical Sciences", "Mathematics And Statistics", "Military Technologies And Applied Sciences", "Multi/Interdisciplinary Studies",	"Parks, Recreation, Leisure, And Fitness Studies", "Philosophy And Religious Studies", "Theology And Religious Vocations", "Physical Sciences", "Science Technologies/Technicians", "Psychology", "Homeland Security, Law Enforcement, Firefighting And Related Protective Services", "Public Administration And Social Service Professions", "Social Sciences", "Construction Trades", "Mechanic And Repair Technologies/Technicians", "Precision Production", "Transportation And Materials Moving", "Visual And Performing Arts", "Health Professions And Related Programs", "Business, Management, Marketing, And Related Support Services", "History"]
@@ -36,6 +37,22 @@ def create_slider(name):
     return dcc.Slider(1, 5, 1, id=f'{name}-imp', value=3,
         marks={1: 'Not Important', 3: 'Moderately Important', 5: 'Extremely Important'},
         className='slider'
+    )
+
+def create_gauge(name):
+    return daq.Gauge(
+        color={"gradient":True,"ranges":{"red":[-7,-2.33],"yellow":[-2.33,2.33],"green":[2.33,7]}},
+        max=7,
+        min=-7,
+        scale= {
+                "custom": {
+                    -7: {"label": "Unlikely", 'style':{'font-size':'10px'}},
+                    -2.33: {"label": "Not Very Likely",'style':{'font-size':'10px'}},
+                    0: {"label":"Possible", 'style':{'font-size':'10px'}},
+                    2.33: {"label": "Likely", 'style':{'font-size':'10px'}},
+                    7: {"label": "Very Likely", 'style':{'font-size':'10px'}},
+                        },
+                },
     )
 
 def create_school_card(info):
@@ -93,6 +110,16 @@ def create_college_info(info, graphs, similar_schools, other_info):
                 html.H3(info.INSTNM, className='college-name'),
                 ###Get school description
                 html.P(info.LONG_DESCRIPTION, className=''),
+            ]),
+            
+            # chances of being accepted
+            html.Div(className='card-content', children=[
+                
+                html.H4('Chances of being accepted', className='card-section chart-title'),
+                ###Gauge
+                html.Div(className='chart-container', children=[
+                    create_gauge(None)
+                ])
             ]),
 
             # Overview
