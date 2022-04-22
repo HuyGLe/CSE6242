@@ -160,7 +160,7 @@ def fill_form(form, form_dict):
         form_dict['STABBR.IL'] = [1, 1]
     form_dict['UGDS'] = [int(form['ugds-i']), int(form['ugds-imp'])] # Always has a value
     if form['locale-first-i'] is not None:
-        form_dict[f'LOCALE_FIRST.{locale_first_to_num[form["locale_first"]]}'] = [1 , int(form['locale_first-imp'])]
+        form_dict[f'LOCALE_FIRST.{locale_first_to_num[form["locale-first-i"]]}'] = [1 , int(form['locale-first-imp'])]
     else:
         form_dict['LOCALE_FIRST.2'] = [1 , 1]
     if form['climate-zone-i'] is not None: 
@@ -184,7 +184,7 @@ def fill_form(form, form_dict):
     else:
         form_dict['RAINY'] = [1, 1]
     if form['snowy-i'] is not None:
-        form_dict['SNOWY'] = [1 if form['snowy-i'] == 'Yes' else 0, form['weather-imp ']*.08]
+        form_dict['SNOWY'] = [1 if form['snowy-i'] == 'Yes' else 0, form['weather-imp']*.08]
     else:
         form_dict['SNOWY'] = [1, 1]
     form_dict['TUITION'] = [None, int(form['tuition-imp'])]
@@ -275,7 +275,7 @@ def page_2_load(unused, last_page, new_page, store1, store2, store2_filter):
     elif new_page == '/2/filter0':
         print('page_2_load() - new_page= /2/filter0')
         local_df = pd.read_json(store2, typ='series')
-        local_df, df = rec.filt(local_df, dict())
+        local_df, df = rec.filt(local_df, dict(), dict())
         if df.shape[0] > 0:
             new_children = [fe.create_school_card(df.iloc[i, :]) for i in range(min(n, df.shape[0]))]
         else:
