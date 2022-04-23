@@ -141,7 +141,7 @@ norm['UNITID'] = norm.index
 
 zip_to_state = pd.read_csv('data/zip_to_state.csv')
 zip_to_coords = pd.read_csv('data/zip_to_coords.csv', index_col='ZIPCODE')
-columns = pd.read_excel('data/scorecard/columns-simplified.xlsx')
+columns = pd.read_excel('data/columns-simplified.xlsx')
 
 tree_kd = KDTree(data[['LATITUDE', 'LONGITUDE']])
 def dist_to_lat(dist, unit='kilometers'):
