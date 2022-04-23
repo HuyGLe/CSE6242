@@ -2,7 +2,7 @@ from dash import Dash, dcc, html, callback, Output, Input
 from whitenoise import WhiteNoise
 import sys
 import os
-sys.path.append('./Dash')
+sys.path.append('./dash')
 import front_end
 import callbacks
 
