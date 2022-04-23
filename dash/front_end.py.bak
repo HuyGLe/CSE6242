@@ -1,4 +1,6 @@
 from dash import html, dcc
+import sys
+sys.path.append('./scripts')
 import recommendation_engine as rec
 import dash_daq as daq
 
