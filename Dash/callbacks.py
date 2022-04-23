@@ -96,9 +96,9 @@ def filter_vals(filter_dict, reset):
         zip_ii = None
         distance = None
         state_ii = None
-        tuition_ii = [0, 50000]
+        tuition_ii = [0, 75000]
         applfeeu_ii = None
-        exp_earnings_ii = [0, 125000]
+        exp_earnings_ii = [0, 150000]
         select_cat_ii = ['Safety Schools', '50/50 Schools', 'Reach Schools']
         climate_zone_ii = None
         hot_summer_ii = None
@@ -130,7 +130,7 @@ def create_user_info_dict(form):
     else:
         info['major'] = form['major-i']
     if form['gpa-i'] is None:
-        info['gpa'] = 3
+        info['gpa'] = 3.7
     else:
         info['gpa'] = form['gpa-i']
     if form['zip-i'] is None:
@@ -140,7 +140,7 @@ def create_user_info_dict(form):
     zipcode = int(info['zip'])
     info['state'] = rec.zip_to_state[(rec.zip_to_state['Zip Min'] <= zipcode) & (rec.zip_to_state['Zip Max'] >= zipcode)].iloc[0, 0]
     if form['act-i'] is None:
-        info['act'] = 5
+        info['act'] = 32
     else:
         info['act'] = form['act-i']
     if form['sat-i'] is None:
@@ -151,7 +151,7 @@ def create_user_info_dict(form):
 
 def fill_form(form, form_dict):
     if form['major-i'] is not None:
-        form_dict[f'CIP{major_to_num[form["major-i"]]}BACHL'] = [1, 5]
+        form_dict[f'CIP{major_to_num[form["major-i"]]}BACHL'] = [1, 12]
     else:
         form_dict['CIP13BACHL'] = [1, 1]
     if form['state-i'] is not None:

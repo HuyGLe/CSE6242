@@ -152,10 +152,13 @@ def dist_to_lat(dist, unit='kilometers'):
 def adjust_weights(school_dict):
     for key in school_dict.keys():
         weight = school_dict[key][1]
+        if key == 'STABBR.':
+            weight *= 3
         if weight == 5 or weight == 5*0.12 or weight == 5*0.4:
-            weight *= 1.2
+            weight *= 2.4
         elif weight == 1 or weight == 0.12 or weight == 0.4 or weight == 0.33:
-            weight *= 0.5
+            weight *= 0.15
+        school_dict[key][1] = weight
 
 
 def similar_schools(college_id):
@@ -206,31 +209,56 @@ def submit_form(school_dict, user_info):
     school_dict['DISTANCE'] = [min(std_distance_col), location_imp*0.33]
     # SELECTIVITY RANK DISTANCE
     student_rank = rank_student(user_info['gpa'], user_info['sat'], user_info['act'])
-    rank_distance_col = np.abs(student_rank - data.SELECT_CAT)
-    std_distance_col = standardize(rank_distance_col)
-    school_dict['RANK_DISTANCE'] = [0, 5]
+    rank_distance_col = student_rank - data.SELECT_CAT
+    std_rank_distance_col = standardize(rank_distance_col)
+    school_dict['RANK_DISTANCE'] = [0, 3]
     # ABHISHEK'S ORDINAL COLS
     for col in ['HOT_SUMMER', 'HUMIDITY', 'SUNNY', 'RAINY']:
         school_dict[col][0] = standardize(school_dict[col][0], data.loc[:, col])
     print('---------------------------')
     print('school_dict:')
     print(school_dict)
-    
+    adjust_weights(school_dict)
     query = pd.DataFrame(pd.DataFrame(school_dict).iloc[0, :]).T
     weights = pd.DataFrame(school_dict).iloc[1, :]
-    
     # SET UP NN DATAFRAME
     cols = list(set(school_dict.keys()).difference(['TUITION', 'EXP_EARNINGS', 'DISTANCE', 'RANK_DISTANCE']))
     norm_nn = norm[cols].copy()
     norm_nn['TUITION'] = std_cost_col
     norm_nn['EXP_EARNINGS'] = std_exp_earnings_col
     norm_nn['DISTANCE'] = std_distance_col
-    norm_nn['RANK_DISTANCE'] = rank_distance_col
+    norm_nn['RANK_DISTANCE'] = np.abs(rank_distance_col)
     norm_nn = norm_nn.loc[:, school_dict.keys()] # reorder columns to play well with neigh.fit() below 
-    adjust_weights(school_dict)
+    print('adjusted school dict:')
+    print(school_dict) # 110404 122296
+    print('weights:')
+    print(weights)
+    print('query')
+    print(query)
+    print('SM:')
+    print(norm_nn.loc[122296, :])
+    print('DISTANCES')
+    dist_sm = 0
+    dist_cit = 0
+    print(query.shape)
+    print(weights.shape)
+    for col in cols:
+        print('-------------------------------------------------')
+        print(col)
+        print(weights[col])
+        print(f'{query[col]} :: {norm_nn.at[122296, col]} :: {norm_nn.at[110404, col]}')
+        dist_sm += weights[col]*(norm_nn.at[122296, col] - query[col])**2
+        dist_cit += weights[col]*(norm_nn.at[110404, col] - query[col])**2
+    print(f'dist cit: {dist_cit}')
+    print(f'dist_sm: {dist_sm}')
+    print('---- ----')
+    print(norm_nn.iloc[0,:])
+    #print(custom_dist(query,norm_nn.loc[110404,:].squeeze(),weights))
     # NN
     neigh = NearestNeighbors(metric=custom_dist, metric_params = {'weights': weights})
     neigh.fit(norm_nn)
+    x = neigh.kneighbors(query, 1, return_distance=True)
+    print(x)
     return data.iloc[neigh.kneighbors(query, norm_nn.shape[0], return_distance=False)[0], ]
 
 def get_data(rows):
