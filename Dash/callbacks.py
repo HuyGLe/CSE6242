@@ -137,8 +137,10 @@ def create_user_info_dict(form):
         info['zip'] = form['zip-i']
     zipcode = int(info['zip'])
     info['state'] = rec.zip_to_state[(rec.zip_to_state['Zip Min'] <= zipcode) & (rec.zip_to_state['Zip Max'] >= zipcode)].iloc[0, 0]
-    if form['act-i'] is None:
-        info['act'] = 32
+    if form['act-i'] is None and form['sat-i'] is None:
+        info['act'] = 25
+    elif form['act-i'] is None:
+        info['act'] = 1
     else:
         info['act'] = form['act-i']
     if form['sat-i'] is None:

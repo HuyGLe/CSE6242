@@ -211,7 +211,7 @@ def submit_form(school_dict, user_info):
     student_rank = rank_student(user_info['gpa'], user_info['sat'], user_info['act'])
     rank_distance_col = student_rank - data.SELECT_CAT
     std_rank_distance_col = standardize(rank_distance_col)
-    school_dict['RANK_DISTANCE'] = [0, 3]
+    school_dict['RANK_DISTANCE'] = [0, 2.6]
     # ABHISHEK'S ORDINAL COLS
     for col in ['HOT_SUMMER', 'HUMIDITY', 'SUNNY', 'RAINY']:
         school_dict[col][0] = standardize(school_dict[col][0], data.loc[:, col])
@@ -227,7 +227,7 @@ def submit_form(school_dict, user_info):
     norm_nn['TUITION'] = std_cost_col
     norm_nn['EXP_EARNINGS'] = std_exp_earnings_col
     norm_nn['DISTANCE'] = std_distance_col
-    norm_nn['RANK_DISTANCE'] = np.abs(rank_distance_col)
+    norm_nn['RANK_DISTANCE'] = np.where(rank_distance_col>0, np.abs(rank_distance_col)*2, np.abs(rank_distance_col))
     norm_nn = norm_nn.loc[:, school_dict.keys()] # reorder columns to play well with neigh.fit() below 
     print('adjusted school dict:')
     print(school_dict) # 110404 122296
