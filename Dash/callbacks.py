@@ -3,6 +3,9 @@ import pandas as pd
 import numpy as np
 from dash import Input, Output, State, callback, html, dcc, callback_context
 import plotly.express as px
+import os
+import sys
+sys.path.append(os.path.abspath('Dash'))
 import recommendation_engine as rec
 import front_end as fe
 
