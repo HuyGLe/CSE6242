@@ -1,7 +1,7 @@
 from dash import html, dcc
 import os
 import sys
-sys.path.append(os.path.abspath('Dash'))
+sys.path.append(os.path.abspath('dash'))
 import recommendation_engine as rec
 import dash_daq as daq
 

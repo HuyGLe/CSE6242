@@ -5,7 +5,7 @@ from dash import Input, Output, State, callback, html, dcc, callback_context
 import plotly.express as px
 import os
 import sys
-sys.path.append(os.path.abspath('Dash'))
+sys.path.append(os.path.abspath('dash'))
 import recommendation_engine as rec
 import front_end as fe
 
