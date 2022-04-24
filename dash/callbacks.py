@@ -270,7 +270,7 @@ def page_2_load(unused, last_page, new_page, store1, store2, store2_filter):
             new_children = [fe.create_school_card(df.iloc[i, :]) for i in range(min(n, df.shape[0]))]
         else:
             new_children = []
-        fig_map = px.scatter_mapbox(df.iloc[1:n, :], lat="LATITUDE", lon="LONGITUDE", custom_data=custom_data, color_discrete_sequence=["fuchsia"], zoom=3, height=300)
+        fig_map = px.scatter_mapbox(df.iloc[0:n, :], lat="LATITUDE", lon="LONGITUDE", custom_data=custom_data, color_discrete_sequence=["fuchsia"], zoom=3, height=300)
         fig_map.update_traces(hovertemplate=hovertemplate, marker_size=10)
         fig_map.update_layout(mapbox_style="open-street-map", margin={"r":0, "t":0, "l":0, "b":0})
         print(f'...returning from page_2_load... local_df sum: {np.sum(local_df)}')
@@ -283,7 +283,7 @@ def page_2_load(unused, last_page, new_page, store1, store2, store2_filter):
             new_children = [fe.create_school_card(df.iloc[i, :]) for i in range(min(n, df.shape[0]))]
         else:
             new_children = []
-        fig_map = px.scatter_mapbox(df.iloc[1:n, :], lat="LATITUDE", lon="LONGITUDE", custom_data=custom_data, color_discrete_sequence=["fuchsia"], zoom=3, height=300)
+        fig_map = px.scatter_mapbox(df.iloc[0:n, :], lat="LATITUDE", lon="LONGITUDE", custom_data=custom_data, color_discrete_sequence=["fuchsia"], zoom=3, height=300)
         fig_map.update_traces(hovertemplate=hovertemplate, marker_size=10)
         fig_map.update_layout(mapbox_style="open-street-map", margin={"r":0, "t":0, "l":0, "b":0})
         print(f'...returning from page_2_load... local_df sum: {np.sum(local_df)}')
